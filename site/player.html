@@ -44,6 +44,8 @@
 
     <section class="tiles" id="tiles" aria-label="Resumen del jugador"></section>
 
+    <section class="tiles" id="totals" aria-label="Totales del jugador"></section>
+
     <section class="section">
       <div class="section-head">
         <h2>Evolución por partida</h2>
@@ -349,6 +351,25 @@
           tile("Goles · Asist.", `${fmt.format(avg.goals ?? 0)}<small> / ${fmt.format(avg.assists ?? 0)}</small>`, "medias por partida");
       } else {
         document.getElementById("tiles").innerHTML = "";
+      }
+
+      // totales acumulados en 3v3 (palmarés), calculados del historial
+      const rows3 = (player.history || []).filter((h) => h.mode === "3v3");
+      if (rows3.length) {
+        const sum = (key) => rows3.reduce((acc, h) => acc + (h[key] ?? 0), 0);
+        const goals = sum("goals"), shots = sum("shots");
+        const assists = sum("assists"), saves = sum("saves");
+        const mvps = rows3.filter((h) => h.mvp).length;
+        const mvpPct = Math.round((mvps / rows3.length) * 100);
+        document.getElementById("totals").innerHTML =
+          tile("Goles", goals,
+            shots ? `de ${shots} tiros · ${Math.round((goals / shots) * 100)}% acierto` : "totales 3v3") +
+          tile("Asistencias", assists, `${fmt.format(assists / rows3.length)} por partida`) +
+          tile("Paradas", saves, `${fmt.format(saves / rows3.length)} por partida`) +
+          // un tercio = reparto equitativo en un equipo de 3
+          tile("MVPs", mvps, `${mvpPct}% de las partidas`, mvpPct >= 33 ? "good" : "");
+      } else {
+        document.getElementById("totals").innerHTML = "";
       }
 
       // la gráfica resalta al jugador activo (mismo lenguaje que el radar)
