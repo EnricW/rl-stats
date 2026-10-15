@@ -2,6 +2,7 @@
 manifiesto (es el módulo que cuesta dinero: cada llamada de más se paga)."""
 
 import sys
+from datetime import UTC, datetime, timedelta
 
 import pytest
 
@@ -31,6 +32,7 @@ def sandbox(tmp_path, monkeypatch):
         d = tmp_path / name
         d.mkdir()
         dirs[name] = d
+    monkeypatch.setattr(report, "DATA_DIR", tmp_path)
     monkeypatch.setattr(report, "MATCHES_DIR", dirs["matches"])
     monkeypatch.setattr(report, "PLAYERS_DIR", dirs["players"])
     monkeypatch.setattr(report, "REPORTS_DIR", dirs["reports"])
@@ -44,9 +46,11 @@ def sandbox(tmp_path, monkeypatch):
     monkeypatch.setattr(sys, "argv", ["report"])
 
     calls = []
+    payloads = []
 
     def fake_ask(model, system_prompt, payload_text, reports_cfg):
         calls.append(model)
+        payloads.append(payload_text)
         return "# informe de prueba"
 
     monkeypatch.setattr(report, "ask_claude", fake_ask)
@@ -64,7 +68,7 @@ def sandbox(tmp_path, monkeypatch):
                           "averages": {}, "last10_averages": {}}},
         "history": [{"mode": "3v3"}, {"mode": "3v3"}],
     })
-    return {"dirs": dirs, "calls": calls}
+    return {"dirs": dirs, "calls": calls, "payloads": payloads}
 
 
 def test_main_genera_y_registra(sandbox):
@@ -94,6 +98,25 @@ def test_main_es_idempotente(sandbox):
     # sumado partidas nuevas y el de equipo es de hoy -> cero llamadas (coste)
     report.main()
     assert len(sandbox["calls"]) == n
+
+
+def test_team_report_recibe_el_anterior(sandbox):
+    """El informe de equipo nuevo recibe el anterior para darle continuidad."""
+    report.main()
+    # el primero no tiene nada que repasar
+    assert all("informe_anterior" not in p for p in sandbox["payloads"])
+
+    # fuerza que vuelva a tocar: el último informe pasa a tener 8 días
+    manifest = read_json(mf.MANIFEST_FILE)
+    manifest["reports"]["team"][-1]["date"] = (
+        datetime.now(UTC).date() - timedelta(days=8)
+    ).isoformat()
+    write_json(mf.MANIFEST_FILE, manifest)
+
+    report.main()
+    assert sandbox["calls"][-1] == "sonnet-test"  # solo se regeneró el de equipo
+    assert "informe_anterior" in sandbox["payloads"][-1]
+    assert "# informe de prueba" in sandbox["payloads"][-1]  # el markdown viaja
 
 
 def test_main_umbral_de_jugador(sandbox):

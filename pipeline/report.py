@@ -18,6 +18,7 @@ import anthropic
 
 from pipeline import manifest as mf
 from pipeline.util import (
+    DATA_DIR,
     EVENTS_DIR,
     MATCHES_DIR,
     PLAYERS_DIR,
@@ -168,6 +169,20 @@ def player_report(name, settings, manifest):
     print(f"  informe de jugador: {out.name}")
 
 
+def _previous_team_report(manifest):
+    """Último informe de equipo generado, si existe: se le pasa al siguiente
+    para darle continuidad (evaluar si las prioridades marcadas se cumplieron),
+    porque cada informe parte de cero sobre los números."""
+    items = manifest["reports"]["team"]
+    if not items:
+        return None
+    last = items[-1]
+    path = DATA_DIR / last["path"]
+    if not path.exists():
+        return None
+    return {"fecha": last["date"], "markdown": path.read_text(encoding="utf-8")}
+
+
 def team_report(settings, manifest):
     keep = int(settings["reports"].get("prompt_history_games", 20))
     context = {
@@ -176,6 +191,9 @@ def team_report(settings, manifest):
             for p in sorted(PLAYERS_DIR.glob("*.json"))
         }
     }
+    previous = _previous_team_report(manifest)
+    if previous:
+        context["informe_anterior"] = previous
     model = settings["reports"]["trend_model"]
     text = ask_claude(model, prompt("team.md"),
                       json.dumps(context, ensure_ascii=False, indent=1), settings["reports"])
