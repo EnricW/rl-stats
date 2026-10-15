@@ -1,8 +1,9 @@
 # Pipeline principal: sincroniza con ballchasing, agrega, genera informes IA,
 # commitea los datos y despliega la web en GitHub Pages.
 #
-# Se dispara: al avisar el watcher (repository_dispatch), cada 6 h como red de
-# seguridad, el lunes por la mañana para el informe semanal de equipo, y a mano.
+# Se dispara: al avisar el watcher (repository_dispatch), el lunes por la
+# mañana (informe semanal de equipo + reconciliación por si algún aviso del
+# watcher se perdió), y a mano desde la pestaña Actions.
 
 name: Procesar partidas
 
@@ -10,8 +11,7 @@ on:
   repository_dispatch:
     types: [new-replay]
   schedule:
-    - cron: "17 */6 * * *"   # reconciliación
-    - cron: "0 8 * * 1"      # lunes: además, informe de equipo
+    - cron: "0 8 * * 1"      # lunes: reconciliación + informe de equipo
   workflow_dispatch:
 
 # Permisos por job: process solo necesita escribir contenido; los de Pages
