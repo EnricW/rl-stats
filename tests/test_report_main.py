@@ -16,6 +16,7 @@ SETTINGS = {
     "reports": {
         "match_model": "haiku-test",
         "trend_model": "sonnet-test",
+        "trend_effort": "high",
         "player_report_every": 2,
         "team_report_every_days": 7,
         "prompt_history_games": 20,
@@ -47,10 +48,12 @@ def sandbox(tmp_path, monkeypatch):
 
     calls = []
     payloads = []
+    efforts = []
 
-    def fake_ask(model, system_prompt, payload_text, reports_cfg):
+    def fake_ask(model, system_prompt, payload_text, reports_cfg, effort=None):
         calls.append(model)
         payloads.append(payload_text)
+        efforts.append(effort)
         return "# informe de prueba"
 
     monkeypatch.setattr(report, "ask_claude", fake_ask)
@@ -68,7 +71,7 @@ def sandbox(tmp_path, monkeypatch):
                           "averages": {}, "last10_averages": {}}},
         "history": [{"mode": "3v3"}, {"mode": "3v3"}],
     })
-    return {"dirs": dirs, "calls": calls, "payloads": payloads}
+    return {"dirs": dirs, "calls": calls, "payloads": payloads, "efforts": efforts}
 
 
 def test_main_genera_y_registra(sandbox):
@@ -77,6 +80,8 @@ def test_main_genera_y_registra(sandbox):
     # partida (haiku) + tendencia de Enric (2 partidas, every=2) + equipo
     # (nunca hubo): tres llamadas, ni una más
     assert sandbox["calls"] == ["haiku-test", "sonnet-test", "sonnet-test"]
+    # trend_effort solo aplica a las tendencias, no al informe de partida
+    assert sandbox["efforts"] == [None, "high", "high"]
 
     reports_dir = sandbox["dirs"]["reports"]
     assert (reports_dir / f"{MATCH_ID}.md").exists()

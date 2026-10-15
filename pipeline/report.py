@@ -42,12 +42,14 @@ def get_client():
     return _client
 
 
-def ask_claude(model, system_prompt, payload_text, reports_cfg):
+def ask_claude(model, system_prompt, payload_text, reports_cfg, effort=None):
     kwargs = {}
     prefixes = tuple(reports_cfg.get("server_fallback_prefixes") or [])
     if prefixes and model.startswith(prefixes):
         # Fallback automático de servidor ante un refusal del clasificador.
         kwargs = {"betas": ["server-side-fallback-2026-07-01"], "fallbacks": "default"}
+    if effort:
+        kwargs["output_config"] = {"effort": effort}
     # El thinking adaptativo (activo por defecto) también consume max_tokens.
     response = get_client().beta.messages.create(
         model=model,
@@ -160,7 +162,8 @@ def player_report(name, settings, manifest):
     data = slim_player(read_json(PLAYERS_DIR / f"{name}.json"), keep)
     model = settings["reports"]["trend_model"]
     text = ask_claude(model, prompt("player.md"),
-                      json.dumps(data, ensure_ascii=False, indent=1), settings["reports"])
+                      json.dumps(data, ensure_ascii=False, indent=1), settings["reports"],
+                      effort=settings["reports"].get("trend_effort"))
     date = _report_date()
     out = REPORTS_DIR / f"player-{name}-{date}.md"
     write_text_atomic(out, text)
@@ -196,7 +199,8 @@ def team_report(settings, manifest):
         context["informe_anterior"] = previous
     model = settings["reports"]["trend_model"]
     text = ask_claude(model, prompt("team.md"),
-                      json.dumps(context, ensure_ascii=False, indent=1), settings["reports"])
+                      json.dumps(context, ensure_ascii=False, indent=1), settings["reports"],
+                      effort=settings["reports"].get("trend_effort"))
     date = _report_date()
     out = REPORTS_DIR / f"team-{date}.md"
     write_text_atomic(out, text)

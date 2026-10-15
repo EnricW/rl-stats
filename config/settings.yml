@@ -13,7 +13,12 @@ ballchasing:
 
 reports:
   match_model: claude-haiku-5-5
-  trend_model: claude-sonnet-5-5
+  # Tendencias (jugador) e informe de equipo: el mejor análisis disponible.
+  # Coste medido 2026-10: ~$0,17/informe de equipo y ~$0,09/jugador (~$2/mes).
+  trend_model: claude-opus-5-5
+  # Esfuerzo de razonamiento para las tendencias: Opus 5.5 trae "medium" por
+  # defecto y el análisis semanal merece "high".
+  trend_effort: high
   # Regenerar el informe de tendencia de un jugador cada N partidas suyas.
   player_report_every: 10
   # Informe de equipo cada N días. Se decide por la fecha del último informe
@@ -28,3 +33,4 @@ reports:
   # Modelos (por prefijo) con fallback de servidor ante un refusal del clasificador.
   server_fallback_prefixes:
     - claude-sonnet-5-5
+    - claude-opus-5-5
