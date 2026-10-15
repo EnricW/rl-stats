@@ -85,13 +85,7 @@ jobs:
           fi
 
       - name: Construir la web
-        run: |
-          mkdir -p _site
-          cp -r site/* _site/
-          cp -r data _site/data
-          # cache-busting: versiona CSS/JS propios con el commit para que el
-          # navegador no sirva assets viejos tras un deploy
-          sed -i "s/styles\.css/styles.css?v=${GITHUB_SHA::8}/g; s/app\.js/app.js?v=${GITHUB_SHA::8}/g; s/viewer\.js/viewer.js?v=${GITHUB_SHA::8}/g" _site/*.html
+        run: bash scripts/build_site.sh
 
       - uses: actions/upload-pages-artifact@v3
         with:

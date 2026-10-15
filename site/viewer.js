@@ -1,22 +1,38 @@
 /* Visor de repeticiones: reproduce data/frames/<id>.json con three.js.
-   Vista 3D orbital (sigue la bola) y vista aérea 2D, conmutables. */
+   Vista 3D orbital (sigue la bola) y vista aérea 2D, conmutables.
+   Módulo ES: lo importa site/pages/match.js. */
 
-const TEAM_COLORS = { 0: 0x2e9fe6, 1: 0xe8923b };
-const TEAM_EMISSIVE = { 0: 0x16425f, 1: 0x4a2d10 };
-const TEAM_HI = { 0: "#55C1FF", 1: "#F0A24A" };
+import { chartTokens, esc, fmtClock } from "./app.js";
+
 const BOOST_YELLOW = 0xffc53d;
+
+// Colores de equipo desde la paleta de styles.css (antes iban a fuego aquí
+// y no coincidían con --blue/--orange del resto de la web).
+function viewerTheme() {
+  const t = chartTokens();
+  return {
+    color: { 0: new THREE.Color(t.blue || "#1E88D4"), 1: new THREE.Color(t.orange || "#C27425") },
+    emissive: { 0: 0x16425f, 1: 0x4a2d10 },
+    hi: { 0: t.blueHi || "#55C1FF", 1: t.orangeHi || "#F0A24A" },
+  };
+}
 
 // RL: x ancho (±4096), y largo (±5120, porterías), z altura. three.js: y arriba.
 const rl2three = (x, y, z) => [x, z, -y];
 
 /* Etiqueta por coche: nombre + barra de boost, siempre de cara a la cámara
    e independiente de la rotación del coche (flota en la escena, no en él). */
-function makeCarLabel(player) {
+function makeCarLabel(player, teamHi) {
   const canvas = document.createElement("canvas");
   canvas.width = 256; canvas.height = 96;
   const ctx = canvas.getContext("2d");
   const tex = new THREE.CanvasTexture(canvas);
   let lastBoost = -1;
+
+  // roundRect llegó a Safari en la 16: sin él, rectángulo normal y listo
+  const roundedRect = ctx.roundRect
+    ? (x, y, w, h, r) => ctx.roundRect(x, y, w, h, r)
+    : (x, y, w, h) => ctx.rect(x, y, w, h);
 
   function draw(boost) {
     ctx.clearRect(0, 0, 256, 96);
@@ -25,18 +41,18 @@ function makeCarLabel(player) {
     ctx.lineWidth = 6;
     ctx.strokeStyle = "rgba(10,14,22,.9)";
     ctx.strokeText(player.name, 128, 40);
-    ctx.fillStyle = TEAM_HI[player.team];
+    ctx.fillStyle = teamHi;
     ctx.fillText(player.name, 128, 40);
     // barra de boost
     const w = 140, h = 12, x = (256 - w) / 2, y = 58;
     ctx.fillStyle = "rgba(10,14,22,.85)";
     ctx.strokeStyle = "rgba(85,100,130,.8)";
     ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.roundRect(x, y, w, h, 6); ctx.fill(); ctx.stroke();
+    ctx.beginPath(); roundedRect(x, y, w, h, 6); ctx.fill(); ctx.stroke();
     if (boost > 0) {
       ctx.fillStyle = "#FFC53D";
       ctx.beginPath();
-      ctx.roundRect(x + 2, y + 2, Math.max(4, (w - 4) * (boost / 100)), h - 4, 4);
+      roundedRect(x + 2, y + 2, Math.max(4, (w - 4) * (boost / 100)), h - 4, 4);
       ctx.fill();
     }
     tex.needsUpdate = true;
@@ -52,7 +68,7 @@ function makeCarLabel(player) {
   return sprite;
 }
 
-function buildField(scene, pads) {
+function buildField(scene, pads, theme) {
   const W = 8192, L = 10240, H = 2044;
   const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(W, L),
@@ -83,7 +99,7 @@ function buildField(scene, pads) {
   scene.add(lines);
 
   // porterías (el equipo 0/azul defiende y negativo en RL -> z positivo en three)
-  for (const [zEnd, color] of [[L / 2, TEAM_COLORS[0]], [-L / 2, TEAM_COLORS[1]]]) {
+  for (const [zEnd, color] of [[L / 2, theme.color[0]], [-L / 2, theme.color[1]]]) {
     const goal = new THREE.LineSegments(
       new THREE.EdgesGeometry(new THREE.BoxGeometry(1786, 643, 880)),
       new THREE.LineBasicMaterial({ color })
@@ -114,11 +130,11 @@ function buildField(scene, pads) {
   scene.add(walls);
 }
 
-function buildCar(player) {
+function buildCar(player, theme) {
   const group = new THREE.Group();
   const body = new THREE.Mesh(
     new THREE.BoxGeometry(118, 36, 84),
-    new THREE.MeshLambertMaterial({ color: TEAM_COLORS[player.team], emissive: TEAM_EMISSIVE[player.team] })
+    new THREE.MeshLambertMaterial({ color: theme.color[player.team], emissive: theme.emissive[player.team] })
   );
   body.position.y = 18;
   const cabin = new THREE.Mesh(
@@ -155,7 +171,8 @@ function lerpAngle(a, b, k) {
   return a + d * k;
 }
 
-function initMatchViewer(root, data) {
+export function initMatchViewer(root, data) {
+  const theme = viewerTheme();
   const stage = root.querySelector(".viewer-stage");
   const playBtn = root.querySelector(".play-btn");
   const scrub = root.querySelector('input[type="range"]');
@@ -200,7 +217,7 @@ function initMatchViewer(root, data) {
   const sun = new THREE.DirectionalLight(0xffffff, 1.6);
   sun.position.set(3000, 6000, 2000);
   scene.add(sun);
-  buildField(scene, data.pads);
+  buildField(scene, data.pads, theme);
 
   const ball = new THREE.Mesh(
     new THREE.SphereGeometry(93, 24, 18),
@@ -209,7 +226,7 @@ function initMatchViewer(root, data) {
   scene.add(ball);
 
   const cars = data.players.map((p) => {
-    const car = buildCar(p);
+    const car = buildCar(p, theme);
     scene.add(car);
     return car;
   });
@@ -260,7 +277,7 @@ function initMatchViewer(root, data) {
   }
   // etiquetas flotantes (nombre + boost), fuera del coche para no heredar giros
   const labels = data.players.map((p) => {
-    const label = makeCarLabel(p);
+    const label = makeCarLabel(p, theme.hi[p.team]);
     scene.add(label);
     return label;
   });
@@ -294,25 +311,31 @@ function initMatchViewer(root, data) {
     fitOrtho();
   }
   resize();
-  window.addEventListener("resize", () => { resize(); needsRender = true; });
 
   // render bajo demanda: en pausa y sin interacción no se repinta (ahorra
-  // GPU y batería; el bucle rAF sigue vivo pero sin trabajo)
+  // GPU y batería)
   let needsRender = true;
 
   /* cámara 3D orbital que sigue la bola */
   const orbit = { azimuth: Math.PI * 0.5, polar: 0.95, radius: 9000 };
   const target = new THREE.Vector3(0, 300, 0);
+  const camGoal = new THREE.Vector3(); // reutilizado: nada de new por frame
   let dragging = false, lastX = 0, lastY = 0;
-  stage.addEventListener("pointerdown", (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; });
-  window.addEventListener("pointerup", () => { dragging = false; });
-  window.addEventListener("pointermove", (e) => {
+
+  // listeners de window con referencia, para poder quitarlos en destroy()
+  const onResize = () => { resize(); needsRender = true; };
+  const onPointerUp = () => { dragging = false; };
+  const onPointerMove = (e) => {
     if (!dragging || view2d) return;
     orbit.azimuth -= (e.clientX - lastX) * 0.005;
     orbit.polar = Math.min(1.35, Math.max(0.25, orbit.polar - (e.clientY - lastY) * 0.004));
     lastX = e.clientX; lastY = e.clientY;
     needsRender = true;
-  });
+  };
+  window.addEventListener("resize", onResize);
+  window.addEventListener("pointerup", onPointerUp);
+  window.addEventListener("pointermove", onPointerMove);
+  stage.addEventListener("pointerdown", (e) => { dragging = true; lastX = e.clientX; lastY = e.clientY; });
   stage.addEventListener("wheel", (e) => {
     if (view2d) return;
     e.preventDefault();
@@ -320,11 +343,18 @@ function initMatchViewer(root, data) {
     needsRender = true;
   }, { passive: false });
 
+  function applyLabelScale() {
+    const ls = view2d ? 1.6 : 1; // en la vista aérea el campo entero está a la vista
+    for (const label of labels) label.scale.set(860 * ls, 322 * ls, 1);
+  }
+  applyLabelScale();
+
   if (viewBtn) {
     viewBtn.addEventListener("click", () => {
       view2d = !view2d;
       viewBtn.textContent = view2d ? "3D" : "2D";
       viewBtn.setAttribute("aria-label", view2d ? "Cambiar a vista 3D" : "Cambiar a vista aérea 2D");
+      applyLabelScale();
       needsRender = true;
     });
   }
@@ -338,7 +368,7 @@ function initMatchViewer(root, data) {
     const tick = document.createElement("span");
     tick.className = "scrub-goal";
     tick.style.left = `${(g.t / duration) * 100}%`;
-    tick.style.background = TEAM_HI[g.team];
+    tick.style.background = theme.hi[g.team];
     tick.title = `Gol de ${g.name}`;
     scrubWrap.appendChild(tick);
   }
@@ -375,6 +405,7 @@ function initMatchViewer(root, data) {
 
   let bannerUntil = -1;
   let lastT = null;
+  let lastTimeText = "";
   function applyFrame(now) {
     const ft = Math.min(state.t * fps, frames - 1.001);
     const i = Math.floor(ft), k = ft - i, j = Math.min(i + 1, frames - 1);
@@ -399,8 +430,6 @@ function initMatchViewer(root, data) {
 
       // etiqueta flotante sobre el coche, sin heredar su rotación
       label.position.set(x, car.position.y + 340, z);
-      const ls = view2d ? 1.6 : 1; // en la vista aérea el campo entero está a la vista
-      label.scale.set(860 * ls, 322 * ls, 1);
       label.update(f0[6]);
 
       // llama cuando gasta boost (el nivel baja respecto al frame siguiente)
@@ -413,9 +442,10 @@ function initMatchViewer(root, data) {
     });
 
     // cámara 3D: sigue la bola con suavidad
-    target.lerp(new THREE.Vector3(
+    camGoal.set(
       THREE.MathUtils.clamp(ball.position.x, -2800, 2800), 200,
-      THREE.MathUtils.clamp(ball.position.z, -3600, 3600)), 0.04);
+      THREE.MathUtils.clamp(ball.position.z, -3600, 3600));
+    target.lerp(camGoal, 0.04);
     camera3d.position.set(
       target.x + orbit.radius * Math.sin(orbit.polar) * Math.cos(orbit.azimuth),
       target.y + orbit.radius * Math.cos(orbit.polar),
@@ -431,7 +461,7 @@ function initMatchViewer(root, data) {
     hudClock.textContent = ot ? `+${fmtClock(state.t - regEnd)}` : fmtClock(data.clock[i] ?? 0);
     if (lastGoal && state.t - lastGoal.t < 3) {
       goalBanner.querySelector("span").innerHTML =
-        `GOL · <span style="color:${TEAM_HI[lastGoal.team]}">${esc(lastGoal.name)}</span>`;
+        `GOL · <span style="color:${theme.hi[lastGoal.team]}">${esc(lastGoal.name)}</span>`;
       goalBanner.classList.add("show");
       bannerUntil = lastGoal.t + 3;
     } else if (state.t > bannerUntil) {
@@ -467,15 +497,22 @@ function initMatchViewer(root, data) {
     // explosión al cruzar el momento exacto de un gol (reproduciendo, no al saltar)
     if (lastT != null && state.t > lastT && state.t - lastT < 0.5) {
       for (const g of data.goals) {
-        if (lastT < g.t && state.t >= g.t) explode(ball.position, TEAM_HI[g.team]);
+        if (lastT < g.t && state.t >= g.t) explode(ball.position, theme.hi[g.team]);
       }
     }
     lastT = state.t;
 
     scrub.value = String(Math.round(ft));
-    timeEl.innerHTML = `${fmtClock(state.t)} <span>/ ${fmtClock(duration)}</span>`;
+    // el DOM del contador solo se toca cuando cambia el segundo mostrado
+    const timeText = `${fmtClock(state.t)} <span>/ ${fmtClock(duration)}</span>`;
+    if (timeText !== lastTimeText) {
+      lastTimeText = timeText;
+      timeEl.innerHTML = timeText;
+    }
   }
 
+  /* bucle: pausado (rAF cancelado) mientras el visor está fuera de pantalla */
+  let rafId = null;
   let prev = performance.now();
   function loop(now) {
     const dt = (now - prev) / 1000;
@@ -491,8 +528,40 @@ function initMatchViewer(root, data) {
       renderer.render(scene, view2d ? camera2d : camera3d);
       needsRender = false;
     }
-    requestAnimationFrame(loop);
+    rafId = requestAnimationFrame(loop);
   }
+  function startLoop() {
+    if (rafId != null) return;
+    prev = performance.now();
+    needsRender = true;
+    rafId = requestAnimationFrame(loop);
+  }
+  function stopLoop() {
+    if (rafId == null) return;
+    cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+
+  const observer = "IntersectionObserver" in window
+    ? new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) startLoop();
+        else stopLoop();
+      })
+    : null;
+  observer?.observe(stage);
+
   applyFrame(performance.now());
-  requestAnimationFrame(loop);
+  renderer.render(scene, camera3d);
+  if (!observer) startLoop();
+
+  function destroy() {
+    stopLoop();
+    observer?.disconnect();
+    window.removeEventListener("resize", onResize);
+    window.removeEventListener("pointerup", onPointerUp);
+    window.removeEventListener("pointermove", onPointerMove);
+    renderer.dispose();
+    renderer.domElement.remove();
+  }
+  return { destroy };
 }

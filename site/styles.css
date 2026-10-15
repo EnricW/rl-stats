@@ -9,7 +9,8 @@
   --ink: #EDF2FA;
   --ink-2: #C6D0E0;
   --muted: #9AA7BD;
-  --faint: #5F6B80;
+  /* #7A879C: 4,6:1 sobre --card, AA para el texto pequeño donde se usa */
+  --faint: #7A879C;
   --accent: #55C1FF;
   --blue: #1E88D4;
   --blue-hi: #55C1FF;
@@ -19,6 +20,14 @@
   --win: #4ADE80;
   --loss: #F87171;
   --grid: #1C2434;
+  /* Identidad por jugador: tonos que NO se solapan con la semántica del resto
+     de la web (--blue nosotros, --orange rivales, --win/--loss resultado).
+     Los lee app.js (playerColor); antes Enric salía azul-equipo y Ray
+     naranja-rival en rotación, roles y mapa de calor. */
+  --player-1: #2DD4BF;
+  --player-2: #8E6BE4;
+  --player-3: #EC4899;
+  --player-4: #A3E635;
   --font-display: "Chakra Petch", sans-serif;
   --font-body: "Barlow", system-ui, sans-serif;
 }
@@ -325,4 +334,17 @@ footer.site { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; co
 
 @media (max-width: 560px) {
   .radar-legend ul { grid-template-columns: 1fr; }
+}
+
+/* ---- accesibilidad ---- */
+/* foco visible en botones, pestañas, enlaces y controles del visor */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
