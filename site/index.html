@@ -92,11 +92,14 @@
 
     function renderUltima(matches, roster) {
       const m = matches[0];
+      const card = document.getElementById("ultima");
       if (!m) {
-        document.getElementById("ultima").innerHTML =
+        card.innerHTML =
           '<p class="empty">Aún no hay partidas: juega una y aparecerá aquí sola.</p>';
         return;
       }
+      // la card entera se tiñe según el resultado (verde/rojo)
+      if (m.result) card.classList.add(m.result);
       const us = m.our_team ?? "blue";
       const them = us === "blue" ? "orange" : "blue";
       const rows = (m.players || []).map((p) => {

@@ -77,7 +77,7 @@
         `${matches.length} ${matches.length === 1 ? "partida" : "partidas"} · ${wins} V — ${losses} D`;
 
       document.getElementById("match-rows").innerHTML = matches.map((m) => `
-        <tr>
+        <tr class="${m.result ?? ""}">
           <td>${fmtDateShort(m.date)}</td>
           <td>${esc(m.map ?? "—")}</td>
           <td class="num score-mono">${scoreText(m)}${m.overtime ? ' <span style="color:var(--faint);font-size:12px">OT</span>' : ""}</td>

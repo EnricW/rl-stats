@@ -413,6 +413,8 @@
         return;
       }
       document.title = `${match.mode} en ${match.map ?? "?"} — RL Stats`;
+      // el marcador se tiñe según el resultado (mismas clases que la portada)
+      if (match.result) document.getElementById("scoreboard").classList.add(match.result);
 
       const us = match.our_team ?? "blue";
       const them = us === "blue" ? "orange" : "blue";

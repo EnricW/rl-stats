@@ -119,6 +119,15 @@ nav.site .updated { font-size: 13px; color: var(--faint); }
   border: 1px solid #223050; border-radius: 16px; padding: 28px 32px;
   display: flex; flex-wrap: wrap; align-items: center; gap: 24px 48px;
 }
+/* resultado explícito: la card de última partida se tiñe según el resultado */
+.feature.win {
+  background: linear-gradient(135deg, rgba(74, 222, 128, .18) 0%, #10141F 70%);
+  border-color: rgba(74, 222, 128, .4);
+}
+.feature.loss {
+  background: linear-gradient(135deg, rgba(248, 113, 113, .18) 0%, #10141F 70%);
+  border-color: rgba(248, 113, 113, .4);
+}
 .feature .score-block { display: flex; flex-direction: column; gap: 10px; min-width: 220px; }
 .bigscore { display: flex; align-items: baseline; gap: 14px; }
 .bigscore .us { font-family: var(--font-display); font-size: 56px; font-weight: 700; color: var(--blue-hi); line-height: 1; }
@@ -148,6 +157,12 @@ td .nick { color: var(--faint); font-size: 13px; }
 td .score-mono, .mono { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
 table a { color: var(--ink); font-weight: 600; }
 table a:hover { color: var(--accent); }
+
+/* filas del listado de partidas teñidas según el resultado */
+tr.win td { background: rgba(74, 222, 128, .07); }
+tr.loss td { background: rgba(248, 113, 113, .07); }
+tr.win td:first-child { box-shadow: inset 3px 0 0 var(--win); }
+tr.loss td:first-child { box-shadow: inset 3px 0 0 var(--loss); }
 .card.dim { background: var(--card-2); border-color: var(--border-2); }
 .card.dim td { color: #8A96AB; }
 
