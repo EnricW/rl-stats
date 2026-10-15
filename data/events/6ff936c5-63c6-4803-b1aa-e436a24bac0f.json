@@ -1,0 +1,384 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 49.95,
+      "team": 0
+    },
+    {
+      "name": "IRCUS",
+      "score": [
+        1,
+        1
+      ],
+      "t": 77.15,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        1
+      ],
+      "t": 162.45,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        1
+      ],
+      "t": 313.76,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        4,
+        1
+      ],
+      "t": 348.66,
+      "team": 0
+    }
+  ],
+  "id": "6ff936c5-63c6-4803-b1aa-e436a24bac0f",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 119.9,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 121.4,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 94.0,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "Astur777"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 62.94,
+      "takers": {
+        "0": "Ray",
+        "1": "IRCUS"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 89.07,
+      "takers": {
+        "0": "Enric",
+        "1": "Astur777"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 174.08,
+      "takers": {
+        "0": "Eric",
+        "1": "soychulista"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "IRCUS",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 323.74,
+      "takers": {
+        "0": "Ray",
+        "1": "IRCUS"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "soychulista",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 360.12,
+      "takers": {
+        "0": "Eric",
+        "1": "soychulista"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 21,
+      "pct_first_man": 29.2,
+      "pct_second_man": 24.1,
+      "pct_third_man": 37.3
+    },
+    "Eric": {
+      "became_first_man": 27,
+      "pct_first_man": 23.1,
+      "pct_second_man": 35.4,
+      "pct_third_man": 32.0
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 38.2,
+      "pct_second_man": 31.0,
+      "pct_third_man": 21.3
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1730.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1966.0,
+      "t": 7.74,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1468.0,
+      "kind": "shot",
+      "name": "soychulista",
+      "speed_to_goal": 2226.0,
+      "t": 30.63,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 30.96,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1957.0,
+      "kind": "shot",
+      "name": "Astur777",
+      "speed_to_goal": -513.0,
+      "t": 36.93,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 37.27,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Astur777",
+      "t": 46.1,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 3177.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1866.0,
+      "t": 46.4,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 897.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1417.0,
+      "t": 49.25,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 50.14,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 629.0,
+      "kind": "shot",
+      "name": "IRCUS",
+      "speed_to_goal": null,
+      "t": 77.15,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1425.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -2066.0,
+      "t": 128.67,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "soychulista",
+      "t": 128.71,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 842.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1005.0,
+      "t": 161.21,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "IRCUS",
+      "t": 162.22,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 347.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": null,
+      "t": 162.45,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 162.82,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2172.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -722.0,
+      "t": 202.55,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Astur777",
+      "t": 202.59,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "soychulista",
+      "t": 207.59,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1515.0,
+      "kind": "shot",
+      "name": "IRCUS",
+      "speed_to_goal": 485.0,
+      "t": 230.98,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "soychulista",
+      "t": 276.54,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1710.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1733.0,
+      "t": 276.64,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1846.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 3230.0,
+      "t": 280.74,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Astur777",
+      "t": 281.8,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 666.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1412.0,
+      "t": 313.32,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 372.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 348.66,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 349.15,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 3301.0,
+      "kind": "shot",
+      "name": "soychulista",
+      "speed_to_goal": -1922.0,
+      "t": 369.24,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 369.3,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 4.7,
+    "Eric": 0.1,
+    "Ray": 1.8
+  },
+  "sustained_possession_teams_s": {
+    "0": 6.5,
+    "1": 2.7
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 61.66,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        0
+      ],
+      "t": 220.51,
+      "team": 0
+    },
+    {
+      "name": "joseangelreeche",
+      "score": [
+        2,
+        1
+      ],
+      "t": 255.86,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        1
+      ],
+      "t": 304.58,
+      "team": 0
+    }
+  ],
+  "id": "4f491050-b242-412b-ad07-00c27ef51dbc",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 167.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 66.7,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 102.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "daniel7cubero",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "daniel7cubero"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "joseangelreeche",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 74.64,
+      "takers": {
+        "0": "Enric",
+        "1": "joseangelreeche"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Joseavc_2",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 230.97,
+      "takers": {
+        "0": "Eric",
+        "1": "Joseavc_2"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "daniel7cubero",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 267.54,
+      "takers": {
+        "0": "Ray",
+        "1": "daniel7cubero"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Joseavc_2",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 316.49,
+      "takers": {
+        "0": "Eric",
+        "1": "Joseavc_2"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 25,
+      "pct_first_man": 25.5,
+      "pct_second_man": 27.0,
+      "pct_third_man": 37.5
+    },
+    "Eric": {
+      "became_first_man": 26,
+      "pct_first_man": 34.5,
+      "pct_second_man": 27.9,
+      "pct_third_man": 27.7
+    },
+    "Ray": {
+      "became_first_man": 22,
+      "pct_first_man": 30.0,
+      "pct_second_man": 35.2,
+      "pct_third_man": 24.8
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1282.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1741.0,
+      "t": 43.8,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1769.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1171.0,
+      "t": 60.06,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 718.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 61.66,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "daniel7cubero",
+      "t": 61.76,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 61.91,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "daniel7cubero",
+      "t": 86.82,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1437.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -2153.0,
+      "t": 86.85,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 913.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2140.0,
+      "t": 137.07,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "daniel7cubero",
+      "t": 137.7,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2140.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2233.0,
+      "t": 152.3,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "joseangelreeche",
+      "t": 152.87,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Joseavc_2",
+      "t": 164.07,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1591.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -2002.0,
+      "t": 164.1,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1663.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1841.0,
+      "t": 219.38,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 725.0,
+      "kind": "shot",
+      "name": "joseangelreeche",
+      "speed_to_goal": 1255.0,
+      "t": 255.43,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Joseavc_2",
+      "t": 256.11,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1221.0,
+      "kind": "shot",
+      "name": "daniel7cubero",
+      "speed_to_goal": -1814.0,
+      "t": 284.81,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 284.84,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 472.0,
+      "kind": "shot",
+      "name": "Joseavc_2",
+      "speed_to_goal": 2267.0,
+      "t": 296.04,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 928.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2273.0,
+      "t": 304.12,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 304.9,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.4,
+    "Ray": 9.3
+  },
+  "sustained_possession_teams_s": {
+    "0": 11.7,
+    "1": 9.8
+  }
+}

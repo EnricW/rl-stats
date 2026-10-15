@@ -1,6 +1,276 @@
 {
-  "generated_at": "2026-10-15T14:50:24+00:00",
+  "generated_at": "2026-10-15T20:13:19+00:00",
   "matches": [
+    {
+      "date": "2026-10-15T20:08:58Z",
+      "has_events": true,
+      "has_frames": true,
+      "has_report": true,
+      "id": "6ff936c5-63c6-4803-b1aa-e436a24bac0f",
+      "map": "Sovereign Heights (Dusk)",
+      "mode": "3v3",
+      "our_team": "blue",
+      "overtime": false,
+      "players": [
+        {
+          "assists": 1.0,
+          "goals": 3.0,
+          "mvp": true,
+          "name": "Ray",
+          "saves": 0.0,
+          "score": 593.0,
+          "shots": 6.0
+        },
+        {
+          "assists": 2.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 1.0,
+          "score": 334.0,
+          "shots": 4.0
+        },
+        {
+          "assists": 0.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 2.0,
+          "score": 290.0,
+          "shots": 1.0
+        }
+      ],
+      "result": "win",
+      "score": {
+        "blue": 4,
+        "orange": 1
+      }
+    },
+    {
+      "date": "2026-10-15T20:01:23Z",
+      "has_events": true,
+      "has_frames": true,
+      "has_report": true,
+      "id": "009d30c3-2f16-47b3-8c57-88a796dc1669",
+      "map": "Stadium 10a",
+      "mode": "3v3",
+      "our_team": "blue",
+      "overtime": true,
+      "players": [
+        {
+          "assists": 0.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Ray",
+          "saves": 0.0,
+          "score": 244.0,
+          "shots": 3.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 0.0,
+          "score": 144.0,
+          "shots": 2.0
+        },
+        {
+          "assists": 0.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 0.0,
+          "score": 66.0,
+          "shots": 0.0
+        }
+      ],
+      "result": "loss",
+      "score": {
+        "blue": 1,
+        "orange": 2
+      }
+    },
+    {
+      "date": "2026-10-15T19:54:20Z",
+      "has_events": true,
+      "has_frames": true,
+      "has_report": true,
+      "id": "fd6d060c-238b-49a8-9994-4b64864fd4c1",
+      "map": "Paname Dusk",
+      "mode": "3v3",
+      "our_team": "blue",
+      "overtime": false,
+      "players": [
+        {
+          "assists": 0.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 2.0,
+          "score": 378.0,
+          "shots": 2.0
+        },
+        {
+          "assists": 0.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Ray",
+          "saves": 0.0,
+          "score": 332.0,
+          "shots": 2.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 1.0,
+          "score": 212.0,
+          "shots": 0.0
+        }
+      ],
+      "result": "loss",
+      "score": {
+        "blue": 2,
+        "orange": 4
+      }
+    },
+    {
+      "date": "2026-10-15T19:46:32Z",
+      "has_events": true,
+      "has_frames": true,
+      "has_report": true,
+      "id": "77bbb1d3-fd1f-46d5-8fb3-37416b66c11d",
+      "map": "Sovereign Heights (Dusk)",
+      "mode": "3v3",
+      "our_team": "blue",
+      "overtime": true,
+      "players": [
+        {
+          "assists": 1.0,
+          "goals": 2.0,
+          "mvp": true,
+          "name": "Ray",
+          "saves": 2.0,
+          "score": 557.0,
+          "shots": 4.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 0.0,
+          "score": 278.0,
+          "shots": 1.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 2.0,
+          "score": 234.0,
+          "shots": 0.0
+        }
+      ],
+      "result": "win",
+      "score": {
+        "blue": 3,
+        "orange": 2
+      }
+    },
+    {
+      "date": "2026-10-15T19:38:15Z",
+      "has_events": true,
+      "has_frames": true,
+      "has_report": true,
+      "id": "6ef289c4-04ab-4be0-b032-5c5378c1f186",
+      "map": "Neo Tokyo (Arcade)",
+      "mode": "3v3",
+      "our_team": "blue",
+      "overtime": false,
+      "players": [
+        {
+          "assists": 1.0,
+          "goals": 3.0,
+          "mvp": true,
+          "name": "Ray",
+          "saves": 0.0,
+          "score": 595.0,
+          "shots": 5.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 0.0,
+          "score": 222.0,
+          "shots": 3.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 1.0,
+          "score": 188.0,
+          "shots": 2.0
+        }
+      ],
+      "result": "win",
+      "score": {
+        "blue": 4,
+        "orange": 0
+      }
+    },
+    {
+      "date": "2026-10-15T19:30:48Z",
+      "has_events": true,
+      "has_frames": true,
+      "has_report": true,
+      "id": "4f491050-b242-412b-ad07-00c27ef51dbc",
+      "map": "Urban Central (Night)",
+      "mode": "3v3",
+      "our_team": "blue",
+      "overtime": false,
+      "players": [
+        {
+          "assists": 0.0,
+          "goals": 3.0,
+          "mvp": true,
+          "name": "Ray",
+          "saves": 0.0,
+          "score": 527.0,
+          "shots": 5.0
+        },
+        {
+          "assists": 2.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 1.0,
+          "score": 313.0,
+          "shots": 4.0
+        },
+        {
+          "assists": 0.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 0.0,
+          "score": 92.0,
+          "shots": 0.0
+        }
+      ],
+      "result": "win",
+      "score": {
+        "blue": 3,
+        "orange": 1
+      }
+    },
     {
       "date": "2026-10-14T21:28:27Z",
       "has_events": true,
@@ -628,8 +898,8 @@
   "team": {
     "modes": {
       "3v3": {
-        "games": 13,
-        "wins": 6
+        "games": 19,
+        "wins": 10
       }
     }
   }

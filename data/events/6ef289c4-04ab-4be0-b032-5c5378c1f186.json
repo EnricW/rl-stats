@@ -1,0 +1,293 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 69.9,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        0
+      ],
+      "t": 150.16,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        0
+      ],
+      "t": 263.66,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        4,
+        0
+      ],
+      "t": 339.07,
+      "team": 0
+    }
+  ],
+  "id": "6ef289c4-04ab-4be0-b032-5c5378c1f186",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 53.4,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 75.0,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 131.8,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "jadsafa5"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 79.86,
+      "takers": {
+        "0": "Ray",
+        "1": "Ali_Awada114"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 160.31,
+      "takers": {
+        "0": "Enric",
+        "1": "hsen_safa"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 274.48,
+      "takers": {
+        "0": "Eric",
+        "1": "jadsafa5"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 17,
+      "pct_first_man": 25.6,
+      "pct_second_man": 18.7,
+      "pct_third_man": 43.3
+    },
+    "Eric": {
+      "became_first_man": 21,
+      "pct_first_man": 29.3,
+      "pct_second_man": 36.9,
+      "pct_third_man": 21.3
+    },
+    "Ray": {
+      "became_first_man": 24,
+      "pct_first_man": 32.6,
+      "pct_second_man": 32.0,
+      "pct_third_man": 22.9
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2103.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1515.0,
+      "t": 30.98,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ali_Awada114",
+      "t": 31.58,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 820.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1439.0,
+      "t": 69.23,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 177.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2143.0,
+      "t": 69.7,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 70.11,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2018.0,
+      "kind": "shot",
+      "name": "jadsafa5",
+      "speed_to_goal": -2438.0,
+      "t": 114.41,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 115.42,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "jadsafa5",
+      "t": 123.52,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2631.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1582.0,
+      "t": 123.55,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2742.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1101.0,
+      "t": 145.89,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "hsen_safa",
+      "t": 145.93,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2214.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2177.0,
+      "t": 147.66,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 150.48,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1302.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1669.0,
+      "t": 195.92,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ali_Awada114",
+      "t": 196.85,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 596.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2439.0,
+      "t": 207.01,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "hsen_safa",
+      "t": 207.11,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1913.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1645.0,
+      "t": 248.73,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ali_Awada114",
+      "t": 249.67,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1979.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 3353.0,
+      "t": 262.96,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 263.86,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.7,
+    "Eric": 3.2,
+    "Ray": 1.4
+  },
+  "sustained_possession_teams_s": {
+    "0": 7.3,
+    "1": 5.3
+  }
+}

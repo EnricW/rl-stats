@@ -1,0 +1,335 @@
+{
+  "goals": [
+    {
+      "name": "Mr. Kringle OG",
+      "score": [
+        0,
+        1
+      ],
+      "t": 26.01,
+      "team": 1
+    },
+    {
+      "name": "andIRip",
+      "score": [
+        0,
+        2
+      ],
+      "t": 105.6,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        2
+      ],
+      "t": 132.06,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        2
+      ],
+      "t": 185.14,
+      "team": 0
+    },
+    {
+      "name": "andIRip",
+      "score": [
+        2,
+        3
+      ],
+      "t": 253.02,
+      "team": 1
+    },
+    {
+      "name": "andIRip",
+      "score": [
+        2,
+        4
+      ],
+      "t": 330.78,
+      "team": 1
+    }
+  ],
+  "id": "fd6d060c-238b-49a8-9994-4b64864fd4c1",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 39.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 7,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 79.9,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 7,
+      "taken": 3
+    },
+    "Ray": {
+      "avg_boost_after": 143.4,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 7,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "andIRip",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "andIRip"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "andIRip",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 38.19,
+      "takers": {
+        "0": "Eric",
+        "1": "andIRip"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": null,
+      "t": 118.62,
+      "takers": {
+        "0": "Ray",
+        "1": "Mr. Kringle OG"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "andIRip",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 145.06,
+      "takers": {
+        "0": "Eric",
+        "1": "andIRip"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "m2thearrr",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 198.12,
+      "takers": {
+        "0": "Enric",
+        "1": "m2thearrr"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "andIRip",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 264.8,
+      "takers": {
+        "0": "Enric",
+        "1": "andIRip"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "andIRip",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 342.02,
+      "takers": {
+        "0": "Eric",
+        "1": "andIRip"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 24,
+      "pct_first_man": 28.9,
+      "pct_second_man": 20.7,
+      "pct_third_man": 37.2
+    },
+    "Eric": {
+      "became_first_man": 31,
+      "pct_first_man": 24.5,
+      "pct_second_man": 38.7,
+      "pct_third_man": 23.7
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 33.5,
+      "pct_second_man": 27.4,
+      "pct_third_man": 26.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1208.0,
+      "kind": "shot",
+      "name": "Mr. Kringle OG",
+      "speed_to_goal": 2369.0,
+      "t": 25.64,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 799.0,
+      "kind": "shot",
+      "name": "andIRip",
+      "speed_to_goal": 2022.0,
+      "t": 105.34,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "m2thearrr",
+      "t": 105.89,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 457.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 799.0,
+      "t": 131.86,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 179.61,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 940.0,
+      "kind": "shot",
+      "name": "Mr. Kringle OG",
+      "speed_to_goal": -1045.0,
+      "t": 179.64,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1112.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1510.0,
+      "t": 184.61,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 185.43,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2070.0,
+      "kind": "shot",
+      "name": "Mr. Kringle OG",
+      "speed_to_goal": 2113.0,
+      "t": 243.89,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 244.89,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 173.0,
+      "kind": "shot",
+      "name": "andIRip",
+      "speed_to_goal": null,
+      "t": 253.02,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Mr. Kringle OG",
+      "t": 253.02,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2331.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -2258.0,
+      "t": 271.93,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Mr. Kringle OG",
+      "t": 271.93,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 971.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 573.0,
+      "t": 321.65,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1508.0,
+      "kind": "shot",
+      "name": "andIRip",
+      "speed_to_goal": 2014.0,
+      "t": 330.08,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "m2thearrr",
+      "t": 330.84,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2145.0,
+      "kind": "shot",
+      "name": "m2thearrr",
+      "speed_to_goal": 2935.0,
+      "t": 391.83,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 392.76,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Eric": 0.1,
+    "Ray": 9.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 9.3,
+    "1": 3.1
+  }
+}

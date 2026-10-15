@@ -1,0 +1,329 @@
+{
+  "goals": [
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 34.48,
+      "team": 0
+    },
+    {
+      "name": "TWITCH_mato",
+      "score": [
+        1,
+        1
+      ],
+      "t": 270.77,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        1
+      ],
+      "t": 296.76,
+      "team": 0
+    },
+    {
+      "name": "TWITCH_mato",
+      "score": [
+        2,
+        2
+      ],
+      "t": 329.49,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        2
+      ],
+      "t": 426.82,
+      "team": 0
+    }
+  ],
+  "id": "77bbb1d3-fd1f-46d5-8fb3-37416b66c11d",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 160.9,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 6,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 36.0,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 51.5,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 3
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "LabbeThaDoggo"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "TWITCH_mato",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 44.45,
+      "takers": {
+        "0": "Eric",
+        "1": "TWITCH_mato"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "TWITCH_mato",
+      "first_touch_team": 1,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 280.53,
+      "takers": {
+        "0": "Enric",
+        "1": "TWITCH_mato"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 309.75,
+      "takers": {
+        "0": "Eric",
+        "1": "Sneg_19"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "LabbeThaDoggo",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 342.48,
+      "takers": {
+        "0": "Ray",
+        "1": "LabbeThaDoggo"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 373.45,
+      "takers": {
+        "0": "Ray",
+        "1": "LabbeThaDoggo"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 23,
+      "pct_first_man": 24.1,
+      "pct_second_man": 24.1,
+      "pct_third_man": 39.3
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 29.8,
+      "pct_second_man": 32.4,
+      "pct_third_man": 25.4
+    },
+    "Ray": {
+      "became_first_man": 24,
+      "pct_first_man": 33.6,
+      "pct_second_man": 31.0,
+      "pct_third_man": 22.9
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1066.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1412.0,
+      "t": 32.58,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 93.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": null,
+      "t": 34.48,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 34.62,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 540.0,
+      "kind": "shot",
+      "name": "TWITCH_mato",
+      "speed_to_goal": 967.0,
+      "t": 101.32,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 111.99,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 3003.0,
+      "kind": "shot",
+      "name": "TWITCH_mato",
+      "speed_to_goal": -1225.0,
+      "t": 112.52,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1340.0,
+      "kind": "shot",
+      "name": "Sneg_19",
+      "speed_to_goal": 763.0,
+      "t": 128.83,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1938.0,
+      "kind": "shot",
+      "name": "Sneg_19",
+      "speed_to_goal": 2058.0,
+      "t": 244.78,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 245.11,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1386.0,
+      "kind": "shot",
+      "name": "TWITCH_mato",
+      "speed_to_goal": 1702.0,
+      "t": 269.97,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 230.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 296.76,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 297.13,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 983.0,
+      "kind": "shot",
+      "name": "TWITCH_mato",
+      "speed_to_goal": 2895.0,
+      "t": 329.06,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Sneg_19",
+      "t": 329.78,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 885.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 512.0,
+      "t": 368.89,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 3448.0,
+      "kind": "shot",
+      "name": "Sneg_19",
+      "speed_to_goal": -2131.0,
+      "t": 383.15,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 383.22,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1573.0,
+      "kind": "shot",
+      "name": "TWITCH_mato",
+      "speed_to_goal": 1724.0,
+      "t": 388.28,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 389.12,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 742.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2214.0,
+      "t": 426.63,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 426.86,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 6.8,
+    "Ray": 4.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 10.9,
+    "1": 26.2
+  }
+}

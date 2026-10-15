@@ -1,0 +1,224 @@
+{
+  "goals": [
+    {
+      "name": "Xtrem-_-VorTeX",
+      "score": [
+        0,
+        1
+      ],
+      "t": 29.75,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        1
+      ],
+      "t": 90.43,
+      "team": 0
+    },
+    {
+      "name": "FCP_nolhann0204",
+      "score": [
+        1,
+        2
+      ],
+      "t": 359.33,
+      "team": 1
+    }
+  ],
+  "id": "009d30c3-2f16-47b3-8c57-88a796dc1669",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 189.1,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 29.5,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 86.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "FCP_nolhann0204"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Xtrem-_-VorTeX",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 42.74,
+      "takers": {
+        "0": "Enric",
+        "1": "Xtrem-_-VorTeX"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Xtrem-_-VorTeX",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 103.39,
+      "takers": {
+        "0": "Ray",
+        "1": "Xtrem-_-VorTeX"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Xtrem-_-VorTeX",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 344.43,
+      "takers": {
+        "0": "Ray",
+        "1": "Xtrem-_-VorTeX"
+      },
+      "type": "center_offset"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 21,
+      "pct_first_man": 30.6,
+      "pct_second_man": 18.8,
+      "pct_third_man": 38.8
+    },
+    "Eric": {
+      "became_first_man": 30,
+      "pct_first_man": 30.3,
+      "pct_second_man": 31.0,
+      "pct_third_man": 26.9
+    },
+    "Ray": {
+      "became_first_man": 27,
+      "pct_first_man": 27.3,
+      "pct_second_man": 38.4,
+      "pct_third_man": 22.5
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1186.0,
+      "kind": "shot",
+      "name": "Xtrem-_-VorTeX",
+      "speed_to_goal": 959.0,
+      "t": 28.88,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1513.0,
+      "kind": "shot",
+      "name": "FCP_nolhann0204",
+      "speed_to_goal": 2020.0,
+      "t": 53.91,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1619.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 747.0,
+      "t": 87.46,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "puni-nath-le-bg",
+      "t": 87.46,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 252.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 90.43,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 90.5,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 802.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 23.0,
+      "t": 118.64,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2135.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2608.0,
+      "t": 192.8,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1326.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1142.0,
+      "t": 316.74,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "FCP_nolhann0204",
+      "t": 317.54,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 214.0,
+      "kind": "shot",
+      "name": "FCP_nolhann0204",
+      "speed_to_goal": 647.0,
+      "t": 359.16,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Xtrem-_-VorTeX",
+      "t": 359.37,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.9,
+    "Eric": 1.5,
+    "Ray": 0.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 4.4,
+    "1": 4.4
+  }
+}
