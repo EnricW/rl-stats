@@ -6,6 +6,7 @@ rotaciones de bola y coches a FPS fijos, boost, reloj del partido y goles con
 su tiempo exacto. La web lo carga bajo demanda en la página de partida.
 """
 
+import bisect
 import math
 
 # OJO: numpy no se importa aquí, pero sigue en requirements.txt porque el
@@ -25,6 +26,39 @@ def _round(value, digits=0):
     if value is None or (isinstance(value, float) and math.isnan(value)):
         return None
     return round(float(value), digits) if digits else int(round(float(value)))
+
+
+def _phase_map(meta_frames, goal_times):
+    """Mapea replicated_game_state_name -> fase del visor (0 cuenta atrás,
+    1 juego, 2 gol/repetición).
+
+    OJO: esos valores son índices a la tabla de nombres del replay y cambian
+    de un archivo a otro (en el replay de muestra de 2016 eran 0/2/3; en los
+    actuales, 66/73/74/95/98). Se infieren por comportamiento:
+    - cuenta atrás: el único estado cuyo replicated_game_state_time_remaining
+      alcanza 3 (los 3-2-1 del saque);
+    - gol/repetición: los estados cuyos tramos empiezan en el instante de un gol;
+    - cualquier otro: juego.
+    """
+    tr_max = {}
+    for f in meta_frames:
+        v = f.get("replicated_game_state_name")
+        tr = f.get("replicated_game_state_time_remaining") or 0
+        tr_max[v] = max(tr_max.get(v, 0), tr)
+    countdown = {v for v, m in tr_max.items() if m >= 2}
+
+    goal_states = set()
+    times = [f["time"] for f in meta_frames]
+    for gt in goal_times:
+        i = bisect.bisect_left(times, gt)
+        for j in (i, i + 1):
+            if 0 <= j < len(meta_frames):
+                v = meta_frames[j].get("replicated_game_state_name")
+                if v not in countdown:
+                    goal_states.add(v)
+                    break
+
+    return {v: 0 if v in countdown else 2 if v in goal_states else 1 for v in tr_max}
 
 
 def extract(replay_path, roster):
@@ -49,9 +83,9 @@ def extract(replay_path, roster):
     t0 = meta_frames[0]["time"] if meta_frames else 0.0
     n = arr.shape[0]
 
-    # seconds_remaining y fase de juego remuestreados a FPS.
-    # replicated_game_state_name: 0 = cuenta atrás, 2 = juego, 3 = gol/repetición.
-    _PHASES = {0: 0, 2: 1, 3: 2}  # -> 0 countdown, 1 play, 2 goal/replay
+    # seconds_remaining y fase de juego remuestreados a FPS. El mapeo de
+    # estados se infiere por replay (ver _phase_map).
+    phases = _phase_map(meta_frames, [g["time"] for g in events.get("goal_events") or []])
     clock, phase, j = [], [], 0
     for i in range(n):
         t = t0 + i / FPS
@@ -59,7 +93,7 @@ def extract(replay_path, roster):
             j += 1
         frame = meta_frames[j] if meta_frames else {}
         clock.append(int(frame.get("seconds_remaining") or 0))
-        phase.append(_PHASES.get(frame.get("replicated_game_state_name"), 1))
+        phase.append(phases.get(frame.get("replicated_game_state_name"), 1))
 
     goals = []
     for g in events.get("goal_events") or []:
