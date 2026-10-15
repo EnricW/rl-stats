@@ -151,8 +151,11 @@ def player_report(name, settings):
         prompt("player.md"),
         json.dumps(data, ensure_ascii=False, indent=1),
     )
-    out = REPORTS_DIR / f"player-{name}.md"
+    date = _report_date()
+    out = REPORTS_DIR / f"player-{name}-{date}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(text, encoding="utf-8")
+    _register_report("players", date, name)
     print(f"  informe de jugador: {out.name}")
 
 
@@ -167,8 +170,12 @@ def team_report(settings):
         prompt("team.md"),
         json.dumps(context, ensure_ascii=False, indent=1),
     )
-    (REPORTS_DIR / "team.md").write_text(text, encoding="utf-8")
-    print("  informe de equipo: team.md")
+    date = _report_date()
+    out = REPORTS_DIR / f"team-{date}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(text, encoding="utf-8")
+    _register_report("team", date)
+    print(f"  informe de equipo: {out.name}")
 
 
 # Estado de los informes de jugador: con cuántas partidas se generó el último.
@@ -176,9 +183,28 @@ def team_report(settings):
 # cada pasada del cron hasta que el jugador jugase otra partida.
 STATE_FILE = REPORTS_DIR / "player_reports_state.json"
 
+# Histórico de informes: los de tendencia y equipo se guardan fechados
+# (player-<nombre>-<fecha>.md, team-<fecha>.md) y este índice dice a la web
+# qué fechas existen (un sitio estático no puede listar directorios).
+INDEX_FILE = REPORTS_DIR / "index.json"
+
 
 def _load_state():
     return read_json(STATE_FILE) if STATE_FILE.exists() else {}
+
+
+def _report_date():
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+def _register_report(kind, date, name=None):
+    """Apunta un informe fechado en index.json (kind: 'team' | 'players')."""
+    idx = read_json(INDEX_FILE) if INDEX_FILE.exists() else {"team": [], "players": {}}
+    dates = idx.setdefault("players", {}).setdefault(name, []) if name else idx.setdefault("team", [])
+    if date not in dates:
+        dates.append(date)
+        dates.sort()
+    write_json(INDEX_FILE, idx)
 
 
 def main():

@@ -46,6 +46,11 @@ function fmtDateShort(iso) {
   return new Date(iso).toLocaleDateString("es-ES", { day: "2-digit", month: "short" });
 }
 
+function fmtDateLong(iso) {
+  if (!iso) return "—";
+  return new Date(iso).toLocaleDateString("es-ES", { day: "2-digit", month: "short", year: "numeric" });
+}
+
 function fmtClock(totalSeconds) {
   const s = Math.max(0, Math.round(totalSeconds));
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;

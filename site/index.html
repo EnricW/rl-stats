@@ -31,6 +31,15 @@
       <div class="card bars" id="ranking-bars"></div>
     </section>
 
+    <section class="section">
+      <div class="section-head">
+        <h2>Informe semanal del equipo</h2>
+        <span class="chip violet">CLAUDE SONNET</span>
+        <select id="team-report-date" class="metric-select" aria-label="Fecha del informe" hidden></select>
+      </div>
+      <div class="card report" id="team-report"></div>
+    </section>
+
     <footer class="site">
       <span>Stats: ballchasing.com</span>
       <span>Informes: Claude</span>
@@ -38,6 +47,8 @@
     </footer>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js" integrity="sha384-NNQgBjjuhtXzPmmy4gurS5X7P4uTt1DThyevz4Ua0IVK5+kazYQI1W27JHjbbxQz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js" integrity="sha384-XQqX/4yiUGu+oyr87jvWzRuqBUK/adrY0DunhL+tID9m/9dwSpV8h9Fk/Sg6ifVQ" crossorigin="anonymous"></script>
   <script src="app.js"></script>
   <script>
     const CHECK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Victoria"><path d="M20 6 9 17l-5-5"></path></svg>';
@@ -157,6 +168,24 @@
       renderForma(matches);
       renderUltima(matches, roster);
       renderRanking(matches, roster);
+      // informe semanal del equipo: histórico por fechas desde index.json
+      const reportsIndex = await fetchJSON("data/reports/index.json");
+      const teamDates = [...(reportsIndex?.team || [])].reverse();
+      const teamSel = document.getElementById("team-report-date");
+      const showTeam = (date) => renderReport(
+        document.getElementById("team-report"),
+        `data/reports/team-${date}.md`,
+        "No se pudo cargar el informe."
+      );
+      if (teamDates.length) {
+        teamSel.hidden = false;
+        teamSel.innerHTML = teamDates.map((d) => `<option value="${d}">${fmtDateLong(d)}</option>`).join("");
+        teamSel.addEventListener("change", () => showTeam(teamSel.value));
+        showTeam(teamDates[0]);
+      } else {
+        document.getElementById("team-report").innerHTML =
+          '<p class="empty">El informe semanal se genera cada lunes por la mañana y aparecerá aquí.</p>';
+      }
 
       // el contenido se monta tras cargar: el salto a #ancla hay que repetirlo ahora
       if (location.hash) {
