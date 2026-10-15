@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Partidas — RL Stats</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="site"></nav>
+
+    <header class="page-head">
+      <div>
+        <span class="kicker">Temporada · 3v3</span>
+        <h1>Partidas</h1>
+      </div>
+      <span class="spacer"></span>
+      <span class="sub" id="season-line"></span>
+    </header>
+
+    <section class="section" aria-label="Historial de partidas">
+      <div class="card table-scroll">
+        <table style="min-width:720px">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Mapa</th>
+              <th class="num">Marcador</th>
+              <th>Resultado</th>
+              <th>Mejor del equipo</th>
+              <th class="num">Ver</th>
+            </tr>
+          </thead>
+          <tbody id="match-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="site">
+      <span>Stats: ballchasing.com</span>
+      <span>Informes: Claude</span>
+      <span>Actualización automática con GitHub Actions</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    function bestOfTeam(m, roster) {
+      const ours = (m.players || []);
+      if (!ours.length) return "—";
+      const top = [...ours].sort((a, b) => (b.score ?? 0) - (a.score ?? 0))[0];
+      const color = playerColor(top.name, roster);
+      return `<span style="display:inline-flex;align-items:center;gap:8px">
+        <span style="width:10px;height:10px;border-radius:3px;background:${color}"></span>
+        <a href="player.html?name=${encodeURIComponent(top.name)}">${esc(top.name)}</a>
+        <span style="color:var(--faint)">· ${fmt.format(top.score)}${top.mvp ? " ⭐" : ""}</span>
+      </span>`;
+    }
+
+    async function main() {
+      renderNav("match");
+      const summary = await fetchJSON("data/summary.json");
+      if (!summary) {
+        document.getElementById("match-rows").innerHTML =
+          '<tr><td colspan="6"><p class="empty">No se pudieron cargar los datos. Comprueba la conexión y recarga la página.</p></td></tr>';
+        return;
+      }
+      setUpdated(summary);
+      const matches = [...(summary.matches || [])].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      const roster = summary.players || [];
+
+      const wins = matches.filter((m) => m.result === "win").length;
+      const losses = matches.filter((m) => m.result === "loss").length;
+      document.getElementById("season-line").textContent =
+        `${matches.length} ${matches.length === 1 ? "partida" : "partidas"} · ${wins} V — ${losses} D`;
+
+      document.getElementById("match-rows").innerHTML = matches.map((m) => `
+        <tr>
+          <td>${fmtDateShort(m.date)}</td>
+          <td>${esc(m.map ?? "—")}</td>
+          <td class="num score-mono">${scoreText(m)}${m.overtime ? ' <span style="color:var(--faint);font-size:12px">OT</span>' : ""}</td>
+          <td>${resultPill(m.result)}</td>
+          <td>${bestOfTeam(m, roster)}</td>
+          <td class="num" style="white-space:nowrap">
+            <a href="match.html?id=${m.id}">${m.has_report ? "Informe" : "Partida"}</a>
+            <span style="color:var(--faint)"> · </span>
+            <a href="match.html?id=${m.id}#visor">Repetición</a>
+          </td>
+        </tr>`).join("") ||
+        '<tr><td colspan="6"><p class="empty">Aún no hay partidas: juega una y aparecerá aquí sola.</p></td></tr>';
+    }
+    main();
+  </script>
+</body>
+</html>

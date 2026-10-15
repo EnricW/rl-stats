@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RL Stats — Panel del equipo</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="site"></nav>
+
+    <header class="page-head">
+      <div>
+        <span class="kicker">Temporada · 3v3</span>
+        <h1>Panel del equipo</h1>
+      </div>
+      <span class="spacer"></span>
+      <span class="sub">Stats de ballchasing · informes de coach IA tras cada partida</span>
+    </header>
+
+    <section class="tiles" id="tiles" aria-label="Resumen del equipo"></section>
+
+    <section class="card form-strip" id="forma" aria-label="Forma del equipo"></section>
+
+    <section class="feature" id="ultima" aria-label="Última partida"></section>
+
+    <section class="section" id="ranking" aria-label="Ranking de jugadores">
+      <h2>Ranking · score medio por partida</h2>
+      <div class="card bars" id="ranking-bars"></div>
+    </section>
+
+    <footer class="site">
+      <span>Stats: ballchasing.com</span>
+      <span>Informes: Claude</span>
+      <span>Actualización automática con GitHub Actions</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    const CHECK = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Victoria"><path d="M20 6 9 17l-5-5"></path></svg>';
+    const CROSS = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-label="Derrota"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>';
+
+    function tile(label, value, hint, cls = "") {
+      return `<div class="tile"><span class="label">${label}</span>
+        <span class="value ${cls}">${value}</span>
+        ${hint ? `<span class="hint">${hint}</span>` : ""}</div>`;
+    }
+
+    function renderTiles(matches) {
+      const played = matches.filter((m) => m.result);
+      const wins = played.filter((m) => m.result === "win").length;
+      const losses = played.length - wins;
+      let gf = 0, gc = 0;
+      for (const m of matches) {
+        const us = m.our_team;
+        if (!us) continue;
+        const them = us === "blue" ? "orange" : "blue";
+        gf += m.score[us]; gc += m.score[them];
+      }
+      const wr = played.length ? Math.round((wins / played.length) * 100) : 0;
+      const dif = gf - gc;
+      document.getElementById("tiles").innerHTML =
+        tile("Partidas", matches.length, "temporada actual") +
+        tile("Winrate", `${wr}%`, `${wins} V · ${losses} D`, wr >= 50 ? "good" : "bad") +
+        tile("Goles", `${gf}<small> / ${gc}</small>`, "a favor / en contra") +
+        tile("Dif. de goles", `${dif >= 0 ? "+" : ""}${dif}`,
+          matches.length ? `media ${fmt.format(dif / matches.length)} por partida` : "",
+          dif >= 0 ? "good" : "bad");
+    }
+
+    function renderForma(matches) {
+      // cronológico de izquierda a derecha, las últimas 8
+      const seq = [...matches].reverse().slice(-8);
+      const items = seq.map((m, i) => {
+        const last = i === seq.length - 1;
+        const win = m.result === "win";
+        return `<a class="form-item ${last ? "last" : ""}" href="match.html?id=${m.id}">
+            <span class="form-icon ${win ? "win" : "loss"}">${win ? CHECK : CROSS}</span>
+            <span>${fmtDateShort(m.date)}${last ? " · última" : ""}</span>
+          </a>`;
+      }).join('<span class="form-link" aria-hidden="true"></span>');
+      document.getElementById("forma").innerHTML = `
+        <div class="label-block">
+          <span class="tile-label" style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--faint)">Forma</span>
+          <span class="sub">últimas ${seq.length} partidas</span>
+        </div>
+        <div class="form-seq">${items}</div>`;
+    }
+
+    function renderUltima(matches, roster) {
+      const m = matches[0];
+      if (!m) {
+        document.getElementById("ultima").innerHTML =
+          '<p class="empty">Aún no hay partidas: juega una y aparecerá aquí sola.</p>';
+        return;
+      }
+      const us = m.our_team ?? "blue";
+      const them = us === "blue" ? "orange" : "blue";
+      const rows = (m.players || []).map((p) => {
+        const bits = [];
+        if (p.goals) bits.push(`${p.goals} ${p.goals === 1 ? "gol" : "goles"}`);
+        if (p.assists) bits.push(`${p.assists} asist.`);
+        if (p.saves) bits.push(`${p.saves} ${p.saves === 1 ? "parada" : "paradas"}`);
+        bits.push(`score ${fmt.format(p.score)}`);
+        return `<div class="row"><span class="dot" style="background:${playerColor(p.name, roster)}"></span>
+          <span class="nm">${esc(p.name)}</span><span class="tx">${bits.join(" · ")}</span></div>`;
+      }).join("");
+      document.getElementById("ultima").innerHTML = `
+        <div class="score-block">
+          <span class="kicker" style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Última partida</span>
+          <div class="bigscore">
+            <span class="us">${m.score[us]}</span><span class="dash">—</span><span class="them">${m.score[them]}</span>
+            ${resultPill(m.result, m.overtime)}
+          </div>
+          <span class="sub" style="font-size:14px;color:var(--muted)">${esc(m.mode)} · ${esc(m.map ?? "—")} · ${fmtDateShort(m.date)}</span>
+        </div>
+        <div class="players-mini">${rows}</div>
+        <div class="cta">
+          <a class="btn" href="match.html?id=${m.id}">Ver partida e informe IA
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg></a>
+          <a class="btn ghost" href="match.html?id=${m.id}#visor">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+            Ver repetición</a>
+        </div>`;
+    }
+
+    function renderRanking(matches, roster) {
+      const totals = new Map();
+      for (const m of matches) for (const p of m.players || []) {
+        const t = totals.get(p.name) || { score: 0, games: 0 };
+        t.score += p.score; t.games += 1;
+        totals.set(p.name, t);
+      }
+      const rank = [...totals.entries()]
+        .map(([name, t]) => ({ name, avg: t.score / t.games }))
+        .sort((a, b) => b.avg - a.avg);
+      const max = rank[0]?.avg || 1;
+      document.getElementById("ranking-bars").innerHTML = rank.map((r) => `
+        <a class="bar-row" href="player.html?name=${encodeURIComponent(r.name)}" style="color:var(--ink)">
+          <span class="nm">${esc(r.name)}</span>
+          <span class="track"><span class="fill" style="width:${Math.round((r.avg / max) * 100)}%;background:${playerColor(r.name, roster)}"></span></span>
+          <span class="val">${Math.round(r.avg)}</span>
+        </a>`).join("") || '<p class="empty">Sin datos todavía.</p>';
+    }
+
+    async function main() {
+      renderNav("index");
+      const summary = await fetchJSON("data/summary.json");
+      if (!summary) { loadError(document.getElementById("tiles")); return; }
+      setUpdated(summary);
+      const matches = [...(summary.matches || [])].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      const roster = summary.players || [];
+      renderTiles(matches);
+      renderForma(matches);
+      renderUltima(matches, roster);
+      renderRanking(matches, roster);
+
+      // el contenido se monta tras cargar: el salto a #ancla hay que repetirlo ahora
+      if (location.hash) {
+        document.querySelector(location.hash)?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    main();
+  </script>
+</body>
+</html>

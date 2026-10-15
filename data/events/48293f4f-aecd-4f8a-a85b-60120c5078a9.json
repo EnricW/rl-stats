@@ -1,0 +1,379 @@
+{
+  "goals": [
+    {
+      "name": "AecrØn",
+      "score": [
+        1,
+        0
+      ],
+      "t": 34.75,
+      "team": 0
+    },
+    {
+      "name": "pamblls",
+      "score": [
+        2,
+        0
+      ],
+      "t": 88.73,
+      "team": 0
+    },
+    {
+      "name": "AecrØn",
+      "score": [
+        3,
+        0
+      ],
+      "t": 125.47,
+      "team": 0
+    },
+    {
+      "name": "pamblls",
+      "score": [
+        4,
+        0
+      ],
+      "t": 198.14,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        4,
+        1
+      ],
+      "t": 239.07,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        4,
+        2
+      ],
+      "t": 275.77,
+      "team": 1
+    }
+  ],
+  "id": "48293f4f-aecd-4f8a-a85b-60120c5078a9",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 97.6,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 7,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 54.9,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 7,
+      "taken": 3
+    },
+    "Ray": {
+      "avg_boost_after": 137.0,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 7,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.05,
+      "takers": {
+        "0": "pamblls",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 47.74,
+      "takers": {
+        "0": "AecrØn",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "VenuuX42",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 101.74,
+      "takers": {
+        "0": "VenuuX42",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "AecrØn",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 138.42,
+      "takers": {
+        "0": "AecrØn",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "VenuuX42",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 211.07,
+      "takers": {
+        "0": "VenuuX42",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "pamblls",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 252.07,
+      "takers": {
+        "0": "pamblls",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "AecrØn",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 288.78,
+      "takers": {
+        "0": "AecrØn",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 24,
+      "pct_first_man": 26.3,
+      "pct_second_man": 29.3,
+      "pct_third_man": 33.5
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 29.2,
+      "pct_second_man": 29.3,
+      "pct_third_man": 30.6
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 33.6,
+      "pct_second_man": 30.4,
+      "pct_third_man": 25.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 472.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 56.0,
+      "t": 8.58,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2193.0,
+      "kind": "shot",
+      "name": "AecrØn",
+      "speed_to_goal": 1856.0,
+      "t": 33.78,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2213.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2474.0,
+      "t": 68.67,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "VenuuX42",
+      "t": 69.09,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1597.0,
+      "kind": "shot",
+      "name": "pamblls",
+      "speed_to_goal": 2681.0,
+      "t": 87.99,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "AecrØn",
+      "t": 88.73,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2244.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1593.0,
+      "t": 109.78,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "pamblls",
+      "t": 110.2,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2274.0,
+      "kind": "shot",
+      "name": "VenuuX42",
+      "speed_to_goal": 1948.0,
+      "t": 124.4,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 768.0,
+      "kind": "shot",
+      "name": "AecrØn",
+      "speed_to_goal": 1980.0,
+      "t": 125.38,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "VenuuX42",
+      "t": 125.47,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1378.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1147.0,
+      "t": 151.3,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 920.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1673.0,
+      "t": 171.87,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2150.0,
+      "kind": "shot",
+      "name": "AecrØn",
+      "speed_to_goal": 1759.0,
+      "t": 195.14,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 196.24,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 492.0,
+      "kind": "shot",
+      "name": "pamblls",
+      "speed_to_goal": 1713.0,
+      "t": 198.0,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "AecrØn",
+      "t": 198.14,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2257.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2423.0,
+      "t": 234.38,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "AecrØn",
+      "t": 235.07,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 239.07,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1770.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1328.0,
+      "t": 274.15,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2288.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2165.0,
+      "t": 312.04,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "AecrØn",
+      "t": 312.46,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2198.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1819.0,
+      "t": 356.88,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "AecrØn",
+      "t": 357.94,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 1.6,
+    "Eric": 4.1,
+    "Ray": 7.4
+  },
+  "sustained_possession_teams_s": {
+    "0": 22.4,
+    "1": 13.2
+  }
+}

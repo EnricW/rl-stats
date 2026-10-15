@@ -1,0 +1,262 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 145.23,
+      "team": 1
+    },
+    {
+      "name": "Nightmare-Zeyzox",
+      "score": [
+        1,
+        1
+      ],
+      "t": 202.14,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        2
+      ],
+      "t": 321.48,
+      "team": 1
+    }
+  ],
+  "id": "5664be64-07b6-4193-8280-47803b401f82",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 57.0,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 9.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 164.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "MoustacheBlanch",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Xorlia",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 158.21,
+      "takers": {
+        "0": "Xorlia",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "MoustacheBlanch",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 214.88,
+      "takers": {
+        "0": "MoustacheBlanch",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Nightmare-Zeyzox",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 333.55,
+      "takers": {
+        "0": "Nightmare-Zeyzox",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 24,
+      "pct_first_man": 24.9,
+      "pct_second_man": 24.5,
+      "pct_third_man": 37.2
+    },
+    "Eric": {
+      "became_first_man": 31,
+      "pct_first_man": 30.8,
+      "pct_second_man": 32.8,
+      "pct_third_man": 23.0
+    },
+    "Ray": {
+      "became_first_man": 31,
+      "pct_first_man": 30.9,
+      "pct_second_man": 29.3,
+      "pct_third_man": 26.4
+    }
+  },
+  "stat_events": [
+    {
+      "kind": "save",
+      "name": "Nightmare-Zeyzox",
+      "t": 86.36,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2505.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1586.0,
+      "t": 86.89,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2161.0,
+      "kind": "shot",
+      "name": "Nightmare-Zeyzox",
+      "speed_to_goal": 2007.0,
+      "t": 106.74,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 107.61,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1485.0,
+      "kind": "shot",
+      "name": "Xorlia",
+      "speed_to_goal": 1107.0,
+      "t": 111.64,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 112.28,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 145.68,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 638.0,
+      "kind": "shot",
+      "name": "MoustacheBlanch",
+      "speed_to_goal": 2080.0,
+      "t": 199.9,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 456.0,
+      "kind": "shot",
+      "name": "Nightmare-Zeyzox",
+      "speed_to_goal": 1284.0,
+      "t": 201.94,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "MoustacheBlanch",
+      "t": 202.52,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2459.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -2267.0,
+      "t": 224.02,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Nightmare-Zeyzox",
+      "t": 224.05,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Nightmare-Zeyzox",
+      "t": 250.41,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1205.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1124.0,
+      "t": 250.45,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "MoustacheBlanch",
+      "t": 289.94,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1376.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -2027.0,
+      "t": 290.11,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 321.58,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 527.0,
+      "kind": "shot",
+      "name": "MoustacheBlanch",
+      "speed_to_goal": -673.0,
+      "t": 355.89,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Eric": 8.1,
+    "Ray": 4.3
+  },
+  "sustained_possession_teams_s": {
+    "0": 23.7,
+    "1": 12.4
+  }
+}

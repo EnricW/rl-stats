@@ -1,0 +1,18 @@
+# Configuración del pipeline. Las claves/tokens NUNCA van aquí:
+# van en el .env de la raíz (plantilla: .env.example; git lo ignora).
+
+ballchasing:
+  # ID del grupo del equipo en ballchasing.com (lo que va después de /group/ en su URL).
+  group: "rl-stats-xl1gi5rbh9"
+  # Visibilidad con la que el watcher y la vía manual suben los replays.
+  visibility: unlisted
+  # Descargar el .replay a replays/archive/ para que frames/events lo parseen.
+  # La carpeta está en .gitignore: el almacén de replays es ballchasing y el
+  # pipeline re-descarga lo que le falte.
+  archive_replays: true
+
+reports:
+  match_model: claude-haiku-5-5
+  trend_model: claude-sonnet-5-5
+  # Regenerar el informe de tendencia de un jugador cada N partidas suyas.
+  player_report_every: 10

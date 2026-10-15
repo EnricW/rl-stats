@@ -1,0 +1,118 @@
+# Pipeline principal: sincroniza con ballchasing, agrega, genera informes IA,
+# commitea los datos y despliega la web en GitHub Pages.
+#
+# Se dispara: al avisar el watcher (repository_dispatch), cada 6 h como red de
+# seguridad, el lunes por la mañana para el informe semanal de equipo, y a mano.
+
+name: Procesar partidas
+
+on:
+  repository_dispatch:
+    types: [new-replay]
+  schedule:
+    - cron: "17 */6 * * *"   # reconciliación
+    - cron: "0 8 * * 1"      # lunes: además, informe de equipo
+  workflow_dispatch:
+
+# Permisos por job: process solo necesita escribir contenido; los de Pages
+# (pages, id-token) los recibe únicamente el job deploy.
+permissions: {}
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      # El pipeline lee sus claves del .env de la raíz (git lo ignora;
+      # el runner es efímero y se destruye al acabar el job). Los secrets se
+      # pasan por env: interpolarlos con ${{ }} dentro del script rompería
+      # con comillas en el valor y es el patrón que GitHub desaconseja.
+      - name: Escribir .env desde los secrets
+        env:
+          BALLCHASING_TOKEN: ${{ secrets.BALLCHASING_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          printf 'BALLCHASING_TOKEN=%s\nANTHROPIC_API_KEY=%s\n' \
+            "$BALLCHASING_TOKEN" "$ANTHROPIC_API_KEY" > .env
+
+      - name: Sincronizar con ballchasing
+        run: python -m pipeline.sync
+
+      - name: Extraer trayectorias para el visor 3D
+        run: python -m pipeline.frames
+
+      - name: Extraer eventos (tiros, kickoffs, rotación)
+        run: python -m pipeline.events
+
+      - name: Agregar estadísticas
+        run: python -m pipeline.aggregate
+
+      - name: Informes IA
+        run: python -m pipeline.report
+
+      - name: Informe semanal de equipo
+        if: github.event.schedule == '0 8 * * 1'
+        run: python -m pipeline.report --team
+
+      # segunda pasada: summary.json debe reflejar los informes recién creados
+      - name: Refrescar índice
+        run: python -m pipeline.aggregate
+
+      - name: Commit de los datos
+        run: |
+          git config user.name "rl-stats bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "data: actualización automática"
+            # por si alguien ha pusheado a main mientras corría el pipeline
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Construir la web
+        run: |
+          mkdir -p _site
+          cp -r site/* _site/
+          cp -r data _site/data
+          # cache-busting: versiona CSS/JS propios con el commit para que el
+          # navegador no sirva assets viejos tras un deploy
+          sed -i "s/styles\.css/styles.css?v=${GITHUB_SHA::8}/g; s/app\.js/app.js?v=${GITHUB_SHA::8}/g; s/viewer\.js/viewer.js?v=${GITHUB_SHA::8}/g" _site/*.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    # GitHub Pages gratis requiere repo público; mientras sea privado se salta.
+    if: ${{ !github.event.repository.private }}
+    needs: process
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    # mismo grupo que deploy.yml: dos despliegues a Pages no se pisan
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

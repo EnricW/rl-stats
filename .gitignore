@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+_site/
+.DS_Store
+watcher/uploaded.json
+# los .replay no se versionan: ballchasing es el almacén; el pipeline los
+# descarga al vuelo para parsearlos (ver README · Privacidad)
+replays/archive/

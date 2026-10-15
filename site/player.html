@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jugadores — RL Stats</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="site"></nav>
+
+    <header class="page-head">
+      <div>
+        <span class="kicker">El equipo · 3v3</span>
+        <h1>Jugadores</h1>
+      </div>
+    </header>
+
+    <section class="radar-wrap" aria-label="Perfil comparado del equipo">
+      <div class="radar-box"><canvas id="radar"></canvas></div>
+      <span class="note">
+        <span style="display:inline-block;width:18px;border-top:2px dashed var(--faint);vertical-align:middle;margin-right:6px"></span>Media del equipo ·
+        medias por partida, escaladas al mejor del equipo en cada eje.
+      </span>
+    </section>
+
+    <div class="player-tabs" id="tabs" role="tablist" aria-label="Jugadores del equipo"></div>
+
+    <div id="player-error"></div>
+
+    <section class="tiles" id="tiles" aria-label="Resumen del jugador"></section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Evolución por partida</h2>
+        <select id="evolution-metric" class="metric-select" aria-label="Métrica de la gráfica"></select>
+      </div>
+      <div class="card chart-card"><div class="chart-box"><canvas id="evolution"></canvas></div></div>
+    </section>
+
+    <section class="section" id="compare-section" hidden>
+      <div class="section-head">
+        <h2 id="compare-title">Comparativa con el equipo</h2>
+        <div class="legend">
+          <span class="key"><span class="swatch" id="legend-me"></span><span id="legend-me-name"></span></span>
+          <span class="key"><span class="swatch" style="background:var(--faint)"></span>Media equipo</span>
+        </div>
+      </div>
+      <div class="card duo-bars" id="compare"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Informe de tendencias</h2>
+        <span class="chip violet">CLAUDE SONNET</span>
+      </div>
+      <div id="player-report"></div>
+    </section>
+
+    <footer class="site">
+      <span>Stats: ballchasing.com</span>
+      <span>Informes: Claude</span>
+      <span>Actualización automática con GitHub Actions</span>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js" integrity="sha384-NNQgBjjuhtXzPmmy4gurS5X7P4uTt1DThyevz4Ua0IVK5+kazYQI1W27JHjbbxQz" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.7/purify.min.js" integrity="sha384-XQqX/4yiUGu+oyr87jvWzRuqBUK/adrY0DunhL+tID9m/9dwSpV8h9Fk/Sg6ifVQ" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha384-bs/nf9FbdNouRbMiFcrcZfLXYPKiPaGVGplVbv7dLGECccEXDW+S3zjqSKR5ZEaD" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  <script>
+    let roster = [];
+    let chart = null;
+    let radar = null;
+    let radarActive = null;
+    const playersData = new Map();
+
+    /* ---- radar hexagonal: 6 dimensiones independientes, todas "más = mejor".
+       Ofensiva arriba (Goles-Tiros-Asistencias), Paradas opuesta a Goles,
+       Presión y Ritmo de puente. Normalizado al mejor del equipo por eje. ---- */
+    const RADAR_AXES = [
+      ["Goles", "goals"],
+      ["Tiros", "shots"],
+      ["Asistencias", "assists"],
+      ["Paradas", "saves"],
+      ["Presión", "boost_stolen"],
+      ["Ritmo", "avg_speed"],
+    ];
+
+    function playerAvg(name) {
+      return playersData.get(name)?.modes?.["3v3"]?.averages || {};
+    }
+
+    function buildRadar(selected) {
+      const maxes = RADAR_AXES.map(([, key]) =>
+        Math.max(...roster.map((n) => playerAvg(n)[key] ?? 0), 0.0001));
+      const datasets = roster.map((n) => {
+        const avg = playerAvg(n);
+        return {
+          label: n,
+          data: RADAR_AXES.map(([, key], i) => (avg[key] ?? 0) / maxes[i]),
+          real: RADAR_AXES.map(([, key]) => avg[key] ?? 0),
+          pointHoverRadius: 5,
+        };
+      });
+      // línea de referencia: media del equipo por eje (gris, discontinua)
+      const teamReal = RADAR_AXES.map(([, key]) => {
+        const vals = roster.map((n) => playerAvg(n)[key] ?? 0);
+        return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
+      });
+      datasets.push({
+        label: "Media equipo",
+        isTeam: true,
+        data: teamReal.map((v, i) => v / maxes[i]),
+        real: teamReal,
+        backgroundColor: "transparent",
+        borderColor: "#5F6B80",
+        borderWidth: 1.5,
+        borderDash: [6, 4],
+        pointRadius: 0,
+        pointHoverRadius: 4,
+        pointBackgroundColor: "#5F6B80",
+        order: 3, // siempre al fondo
+      });
+      radar = new Chart(document.getElementById("radar"), {
+        type: "radar",
+        data: { labels: RADAR_AXES.map(([label]) => label), datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }, // las pestañas de abajo son la leyenda
+            tooltip: {
+              callbacks: {
+                label: (c) => `${c.dataset.label}: ${fmt.format(c.dataset.real[c.dataIndex])}`,
+              },
+            },
+          },
+          scales: {
+            r: {
+              min: 0, max: 1,
+              ticks: { display: false },
+              grid: { color: "#1C2434" },
+              angleLines: { color: "#1C2434" },
+              pointLabels: {
+                color: "#9AA7BD",
+                font: { family: "Barlow", size: 13, weight: 600 },
+                // dos líneas: eje + valor real del jugador seleccionado
+                callback: (label, i) => {
+                  const real = radarActive ? playerAvg(radarActive)[RADAR_AXES[i][1]] : null;
+                  return real == null ? label : [label, fmt.format(real)];
+                },
+              },
+            },
+          },
+        },
+      });
+      styleRadar(selected);
+    }
+
+    function styleRadar(name) {
+      if (!radar) return;
+      radarActive = name;
+      radar.data.datasets.forEach((ds) => {
+        if (ds.isTeam) return; // la media del equipo no cambia con la selección
+        const color = playerColor(ds.label, roster);
+        const active = ds.label === name;
+        ds.backgroundColor = color + (active ? "59" : "14");
+        ds.borderColor = active ? color : color + "66";
+        ds.borderWidth = active ? 3 : 1.5;
+        ds.pointRadius = active ? 3.5 : 2;
+        ds.pointBackgroundColor = color;
+        ds.order = active ? 0 : 1; // el activo se dibuja encima
+      });
+      radar.update();
+    }
+
+    function tile(label, value, hint, cls = "") {
+      return `<div class="tile"><span class="label">${label}</span>
+        <span class="value ${cls}">${value}</span>
+        ${hint ? `<span class="hint">${hint}</span>` : ""}</div>`;
+    }
+
+    // métricas de la comparativa: [etiqueta, clave, nota]
+    const COMPARE = [
+      ["Boost usado por minuto (BPM)", "bpm", ""],
+      ["% del tiempo sin boost", "pct_zero_boost", "menos es mejor · sano <12%"],
+      ["Boost robado en campo rival", "boost_stolen", ""],
+      ["% del tiempo supersónico", "pct_supersonic", ""],
+      ["Goles encajados siendo último hombre", "ga_last_defender", "menos es mejor"],
+      ["Distancia media a compañeros", "avg_dist_to_mates", "muy baja = apelotonados"],
+    ];
+
+    // métricas disponibles en la gráfica de evolución: [clave, etiqueta, unidad]
+    const EVOLUTION = [
+      ["score", "Score", ""],
+      ["goals", "Goles", ""],
+      ["assists", "Asistencias", ""],
+      ["saves", "Paradas", ""],
+      ["shots", "Tiros", ""],
+      ["shooting_pct", "% de acierto", "%"],
+      ["bpm", "Boost usado por minuto", ""],
+      ["avg_boost", "Boost medio en el depósito", ""],
+      ["pct_zero_boost", "% sin boost", "%"],
+      ["boost_stolen", "Boost robado", ""],
+      ["avg_speed", "Velocidad media", ""],
+      ["pct_supersonic", "% supersónico", "%"],
+      ["pct_behind_ball", "% detrás del balón", "%"],
+      ["pct_most_back", "% último hombre", "%"],
+      ["pct_most_forward", "% primer hombre", "%"],
+      ["demos_inflicted", "Demos hechas", ""],
+    ];
+    let evoHistory = [];
+    let evoColor = "";
+
+    function renderEvolution() {
+      if (chart) { chart.destroy(); chart = null; }
+      if (!evoHistory.length) return;
+      const key = document.getElementById("evolution-metric").value;
+      const def = EVOLUTION.find((e) => e[0] === key) || EVOLUTION[0];
+      document.documentElement.style.setProperty("--series-1", evoColor);
+      chart = lineChart(
+        document.getElementById("evolution"),
+        evoHistory.map((h) => fmtDateShort(h.date)),
+        evoHistory.map((h) => h[def[0]] ?? null),
+        { unit: def[2] }
+      );
+    }
+
+    function renderTabs(selected) {
+      document.getElementById("tabs").innerHTML = roster.map((n) => {
+        const color = playerColor(n, roster);
+        const active = n === selected;
+        const avatarStyle = active
+          ? `background:${color}26;border-color:${color};color:${color}`
+          : "";
+        return `<button type="button" class="player-tab" role="tab" data-name="${esc(n)}"
+            aria-selected="${active}" ${active ? `style="border-bottom-color:${color}"` : ""}>
+          <span class="mini-avatar" style="${avatarStyle}">${esc(n.slice(0, 2).toUpperCase())}</span>
+          ${esc(n)}
+        </button>`;
+      }).join("");
+      for (const btn of document.querySelectorAll(".player-tab")) {
+        btn.addEventListener("click", () => {
+          const name = btn.dataset.name;
+          history.replaceState(null, "", `player.html?name=${encodeURIComponent(name)}`);
+          renderTabs(name);
+          styleRadar(name);
+          loadPlayer(name);
+        });
+      }
+    }
+
+    function renderCompare(name, mine, teamAvg, color) {
+      document.getElementById("compare-section").hidden = false;
+      document.getElementById("compare-title").textContent = `${name} vs media del equipo`;
+      document.getElementById("legend-me").style.background = color;
+      document.getElementById("legend-me-name").textContent = name;
+      document.getElementById("compare").innerHTML = COMPARE.map(([label, key, note]) => {
+        const a = mine[key], b = teamAvg[key];
+        if (a == null || b == null) return "";
+        const max = Math.max(a, b, 0.001);
+        const unit = key.startsWith("pct") ? "%" : "";
+        return `<div class="duo">
+          <span class="metric">${label}${note ? ` <small>(${note})</small>` : ""}</span>
+          <div class="line"><span class="bar me" style="width:${Math.round((a / max) * 72)}%;background:${color}"></span><span class="v">${fmt.format(a)}${unit}</span></div>
+          <div class="line"><span class="bar team" style="width:${Math.round((b / max) * 72)}%"></span><span class="v team">${fmt.format(b)}${unit}</span></div>
+        </div>`;
+      }).join("");
+    }
+
+    async function loadPlayer(name) {
+      const player = playersData.get(name);
+      if (!player) {
+        document.getElementById("player-error").innerHTML = '<p class="empty">Jugador no encontrado.</p>';
+        document.getElementById("tiles").innerHTML = "";
+        document.getElementById("compare-section").hidden = true;
+        return;
+      }
+      document.getElementById("player-error").innerHTML = "";
+      document.title = `${player.name} — RL Stats`;
+      const color = playerColor(player.name, roster);
+
+      const history3 = (player.history || []).filter((h) => h.mode === "3v3");
+      const mode = (player.modes || {})["3v3"];
+      if (mode) {
+        const avg = mode.averages || {};
+        const wr = Math.round((mode.winrate ?? 0) * 100);
+        document.getElementById("tiles").innerHTML =
+          tile("Partidas", mode.games, "") +
+          tile("Winrate", `${wr}%`, `${mode.wins ?? "—"} victorias`, wr >= 50 ? "good" : "bad") +
+          tile("Score medio", Math.round(avg.score ?? 0), "por partida") +
+          tile("Goles · Asist.", `${fmt.format(avg.goals ?? 0)}<small> / ${fmt.format(avg.assists ?? 0)}</small>`, "medias por partida");
+      } else {
+        document.getElementById("tiles").innerHTML = "";
+      }
+
+      // la gráfica usa el color de identidad del jugador activo
+      evoHistory = history3;
+      evoColor = color;
+      renderEvolution();
+
+      // media del equipo: promedio de las medias 3v3 del roster
+      document.getElementById("compare-section").hidden = true;
+      if (mode) {
+        const avgs = roster.map((n) => playersData.get(n)?.modes?.["3v3"]?.averages).filter(Boolean);
+        if (avgs.length > 1) {
+          const teamAvg = {};
+          for (const [, key] of COMPARE) {
+            const vals = avgs.map((a) => a[key]).filter((v) => v != null);
+            if (vals.length) teamAvg[key] = vals.reduce((a, b) => a + b, 0) / vals.length;
+          }
+          renderCompare(player.name, mode.averages || {}, teamAvg, color);
+        }
+      }
+
+      // informe de tendencias, o estado vacío con progreso hasta el siguiente
+      const reportEl = document.getElementById("player-report");
+      const md = await fetchText(`data/reports/player-${encodeURIComponent(player.name)}.md`);
+      if (md) {
+        reportEl.innerHTML = `<div class="card report">${mdToHTML(md)}</div>`;
+      } else {
+        const games = mode?.games ?? 0;
+        const toGo = games % 10;
+        reportEl.innerHTML = `
+          <div class="empty-state">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5F6B80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
+            <span class="t">El informe de tendencias se genera cada 10 partidas</span>
+            <span class="s">Lleva ${toGo} de 10 · comparará su evolución con el equipo y propondrá un plan de práctica</span>
+            <span class="progress"><span style="width:${toGo * 10}%"></span></span>
+          </div>`;
+      }
+    }
+
+    async function main() {
+      renderNav("player");
+      const summary = await fetchJSON("data/summary.json");
+      if (!summary) { loadError(document.getElementById("player-error")); return; }
+      setUpdated(summary);
+      roster = summary?.players || [];
+      if (!roster.length) {
+        document.getElementById("player-error").innerHTML =
+          '<p class="empty">Aún no hay jugadores: se rellenan solos con la primera partida.</p>';
+        return;
+      }
+      // todos los jugadores de una vez: alimentan radar, ficha y media del equipo
+      const all = await Promise.all(
+        roster.map((n) => fetchJSON(`data/players/${encodeURIComponent(n)}.json`))
+      );
+      roster.forEach((n, i) => { if (all[i]) playersData.set(n, all[i]); });
+
+      const sel = document.getElementById("evolution-metric");
+      sel.innerHTML = EVOLUTION.map(([k, label]) => `<option value="${k}">${label}</option>`).join("");
+      sel.addEventListener("change", renderEvolution);
+
+      const asked = new URLSearchParams(location.search).get("name");
+      const selected = roster.includes(asked) ? asked : roster[0];
+      renderTabs(selected);
+      buildRadar(selected);
+      loadPlayer(selected);
+    }
+    main();
+  </script>
+</body>
+</html>

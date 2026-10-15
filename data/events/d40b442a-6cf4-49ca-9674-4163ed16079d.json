@@ -1,0 +1,236 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 74.0,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        0
+      ],
+      "t": 144.82,
+      "team": 0
+    },
+    {
+      "name": "temp-03015620",
+      "score": [
+        2,
+        1
+      ],
+      "t": 220.03,
+      "team": 1
+    }
+  ],
+  "id": "d40b442a-6cf4-49ca-9674-4163ed16079d",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 0.0,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 4,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 90.1,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 143.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 0
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "temp-03015620",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "temp-03015620"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 86.12,
+      "takers": {
+        "0": "Enric",
+        "1": "FAZE_Jaime_gg"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "temp-03015620",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 157.8,
+      "takers": {
+        "0": "Eric",
+        "1": "temp-03015620"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 233.02,
+      "takers": {
+        "0": "Enric",
+        "1": "FAZE_Jaime_gg"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 22,
+      "pct_first_man": 23.4,
+      "pct_second_man": 26.3,
+      "pct_third_man": 40.0
+    },
+    "Eric": {
+      "became_first_man": 24,
+      "pct_first_man": 29.6,
+      "pct_second_man": 29.7,
+      "pct_third_man": 30.4
+    },
+    "Ray": {
+      "became_first_man": 27,
+      "pct_first_man": 36.7,
+      "pct_second_man": 33.7,
+      "pct_third_man": 19.3
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 637.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1991.0,
+      "t": 55.7,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "adrian_garde12",
+      "t": 56.46,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2129.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2454.0,
+      "t": 72.97,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 74.29,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2863.0,
+      "kind": "shot",
+      "name": "adrian_garde12",
+      "speed_to_goal": -2542.0,
+      "t": 107.43,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 107.5,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1012.0,
+      "kind": "shot",
+      "name": "temp-03015620",
+      "speed_to_goal": -652.0,
+      "t": 118.69,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 119.66,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 189.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": null,
+      "t": 144.82,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1021.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2390.0,
+      "t": 179.13,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "adrian_garde12",
+      "t": 180.16,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1995.0,
+      "kind": "shot",
+      "name": "temp-03015620",
+      "speed_to_goal": 1637.0,
+      "t": 218.7,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1246.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -696.0,
+      "t": 280.77,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "adrian_garde12",
+      "t": 280.84,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 5.6,
+    "Eric": 0.4,
+    "Ray": 3.2
+  },
+  "sustained_possession_teams_s": {
+    "0": 9.2,
+    "1": 22.0
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "goals": [
+    {
+      "name": "Eric",
+      "score": [
+        0,
+        1
+      ],
+      "t": 45.88,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        0,
+        2
+      ],
+      "t": 125.7,
+      "team": 1
+    },
+    {
+      "name": "Tifouze",
+      "score": [
+        1,
+        2
+      ],
+      "t": 168.76,
+      "team": 0
+    },
+    {
+      "name": "Firenutz48",
+      "score": [
+        2,
+        2
+      ],
+      "t": 208.91,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        3
+      ],
+      "t": 272.86,
+      "team": 1
+    },
+    {
+      "name": "Firenutz48",
+      "score": [
+        3,
+        3
+      ],
+      "t": 318.68,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        4
+      ],
+      "t": 351.12,
+      "team": 1
+    }
+  ],
+  "id": "a093337d-19b3-49cc-8102-e5066af33314",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 77.5,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 8,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 172.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 8,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 75.8,
+      "fakes": 0,
+      "first_touches": 3,
+      "kickoffs": 8,
+      "taken": 4
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "KirmizıTuborg",
+        "1": "Enric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Firenutz48",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 58.84,
+      "takers": {
+        "0": "Firenutz48",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 138.69,
+      "takers": {
+        "0": "Firenutz48",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Tifouze",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 181.76,
+      "takers": {
+        "0": "Tifouze",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "KirmizıTuborg",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 221.93,
+      "takers": {
+        "0": "KirmizıTuborg",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Tifouze",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 286.31,
+      "takers": {
+        "0": "Tifouze",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 331.69,
+      "takers": {
+        "0": "Firenutz48",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 361.34,
+      "takers": {
+        "0": "Firenutz48",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 22,
+      "pct_first_man": 26.4,
+      "pct_second_man": 20.4,
+      "pct_third_man": 40.6
+    },
+    "Eric": {
+      "became_first_man": 27,
+      "pct_first_man": 35.2,
+      "pct_second_man": 21.9,
+      "pct_third_man": 30.4
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 25.9,
+      "pct_second_man": 45.1,
+      "pct_third_man": 16.5
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1869.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2061.0,
+      "t": 24.57,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1441.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1988.0,
+      "t": 44.98,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1136.0,
+      "kind": "shot",
+      "name": "Tifouze",
+      "speed_to_goal": 1212.0,
+      "t": 86.31,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 87.08,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 952.0,
+      "kind": "shot",
+      "name": "Tifouze",
+      "speed_to_goal": 1413.0,
+      "t": 93.42,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 94.19,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 613.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1190.0,
+      "t": 124.91,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1577.0,
+      "kind": "shot",
+      "name": "Tifouze",
+      "speed_to_goal": 2560.0,
+      "t": 168.13,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Firenutz48",
+      "t": 169.01,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1651.0,
+      "kind": "shot",
+      "name": "Tifouze",
+      "speed_to_goal": 1395.0,
+      "t": 207.21,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 308.0,
+      "kind": "shot",
+      "name": "Firenutz48",
+      "speed_to_goal": null,
+      "t": 208.91,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Tifouze",
+      "t": 209.12,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1532.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1118.0,
+      "t": 271.73,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1709.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1558.0,
+      "t": 305.65,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Firenutz48",
+      "t": 306.68,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 712.0,
+      "kind": "shot",
+      "name": "Firenutz48",
+      "speed_to_goal": null,
+      "t": 318.68,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Tifouze",
+      "t": 318.89,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 405.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2377.0,
+      "t": 350.99,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2198.0,
+      "kind": "shot",
+      "name": "KirmizıTuborg",
+      "speed_to_goal": -2040.0,
+      "t": 381.67,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 382.61,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.0,
+    "Eric": 6.5,
+    "Ray": 4.9
+  },
+  "sustained_possession_teams_s": {
+    "0": 14.9,
+    "1": 13.3
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 267.18,
+      "team": 1
+    }
+  ],
+  "id": "2101621c-83f8-4ccc-868d-886bca092092",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 205.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 2,
+      "taken": 0
+    },
+    "Eric": {
+      "avg_boost_after": 28.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 2,
+      "taken": 0
+    },
+    "Ray": {
+      "avg_boost_after": 0.0,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 2,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "raamoonnn_",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ｎｅｔｅ",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 280.15,
+      "takers": {
+        "0": "Ｎｅｔｅ",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 30,
+      "pct_first_man": 25.1,
+      "pct_second_man": 35.3,
+      "pct_third_man": 28.3
+    },
+    "Eric": {
+      "became_first_man": 31,
+      "pct_first_man": 30.2,
+      "pct_second_man": 24.7,
+      "pct_third_man": 33.9
+    },
+    "Ray": {
+      "became_first_man": 31,
+      "pct_first_man": 33.5,
+      "pct_second_man": 28.7,
+      "pct_third_man": 26.6
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1846.0,
+      "kind": "shot",
+      "name": "Ｎｅｔｅ",
+      "speed_to_goal": 1856.0,
+      "t": 52.73,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 65.34,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2665.0,
+      "kind": "shot",
+      "name": "raamoonnn_",
+      "speed_to_goal": -1771.0,
+      "t": 65.61,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1412.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1583.0,
+      "t": 91.68,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "raamoonnn_",
+      "t": 92.05,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1238.0,
+      "kind": "shot",
+      "name": "Ｎｅｔｅ",
+      "speed_to_goal": 2764.0,
+      "t": 114.75,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 115.08,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2096.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 493.0,
+      "t": 241.32,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ｎｅｔｅ",
+      "t": 241.55,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 260.64,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1514.0,
+      "kind": "shot",
+      "name": "raamoonnn_",
+      "speed_to_goal": -2563.0,
+      "t": 260.74,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 907.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2514.0,
+      "t": 266.71,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 1.7,
+    "Eric": 1.2,
+    "Ray": 6.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 12.9,
+    "1": 8.9
+  }
+}

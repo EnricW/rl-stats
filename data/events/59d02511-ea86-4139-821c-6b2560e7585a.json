@@ -1,0 +1,319 @@
+{
+  "goals": [
+    {
+      "name": "yaremchuk",
+      "score": [
+        1,
+        0
+      ],
+      "t": 101.76,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        1
+      ],
+      "t": 228.98,
+      "team": 1
+    },
+    {
+      "name": "yaremchuk",
+      "score": [
+        2,
+        1
+      ],
+      "t": 301.76,
+      "team": 0
+    },
+    {
+      "name": "yaremchuk",
+      "score": [
+        3,
+        1
+      ],
+      "t": 325.84,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        2
+      ],
+      "t": 347.87,
+      "team": 1
+    },
+    {
+      "name": "yaremchuk",
+      "score": [
+        4,
+        2
+      ],
+      "t": 374.23,
+      "team": 0
+    }
+  ],
+  "id": "59d02511-ea86-4139-821c-6b2560e7585a",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 83.8,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 104.3,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 3
+    },
+    "Ray": {
+      "avg_boost_after": 114.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 6,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "PoWa-ILuKky",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "PoWa-ILuKky",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 111.81,
+      "takers": {
+        "0": "Qpo11",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 238.78,
+      "takers": {
+        "0": "PoWa-ILuKky",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Qpo11",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 310.84,
+      "takers": {
+        "0": "Qpo11",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "yaremchuk",
+      "first_touch_team": 0,
+      "goal_team": 1,
+      "outcome": 1,
+      "t": 335.17,
+      "takers": {
+        "0": "yaremchuk",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "PoWa-ILuKky",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 356.06,
+      "takers": {
+        "0": "PoWa-ILuKky",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 25,
+      "pct_first_man": 22.4,
+      "pct_second_man": 30.0,
+      "pct_third_man": 33.5
+    },
+    "Eric": {
+      "became_first_man": 28,
+      "pct_first_man": 29.6,
+      "pct_second_man": 23.5,
+      "pct_third_man": 32.9
+    },
+    "Ray": {
+      "became_first_man": 30,
+      "pct_first_man": 34.0,
+      "pct_second_man": 32.5,
+      "pct_third_man": 19.5
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2078.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2419.0,
+      "t": 45.06,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "yaremchuk",
+      "t": 46.56,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2288.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -2316.0,
+      "t": 76.78,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Qpo11",
+      "t": 77.32,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2118.0,
+      "kind": "shot",
+      "name": "yaremchuk",
+      "speed_to_goal": 1224.0,
+      "t": 100.43,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "PoWa-ILuKky",
+      "t": 101.76,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1904.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1285.0,
+      "t": 142.26,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "PoWa-ILuKky",
+      "t": 143.33,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 195.1,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 784.0,
+      "kind": "shot",
+      "name": "yaremchuk",
+      "speed_to_goal": -404.0,
+      "t": 195.1,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1330.0,
+      "kind": "shot",
+      "name": "Qpo11",
+      "speed_to_goal": 1139.0,
+      "t": 211.35,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1248.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1936.0,
+      "t": 218.45,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 863.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -316.0,
+      "t": 228.62,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1507.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2264.0,
+      "t": 294.66,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 181.0,
+      "kind": "shot",
+      "name": "yaremchuk",
+      "speed_to_goal": 1043.0,
+      "t": 301.66,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Qpo11",
+      "t": 301.98,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 537.0,
+      "kind": "shot",
+      "name": "yaremchuk",
+      "speed_to_goal": null,
+      "t": 325.84,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1734.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1071.0,
+      "t": 346.3,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Eric": 5.3,
+    "Ray": 4.7
+  },
+  "sustained_possession_teams_s": {
+    "0": 12.0,
+    "1": 10.2
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "goals": [
+    {
+      "name": "SiMpL15790",
+      "score": [
+        1,
+        0
+      ],
+      "t": 13.29,
+      "team": 0
+    },
+    {
+      "name": "cinarcibaby",
+      "score": [
+        2,
+        0
+      ],
+      "t": 95.7,
+      "team": 0
+    },
+    {
+      "name": "Enric",
+      "score": [
+        2,
+        1
+      ],
+      "t": 150.26,
+      "team": 1
+    },
+    {
+      "name": "Fewesss",
+      "score": [
+        3,
+        1
+      ],
+      "t": 333.87,
+      "team": 0
+    }
+  ],
+  "id": "9926bcb0-4951-4f9e-bbbb-a284edc1857f",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 151.7,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 145.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 20.8,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 5,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "SiMpL15790",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Fewesss",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 26.25,
+      "takers": {
+        "0": "Fewesss",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "cinarcibaby",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 108.69,
+      "takers": {
+        "0": "cinarcibaby",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 163.22,
+      "takers": {
+        "0": "Fewesss",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 346.83,
+      "takers": {
+        "0": "SiMpL15790",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 20,
+      "pct_first_man": 21.4,
+      "pct_second_man": 27.0,
+      "pct_third_man": 40.4
+    },
+    "Eric": {
+      "became_first_man": 28,
+      "pct_first_man": 33.2,
+      "pct_second_man": 25.7,
+      "pct_third_man": 30.0
+    },
+    "Ray": {
+      "became_first_man": 30,
+      "pct_first_man": 34.3,
+      "pct_second_man": 36.1,
+      "pct_third_man": 18.5
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 294.0,
+      "kind": "shot",
+      "name": "SiMpL15790",
+      "speed_to_goal": 1937.0,
+      "t": 13.02,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "cinarcibaby",
+      "t": 13.29,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1714.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1183.0,
+      "t": 39.46,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "cinarcibaby",
+      "t": 41.54,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1922.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -897.0,
+      "t": 71.98,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "cinarcibaby",
+      "t": 72.08,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1599.0,
+      "kind": "shot",
+      "name": "SiMpL15790",
+      "speed_to_goal": 1816.0,
+      "t": 94.74,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "SiMpL15790",
+      "t": 95.74,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1214.0,
+      "kind": "shot",
+      "name": "Fewesss",
+      "speed_to_goal": -1754.0,
+      "t": 137.12,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 137.16,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1734.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2470.0,
+      "t": 149.33,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1976.0,
+      "kind": "shot",
+      "name": "cinarcibaby",
+      "speed_to_goal": 2219.0,
+      "t": 178.52,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 179.5,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1270.0,
+      "kind": "shot",
+      "name": "cinarcibaby",
+      "speed_to_goal": 1184.0,
+      "t": 244.57,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1440.0,
+      "kind": "shot",
+      "name": "SiMpL15790",
+      "speed_to_goal": 1574.0,
+      "t": 305.42,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 306.82,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1673.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 843.0,
+      "t": 318.02,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 580.0,
+      "kind": "shot",
+      "name": "Fewesss",
+      "speed_to_goal": null,
+      "t": 333.87,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 4.9,
+    "Eric": 11.1,
+    "Ray": 4.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 19.4,
+    "1": 20.1
+  }
+}

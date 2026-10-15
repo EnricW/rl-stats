@@ -1,0 +1,33 @@
+# Identidad estable del equipo: traduce IDs de plataforma a nombres,
+# para que un cambio de nick en el juego no rompa el histórico.
+#
+# El "id" es el que muestra ballchasing para cada jugador (campo id.id de la API,
+# también visible en la URL de su perfil en ballchasing). "platform" es
+# steam | epic | ps4 | xbox | switch.
+#
+# Ejemplo:
+# players:
+#   - name: Enric
+#     ids:
+#       - platform: epic
+#         id: "0123456789abcdef0123456789abcdef"
+#       - platform: steam
+#         id: "76561198000000000"
+
+players:
+  - name: Enric
+    ids:
+      - platform: steam
+        id: "76561198003469713"
+  - name: Ray
+    ids:
+      - platform: steam
+        id: "76561198002952563"
+  - name: Eric
+    ids:
+      - platform: steam
+        id: "76561198154782781"
+      - platform: xbox
+        id: "b4a4dd1cfb010900"   # id que usa ballchasing
+      - platform: xbox
+        id: "2535452823102644"   # XUID decimal que usa subtr-actor
