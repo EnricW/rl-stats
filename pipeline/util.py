@@ -90,9 +90,29 @@ def write_json(path, payload, compact=False):
     path.parent.mkdir(parents=True, exist_ok=True)
     fmt = {"separators": (",", ":")} if compact else {"indent": 2}
     tmp = path.with_suffix(path.suffix + ".tmp")
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, sort_keys=True, allow_nan=False, **fmt)
-        f.write("\n")
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, sort_keys=True, allow_nan=False, **fmt)
+            f.write("\n")
+    except BaseException:
+        # sin esto, el .tmp huérfano acabaría en "git add data" y publicado
+        tmp.unlink(missing_ok=True)
+        raise
+    tmp.replace(path)
+
+
+def write_text_atomic(path, text):
+    """Escritura atómica de texto (informes .md): la existencia del archivo es
+    la marca de "informe hecho", así que uno truncado a medias nunca debe
+    quedar en disco (no se regeneraría)."""
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    try:
+        tmp.write_text(text, encoding="utf-8")
+    except BaseException:
+        tmp.unlink(missing_ok=True)
+        raise
     tmp.replace(path)
 
 

@@ -402,7 +402,10 @@
 
     async function main() {
       renderNav("match");
-      const id = new URLSearchParams(location.search).get("id");
+      // el id de la URL acaba en una ruta de fetch: solo el formato UUID
+      // de ballchasing (igual que valida pipeline/report.py --match)
+      const raw = new URLSearchParams(location.search).get("id");
+      const id = raw && /^[0-9a-f-]{36}$/i.test(raw) ? raw : null;
       const [match, summary] = await Promise.all([
         id ? fetchJSON(`data/matches/${id}.json`) : null,
         fetchJSON("data/summary.json"),

@@ -4,7 +4,7 @@ import json
 
 import pytest
 
-from pipeline.util import mode_from_playlist, read_env_file, write_json
+from pipeline.util import mode_from_playlist, read_env_file, write_json, write_text_atomic
 
 
 def test_mode_from_playlist():
@@ -54,3 +54,12 @@ def test_write_json_rechaza_nan(tmp_path):
         write_json(out, {"v": float("nan")})
     # la escritura es atómica: el archivo destino no queda a medias
     assert not out.exists()
+    # y el .tmp no queda huérfano (acabaría commiteado por "git add data")
+    assert list(tmp_path.iterdir()) == []
+
+
+def test_write_text_atomic(tmp_path):
+    out = tmp_path / "sub" / "informe.md"
+    write_text_atomic(out, "# Informe\n")
+    assert out.read_text(encoding="utf-8") == "# Informe\n"
+    assert list(out.parent.glob("*.tmp")) == []

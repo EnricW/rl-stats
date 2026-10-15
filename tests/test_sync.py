@@ -59,13 +59,10 @@ def test_normalize_basico():
 def test_normalize_privacidad():
     m = normalize(_replay(), ROSTER)
     assert "ballchasing_url" not in m
+    # no se publica ningún ID de plataforma: ni de rivales ni del roster
+    # (un Steam64 enlaza directamente con el perfil real del jugador)
     for p in m["players"]:
-        if p["roster"]:
-            # los IDs del roster sí se publican (ya constan en players.yml)
-            assert p["platform_id"]
-        else:
-            # los de rivales, nunca
-            assert "platform_id" not in p and "platform" not in p
+        assert "platform_id" not in p and "platform" not in p
 
 
 def test_normalize_derrota_y_empate():

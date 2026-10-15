@@ -55,11 +55,9 @@ def normalize(replay, roster):
                 "rank": p.get("rank"),  # {id, tier, division, name} o null
                 "stats": p.get("stats") or {},
             }
-            # Privacidad: los IDs de plataforma solo se publican para el roster
-            # (ya constan en config/players.yml); los de rivales, nunca.
-            if roster_name is not None:
-                player["platform"] = platform
-                player["platform_id"] = platform_id
+            # Privacidad: no se publica ningún ID de plataforma, tampoco los
+            # del roster (la web no los usa y un Steam64 enlaza con el perfil
+            # real). El join con config/players.yml ya se hizo aquí arriba.
             players.append(player)
 
     roster_by_team = {c: sum(1 for p in players if p["team"] == c and p["roster"]) for c in teams}

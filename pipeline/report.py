@@ -26,6 +26,7 @@ from pipeline.util import (
     read_json,
     require_secret,
     write_json,
+    write_text_atomic,
 )
 
 # Cliente perezoso: así importar este módulo (p. ej. desde los tests) no exige
@@ -139,8 +140,7 @@ def match_report(match, settings):
         json.dumps(context, ensure_ascii=False, indent=1),
     )
     out = REPORTS_DIR / f"{match['id']}.md"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(text, encoding="utf-8")
+    write_text_atomic(out, text)
     print(f"  informe de partida: {out.name}")
 
 
@@ -153,8 +153,7 @@ def player_report(name, settings):
     )
     date = _report_date()
     out = REPORTS_DIR / f"player-{name}-{date}.md"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(text, encoding="utf-8")
+    write_text_atomic(out, text)
     _register_report("players", date, name)
     print(f"  informe de jugador: {out.name}")
 
@@ -172,8 +171,7 @@ def team_report(settings):
     )
     date = _report_date()
     out = REPORTS_DIR / f"team-{date}.md"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(text, encoding="utf-8")
+    write_text_atomic(out, text)
     _register_report("team", date)
     print(f"  informe de equipo: {out.name}")
 

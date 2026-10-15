@@ -2,9 +2,15 @@
 __pycache__/
 *.pyc
 .venv/
+.ruff_cache/
+.pytest_cache/
 _site/
 .DS_Store
 watcher/uploaded.json
+# escrituras atómicas interrumpidas: nunca deben commitearse con "git add data"
+*.tmp
 # los .replay no se versionan: ballchasing es el almacén; el pipeline los
-# descarga al vuelo para parsearlos (ver README · Privacidad)
+# descarga al vuelo para parsearlos (ver README · Privacidad). El inbox es
+# solo para subir en local con "python -m pipeline.upload_inbox".
 replays/archive/
+replays/inbox/*.replay

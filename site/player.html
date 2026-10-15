@@ -121,6 +121,8 @@
     }
 
     function buildRadar(selected) {
+      // sin Chart.js (CDN caído) el radar se queda vacío, pero la ficha sigue
+      if (!window.Chart) return;
       const maxes = RADAR_AXES.map((axis) =>
         Math.max(...roster.map((n) => axisValue(playerAvg(n), axis) ?? 0), 0.0001));
       const datasets = roster.map((n) => {
@@ -245,6 +247,7 @@
     // jugador activo resaltado (mismo lenguaje visual que el radar). La
     // leyenda de Chart.js permite ocultar/mostrar cada serie con un clic.
     function renderEvolution() {
+      if (!window.Chart) return; // sin CDN, la gráfica se omite sin romper nada
       if (chart) { chart.destroy(); chart = null; }
       if (!evoActive || !playersData.size) return;
       const key = document.getElementById("evolution-metric").value;

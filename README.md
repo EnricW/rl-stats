@@ -9,7 +9,7 @@ ballchasing.com y GitHub Actions actualiza la web en unos minutos.
 ```
 PC de juego ── watcher.py ──> ballchasing.com (grupo del equipo, replays unlisted)
                                    │
-GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron cada 6 h
+GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron semanal (lunes)
   sync          stats completas de la API -> data/matches/<id>.json
                 .replay original -> replays/archive/ (solo en el runner, no se versiona)
   frames        trayectorias del .replay (subtr-actor) -> data/frames/<id>.json
@@ -37,8 +37,12 @@ rotación), que también alimentan los informes IA.
    `BALLCHASING_TOKEN` y `ANTHROPIC_API_KEY`.
 5. **GitHub Pages**: Settings → Pages → Source: *GitHub Actions*.
 
-Vía manual de respaldo: arrastra un `.replay` a `replays/inbox/` desde github.com
-(*Add file → Upload files*) y el pipeline lo sube y procesa solo.
+Vía manual de respaldo (si el watcher no está disponible): sube el `.replay` en
+[ballchasing.com/upload](https://ballchasing.com/upload) al grupo del equipo (o
+cópialo a `replays/inbox/` y ejecuta `python -m pipeline.upload_inbox` en local)
+y lanza el workflow *Procesar partidas* desde la pestaña Actions. **Nunca subas
+un `.replay` por commit**: quedaría para siempre en el historial público con los
+IDs de los 6 jugadores.
 
 ## Ejecutar en local
 
@@ -78,10 +82,11 @@ Este repo es **público** y la web también, así que todo lo que hay en `data/`
 
 - Los replays se suben a ballchasing como `unlisted`, y su URL **no** se incluye
   en los JSON de la web.
-- De los rivales solo se publican su nick en partida y sus stats; sus IDs de
-  plataforma **no** se publican. De los miembros del equipo se publica lo que ya
-  consta en `config/players.yml` (nombre elegido e IDs de plataforma): usa nicks
-  ahí si no quieres nombres reales.
+- En los JSON de la web **no se publica ningún ID de plataforma**, ni de rivales
+  ni del roster: de los rivales solo aparecen su nick en partida y sus stats; de
+  los miembros del equipo, el nombre elegido en `config/players.yml` (usa nicks
+  ahí si no quieres nombres reales; ten en cuenta que `players.yml` sí contiene
+  los IDs y es público).
 - Los `.replay` originales **no** se versionan en el repo (contienen los nicks
   e IDs de todos los jugadores de cada partida): el almacén es ballchasing, el
   pipeline los descarga al vuelo cuando necesita parsearlos, y las copias

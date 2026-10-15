@@ -71,10 +71,16 @@ function scoreText(match) {
   return `${score[us]} – ${score[them]}`;
 }
 
+// Escape explícito de los 5 caracteres: esc() se usa también dentro de
+// atributos HTML (title, data-*), donde las comillas sin escapar permitirían
+// salirse del atributo (XSS con un nick de rival malicioso).
 function esc(text) {
-  const div = document.createElement("div");
-  div.textContent = text ?? "";
-  return div.innerHTML;
+  return String(text ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
 }
 
 // Rangos competitivos de ballchasing (id tipo "diamond-2") en español.
@@ -192,8 +198,11 @@ function multiLineChart(canvas, labels, series, { unit = "" } = {}) {
 // El markdown lo escribe la IA a partir de datos que incluyen nicks de
 // rivales (texto de terceros), así que SIEMPRE se sanea antes de insertarlo.
 function mdToHTML(md) {
-  const html = marked.parse(md);
-  return window.DOMPurify ? DOMPurify.sanitize(html) : esc(md);
+  // sin las librerías del CDN no hay parseo NI saneado: texto plano legible
+  if (!window.marked || !window.DOMPurify) {
+    return `<pre class="report-raw">${esc(md)}</pre>`;
+  }
+  return DOMPurify.sanitize(marked.parse(md));
 }
 
 async function renderReport(container, path, emptyText) {
