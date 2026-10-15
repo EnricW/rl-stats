@@ -20,7 +20,9 @@ from pipeline.util import (
     load_roster,
     load_settings,
     mode_from_playlist,
+    pretty_map_code,
     require_secret,
+    resolve_player,
     write_json,
 )
 
@@ -42,9 +44,7 @@ def normalize(replay, roster):
         }
         for p in team.get("players") or []:
             pid = p.get("id") or {}
-            platform = str(pid.get("platform", "")).lower()
-            platform_id = str(pid.get("id", ""))
-            roster_name = roster.get((platform, platform_id))
+            roster_name = resolve_player(pid.get("platform"), pid.get("id", ""), roster)
             player = {
                 "name": roster_name or p.get("name"),
                 "in_game_name": p.get("name"),
@@ -76,7 +76,7 @@ def normalize(replay, roster):
         "date": replay.get("date"),
         "playlist": replay.get("playlist_id"),
         "mode": mode_from_playlist(replay.get("playlist_id")),
-        "map": replay.get("map_name") or replay.get("map_code"),
+        "map": replay.get("map_name") or pretty_map_code(replay.get("map_code")),
         "duration": replay.get("duration"),
         "overtime": bool(replay.get("overtime")),
         "min_rank": replay.get("min_rank"),  # rango del lobby, si es competitiva

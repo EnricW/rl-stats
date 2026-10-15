@@ -138,37 +138,62 @@ def register_report(manifest, date, path, model, name=None):
     items.sort(key=lambda i: i["date"])
 
 
-def run_stage(stage, version, out_dir, extract, roster, compact=False, describe=None):
-    """Bucle común de frames/events: (re)genera el derivado de cada partida
-    cuando el manifiesto dice que toca, y registra resultado, intentos y error."""
+def run_stages(specs, roster, load_shared):
+    """Bucle común de frames/events: (re)genera los derivados de cada partida
+    cuando el manifiesto dice que toca, y registra resultado, intentos y error.
+
+    `load_shared(ruta)` es el parseo caro del .replay (get_replay_frames_data):
+    se ejecuta UNA vez por partida y se pasa a todos los extract pendientes,
+    en lugar de parsear el mismo replay dos veces (frames y luego events).
+
+    Cada spec: {stage, version, out_dir, extract(replay, roster, shared),
+    compact?, describe?(payload)}.
+    """
     from pipeline.util import ARCHIVE_DIR
 
     manifest = load()
-    done, skipped, failed = 0, 0, 0
+    counts = {s["stage"]: {"done": 0, "skipped": 0, "failed": 0} for s in specs}
+
+    def _record_failure(spec, replay_id, exc):
+        st = record_stage(manifest, replay_id, spec["stage"], spec["version"], ok=False, error=exc)
+        reaction = "se desiste" if st["attempts"] >= MAX_ATTEMPTS else "se reintentará"
+        print(f"  · {spec['stage']} de {replay_id}: no se pudo parsear ({exc}) — "
+              f"intento {st['attempts']}/{MAX_ATTEMPTS}, {reaction}")
+        counts[spec["stage"]]["failed"] += 1
+
     for match_file in sorted(MATCHES_DIR.glob("*.json")):
         replay_id = match_file.stem
-        if not stage_pending(manifest, replay_id, stage, version):
+        todo = [s for s in specs if stage_pending(manifest, replay_id, s["stage"], s["version"])]
+        if not todo:
             continue
         replay = ARCHIVE_DIR / f"{replay_id}.replay"
         if not replay.exists():
-            skipped += 1
+            for spec in todo:
+                counts[spec["stage"]]["skipped"] += 1
             continue
         try:
-            payload = extract(replay, roster)
+            shared = load_shared(str(replay))
         except Exception as exc:  # un replay corrupto no debe parar el pipeline
-            st = record_stage(manifest, replay_id, stage, version, ok=False, error=exc)
-            reaction = "se desiste" if st["attempts"] >= MAX_ATTEMPTS else "se reintentará"
-            print(f"  · {replay_id}: no se pudo parsear ({exc}) — "
-                  f"intento {st['attempts']}/{MAX_ATTEMPTS}, {reaction}")
-            failed += 1
+            for spec in todo:
+                _record_failure(spec, replay_id, exc)
             continue
-        payload["id"] = replay_id
-        write_json(out_dir / f"{replay_id}.json", payload, compact=compact)
-        record_stage(manifest, replay_id, stage, version, ok=True)
-        done += 1
-        print(f"  + {stage} de {replay_id}" + (f": {describe(payload)}" if describe else ""))
+        for spec in todo:
+            try:
+                payload = spec["extract"](replay, roster, shared)
+            except Exception as exc:
+                _record_failure(spec, replay_id, exc)
+                continue
+            payload["id"] = replay_id
+            write_json(spec["out_dir"] / f"{replay_id}.json", payload,
+                       compact=spec.get("compact", False))
+            record_stage(manifest, replay_id, spec["stage"], spec["version"], ok=True)
+            counts[spec["stage"]]["done"] += 1
+            describe = spec.get("describe")
+            print(f"  + {spec['stage']} de {replay_id}"
+                  + (f": {describe(payload)}" if describe else ""))
     save(manifest)
-    print(f"{stage}: {done} generados, {skipped} sin replay, {failed} con error")
+    for stage, c in counts.items():
+        print(f"{stage}: {c['done']} generados, {c['skipped']} sin replay, {c['failed']} con error")
 
 
 def _migrate_legacy():

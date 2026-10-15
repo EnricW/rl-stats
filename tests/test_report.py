@@ -3,7 +3,7 @@
 from datetime import datetime, timedelta, timezone
 
 import pipeline.report as report
-from pipeline.report import slim_match
+from pipeline.report import slim_match, slim_player
 
 
 def test_slim_match_cura_los_equipos():
@@ -41,6 +41,14 @@ def test_slim_match_cura_los_equipos():
     assert slim["teams"]["orange"]["goals"] == 1
     # el original no se muta
     assert "stats" in match["teams"]["blue"]
+
+
+def test_slim_player_recorta_el_historico():
+    data = {"name": "Enric", "modes": {"3v3": {}}, "history": list(range(50))}
+    slim = slim_player(data, 20)
+    assert slim["history"] == list(range(30, 50))  # las últimas 20
+    assert slim["modes"] == {"3v3": {}}
+    assert len(data["history"]) == 50  # el original no se muta
 
 
 def test_team_report_due():

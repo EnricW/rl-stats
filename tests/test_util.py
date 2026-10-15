@@ -6,11 +6,31 @@ import pytest
 
 from pipeline.util import (
     mode_from_playlist,
+    normalize_platform,
+    pretty_map_code,
     read_env_file,
+    resolve_player,
     write_json,
     write_json_if_changed,
     write_text_atomic,
 )
+
+
+def test_resolve_player_normaliza_plataformas():
+    roster = {("ps4", "123"): "Enric", ("xbox", "999"): "Eric"}
+    # ballchasing dice "ps4"; subtr-actor puede decir "PlayStation" o "PsyNet"
+    assert resolve_player("ps4", "123", roster) == "Enric"
+    assert resolve_player("PlayStation", "123", roster) == "Enric"
+    assert resolve_player("PsyNet", 123, roster) == "Enric"
+    assert resolve_player("XboxOne", "999", roster) == "Eric"
+    assert resolve_player("steam", "123", roster) is None
+    assert normalize_platform(None) == ""
+
+
+def test_pretty_map_code():
+    assert pretty_map_code("mall_day_p") == "Mall Day"
+    assert pretty_map_code("paname_dusk_p") == "Paname Dusk"
+    assert pretty_map_code(None) is None
 
 
 def test_mode_from_playlist():

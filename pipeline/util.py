@@ -35,6 +35,34 @@ def read_env_file(path):
 # Única fuente de claves del pipeline: el .env de la raíz (plantilla: .env.example).
 SECRETS = read_env_file(ROOT / ".env")
 
+# Alias de plataforma: ballchasing usa ps4/xbox/steam/epic/switch; subtr-actor
+# (boxcars) nombra el remote_id con variantes como PlayStation/PsyNet o
+# XboxOne. Sin normalizar, un jugador de PS del roster casaría en las stats
+# (ballchasing) pero no en frames/events (subtr-actor), en silencio.
+_PLATFORM_ALIASES = {
+    "playstation": "ps4",
+    "psynet": "ps4",
+    "ps5": "ps4",
+    "xboxone": "xbox",
+    "nintendoswitch": "switch",
+    "nnx": "switch",
+}
+
+
+def normalize_platform(platform):
+    p = str(platform or "").lower()
+    return _PLATFORM_ALIASES.get(p, p)
+
+
+def resolve_player(platform, platform_id, roster):
+    """Nombre del roster para (plataforma, id), o None si no es de los nuestros.
+
+    Única puerta de entrada de identidad: sync (ballchasing), frames y events
+    (subtr-actor) resuelven aquí, con las plataformas normalizadas.
+    """
+    return roster.get((normalize_platform(platform), str(platform_id)))
+
+
 # playlist de ballchasing -> modo que usamos en la web
 _PLAYLIST_MODES = {
     "ranked-duels": "1v1",
@@ -60,12 +88,21 @@ def load_roster():
     roster = {}
     for player in cfg.get("players") or []:
         for pid in player.get("ids") or []:
-            roster[(str(pid["platform"]).lower(), str(pid["id"]))] = player["name"]
+            roster[(normalize_platform(pid["platform"]), str(pid["id"]))] = player["name"]
     return roster
 
 
 def mode_from_playlist(playlist_id):
     return _PLAYLIST_MODES.get(playlist_id, playlist_id or "desconocido")
+
+
+def pretty_map_code(code):
+    """"mall_day_p" -> "Mall Day": cuando ballchasing no trae map_name, el
+    código crudo no debe llegar tal cual a la web."""
+    if not code:
+        return None
+    words = [w for w in str(code).split("_") if w and w != "p"]
+    return " ".join(w.capitalize() for w in words) or code
 
 
 def require_secret(name):

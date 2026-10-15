@@ -12,9 +12,10 @@ PC de juego ── watcher.py ──> ballchasing.com (grupo del equipo, replays
 GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron semanal (lunes)
   sync          stats completas de la API -> data/matches/<id>.json
                 .replay original -> replays/archive/ (solo en el runner, no se versiona)
-  frames        trayectorias del .replay (subtr-actor) -> data/frames/<id>.json
-                (alimenta el visor 3D/2D, la cronología y el mapa de calor)
-  events        tiros/paradas, kickoffs, rotación y posesión -> data/events/<id>.json
+  derive        parsea el .replay una vez (subtr-actor) y genera:
+                  frames: trayectorias -> data/frames/<id>.json
+                          (visor 3D/2D, cronología y mapa de calor)
+                  events: tiros/paradas, kickoffs, rotación -> data/events/<id>.json
   aggregate     data/players/<nombre>.json + data/summary.json
   report        informes con la API de Claude -> data/reports/
   aggregate     segunda pasada: el índice refleja los informes recién creados
@@ -56,8 +57,7 @@ IDs de los 6 jugadores.
 pip install -r requirements.txt
 cp .env.example .env           # y rellena BALLCHASING_TOKEN (y ANTHROPIC_API_KEY para informes)
 python -m pipeline.sync
-python -m pipeline.frames            # trayectorias para el visor
-python -m pipeline.events            # tiros, kickoffs, rotación, posesión
+python -m pipeline.derive            # trayectorias del visor + eventos (parseo único)
 python -m pipeline.aggregate
 python -m pipeline.report            # informes pendientes
 python -m pipeline.report --team     # informe de equipo

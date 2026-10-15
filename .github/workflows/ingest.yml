@@ -56,11 +56,8 @@ jobs:
       - name: Sincronizar con ballchasing
         run: python -m pipeline.sync
 
-      - name: Extraer trayectorias para el visor 3D
-        run: python -m pipeline.frames
-
-      - name: Extraer eventos (tiros, kickoffs, rotación)
-        run: python -m pipeline.events
+      - name: Derivados del replay (trayectorias del visor + eventos)
+        run: python -m pipeline.derive
 
       - name: Agregar estadísticas
         run: python -m pipeline.aggregate

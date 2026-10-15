@@ -13,8 +13,8 @@ import math
 
 import subtr_actor
 
-from pipeline.manifest import EVENTS_VERSION, run_stage
-from pipeline.util import EVENTS_DIR, load_roster
+from pipeline.manifest import EVENTS_VERSION, run_stages
+from pipeline.util import EVENTS_DIR, load_roster, resolve_player
 
 
 def _pid(obj):
@@ -28,8 +28,10 @@ def _r(value, digits=1):
     return round(float(value), digits)
 
 
-def extract(replay_path, roster):
-    data = subtr_actor.get_replay_frames_data(str(replay_path))
+def extract(replay_path, roster, frames_data):
+    """frames_data: salida de subtr_actor.get_replay_frames_data, parseada una
+    sola vez por run_stages y compartida con frames.extract."""
+    data = frames_data
     summed = subtr_actor.get_summed_stats(
         str(replay_path), module_names=["kickoff", "rotation", "player_possession"]
     )
@@ -42,7 +44,9 @@ def extract(replay_path, roster):
         for p in meta.get(team_key) or []:
             rid = p.get("remote_id") or {}
             platform, pid = next(iter(rid.items())) if rid else ("", "")
-            name = roster.get((str(platform).lower(), str(pid)))
+            name = resolve_player(platform, pid, roster)
+            if not str(pid):
+                continue  # sin remote_id (bot): no puede indexarse por id
             players[str(pid)] = {
                 "name": name or p.get("name"),
                 "team": team,
@@ -90,15 +94,24 @@ def extract(replay_path, roster):
     stat_events.sort(key=lambda r: (r["t"] is None, r["t"]))
 
     # Saques iniciales: un evento por kickoff + resumen por jugador del roster.
+    # Los contadores por jugador se cruzan por id de plataforma, no por nombre:
+    # un rival con el mismo nick que alguien del roster los contaminaría.
     kickoffs = []
+    kickoff_taker_pids = []  # por kickoff: ids de los sacadores
+    kickoff_ft_pids = []     # por kickoff: id del primer toque (o None)
     _OUTCOMES = {"team_zero_win": 0, "team_one_win": 1}
     for k in modules.get("kickoff", {}).get("events") or []:
         takers = {}
+        taker_pids = set()
         for key, team in (("team_zero_taker", 0), ("team_one_taker", 1)):
             taker = k.get(key) or {}
             if taker.get("player"):
                 takers[str(team)] = who(taker["player"])["name"]
-        ft = who(k.get("first_touch_player")) if k.get("first_touch_player") else None
+                taker_pids.add(_pid(taker["player"]))
+        kickoff_taker_pids.append(taker_pids)
+        ft_obj = k.get("first_touch_player")
+        ft = who(ft_obj) if ft_obj else None
+        kickoff_ft_pids.append(_pid(ft_obj) if ft_obj else None)
         kickoffs.append({
             "t": round(float(k["start_time"]) - t0, 2),
             "type": k.get("kickoff_type"),
@@ -117,19 +130,16 @@ def extract(replay_path, roster):
 
     kickoff_players = {}
     for ps in modules.get("kickoff", {}).get("player_stats") or []:
+        pid = _pid(ps.get("player_id"))
         p = who(ps.get("player_id"))
         if not p["roster"]:
             continue
         s = ps.get("stats") or {}
         samples = s.get("boost_after_sample_count") or 0
-        taken = sum(
-            1 for k in kickoffs
-            if p["name"] in (k["takers"] or {}).values()
-        )
         kickoff_players[p["name"]] = {
             "kickoffs": s.get("count", 0),
-            "taken": taken,
-            "first_touches": sum(1 for k in kickoffs if k["first_touch"] == p["name"]),
+            "taken": sum(1 for pids in kickoff_taker_pids if pid in pids),
+            "first_touches": sum(1 for fp in kickoff_ft_pids if fp == pid),
             "fakes": s.get("fakes", 0),
             "avg_boost_after": _r((s.get("cumulative_boost_after") or 0) / samples) if samples else None,
         }
@@ -175,13 +185,19 @@ def extract(replay_path, roster):
     }
 
 
+SPEC = {
+    "stage": "events",
+    "version": EVENTS_VERSION,
+    "out_dir": EVENTS_DIR,
+    "extract": extract,
+    "describe": lambda p: (
+        f"{len(p['stat_events'])} tiros/paradas/asist., {len(p['kickoffs'])} kickoffs"
+    ),
+}
+
+
 def main():
-    run_stage(
-        "events", EVENTS_VERSION, EVENTS_DIR, extract, load_roster(),
-        describe=lambda p: (
-            f"{len(p['stat_events'])} tiros/paradas/asist., {len(p['kickoffs'])} kickoffs"
-        ),
-    )
+    run_stages([SPEC], load_roster(), subtr_actor.get_replay_frames_data)
 
 
 if __name__ == "__main__":

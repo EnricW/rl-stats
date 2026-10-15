@@ -122,11 +122,16 @@ def main():
         modes = {}
         for mode in sorted({r["mode"] for r in history}):
             rows = [r for r in history if r["mode"] == mode]
-            wins = sum(1 for r in rows if r["result"] == "win")
+            # mismo criterio que el balance de equipo: el winrate se calcula
+            # sobre partidas con resultado (empates/ambiguas quedan fuera);
+            # si no, las cifras de jugador y equipo no cuadraban entre sí
+            decided = [r for r in rows if r["result"]]
+            wins = sum(1 for r in decided if r["result"] == "win")
             modes[mode] = {
                 "games": len(rows),
+                "decided": len(decided),
                 "wins": wins,
-                "winrate": round(wins / len(rows), 3) if rows else None,
+                "winrate": round(wins / len(decided), 3) if decided else None,
                 "averages": averages(rows),
                 "last10_averages": averages(rows[-10:]),
             }
@@ -143,6 +148,16 @@ def main():
             tm = team_modes.setdefault(match["mode"], {"games": 0, "wins": 0})
             tm["games"] += 1
             tm["wins"] += 1 if match["result"] == "win" else 0
+        roster_players = []
+        for p in match["players"]:
+            if not p["roster"]:
+                continue
+            metrics = extract_metrics(p["stats"])
+            roster_players.append({
+                "name": p["name"],
+                "mvp": p["mvp"],
+                **{k: metrics.get(k) for k in ("goals", "assists", "saves", "shots", "score")},
+            })
         index.append(
             {
                 "id": match["id"],
@@ -157,18 +172,7 @@ def main():
                 "has_report": (REPORTS_DIR / f"{match['id']}.md").exists(),
                 "has_frames": (FRAMES_DIR / f"{match['id']}.json").exists(),
                 "has_events": (EVENTS_DIR / f"{match['id']}.json").exists(),
-                "players": [
-                    {
-                        "name": p["name"],
-                        "mvp": p["mvp"],
-                        **{
-                            k: extract_metrics(p["stats"]).get(k)
-                            for k in ("goals", "assists", "saves", "shots", "score")
-                        },
-                    }
-                    for p in match["players"]
-                    if p["roster"]
-                ],
+                "players": roster_players,
             }
         )
     index.sort(key=lambda m: m["date"] or "", reverse=True)

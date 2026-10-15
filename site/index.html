@@ -87,9 +87,15 @@
       const seq = [...matches].reverse().slice(-8);
       const items = seq.map((m, i) => {
         const last = i === seq.length - 1;
-        const win = m.result === "win";
+        // tres estados: victoria, derrota y neutro (empate o equipo ambiguo);
+        // antes todo lo que no era "win" se pintaba como derrota
+        const icon = m.result === "win"
+          ? `<span class="form-icon win">${CHECK}</span>`
+          : m.result === "loss"
+            ? `<span class="form-icon loss">${CROSS}</span>`
+            : '<span class="form-icon" aria-label="Sin resultado" style="color:var(--faint)">—</span>';
         return `<a class="form-item ${last ? "last" : ""}" href="match.html?id=${m.id}">
-            <span class="form-icon ${win ? "win" : "loss"}">${win ? CHECK : CROSS}</span>
+            ${icon}
             <span>${fmtDateShort(m.date)}${last ? " · última" : ""}</span>
           </a>`;
       }).join('<span class="form-link" aria-hidden="true"></span>');

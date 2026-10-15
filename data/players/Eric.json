@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T13:17:35+00:00",
+  "generated_at": "2026-10-15T14:56:28+00:00",
   "history": [
     {
       "assists": 0.0,
@@ -510,6 +510,7 @@
         "shooting_pct": 29.49,
         "shots": 1.62
       },
+      "decided": 13,
       "games": 13,
       "last10_averages": {
         "assists": 0.4,

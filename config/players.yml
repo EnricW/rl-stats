@@ -3,7 +3,15 @@
 #
 # El "id" es el que muestra ballchasing para cada jugador (campo id.id de la API,
 # también visible en la URL de su perfil en ballchasing). "platform" es
-# steam | epic | ps4 | xbox | switch.
+# steam | epic | ps4 | xbox | switch (los alias tipo "playstation"/"psynet" de
+# subtr-actor se normalizan solos en pipeline/util.py).
+#
+# OJO con Xbox: ballchasing da el id en hex y subtr-actor el XUID decimal;
+# hay que listar LAS DOS variantes (ver Eric abajo).
+#
+# Si renombras a alguien aquí, los derivados ya generados guardan el nombre
+# antiguo: sube FRAMES_VERSION/EVENTS_VERSION en pipeline/manifest.py para
+# que se regeneren, y pasa sync --refetch para las partidas.
 #
 # Ejemplo:
 # players:

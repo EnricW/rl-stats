@@ -19,3 +19,12 @@ reports:
   # Informe de equipo cada N días. Se decide por la fecha del último informe
   # (no por el evento cron): si una pasada se pierde, la siguiente lo genera.
   team_report_every_days: 7
+  # Límite de salida por informe (el thinking adaptativo también lo consume).
+  max_tokens: 16000
+  # Partidas de histórico por jugador incluidas en los prompts de tendencia y
+  # equipo: las medias ya resumen la temporada entera, y sin recorte el coste
+  # en tokens crecía sin límite con cada partida jugada.
+  prompt_history_games: 20
+  # Modelos (por prefijo) con fallback de servidor ante un refusal del clasificador.
+  server_fallback_prefixes:
+    - claude-sonnet-5-5

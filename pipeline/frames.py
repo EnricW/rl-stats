@@ -13,8 +13,8 @@ import math
 # ndarray que devuelve subtr-actor lo necesita en tiempo de ejecución.
 import subtr_actor
 
-from pipeline.manifest import FRAMES_VERSION, run_stage
-from pipeline.util import FRAMES_DIR, load_roster
+from pipeline.manifest import FRAMES_VERSION, run_stages
+from pipeline.util import FRAMES_DIR, load_roster, resolve_player
 
 FPS = 10
 
@@ -62,11 +62,13 @@ def _phase_map(meta_frames, goal_times):
     return {v: 0 if v in countdown else 2 if v in goal_states else 1 for v in tr_max}
 
 
-def extract(replay_path, roster):
+def extract(replay_path, roster, frames_data):
+    """frames_data: salida de subtr_actor.get_replay_frames_data, parseada una
+    sola vez por run_stages y compartida con events.extract."""
     info, arr = subtr_actor.get_ndarray_with_info_from_replay_filepath(
         str(replay_path), fps=FPS
     )
-    events = subtr_actor.get_replay_frames_data(str(replay_path))
+    events = frames_data
     meta = info["replay_meta"]
 
     # Jugadores en el orden de las columnas: primero team 0, luego team 1.
@@ -75,7 +77,7 @@ def extract(replay_path, roster):
         for p in meta.get(team_key) or []:
             rid = p.get("remote_id") or {}
             platform, pid = (next(iter(rid.items())) if rid else ("", ""))
-            name = roster.get((str(platform).lower(), str(pid))) or p.get("name")
+            name = resolve_player(platform, pid, roster) or p.get("name")
             players.append({"name": name, "team": team})
             ids.append(str(pid))
 
@@ -139,14 +141,20 @@ def extract(replay_path, roster):
     }
 
 
+# compact: a ~5k frames por partida, la indentación multiplica el
+# tamaño por ~3 y este archivo se descarga entero en la web
+SPEC = {
+    "stage": "frames",
+    "version": FRAMES_VERSION,
+    "out_dir": FRAMES_DIR,
+    "extract": extract,
+    "compact": True,
+    "describe": lambda p: f"{len(p['ball'])} frames, {len(p['goals'])} goles",
+}
+
+
 def main():
-    # compact: a ~5k frames por partida, la indentación multiplica el
-    # tamaño por ~3 y este archivo se descarga entero en la web
-    run_stage(
-        "frames", FRAMES_VERSION, FRAMES_DIR, extract, load_roster(),
-        compact=True,
-        describe=lambda p: f"{len(p['ball'])} frames, {len(p['goals'])} goles",
-    )
+    run_stages([SPEC], load_roster(), subtr_actor.get_replay_frames_data)
 
 
 if __name__ == "__main__":

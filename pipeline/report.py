@@ -41,15 +41,16 @@ def get_client():
     return _client
 
 
-def ask_claude(model, system_prompt, payload_text):
+def ask_claude(model, system_prompt, payload_text, reports_cfg):
     kwargs = {}
-    if model.startswith("claude-sonnet-5-5"):
+    prefixes = tuple(reports_cfg.get("server_fallback_prefixes") or [])
+    if prefixes and model.startswith(prefixes):
         # Fallback automático de servidor ante un refusal del clasificador.
         kwargs = {"betas": ["server-side-fallback-2026-07-01"], "fallbacks": "default"}
     # El thinking adaptativo (activo por defecto) también consume max_tokens.
     response = get_client().beta.messages.create(
         model=model,
-        max_tokens=16000,
+        max_tokens=int(reports_cfg.get("max_tokens", 16000)),
         system=system_prompt,
         messages=[{"role": "user", "content": payload_text}],
         **kwargs,
@@ -66,6 +67,15 @@ def ask_claude(model, system_prompt, payload_text):
 
 def prompt(name):
     return (PROMPTS_DIR / name).read_text(encoding="utf-8")
+
+
+def slim_player(data, keep):
+    """Recorta el histórico del jugador para los prompts de tendencia/equipo:
+    las medias (modes) ya resumen la temporada entera y, sin recorte, el coste
+    en tokens crecía sin límite con cada partida jugada."""
+    slim = dict(data)
+    slim["history"] = (data.get("history") or [])[-keep:]
+    return slim
 
 
 def slim_match(match):
@@ -135,7 +145,8 @@ def match_report(match, settings, manifest):
     if events:
         context["eventos"] = events
     model = settings["reports"]["match_model"]
-    text = ask_claude(model, prompt("match.md"), json.dumps(context, ensure_ascii=False, indent=1))
+    text = ask_claude(model, prompt("match.md"),
+                      json.dumps(context, ensure_ascii=False, indent=1), settings["reports"])
     out = REPORTS_DIR / f"{match['id']}.md"
     write_text_atomic(out, text)
     mf.record_match_report(manifest, match["id"], f"reports/{out.name}", model)
@@ -144,9 +155,11 @@ def match_report(match, settings, manifest):
 
 
 def player_report(name, settings, manifest):
-    data = read_json(PLAYERS_DIR / f"{name}.json")
+    keep = int(settings["reports"].get("prompt_history_games", 20))
+    data = slim_player(read_json(PLAYERS_DIR / f"{name}.json"), keep)
     model = settings["reports"]["trend_model"]
-    text = ask_claude(model, prompt("player.md"), json.dumps(data, ensure_ascii=False, indent=1))
+    text = ask_claude(model, prompt("player.md"),
+                      json.dumps(data, ensure_ascii=False, indent=1), settings["reports"])
     date = _report_date()
     out = REPORTS_DIR / f"player-{name}-{date}.md"
     write_text_atomic(out, text)
@@ -156,13 +169,16 @@ def player_report(name, settings, manifest):
 
 
 def team_report(settings, manifest):
+    keep = int(settings["reports"].get("prompt_history_games", 20))
     context = {
         "jugadores": {
-            p.stem: read_json(p) for p in sorted(PLAYERS_DIR.glob("*.json"))
+            p.stem: slim_player(read_json(p), keep)
+            for p in sorted(PLAYERS_DIR.glob("*.json"))
         }
     }
     model = settings["reports"]["trend_model"]
-    text = ask_claude(model, prompt("team.md"), json.dumps(context, ensure_ascii=False, indent=1))
+    text = ask_claude(model, prompt("team.md"),
+                      json.dumps(context, ensure_ascii=False, indent=1), settings["reports"])
     date = _report_date()
     out = REPORTS_DIR / f"team-{date}.md"
     write_text_atomic(out, text)
