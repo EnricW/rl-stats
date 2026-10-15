@@ -12,7 +12,10 @@ ballchasing:
   archive_replays: true
 
 reports:
-  match_model: claude-haiku-5-5
+  # Informe por partida: lo más leído de la web (uno en cada página de
+  # partida). Sonnet sintetiza entre métricas donde Haiku recitaba.
+  # Coste medido 2026-10: ~$0,065/informe (~$2,6/mes a 40 partidas).
+  match_model: claude-sonnet-5-5
   # Tendencias (jugador) e informe de equipo: el mejor análisis disponible.
   # Coste medido 2026-10: ~$0,17/informe de equipo y ~$0,09/jugador (~$2/mes).
   trend_model: claude-opus-5-5
