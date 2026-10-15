@@ -1,9 +1,22 @@
+[project]
+name = "rl-stats"
+version = "1.0.0"
+description = "Estadísticas e informes IA del equipo de Rocket League (ballchasing -> GitHub Pages)"
+requires-python = ">=3.12"
+
 [tool.ruff]
 line-length = 110
 target-version = "py312"
-
+# el watcher corre aparte en el PC de juego con Python 3.9+: no usar
+# sintaxis moderna allí (ruff no lo distingue; cuidado en watcher/)
 [tool.ruff.lint]
-select = ["E", "F", "W"]
+# B (bugbear): errores sutiles tipo mutables por defecto o except amplios
+# I (isort): imports ordenados   UP (pyupgrade): sintaxis moderna
+select = ["E", "F", "W", "B", "I", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# el watcher debe seguir siendo compatible con Python 3.9
+"watcher/*" = ["UP"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

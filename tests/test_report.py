@@ -1,6 +1,6 @@
 """Tests de las partes puras de report.py (sin tocar la API de Claude)."""
 
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 
 import pipeline.report as report
 from pipeline.report import slim_match, slim_player
@@ -53,7 +53,7 @@ def test_slim_player_recorta_el_historico():
 
 def test_team_report_due():
     """El informe de equipo se decide por la fecha del último, no por el cron."""
-    today = datetime.now(timezone.utc).date()
+    today = datetime.now(UTC).date()
     manifest = {"reports": {"team": []}}
 
     assert report._team_report_due(manifest, 7) is True  # nunca hubo informe

@@ -1,0 +1,12 @@
+# Avisa con PRs cuando hay versiones nuevas de las dependencias fijadas:
+# las actions (fijadas por SHA) y los paquetes de requirements*.txt.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly

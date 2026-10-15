@@ -24,7 +24,7 @@ que se migran automáticamente la primera vez.
 """
 
 import copy
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from pipeline.util import (
     DATA_DIR,
@@ -57,7 +57,7 @@ _EMPTY = {
 
 
 def _now():
-    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return datetime.now(UTC).isoformat(timespec="seconds")
 
 
 def load():

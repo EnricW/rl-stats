@@ -17,14 +17,10 @@ Se instala una vez en el PC de Windows donde corre Rocket League.
      del lunes recoge las partidas de la semana):
      - `GITHUB_REPO`: `tuusuario/rl-stats`
      - `GITHUB_PAT`: token *fine-grained* creado en GitHub → Settings → Developer settings,
-       con acceso SOLO a ese repositorio y permiso **Contents: Read and write**
-       (repository_dispatch requiere ese permiso).
-
-       ⚠️ Ese permiso también deja hacer *push* al repo: quien robe el PAT del PC
-       podría alterar `pipeline/` (que CI ejecuta con los secrets). Guarda el PAT
-       solo en ese `.env` y revócalo si el PC se ve comprometido. Alternativa de
-       menor alcance: un workflow con `workflow_dispatch` y un PAT con solo
-       **Actions: Read and write**.
+       con acceso SOLO a ese repositorio y permiso **Actions: Read and write**
+       (el watcher lanza el workflow por `workflow_dispatch`; no necesita
+       Contents, así que un PAT robado del PC no puede tocar el código).
+       Guarda el PAT solo en ese `.env` y revócalo si el PC se ve comprometido.
 4. Prueba en una terminal: `python C:\rl-watcher\watcher.py`
    Debe decir `Vigilando ...`. En el primer arranque, los replays que ya hubiera
    en la carpeta se marcan como vistos y **no** se suben (podrían ser años de

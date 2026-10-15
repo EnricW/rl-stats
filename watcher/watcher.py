@@ -10,7 +10,8 @@ Configuración: un archivo `.env` junto a este script (copia `.env.example`):
   BALLCHASING_GROUP   id del grupo del equipo                  (obligatorio)
   RL_REPLAY_DIR       carpeta de replays (por defecto, la estándar de Windows)
   GITHUB_REPO         usuario/repositorio, p. ej. "enric/rl-stats" (opcional)
-  GITHUB_PAT          token fino con permiso Contents:RW solo en ese repo (opcional)
+  GITHUB_PAT          token fino con permiso Actions:RW solo en ese repo (opcional);
+                      NO necesita Contents (un PAT robado no podría tocar el código)
 
 Registro: watcher.log junto al script (rotativo). Imprescindible porque el
 arranque recomendado es pythonw.exe, que no tiene consola.
@@ -153,17 +154,24 @@ def upload(path):
 
 
 def notify_github():
-    """Avisa al pipeline. True si el aviso llegó (o no hay nada configurado)."""
+    """Lanza el workflow de ingesta. True si el aviso llegó (o no hay nada
+    configurado).
+
+    Usa workflow_dispatch y no repository_dispatch: este endpoint funciona
+    con un PAT que SOLO tenga Actions:RW, mientras que repository_dispatch
+    exigía Contents:RW (permiso de push: quien robase el PAT del PC de juego
+    podría alterar pipeline/, que CI ejecuta con los secrets).
+    """
     if not (GITHUB_REPO and GITHUB_PAT):
         return True
     try:
         resp = requests.post(
-            f"https://api.github.com/repos/{GITHUB_REPO}/dispatches",
+            f"https://api.github.com/repos/{GITHUB_REPO}/actions/workflows/ingest.yml/dispatches",
             headers={
                 "Authorization": f"Bearer {GITHUB_PAT}",
                 "Accept": "application/vnd.github+json",
             },
-            json={"event_type": "new-replay"},
+            json={"ref": "main"},
             timeout=30,
         )
         if resp.status_code == 204:

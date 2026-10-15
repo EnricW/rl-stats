@@ -37,7 +37,7 @@ class BallchasingClient:
             except requests.RequestException as exc:
                 self._last_call = time.monotonic()
                 if attempt == self.max_retries:
-                    raise BallchasingError(f"Error de red persistente en {url}: {exc}")
+                    raise BallchasingError(f"Error de red persistente en {url}: {exc}") from exc
                 time.sleep(min(2 ** attempt, 60))
                 continue
             self._last_call = time.monotonic()

@@ -12,7 +12,7 @@ Uso: python -m pipeline.report [--team] [--match <id>]
 
 import argparse
 import json
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import anthropic
 
@@ -60,7 +60,7 @@ def ask_claude(model, system_prompt, payload_text, reports_cfg):
     text = "".join(b.text for b in response.content if b.type == "text")
     footer = (
         f"\n\n---\n*Informe generado por {model} el "
-        f"{datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}.*\n"
+        f"{datetime.now(UTC).strftime('%Y-%m-%d %H:%M UTC')}.*\n"
     )
     return text.strip() + footer
 
@@ -192,7 +192,7 @@ def team_report(settings, manifest):
 
 
 def _report_date():
-    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    return datetime.now(UTC).strftime("%Y-%m-%d")
 
 
 def _team_report_due(manifest, every_days):
@@ -207,7 +207,7 @@ def _team_report_due(manifest, every_days):
     if not items:
         return True
     last = datetime.strptime(items[-1]["date"], "%Y-%m-%d").date()
-    return (datetime.now(timezone.utc).date() - last).days >= every_days
+    return (datetime.now(UTC).date() - last).days >= every_days
 
 
 def main():

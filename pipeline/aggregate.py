@@ -6,7 +6,7 @@
 Uso: python -m pipeline.aggregate
 """
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from pipeline import manifest as mf
 from pipeline.util import (
@@ -91,7 +91,7 @@ def averages(rows):
 
 def main():
     matches = load_matches()
-    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    now = datetime.now(UTC).isoformat(timespec="seconds")
 
     # ---- por jugador (solo roster) ----
     histories = {}

@@ -153,7 +153,7 @@ def extract(replay_path, roster, frames_data):
         s = ps.get("stats") or {}
         active = s.get("active_game_time") or 0
 
-        def pct(key):
+        def pct(key, s=s, active=active):  # ligadas por valor: cierre en bucle
             return _r((s.get(key) or 0) / active * 100) if active else None
 
         rotation[p["name"]] = {
