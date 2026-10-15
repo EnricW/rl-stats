@@ -50,14 +50,18 @@ def ask_claude(model, system_prompt, payload_text, reports_cfg, effort=None):
         kwargs = {"betas": ["server-side-fallback-2026-07-01"], "fallbacks": "default"}
     if effort:
         kwargs["output_config"] = {"effort": effort}
-    # El thinking adaptativo (activo por defecto) también consume max_tokens.
-    response = get_client().beta.messages.create(
+    # Streaming: el thinking adaptativo también consume max_tokens, así que el
+    # límite es alto y un informe con razonamiento largo superaría el timeout
+    # HTTP de una petición normal. get_final_message() devuelve el mensaje
+    # completo igual que create().
+    with get_client().beta.messages.stream(
         model=model,
-        max_tokens=int(reports_cfg.get("max_tokens", 16000)),
+        max_tokens=int(reports_cfg.get("max_tokens", 32000)),
         system=system_prompt,
         messages=[{"role": "user", "content": payload_text}],
         **kwargs,
-    )
+    ) as stream:
+        response = stream.get_final_message()
     if response.stop_reason not in ("end_turn", "stop_sequence"):
         raise RuntimeError(f"Respuesta incompleta ({response.stop_reason})")
     text = "".join(b.text for b in response.content if b.type == "text")
