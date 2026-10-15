@@ -15,7 +15,7 @@ from pipeline.util import (
     REPORTS_DIR,
     load_matches,
     read_json,
-    write_json,
+    write_json_if_changed,
 )
 
 # métrica de la web -> ruta dentro del bloque stats de ballchasing
@@ -127,7 +127,7 @@ def main():
                 "averages": averages(rows),
                 "last10_averages": averages(rows[-10:]),
             }
-        write_json(
+        write_json_if_changed(
             PLAYERS_DIR / f"{name}.json",
             {"name": name, "generated_at": now, "modes": modes, "history": history},
         )
@@ -167,7 +167,7 @@ def main():
         )
     index.sort(key=lambda m: m["date"] or "", reverse=True)
 
-    write_json(
+    write_json_if_changed(
         DATA_DIR / "summary.json",
         {
             "generated_at": now,

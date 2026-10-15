@@ -30,7 +30,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # ref: main — si este deploy quedó en cola detrás de uno de ingest (que
+      # commitea datos nuevos), desplegar el SHA que lo disparó publicaría
+      # datos viejos encima de los recién publicados.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Construir la web
         run: |

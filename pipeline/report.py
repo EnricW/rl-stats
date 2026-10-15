@@ -195,6 +195,22 @@ def _report_date():
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 
+def _team_report_due(every_days):
+    """True si toca informe de equipo: nunca hubo o el último tiene N días.
+
+    Se decide por estado (index.json) y no por el evento que disparó el job:
+    GitHub solo mantiene una ejecución en cola por grupo de concurrencia, así
+    que el cron del lunes puede perderse si lo sustituye un aviso del watcher.
+    Con esto, la siguiente pasada (sea cual sea) lo recupera.
+    """
+    idx = read_json(INDEX_FILE) if INDEX_FILE.exists() else {}
+    dates = idx.get("team") or []
+    if not dates:
+        return True
+    last = datetime.strptime(dates[-1], "%Y-%m-%d").date()
+    return (datetime.now(timezone.utc).date() - last).days >= every_days
+
+
 def _register_report(kind, date, name=None):
     """Apunta un informe fechado en index.json (kind: 'team' | 'players')."""
     idx = read_json(INDEX_FILE) if INDEX_FILE.exists() else {"team": [], "players": {}}
@@ -214,6 +230,7 @@ def main():
     every = int(settings["reports"].get("player_report_every", 10))
 
     if args.team:
+        # fuerza el informe de equipo ahora, sin mirar la fecha del último
         team_report(settings)
         return
 
@@ -252,6 +269,15 @@ def main():
             else:
                 state[data["name"]] = games
                 write_json(STATE_FILE, state)
+
+    # Informe de equipo periódico, decidido por estado (ver _team_report_due)
+    team_days = int(settings["reports"].get("team_report_every_days", 7))
+    if any(PLAYERS_DIR.glob("*.json")) and _team_report_due(team_days):
+        try:
+            team_report(settings)
+        except Exception as exc:
+            failures += 1
+            print(f"  ! informe de equipo falló (se reintentará): {exc}")
 
     if failures:
         print(f"report: {failures} informes fallidos (se reintentarán en la siguiente pasada)")

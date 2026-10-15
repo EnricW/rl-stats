@@ -10,6 +10,7 @@ Uso: python -m pipeline.sync [--no-archive] [--refetch]
 """
 
 import argparse
+import time
 
 from pipeline.ballchasing import BallchasingClient
 from pipeline.util import (
@@ -90,6 +91,29 @@ def normalize(replay, roster):
     }
 
 
+# Esperas entre reintentos de partidas que ballchasing aún está procesando.
+# El watcher avisa justo tras el upload, y sin el cron diario una partida
+# "pendiente" podía quedarse sin ingestar hasta el lunes.
+_RETRY_DELAYS = (30, 60, 120)
+
+
+def _ingest(client, replay_id, roster, archive):
+    """Descarga, normaliza y guarda una partida.
+
+    False si ballchasing aún la está procesando (status != ok); se reintenta.
+    """
+    full = client.get_replay(replay_id)
+    if full.get("status") != "ok":
+        print(f"  · {replay_id}: estado '{full.get('status')}'")
+        return False
+    write_json(MATCHES_DIR / f"{replay_id}.json", normalize(full, roster))
+    dest = ARCHIVE_DIR / f"{replay_id}.replay"
+    if archive and not dest.exists():
+        client.download_replay(replay_id, dest)
+    print(f"  + {replay_id}: {full.get('playlist_id')} {full.get('date')}")
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser(description="Sincroniza el grupo de ballchasing con data/matches/")
     parser.add_argument("--no-archive", action="store_true", help="no descargar el .replay original")
@@ -109,7 +133,7 @@ def main():
     roster = load_roster()
     known = {p.stem for p in MATCHES_DIR.glob("*.json")}
 
-    new, skipped = 0, 0
+    new, pending = 0, []
     for entry in client.iter_group_replays(group):
         replay_id = entry["id"]
         dest = ARCHIVE_DIR / f"{replay_id}.replay"
@@ -124,18 +148,28 @@ def main():
             ):
                 client.download_replay(replay_id, dest)
             continue
-        full = client.get_replay(replay_id)
-        if full.get("status") != "ok":
-            print(f"  · {replay_id}: estado '{full.get('status')}', se reintentará")
-            skipped += 1
-            continue
-        write_json(MATCHES_DIR / f"{replay_id}.json", normalize(full, roster))
-        if archive and not dest.exists():
-            client.download_replay(replay_id, dest)
-        new += 1
-        print(f"  + {replay_id}: {full.get('playlist_id')} {full.get('date')}")
+        if _ingest(client, replay_id, roster, archive):
+            new += 1
+        else:
+            pending.append(replay_id)
 
-    print(f"sync: {new} partidas nuevas, {skipped} pendientes, {len(known)} ya existentes")
+    # Reintento acotado de las que ballchasing aún procesa: suele tardar
+    # menos de un minuto, y así la última partida de la noche no se queda
+    # fuera hasta la siguiente pasada del pipeline.
+    for delay in _RETRY_DELAYS:
+        if not pending:
+            break
+        print(f"  · {len(pending)} partidas procesándose en ballchasing; reintento en {delay}s")
+        time.sleep(delay)
+        still = []
+        for replay_id in pending:
+            if _ingest(client, replay_id, roster, archive):
+                new += 1
+            else:
+                still.append(replay_id)
+        pending = still
+
+    print(f"sync: {new} partidas nuevas, {len(pending)} pendientes, {len(known)} ya existentes")
 
 
 if __name__ == "__main__":

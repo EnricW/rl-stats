@@ -4,7 +4,13 @@ import json
 
 import pytest
 
-from pipeline.util import mode_from_playlist, read_env_file, write_json, write_text_atomic
+from pipeline.util import (
+    mode_from_playlist,
+    read_env_file,
+    write_json,
+    write_json_if_changed,
+    write_text_atomic,
+)
 
 
 def test_mode_from_playlist():
@@ -63,3 +69,15 @@ def test_write_text_atomic(tmp_path):
     write_text_atomic(out, "# Informe\n")
     assert out.read_text(encoding="utf-8") == "# Informe\n"
     assert list(out.parent.glob("*.tmp")) == []
+
+
+def test_write_json_if_changed_ignora_volatiles(tmp_path):
+    out = tmp_path / "x.json"
+    assert write_json_if_changed(out, {"generated_at": "t1", "a": 1}) is True
+    before = out.read_text(encoding="utf-8")
+    # solo cambia la marca de tiempo: no se reescribe (sin commits de ruido)
+    assert write_json_if_changed(out, {"generated_at": "t2", "a": 1}) is False
+    assert out.read_text(encoding="utf-8") == before
+    # cambia el contenido real: sí se reescribe
+    assert write_json_if_changed(out, {"generated_at": "t3", "a": 2}) is True
+    assert json.loads(out.read_text(encoding="utf-8"))["a"] == 2

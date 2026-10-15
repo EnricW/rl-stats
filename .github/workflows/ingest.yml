@@ -2,8 +2,10 @@
 # commitea los datos y despliega la web en GitHub Pages.
 #
 # Se dispara: al avisar el watcher (repository_dispatch), el lunes por la
-# mañana (informe semanal de equipo + reconciliación por si algún aviso del
-# watcher se perdió), y a mano desde la pestaña Actions.
+# mañana (reconciliación por si algún aviso del watcher se perdió), y a mano
+# desde la pestaña Actions. El informe semanal de equipo lo decide report.py
+# por estado (fecha del último), no el evento: así un cron perdido en la cola
+# de concurrencia no deja la semana sin informe.
 
 name: Procesar partidas
 
@@ -11,7 +13,7 @@ on:
   repository_dispatch:
     types: [new-replay]
   schedule:
-    - cron: "0 8 * * 1"      # lunes: reconciliación + informe de equipo
+    - cron: "0 8 * * 1"      # lunes: reconciliación (e informe de equipo si toca)
   workflow_dispatch:
 
 # Permisos por job: process solo necesita escribir contenido; los de Pages
@@ -25,6 +27,7 @@ concurrency:
 jobs:
   process:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     permissions:
       contents: write
     steps:
@@ -65,15 +68,14 @@ jobs:
       - name: Informes IA
         run: python -m pipeline.report
 
-      - name: Informe semanal de equipo
-        if: github.event.schedule == '0 8 * * 1'
-        run: python -m pipeline.report --team
-
       # segunda pasada: summary.json debe reflejar los informes recién creados
       - name: Refrescar índice
         run: python -m pipeline.aggregate
 
+      # Se ejecuta aunque un paso anterior haya fallado: los informes IA ya
+      # generados (y cobrados) no deben perderse con el runner efímero.
       - name: Commit de los datos
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "rl-stats bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"

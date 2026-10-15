@@ -7,6 +7,9 @@ __pycache__/
 _site/
 .DS_Store
 watcher/uploaded.json
+watcher/uploaded.json.bak
+watcher/watcher.log*
+watcher/pending_notify
 # escrituras atómicas interrumpidas: nunca deben commitearse con "git add data"
 *.tmp
 # los .replay no se versionan: ballchasing es el almacén; el pipeline los

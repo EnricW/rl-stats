@@ -13,7 +13,8 @@ Se instala una vez en el PC de Windows donde corre Rocket League.
 3. En esa carpeta, copia `.env.example` a `.env` y rellénalo:
    - `BALLCHASING_TOKEN`: tu token de https://ballchasing.com/upload
    - `BALLCHASING_GROUP`: el id del grupo del equipo (lo que va tras `/group/` en su URL)
-   - Opcionales, para que la web se actualice al momento y no al siguiente cron:
+   - Opcionales, para que la web se actualice al momento (sin ellos, el cron
+     del lunes recoge las partidas de la semana):
      - `GITHUB_REPO`: `tuusuario/rl-stats`
      - `GITHUB_PAT`: token *fine-grained* creado en GitHub → Settings → Developer settings,
        con acceso SOLO a ese repositorio y permiso **Contents: Read and write**
@@ -43,9 +44,14 @@ de un inicio programado perdido".
 
 ## Notas
 
-- El fichero `uploaded.json` (junto al script) recuerda qué replays ya se subieron;
+- El watcher escribe su registro en `watcher.log` (junto al script, rotativo):
+  es el sitio donde mirar si algo no sube, porque `pythonw` no tiene consola.
+- El fichero `uploaded.json` (junto al script) recuerda qué replays ya se
+  trataron (subidos, o con error permanente que no tiene sentido reintentar);
   bórralo solo si quieres resubirlo todo (ballchasing deduplica, no pasa nada grave).
-- Si el PC está sin conexión, el watcher reintenta y, en el peor caso, el cron
-  de GitHub recoge las partidas en unas horas.
+- Si el PC está sin conexión, o falla el aviso a GitHub, el watcher lo
+  reintenta en cada pasada (el aviso pendiente se recuerda en `pending_notify`,
+  incluso entre reinicios); en el peor caso, el cron del lunes recoge las
+  partidas de la semana.
 - Si un día no quieres subir una partida, borra su `.replay` de la carpeta Demos
   antes de que el watcher la detecte (ventana de ~30 s) o para la tarea antes de jugar.

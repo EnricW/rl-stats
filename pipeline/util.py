@@ -116,6 +116,23 @@ def write_text_atomic(path, text):
     tmp.replace(path)
 
 
+def write_json_if_changed(path, payload, volatile=("generated_at",)):
+    """Como write_json, pero no reescribe si solo cambian campos volátiles
+    de primer nivel (generated_at): evita commits de "actualización
+    automática" que solo tocan marcas de tiempo. Devuelve True si escribió."""
+    path = Path(path)
+    if path.exists():
+        def _strip(doc):
+            return {k: v for k, v in doc.items() if k not in volatile}
+        try:
+            if _strip(read_json(path)) == _strip(payload):
+                return False
+        except (OSError, ValueError):
+            pass  # ilegible: se reescribe
+    write_json(path, payload)
+    return True
+
+
 def load_matches():
     """Todas las partidas normalizadas, ordenadas por fecha ascendente."""
     matches = [read_json(p) for p in sorted(MATCHES_DIR.glob("*.json"))]
