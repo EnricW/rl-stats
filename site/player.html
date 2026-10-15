@@ -24,6 +24,18 @@
         <span style="display:inline-block;width:18px;border-top:2px dashed var(--faint);vertical-align:middle;margin-right:6px"></span>Media del equipo ·
         medias por partida, escaladas al mejor del equipo en cada eje.
       </span>
+      <div class="radar-legend">
+        <ul>
+          <li><b>Goles</b> — goles marcados por partida.</li>
+          <li><b>Tiros</b> — volumen ofensivo: tiros a puerta por partida.</li>
+          <li><b>Asistencias</b> — juego de equipo: pases de gol por partida.</li>
+          <li><b>Saques</b> — % de sus saques con primer toque propio · bien: &gt;50%.</li>
+          <li><b>Paradas</b> — paradas por partida.</li>
+          <li><b>Presión</b> — boost robado en campo rival por partida (agresividad sin balón).</li>
+          <li><b>Ritmo</b> — velocidad media del coche (supersónico = 2.300 uu/s).</li>
+          <li><b>Gestión</b> — % del tiempo con boost en el depósito · sano: &gt;88%.</li>
+        </ul>
+      </div>
     </section>
 
     <div class="player-tabs" id="tabs" role="tablist" aria-label="Jugadores del equipo"></div>
@@ -77,37 +89,48 @@
     let radarActive = null;
     const playersData = new Map();
 
-    /* ---- radar hexagonal: 6 dimensiones independientes, todas "más = mejor".
-       Ofensiva arriba (Goles-Tiros-Asistencias), Paradas opuesta a Goles,
-       Presión y Ritmo de puente. Normalizado al mejor del equipo por eje. ---- */
+    /* ---- radar octogonal: 8 ejes, todos "más = mejor" (los invertidos se
+       transforman en axisValue). Ofensiva en la mitad superior y motor/defensa
+       en la inferior, con Goles↔Paradas y Tiros↔Presión enfrentados.
+       Normalizado al mejor del equipo por eje. ---- */
     const RADAR_AXES = [
       ["Goles", "goals"],
       ["Tiros", "shots"],
       ["Asistencias", "assists"],
+      ["Saques", "kickoff_ft_pct"],        // % de 1.er toque en sus kickoffs
       ["Paradas", "saves"],
       ["Presión", "boost_stolen"],
       ["Ritmo", "avg_speed"],
+      ["Gestión", "pct_zero_boost", true], // invertida: % del tiempo CON boost
     ];
 
     function playerAvg(name) {
       return playersData.get(name)?.modes?.["3v3"]?.averages || {};
     }
 
+    // Valor de un eje para un jugador; los ejes con invert=true son métricas
+    // en % donde menos es mejor, y se muestran como su complemento (100 − v).
+    function axisValue(avg, [, key, invert]) {
+      const v = avg[key];
+      if (v == null) return null;
+      return invert ? 100 - v : v;
+    }
+
     function buildRadar(selected) {
-      const maxes = RADAR_AXES.map(([, key]) =>
-        Math.max(...roster.map((n) => playerAvg(n)[key] ?? 0), 0.0001));
+      const maxes = RADAR_AXES.map((axis) =>
+        Math.max(...roster.map((n) => axisValue(playerAvg(n), axis) ?? 0), 0.0001));
       const datasets = roster.map((n) => {
         const avg = playerAvg(n);
         return {
           label: n,
-          data: RADAR_AXES.map(([, key], i) => (avg[key] ?? 0) / maxes[i]),
-          real: RADAR_AXES.map(([, key]) => avg[key] ?? 0),
+          data: RADAR_AXES.map((axis, i) => (axisValue(avg, axis) ?? 0) / maxes[i]),
+          real: RADAR_AXES.map((axis) => axisValue(avg, axis) ?? 0),
           pointHoverRadius: 5,
         };
       });
       // línea de referencia: media del equipo por eje (gris, discontinua)
-      const teamReal = RADAR_AXES.map(([, key]) => {
-        const vals = roster.map((n) => playerAvg(n)[key] ?? 0);
+      const teamReal = RADAR_AXES.map((axis) => {
+        const vals = roster.map((n) => axisValue(playerAvg(n), axis) ?? 0);
         return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : 0;
       });
       datasets.push({
@@ -149,7 +172,7 @@
                 font: { family: "Barlow", size: 13, weight: 600 },
                 // dos líneas: eje + valor real del jugador seleccionado
                 callback: (label, i) => {
-                  const real = radarActive ? playerAvg(radarActive)[RADAR_AXES[i][1]] : null;
+                  const real = radarActive ? axisValue(playerAvg(radarActive), RADAR_AXES[i]) : null;
                   return real == null ? label : [label, fmt.format(real)];
                 },
               },

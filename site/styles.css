@@ -303,3 +303,12 @@ footer.site { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; co
   .bigscore .us, .bigscore .them, .match-head .side .pts { font-size: 48px; }
   .tile .value { font-size: 36px; }
 }
+
+/* ---- leyenda del radar (player.html) ---- */
+.radar-legend { margin-top: 12px; font-size: 13px; color: var(--faint); }
+.radar-legend ul { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
+.radar-legend b { color: var(--muted); font-weight: 600; }
+
+@media (max-width: 560px) {
+  .radar-legend ul { grid-template-columns: 1fr; }
+}
