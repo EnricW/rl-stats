@@ -486,7 +486,13 @@
         }
       ]
     },
-    "team": []
+    "team": [
+      {
+        "date": "2026-10-15",
+        "model": "claude-opus-5-5",
+        "path": "reports/team-2026-10-15.md"
+      }
+    ]
   },
   "schema_version": 1
 }
