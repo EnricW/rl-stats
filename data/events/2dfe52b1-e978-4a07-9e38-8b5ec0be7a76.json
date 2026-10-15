@@ -1,0 +1,230 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 129.31,
+      "team": 1
+    },
+    {
+      "name": "MatR_30",
+      "score": [
+        1,
+        1
+      ],
+      "t": 284.85,
+      "team": 0
+    },
+    {
+      "name": "Maxftn30",
+      "score": [
+        2,
+        1
+      ],
+      "t": 341.52,
+      "team": 0
+    }
+  ],
+  "id": "2dfe52b1-e978-4a07-9e38-8b5ec0be7a76",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 135.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 39.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 90.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "MatR_30",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 0.0,
+      "takers": {
+        "0": "MatR_30",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ookami-Yume-_-",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 142.3,
+      "takers": {
+        "0": "Ookami-Yume-_-",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Maxftn30",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 297.82,
+      "takers": {
+        "0": "Maxftn30",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "MatR_30",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 354.48,
+      "takers": {
+        "0": "MatR_30",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 23,
+      "pct_first_man": 27.9,
+      "pct_second_man": 22.1,
+      "pct_third_man": 37.8
+    },
+    "Eric": {
+      "became_first_man": 28,
+      "pct_first_man": 30.9,
+      "pct_second_man": 28.5,
+      "pct_third_man": 28.4
+    },
+    "Ray": {
+      "became_first_man": 31,
+      "pct_first_man": 29.0,
+      "pct_second_man": 37.2,
+      "pct_third_man": 21.5
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1511.0,
+      "kind": "shot",
+      "name": "Maxftn30",
+      "speed_to_goal": -790.0,
+      "t": 10.23,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 11.0,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 888.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2067.0,
+      "t": 46.57,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1645.0,
+      "kind": "shot",
+      "name": "Maxftn30",
+      "speed_to_goal": -1123.0,
+      "t": 74.24,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 74.91,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 531.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1760.0,
+      "t": 128.78,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 129.56,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1991.0,
+      "kind": "shot",
+      "name": "Maxftn30",
+      "speed_to_goal": -858.0,
+      "t": 207.32,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 207.36,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1845.0,
+      "kind": "shot",
+      "name": "MatR_30",
+      "speed_to_goal": 1291.0,
+      "t": 214.44,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 215.41,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1655.0,
+      "kind": "shot",
+      "name": "MatR_30",
+      "speed_to_goal": 1550.0,
+      "t": 283.68,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 191.0,
+      "kind": "shot",
+      "name": "Maxftn30",
+      "speed_to_goal": null,
+      "t": 341.52,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 3.7,
+    "Eric": 1.8,
+    "Ray": 6.9
+  },
+  "sustained_possession_teams_s": {
+    "0": 4.1,
+    "1": 12.4
+  }
+}

@@ -1,6 +1,135 @@
 {
-  "generated_at": "2026-10-15T10:30:04+00:00",
+  "generated_at": "2026-10-15T13:17:35+00:00",
   "matches": [
+    {
+      "date": "2026-10-14T21:28:27Z",
+      "has_report": true,
+      "id": "2dfe52b1-e978-4a07-9e38-8b5ec0be7a76",
+      "map": "mall_day_p",
+      "mode": "3v3",
+      "our_team": "orange",
+      "overtime": false,
+      "players": [
+        {
+          "assists": 0.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Ray",
+          "saves": 1.0,
+          "score": 344.0,
+          "shots": 1.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 2.0,
+          "score": 276.0,
+          "shots": 0.0
+        },
+        {
+          "assists": 0.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 1.0,
+          "score": 100.0,
+          "shots": 1.0
+        }
+      ],
+      "result": "loss",
+      "score": {
+        "blue": 2,
+        "orange": 1
+      }
+    },
+    {
+      "date": "2026-10-14T21:21:25Z",
+      "has_report": true,
+      "id": "0fc00121-a98e-47e3-b9f4-f58f06ea5fbc",
+      "map": "Sovereign Heights (Dusk)",
+      "mode": "3v3",
+      "our_team": "blue",
+      "overtime": false,
+      "players": [
+        {
+          "assists": 1.0,
+          "goals": 1.0,
+          "mvp": true,
+          "name": "Ray",
+          "saves": 0.0,
+          "score": 364.0,
+          "shots": 1.0
+        },
+        {
+          "assists": 0.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 0.0,
+          "score": 228.0,
+          "shots": 1.0
+        },
+        {
+          "assists": 0.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 0.0,
+          "score": 158.0,
+          "shots": 2.0
+        }
+      ],
+      "result": "win",
+      "score": {
+        "blue": 3,
+        "orange": 2
+      }
+    },
+    {
+      "date": "2026-10-14T21:13:51Z",
+      "has_report": true,
+      "id": "743b9fe6-3f0e-4746-8028-b1e16a2cf948",
+      "map": "Estadio Vida (Dusk)",
+      "mode": "3v3",
+      "our_team": "orange",
+      "overtime": false,
+      "players": [
+        {
+          "assists": 1.0,
+          "goals": 5.0,
+          "mvp": true,
+          "name": "Ray",
+          "saves": 1.0,
+          "score": 969.0,
+          "shots": 6.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 1.0,
+          "mvp": false,
+          "name": "Enric",
+          "saves": 0.0,
+          "score": 208.0,
+          "shots": 0.0
+        },
+        {
+          "assists": 1.0,
+          "goals": 0.0,
+          "mvp": false,
+          "name": "Eric",
+          "saves": 0.0,
+          "score": 180.0,
+          "shots": 2.0
+        }
+      ],
+      "result": "win",
+      "score": {
+        "blue": 1,
+        "orange": 6
+      }
+    },
     {
       "date": "2026-10-14T21:03:16Z",
       "has_report": true,
@@ -440,8 +569,8 @@
   "team": {
     "modes": {
       "3v3": {
-        "games": 10,
-        "wins": 4
+        "games": 13,
+        "wins": 6
       }
     }
   }
