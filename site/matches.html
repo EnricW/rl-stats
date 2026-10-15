@@ -84,9 +84,7 @@
           <td>${resultPill(m.result)}</td>
           <td>${bestOfTeam(m, roster)}</td>
           <td class="num" style="white-space:nowrap">
-            <a href="match.html?id=${m.id}">${m.has_report ? "Informe" : "Partida"}</a>
-            <span style="color:var(--faint)"> · </span>
-            <a href="match.html?id=${m.id}#visor">Repetición</a>
+            <a href="match.html?id=${m.id}">Ver partida</a>
           </td>
         </tr>`).join("") ||
         '<tr><td colspan="6"><p class="empty">Aún no hay partidas: juega una y aparecerá aquí sola.</p></td></tr>';
