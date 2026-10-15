@@ -124,7 +124,6 @@ function renderNav(active) {
 function chartTokens() {
   const css = getComputedStyle(document.documentElement);
   return {
-    series: css.getPropertyValue("--series-1").trim(),
     seriesHi: css.getPropertyValue("--blue-hi").trim(),
     grid: css.getPropertyValue("--grid").trim(),
     muted: css.getPropertyValue("--muted").trim(),
@@ -132,32 +131,48 @@ function chartTokens() {
   };
 }
 
-// Gráfica de línea de una sola serie (sin leyenda: el título de la tarjeta la nombra).
-function lineChart(canvas, labels, values, { unit = "" } = {}) {
+// Gráfica de línea multi-serie, con el mismo lenguaje visual que el radar:
+// la serie activa en color pleno, el resto atenuado y la media del equipo en
+// gris discontinuo. series = [{ label, values, color, kind }] con kind
+// "active" | "dim" | "team". La leyenda es clicable (Chart.js oculta/muestra
+// cada serie de serie por defecto).
+function multiLineChart(canvas, labels, series, { unit = "" } = {}) {
   const t = chartTokens();
-  const last = values.length - 1;
+  const last = labels.length - 1;
+  const datasets = series.map(({ label, values, color, kind }) => {
+    if (kind === "team") {
+      return {
+        label, data: values,
+        borderColor: t.faint, borderWidth: 1.5, borderDash: [6, 4],
+        pointRadius: 0, pointHoverRadius: 4, pointBackgroundColor: t.faint,
+        tension: 0.25, spanGaps: true, order: 3,
+      };
+    }
+    const active = kind === "active";
+    return {
+      label, data: values,
+      borderColor: active ? color : color + "59",
+      backgroundColor: color,
+      pointBackgroundColor: values.map((_, i) => (active && i === last ? t.seriesHi : color)),
+      borderWidth: active ? 3 : 1.5,
+      pointRadius: active ? values.map((_, i) => (i === last ? 5 : 3)) : 0,
+      pointHoverRadius: active ? 7 : 5,
+      tension: 0.25, spanGaps: true, order: active ? 0 : 1,
+    };
+  });
   return new Chart(canvas, {
     type: "line",
-    data: {
-      labels,
-      datasets: [{
-        data: values,
-        borderColor: t.series,
-        backgroundColor: values.map((_, i) => (i === last ? t.seriesHi : t.series)),
-        borderWidth: 2,
-        pointRadius: values.map((_, i) => (i === last ? 5 : 3)),
-        pointHoverRadius: 7,
-        tension: 0.25,
-        spanGaps: true,
-      }],
-    },
+    data: { labels, datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       interaction: { mode: "index", intersect: false },
       plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: (c) => `${fmt.format(c.parsed.y)}${unit}` } },
+        legend: {
+          display: true, position: "top", align: "end",
+          labels: { usePointStyle: true, pointStyle: "line", boxWidth: 24, color: t.muted, font: { family: "Barlow", size: 13 } },
+        },
+        tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${fmt.format(c.parsed.y)}${unit}` } },
       },
       scales: {
         x: { grid: { display: false }, border: { color: t.grid }, ticks: { color: t.faint, maxTicksLimit: 8, font: { family: "Barlow" } } },
