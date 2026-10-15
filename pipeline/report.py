@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 
 import anthropic
 
+from pipeline import manifest as mf
 from pipeline.util import (
     EVENTS_DIR,
     MATCHES_DIR,
@@ -25,7 +26,6 @@ from pipeline.util import (
     load_settings,
     read_json,
     require_secret,
-    write_json,
     write_text_atomic,
 )
 
@@ -122,7 +122,7 @@ def player_context(name, mode):
     }
 
 
-def match_report(match, settings):
+def match_report(match, settings, manifest):
     context = {
         "partida": slim_match(match),
         "medias_historicas_por_jugador": {
@@ -134,91 +134,64 @@ def match_report(match, settings):
     events = match_events(match["id"])
     if events:
         context["eventos"] = events
-    text = ask_claude(
-        settings["reports"]["match_model"],
-        prompt("match.md"),
-        json.dumps(context, ensure_ascii=False, indent=1),
-    )
+    model = settings["reports"]["match_model"]
+    text = ask_claude(model, prompt("match.md"), json.dumps(context, ensure_ascii=False, indent=1))
     out = REPORTS_DIR / f"{match['id']}.md"
     write_text_atomic(out, text)
+    mf.record_match_report(manifest, match["id"], f"reports/{out.name}", model)
+    mf.save(manifest)
     print(f"  informe de partida: {out.name}")
 
 
-def player_report(name, settings):
+def player_report(name, settings, manifest):
     data = read_json(PLAYERS_DIR / f"{name}.json")
-    text = ask_claude(
-        settings["reports"]["trend_model"],
-        prompt("player.md"),
-        json.dumps(data, ensure_ascii=False, indent=1),
-    )
+    model = settings["reports"]["trend_model"]
+    text = ask_claude(model, prompt("player.md"), json.dumps(data, ensure_ascii=False, indent=1))
     date = _report_date()
     out = REPORTS_DIR / f"player-{name}-{date}.md"
     write_text_atomic(out, text)
-    _register_report("players", date, name)
+    mf.register_report(manifest, date, f"reports/{out.name}", model, name=name)
+    mf.save(manifest)
     print(f"  informe de jugador: {out.name}")
 
 
-def team_report(settings):
+def team_report(settings, manifest):
     context = {
         "jugadores": {
             p.stem: read_json(p) for p in sorted(PLAYERS_DIR.glob("*.json"))
         }
     }
-    text = ask_claude(
-        settings["reports"]["trend_model"],
-        prompt("team.md"),
-        json.dumps(context, ensure_ascii=False, indent=1),
-    )
+    model = settings["reports"]["trend_model"]
+    text = ask_claude(model, prompt("team.md"), json.dumps(context, ensure_ascii=False, indent=1))
     date = _report_date()
     out = REPORTS_DIR / f"team-{date}.md"
     write_text_atomic(out, text)
-    _register_report("team", date)
+    mf.register_report(manifest, date, f"reports/{out.name}", model)
+    mf.save(manifest)
     print(f"  informe de equipo: {out.name}")
 
 
-# Estado de los informes de jugador: con cuántas partidas se generó el último.
-# Sin esto, "games % every == 0" regeneraría (y cobraría) el mismo informe en
-# cada pasada del cron hasta que el jugador jugase otra partida.
-STATE_FILE = REPORTS_DIR / "player_reports_state.json"
-
-# Histórico de informes: los de tendencia y equipo se guardan fechados
-# (player-<nombre>-<fecha>.md, team-<fecha>.md) y este índice dice a la web
-# qué fechas existen (un sitio estático no puede listar directorios).
-INDEX_FILE = REPORTS_DIR / "index.json"
-
-
-def _load_state():
-    return read_json(STATE_FILE) if STATE_FILE.exists() else {}
+# El estado de los informes (histórico fechado, con qué nº de partidas se
+# generó el último de cada jugador, modelo usado) vive en data/manifest.json.
 
 
 def _report_date():
     return datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 
-def _team_report_due(every_days):
+def _team_report_due(manifest, every_days):
     """True si toca informe de equipo: nunca hubo o el último tiene N días.
 
-    Se decide por estado (index.json) y no por el evento que disparó el job:
-    GitHub solo mantiene una ejecución en cola por grupo de concurrencia, así
-    que el cron del lunes puede perderse si lo sustituye un aviso del watcher.
-    Con esto, la siguiente pasada (sea cual sea) lo recupera.
+    Se decide por estado (el manifiesto) y no por el evento que disparó el
+    job: GitHub solo mantiene una ejecución en cola por grupo de concurrencia,
+    así que el cron del lunes puede perderse si lo sustituye un aviso del
+    watcher. Con esto, la siguiente pasada (sea cual sea) lo recupera.
     """
-    idx = read_json(INDEX_FILE) if INDEX_FILE.exists() else {}
-    dates = idx.get("team") or []
-    if not dates:
+    items = manifest["reports"]["team"]
+    if not items:
         return True
-    last = datetime.strptime(dates[-1], "%Y-%m-%d").date()
+    last = datetime.strptime(items[-1]["date"], "%Y-%m-%d").date()
     return (datetime.now(timezone.utc).date() - last).days >= every_days
-
-
-def _register_report(kind, date, name=None):
-    """Apunta un informe fechado en index.json (kind: 'team' | 'players')."""
-    idx = read_json(INDEX_FILE) if INDEX_FILE.exists() else {"team": [], "players": {}}
-    dates = idx.setdefault("players", {}).setdefault(name, []) if name else idx.setdefault("team", [])
-    if date not in dates:
-        dates.append(date)
-        dates.sort()
-    write_json(INDEX_FILE, idx)
 
 
 def main():
@@ -228,17 +201,18 @@ def main():
     args = parser.parse_args()
     settings = load_settings()
     every = int(settings["reports"].get("player_report_every", 10))
+    manifest = mf.load()
 
     if args.team:
         # fuerza el informe de equipo ahora, sin mirar la fecha del último
-        team_report(settings)
+        team_report(settings, manifest)
         return
 
     if args.match:
         # el id viene de la línea de comandos y acaba en una ruta: solo UUID
         if not all(c in "0123456789abcdef-" for c in args.match.lower()):
             parser.error(f"id de partida no válido: {args.match}")
-        match_report(read_json(MATCHES_DIR / f"{args.match}.json"), settings)
+        match_report(read_json(MATCHES_DIR / f"{args.match}.json"), settings, manifest)
         return
 
     failures = 0
@@ -250,34 +224,36 @@ def main():
     pending = [m for m in matches if not (REPORTS_DIR / f"{m.stem}.md").exists()]
     for path in pending:
         try:
-            match_report(read_json(path), settings)
+            match_report(read_json(path), settings, manifest)
         except Exception as exc:
             failures += 1
             print(f"  ! informe de {path.stem} falló (se reintentará): {exc}")
 
     # Informe de tendencia cuando un jugador suma N partidas desde el último
-    state = _load_state()
+    state = manifest["player_reports_state"]
     for path in sorted(PLAYERS_DIR.glob("*.json")):
         data = read_json(path)
         games = len(data.get("history") or [])
         if games >= every and games - int(state.get(data["name"], 0)) >= every:
             try:
-                player_report(data["name"], settings)
+                player_report(data["name"], settings, manifest)
             except Exception as exc:
                 failures += 1
                 print(f"  ! informe de {data['name']} falló (se reintentará): {exc}")
             else:
                 state[data["name"]] = games
-                write_json(STATE_FILE, state)
+                mf.save(manifest)
 
     # Informe de equipo periódico, decidido por estado (ver _team_report_due)
     team_days = int(settings["reports"].get("team_report_every_days", 7))
-    if any(PLAYERS_DIR.glob("*.json")) and _team_report_due(team_days):
+    if any(PLAYERS_DIR.glob("*.json")) and _team_report_due(manifest, team_days):
         try:
-            team_report(settings)
+            team_report(settings, manifest)
         except Exception as exc:
             failures += 1
             print(f"  ! informe de equipo falló (se reintentará): {exc}")
+
+    mf.save(manifest)
 
     if failures:
         print(f"report: {failures} informes fallidos (se reintentarán en la siguiente pasada)")

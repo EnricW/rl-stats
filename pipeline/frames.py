@@ -13,7 +13,8 @@ import math
 # ndarray que devuelve subtr-actor lo necesita en tiempo de ejecución.
 import subtr_actor
 
-from pipeline.util import ARCHIVE_DIR, FRAMES_DIR, MATCHES_DIR, load_roster, write_json
+from pipeline.manifest import FRAMES_VERSION, run_stage
+from pipeline.util import FRAMES_DIR, load_roster
 
 FPS = 10
 
@@ -139,30 +140,13 @@ def extract(replay_path, roster):
 
 
 def main():
-    roster = load_roster()
-    done, skipped = 0, 0
-    for match_file in sorted(MATCHES_DIR.glob("*.json")):
-        replay_id = match_file.stem
-        out = FRAMES_DIR / f"{replay_id}.json"
-        replay = ARCHIVE_DIR / f"{replay_id}.replay"
-        if out.exists():
-            continue
-        if not replay.exists():
-            skipped += 1
-            continue
-        try:
-            payload = extract(replay, roster)
-        except Exception as exc:  # un replay corrupto no debe parar el pipeline
-            print(f"  · {replay_id}: no se pudo parsear ({exc})")
-            skipped += 1
-            continue
-        payload["id"] = replay_id
-        # compact: a ~5k frames por partida, la indentación multiplica el
-        # tamaño por ~3 y este archivo se descarga entero en la web
-        write_json(out, payload, compact=True)
-        done += 1
-        print(f"  + frames de {replay_id}: {len(payload['ball'])} frames, {len(payload['goals'])} goles")
-    print(f"frames: {done} generados, {skipped} sin replay o con error")
+    # compact: a ~5k frames por partida, la indentación multiplica el
+    # tamaño por ~3 y este archivo se descarga entero en la web
+    run_stage(
+        "frames", FRAMES_VERSION, FRAMES_DIR, extract, load_roster(),
+        compact=True,
+        describe=lambda p: f"{len(p['ball'])} frames, {len(p['goals'])} goles",
+    )
 
 
 if __name__ == "__main__":

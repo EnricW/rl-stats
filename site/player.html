@@ -90,7 +90,9 @@
     let chart = null;
     let radar = null;
     let radarActive = null;
-    let reportsIndex = { team: [], players: {} };
+    // vista de informes publicada por el pipeline en summary.reports:
+    // { every, team: [{date, path}], players: {n: {items, games_at_last}} }
+    let reportsIndex = { every: 10, team: [], players: {} };
     const playersData = new Map();
 
     /* ---- radar octogonal: 8 ejes, todos "más = mejor" (los invertidos se
@@ -398,29 +400,34 @@
     }
 
     // Desplegable con las fechas de los informes de tendencia del jugador
-    // (index.json los enumera: un sitio estático no puede listar carpetas).
+    // (summary.reports los enumera: un sitio estático no puede listar carpetas).
     function renderTrendReport(name, games) {
       const sel = document.getElementById("trend-date");
-      const dates = [...(reportsIndex.players?.[name] || [])].reverse();
-      if (!dates.length) {
+      const info = reportsIndex.players?.[name];
+      const items = [...(info?.items || [])].reverse();
+      if (!items.length) {
         sel.hidden = true;
-        const toGo = games % 10;
+        // progreso real hacia el siguiente informe: cada `every` partidas
+        // desde el último (el ciclo lo publica el pipeline, no va a fuego)
+        const every = reportsIndex.every || 10;
+        const since = Math.min(games - (info?.games_at_last ?? 0), every);
         document.getElementById("player-report").innerHTML = `
           <div class="empty-state">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5F6B80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
-            <span class="t">El informe de tendencias se genera cada 10 partidas</span>
-            <span class="s">Lleva ${toGo} de 10 · comparará su evolución con el equipo y propondrá un plan de práctica</span>
-            <span class="progress"><span style="width:${toGo * 10}%"></span></span>
+            <span class="t">El informe de tendencias se genera cada ${every} partidas</span>
+            <span class="s">Lleva ${since} de ${every} · comparará su evolución con el equipo y propondrá un plan de práctica</span>
+            <span class="progress"><span style="width:${Math.round((since / every) * 100)}%"></span></span>
           </div>`;
         return;
       }
       sel.hidden = false;
-      sel.innerHTML = dates.map((d) => `<option value="${d}">${fmtDateLong(d)}</option>`).join("");
-      showTrendReport(name, dates[0]);
+      sel.innerHTML = items.map((i) => `<option value="${i.date}">${fmtDateLong(i.date)}</option>`).join("");
+      showTrendReport(name, items[0].date);
     }
 
     async function showTrendReport(name, date) {
-      const md = await fetchText(`data/reports/player-${encodeURIComponent(name)}-${date}.md`);
+      const item = (reportsIndex.players?.[name]?.items || []).find((i) => i.date === date);
+      const md = item ? await fetchText(`data/${item.path}`) : null;
       document.getElementById("player-report").innerHTML = md
         ? `<div class="card report">${mdToHTML(md)}</div>`
         : '<p class="empty">No se pudo cargar el informe.</p>';
@@ -443,7 +450,7 @@
       );
       roster.forEach((n, i) => { if (all[i]) playersData.set(n, all[i]); });
 
-      reportsIndex = (await fetchJSON("data/reports/index.json")) || reportsIndex;
+      reportsIndex = summary.reports || reportsIndex;
 
       const sel = document.getElementById("evolution-metric");
       sel.innerHTML = EVOLUTION.map(([k, label]) => `<option value="${k}">${label}</option>`).join("");

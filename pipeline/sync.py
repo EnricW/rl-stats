@@ -12,11 +12,10 @@ Uso: python -m pipeline.sync [--no-archive] [--refetch]
 import argparse
 import time
 
+from pipeline import manifest as mf
 from pipeline.ballchasing import BallchasingClient
 from pipeline.util import (
     ARCHIVE_DIR,
-    EVENTS_DIR,
-    FRAMES_DIR,
     MATCHES_DIR,
     load_roster,
     load_settings,
@@ -97,8 +96,8 @@ def normalize(replay, roster):
 _RETRY_DELAYS = (30, 60, 120)
 
 
-def _ingest(client, replay_id, roster, archive):
-    """Descarga, normaliza y guarda una partida.
+def _ingest(client, replay_id, roster, archive, manifest):
+    """Descarga, normaliza y guarda una partida; la registra en el manifiesto.
 
     False si ballchasing aún la está procesando (status != ok); se reintenta.
     """
@@ -106,7 +105,22 @@ def _ingest(client, replay_id, roster, archive):
     if full.get("status") != "ok":
         print(f"  · {replay_id}: estado '{full.get('status')}'")
         return False
+
+    # Dedup por match_guid: si dos compañeros suben su propio replay de la
+    # misma partida, ballchasing devuelve dos ids distintos. Sin esto, la
+    # partida contaría dos veces en todas las estadísticas.
+    guid = full.get("match_guid")
+    canonical = mf.known_guids(manifest).get(guid) if guid else None
+    if canonical and canonical != replay_id:
+        mf.match_entry(manifest, replay_id)["duplicate_of"] = canonical
+        mf.match_entry(manifest, replay_id)["match_guid"] = guid
+        mf.save(manifest)
+        print(f"  · {replay_id}: duplicado de {canonical} (mismo match_guid), se omite")
+        return True
+
     write_json(MATCHES_DIR / f"{replay_id}.json", normalize(full, roster))
+    mf.record_ingest(manifest, replay_id, guid, full.get("date"))
+    mf.save(manifest)
     dest = ARCHIVE_DIR / f"{replay_id}.replay"
     if archive and not dest.exists():
         client.download_replay(replay_id, dest)
@@ -131,24 +145,27 @@ def main():
 
     client = BallchasingClient(require_secret("BALLCHASING_TOKEN"))
     roster = load_roster()
+    manifest = mf.load()
     known = {p.stem for p in MATCHES_DIR.glob("*.json")}
 
     new, pending = 0, []
     for entry in client.iter_group_replays(group):
         replay_id = entry["id"]
         dest = ARCHIVE_DIR / f"{replay_id}.replay"
+        if manifest["matches"].get(replay_id, {}).get("duplicate_of"):
+            continue  # duplicado ya detectado en otra pasada
         if replay_id in known and not refetch:
             # Los .replay no se versionan y el runner de CI es efímero: si a
-            # una partida conocida aún le falta un derivado (frames/events,
-            # p. ej. porque su parseo falló en una pasada anterior o tras un
-            # backfill que los borró), re-descarga el replay para reintentarlo.
+            # una partida conocida aún le falta un derivado (frames/events)
+            # que el manifiesto dice que toca regenerar, re-descarga el
+            # replay. Si la etapa desistió (MAX_ATTEMPTS), ya no se descarga.
             if archive and not dest.exists() and (
-                not (FRAMES_DIR / f"{replay_id}.json").exists()
-                or not (EVENTS_DIR / f"{replay_id}.json").exists()
+                mf.stage_pending(manifest, replay_id, "frames", mf.FRAMES_VERSION)
+                or mf.stage_pending(manifest, replay_id, "events", mf.EVENTS_VERSION)
             ):
                 client.download_replay(replay_id, dest)
             continue
-        if _ingest(client, replay_id, roster, archive):
+        if _ingest(client, replay_id, roster, archive, manifest):
             new += 1
         else:
             pending.append(replay_id)
@@ -163,7 +180,7 @@ def main():
         time.sleep(delay)
         still = []
         for replay_id in pending:
-            if _ingest(client, replay_id, roster, archive):
+            if _ingest(client, replay_id, roster, archive, manifest):
                 new += 1
             else:
                 still.append(replay_id)

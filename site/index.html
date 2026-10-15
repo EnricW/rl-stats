@@ -168,23 +168,24 @@
       renderForma(matches);
       renderUltima(matches, roster);
       renderRanking(matches, roster);
-      // informe semanal del equipo: histórico por fechas desde index.json
-      const reportsIndex = await fetchJSON("data/reports/index.json");
-      const teamDates = [...(reportsIndex?.team || [])].reverse();
+      // informe de equipo: histórico con fechas y rutas publicadas por el
+      // pipeline en summary.reports (la web ya no reconstruye nombres a mano)
+      const teamReports = [...(summary.reports?.team || [])].reverse();
       const teamSel = document.getElementById("team-report-date");
+      const pathByDate = new Map(teamReports.map((r) => [r.date, r.path]));
       const showTeam = (date) => renderReport(
         document.getElementById("team-report"),
-        `data/reports/team-${date}.md`,
+        `data/${pathByDate.get(date)}`,
         "No se pudo cargar el informe."
       );
-      if (teamDates.length) {
+      if (teamReports.length) {
         teamSel.hidden = false;
-        teamSel.innerHTML = teamDates.map((d) => `<option value="${d}">${fmtDateLong(d)}</option>`).join("");
+        teamSel.innerHTML = teamReports.map((r) => `<option value="${r.date}">${fmtDateLong(r.date)}</option>`).join("");
         teamSel.addEventListener("change", () => showTeam(teamSel.value));
-        showTeam(teamDates[0]);
+        showTeam(teamReports[0].date);
       } else {
         document.getElementById("team-report").innerHTML =
-          '<p class="empty">El informe semanal se genera cada lunes por la mañana y aparecerá aquí.</p>';
+          '<p class="empty">El informe de equipo se genera cada semana y aparecerá aquí.</p>';
       }
 
       // el contenido se monta tras cargar: el salto a #ancla hay que repetirlo ahora

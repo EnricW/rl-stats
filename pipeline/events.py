@@ -13,7 +13,8 @@ import math
 
 import subtr_actor
 
-from pipeline.util import ARCHIVE_DIR, EVENTS_DIR, MATCHES_DIR, load_roster, write_json
+from pipeline.manifest import EVENTS_VERSION, run_stage
+from pipeline.util import EVENTS_DIR, load_roster
 
 
 def _pid(obj):
@@ -175,31 +176,12 @@ def extract(replay_path, roster):
 
 
 def main():
-    roster = load_roster()
-    done, skipped = 0, 0
-    for match_file in sorted(MATCHES_DIR.glob("*.json")):
-        replay_id = match_file.stem
-        out = EVENTS_DIR / f"{replay_id}.json"
-        replay = ARCHIVE_DIR / f"{replay_id}.replay"
-        if out.exists():
-            continue
-        if not replay.exists():
-            skipped += 1
-            continue
-        try:
-            payload = extract(replay, roster)
-        except Exception as exc:  # un replay corrupto no debe parar el pipeline
-            print(f"  · {replay_id}: no se pudo parsear ({exc})")
-            skipped += 1
-            continue
-        payload["id"] = replay_id
-        write_json(out, payload)
-        done += 1
-        print(
-            f"  + eventos de {replay_id}: {len(payload['stat_events'])} tiros/paradas/asist., "
-            f"{len(payload['kickoffs'])} kickoffs"
-        )
-    print(f"events: {done} generados, {skipped} sin replay o con error")
+    run_stage(
+        "events", EVENTS_VERSION, EVENTS_DIR, extract, load_roster(),
+        describe=lambda p: (
+            f"{len(p['stat_events'])} tiros/paradas/asist., {len(p['kickoffs'])} kickoffs"
+        ),
+    )
 
 
 if __name__ == "__main__":

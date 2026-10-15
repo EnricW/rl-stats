@@ -1,0 +1,348 @@
+{
+  "matches": {
+    "0fc00121-a98e-47e3-b9f4-f58f06ea5fbc": {
+      "date": "2026-10-14T21:21:25Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/0fc00121-a98e-47e3-b9f4-f58f06ea5fbc.md"
+      }
+    },
+    "1b1783d1-80c5-4d0f-ae15-bb89cc063b89": {
+      "date": "2026-10-14T17:51:26Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/1b1783d1-80c5-4d0f-ae15-bb89cc063b89.md"
+      }
+    },
+    "2101621c-83f8-4ccc-868d-886bca092092": {
+      "date": "2026-10-14T20:12:21Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/2101621c-83f8-4ccc-868d-886bca092092.md"
+      }
+    },
+    "2dfe52b1-e978-4a07-9e38-8b5ec0be7a76": {
+      "date": "2026-10-14T21:28:27Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/2dfe52b1-e978-4a07-9e38-8b5ec0be7a76.md"
+      }
+    },
+    "48293f4f-aecd-4f8a-a85b-60120c5078a9": {
+      "date": "2026-10-14T17:59:59Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/48293f4f-aecd-4f8a-a85b-60120c5078a9.md"
+      }
+    },
+    "5664be64-07b6-4193-8280-47803b401f82": {
+      "date": "2026-10-14T20:28:03Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/5664be64-07b6-4193-8280-47803b401f82.md"
+      }
+    },
+    "59d02511-ea86-4139-821c-6b2560e7585a": {
+      "date": "2026-10-14T19:45:31Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/59d02511-ea86-4139-821c-6b2560e7585a.md"
+      }
+    },
+    "67348c74-0484-4af4-bab9-142ff6e95f21": {
+      "date": "2026-10-14T20:47:39Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/67348c74-0484-4af4-bab9-142ff6e95f21.md"
+      }
+    },
+    "743b9fe6-3f0e-4746-8028-b1e16a2cf948": {
+      "date": "2026-10-14T21:13:51Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/743b9fe6-3f0e-4746-8028-b1e16a2cf948.md"
+      }
+    },
+    "9926bcb0-4951-4f9e-bbbb-a284edc1857f": {
+      "date": "2026-10-14T20:35:20Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/9926bcb0-4951-4f9e-bbbb-a284edc1857f.md"
+      }
+    },
+    "9ddd713c-ad6e-4e30-a2d6-55fc7321b46b": {
+      "date": "2026-10-14T20:21:15Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/9ddd713c-ad6e-4e30-a2d6-55fc7321b46b.md"
+      }
+    },
+    "a093337d-19b3-49cc-8102-e5066af33314": {
+      "date": "2026-10-14T21:03:16Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/a093337d-19b3-49cc-8102-e5066af33314.md"
+      }
+    },
+    "d40b442a-6cf4-49ca-9674-4163ed16079d": {
+      "date": "2026-10-14T20:54:58Z",
+      "events": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": null,
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": null,
+      "match_guid": null,
+      "report": {
+        "generated_at": null,
+        "model": null,
+        "path": "reports/d40b442a-6cf4-49ca-9674-4163ed16079d.md"
+      }
+    }
+  },
+  "player_reports_state": {
+    "Enric": 10,
+    "Eric": 10,
+    "Ray": 10
+  },
+  "reports": {
+    "players": {
+      "Enric": [
+        {
+          "date": "2026-10-15",
+          "model": null,
+          "path": "reports/player-Enric-2026-10-15.md"
+        }
+      ],
+      "Eric": [
+        {
+          "date": "2026-10-15",
+          "model": null,
+          "path": "reports/player-Eric-2026-10-15.md"
+        }
+      ],
+      "Ray": [
+        {
+          "date": "2026-10-15",
+          "model": null,
+          "path": "reports/player-Ray-2026-10-15.md"
+        }
+      ]
+    },
+    "team": []
+  },
+  "schema_version": 1
+}

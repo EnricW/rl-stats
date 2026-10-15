@@ -462,22 +462,29 @@
       const matchRoster = match.players.filter((p) => p.roster).map((p) => p.name);
       const colorRoster = summary?.players?.length ? summary.players : matchRoster;
       renderRoles(match, colorRoster);
-      renderReport(
-        document.getElementById("report"),
-        `data/reports/${match.id}.md`,
-        "Esta partida aún no tiene informe (se genera en la siguiente pasada del pipeline)."
-      );
+      // summary dice qué derivados existen (has_report/has_events/has_frames):
+      // así no se piden archivos que sabemos que faltan (404 a ciegas)
+      const entry = summary?.matches?.find((m) => m.id === match.id);
+      const noReportText =
+        "Esta partida aún no tiene informe (se genera en la siguiente pasada del pipeline).";
+      if (entry?.has_report === false) {
+        document.getElementById("report").innerHTML = `<p class="empty">${noReportText}</p>`;
+      } else {
+        renderReport(document.getElementById("report"), `data/reports/${match.id}.md`, noReportText);
+      }
 
       // visor 3D, cronología, heatmap y eventos: solo si el replay se parseó.
       // Los eventos (~7 KB) se pintan primero; los frames (pesados) después,
       // sin bloquear la rotación y los saques.
       const ourIsTeam0 = us === "blue"; // team 0 = azul en el replay
-      const events = await fetchJSON(`data/events/${match.id}.json`);
+      const events = entry?.has_events === false
+        ? null : await fetchJSON(`data/events/${match.id}.json`);
       if (events) {
         renderRotation(events, colorRoster);
         renderKickoffs(events, ourIsTeam0 ? 0 : 1, colorRoster);
       }
-      const frames = await fetchJSON(`data/frames/${match.id}.json`);
+      const frames = entry?.has_frames === false
+        ? null : await fetchJSON(`data/frames/${match.id}.json`);
       if (frames) {
         renderTimeline(frames, events, ourIsTeam0);
         renderHeatmap(frames, match, colorRoster);

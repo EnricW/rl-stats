@@ -1,8 +1,10 @@
 {
-  "generated_at": "2026-10-15T13:17:35+00:00",
+  "generated_at": "2026-10-15T14:50:24+00:00",
   "matches": [
     {
       "date": "2026-10-14T21:28:27Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "2dfe52b1-e978-4a07-9e38-8b5ec0be7a76",
       "map": "mall_day_p",
@@ -46,6 +48,8 @@
     },
     {
       "date": "2026-10-14T21:21:25Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "0fc00121-a98e-47e3-b9f4-f58f06ea5fbc",
       "map": "Sovereign Heights (Dusk)",
@@ -89,6 +93,8 @@
     },
     {
       "date": "2026-10-14T21:13:51Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "743b9fe6-3f0e-4746-8028-b1e16a2cf948",
       "map": "Estadio Vida (Dusk)",
@@ -132,6 +138,8 @@
     },
     {
       "date": "2026-10-14T21:03:16Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "a093337d-19b3-49cc-8102-e5066af33314",
       "map": "Utopia Coliseum (Dusk)",
@@ -175,6 +183,8 @@
     },
     {
       "date": "2026-10-14T20:54:58Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "d40b442a-6cf4-49ca-9674-4163ed16079d",
       "map": "Farmstead (Pitched)",
@@ -218,6 +228,8 @@
     },
     {
       "date": "2026-10-14T20:47:39Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "67348c74-0484-4af4-bab9-142ff6e95f21",
       "map": "paname_dusk_p",
@@ -261,6 +273,8 @@
     },
     {
       "date": "2026-10-14T20:35:20Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "9926bcb0-4951-4f9e-bbbb-a284edc1857f",
       "map": "Neo Tokyo (Arcade)",
@@ -304,6 +318,8 @@
     },
     {
       "date": "2026-10-14T20:28:03Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "5664be64-07b6-4193-8280-47803b401f82",
       "map": "Neo Tokyo (Standard)",
@@ -347,6 +363,8 @@
     },
     {
       "date": "2026-10-14T20:21:15Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "9ddd713c-ad6e-4e30-a2d6-55fc7321b46b",
       "map": "Utopia Coliseum (Dusk)",
@@ -390,6 +408,8 @@
     },
     {
       "date": "2026-10-14T20:12:21Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "2101621c-83f8-4ccc-868d-886bca092092",
       "map": "Salty Shores (Salty Fest)",
@@ -433,6 +453,8 @@
     },
     {
       "date": "2026-10-14T19:45:31Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "59d02511-ea86-4139-821c-6b2560e7585a",
       "map": "Beckwith Park (Stormy)",
@@ -476,6 +498,8 @@
     },
     {
       "date": "2026-10-14T17:59:59Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "48293f4f-aecd-4f8a-a85b-60120c5078a9",
       "map": "Beckwith Park",
@@ -519,6 +543,8 @@
     },
     {
       "date": "2026-10-14T17:51:26Z",
+      "has_events": true,
+      "has_frames": true,
       "has_report": true,
       "id": "1b1783d1-80c5-4d0f-ae15-bb89cc063b89",
       "map": "paname_dusk_p",
@@ -566,6 +592,39 @@
     "Eric",
     "Ray"
   ],
+  "reports": {
+    "every": 10,
+    "players": {
+      "Enric": {
+        "games_at_last": 10,
+        "items": [
+          {
+            "date": "2026-10-15",
+            "path": "reports/player-Enric-2026-10-15.md"
+          }
+        ]
+      },
+      "Eric": {
+        "games_at_last": 10,
+        "items": [
+          {
+            "date": "2026-10-15",
+            "path": "reports/player-Eric-2026-10-15.md"
+          }
+        ]
+      },
+      "Ray": {
+        "games_at_last": 10,
+        "items": [
+          {
+            "date": "2026-10-15",
+            "path": "reports/player-Ray-2026-10-15.md"
+          }
+        ]
+      }
+    },
+    "team": []
+  },
   "team": {
     "modes": {
       "3v3": {

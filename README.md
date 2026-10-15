@@ -21,6 +21,12 @@ GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron s
   deploy        site/ + data/ -> GitHub Pages
 ```
 
+El estado del pipeline vive en `data/manifest.json` (registro central): qué
+partidas se ingirieron (con dedup por `match_guid`), el estado de cada derivado
+(versión del extractor, intentos y último error: un replay corrupto se reintenta
+3 veces y se desiste), y el histórico de informes con fecha, ruta y modelo.
+La web no adivina rutas: lee la vista que `aggregate` publica en `summary.json`.
+
 Las stats agregadas las calcula ballchasing (aquí solo se normalizan y comentan);
 los `.replay` archivados se parsean con [subtr-actor](https://github.com/rlrml/subtr-actor)
 para extraer trayectorias (visor) y eventos con timestamp (cronología, saques,
