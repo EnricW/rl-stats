@@ -1,5 +1,8 @@
-# Despliegue de la web cuando se edita site/ a mano (el pipeline de ingest ya
-# despliega por su cuenta tras cada tanda de datos).
+# Despliegue de la web cuando se edita site/ o data/ a mano (el pipeline de
+# ingest ya despliega por su cuenta tras cada tanda de datos, y sus pushes no
+# disparan este workflow: GitHub no encadena workflows desde GITHUB_TOKEN).
+# Sin data/** aquí, un push humano con solo datos (p. ej. informes
+# regenerados) dejaba la web desactualizada hasta el siguiente deploy.
 
 name: Desplegar web
 
@@ -8,6 +11,7 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      - "data/**"
   workflow_dispatch:
 
 permissions:
