@@ -1,0 +1,334 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 71.9,
+      "team": 0
+    },
+    {
+      "name": "ledevint",
+      "score": [
+        1,
+        1
+      ],
+      "t": 127.08,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        1
+      ],
+      "t": 196.86,
+      "team": 0
+    },
+    {
+      "name": "Nibj1b",
+      "score": [
+        2,
+        2
+      ],
+      "t": 217.36,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        3,
+        2
+      ],
+      "t": 387.97,
+      "team": 0
+    }
+  ],
+  "id": "97c95901-f6da-433e-9487-15d08bf717ad",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 78.7,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 105.7,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 6,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 92.5,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Nibj1b",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "Nibj1b"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 84.91,
+      "takers": {
+        "0": "Ray",
+        "1": "Nibj1b"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 137.66,
+      "takers": {
+        "0": "Enric",
+        "1": "Datt2006"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "ledevint",
+      "first_touch_team": 1,
+      "goal_team": 1,
+      "outcome": 1,
+      "t": 208.42,
+      "takers": {
+        "0": "Eric",
+        "1": "ledevint"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 229.6,
+      "takers": {
+        "0": "Enric",
+        "1": "ledevint"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Nibj1b",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 377.11,
+      "takers": {
+        "0": "Ray",
+        "1": "Nibj1b"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 25,
+      "pct_first_man": 28.6,
+      "pct_second_man": 18.3,
+      "pct_third_man": 38.0
+    },
+    "Eric": {
+      "became_first_man": 28,
+      "pct_first_man": 25.5,
+      "pct_second_man": 27.2,
+      "pct_third_man": 32.3
+    },
+    "Ray": {
+      "became_first_man": 34,
+      "pct_first_man": 30.9,
+      "pct_second_man": 39.4,
+      "pct_third_man": 14.6
+    }
+  },
+  "stat_events": [
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 21.1,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1919.0,
+      "kind": "shot",
+      "name": "Nibj1b",
+      "speed_to_goal": -1126.0,
+      "t": 21.1,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1704.0,
+      "kind": "shot",
+      "name": "Nibj1b",
+      "speed_to_goal": 1846.0,
+      "t": 41.14,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 41.24,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1926.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -686.0,
+      "t": 63.35,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Datt2006",
+      "t": 63.41,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2105.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2533.0,
+      "t": 70.1,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 570.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2135.0,
+      "t": 71.57,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 71.94,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2105.0,
+      "kind": "shot",
+      "name": "ledevint",
+      "speed_to_goal": 1961.0,
+      "t": 125.74,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1543.0,
+      "kind": "shot",
+      "name": "ledevint",
+      "speed_to_goal": 651.0,
+      "t": 151.49,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 152.22,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2230.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2200.0,
+      "t": 162.7,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "ledevint",
+      "t": 163.76,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2153.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1618.0,
+      "t": 195.29,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 196.82,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2281.0,
+      "kind": "shot",
+      "name": "Nibj1b",
+      "speed_to_goal": 3091.0,
+      "t": 216.49,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "ledevint",
+      "t": 217.36,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2071.0,
+      "kind": "shot",
+      "name": "ledevint",
+      "speed_to_goal": 2471.0,
+      "t": 259.33,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 260.27,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2240.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1909.0,
+      "t": 387.11,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 388.04,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.7,
+    "Eric": 2.9,
+    "Ray": 2.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 7.7,
+    "1": 18.5
+  }
+}

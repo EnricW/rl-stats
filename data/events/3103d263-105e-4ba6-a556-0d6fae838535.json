@@ -1,0 +1,332 @@
+{
+  "goals": [
+    {
+      "name": "The StrangerCold",
+      "score": [
+        0,
+        1
+      ],
+      "t": 89.78,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        1
+      ],
+      "t": 134.46,
+      "team": 0
+    },
+    {
+      "name": "jamjam le plot",
+      "score": [
+        1,
+        2
+      ],
+      "t": 245.72,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        2,
+        2
+      ],
+      "t": 359.01,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        3,
+        2
+      ],
+      "t": 421.98,
+      "team": 0
+    }
+  ],
+  "id": "3103d263-105e-4ba6-a556-0d6fae838535",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 63.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 155.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 40.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "The StrangerCold",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "The StrangerCold"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Nono_Le_Plot",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 101.38,
+      "takers": {
+        "0": "Ray",
+        "1": "Nono_Le_Plot"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "The StrangerCold",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 144.39,
+      "takers": {
+        "0": "Enric",
+        "1": "The StrangerCold"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "The StrangerCold",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 258.7,
+      "takers": {
+        "0": "Enric",
+        "1": "The StrangerCold"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "jamjam le plot",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 371.97,
+      "takers": {
+        "0": "Eric",
+        "1": "jamjam le plot"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 31,
+      "pct_first_man": 27.5,
+      "pct_second_man": 29.0,
+      "pct_third_man": 31.8
+    },
+    "Eric": {
+      "became_first_man": 31,
+      "pct_first_man": 30.9,
+      "pct_second_man": 27.9,
+      "pct_third_man": 29.6
+    },
+    "Ray": {
+      "became_first_man": 27,
+      "pct_first_man": 29.9,
+      "pct_second_man": 31.4,
+      "pct_third_man": 27.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 870.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1572.0,
+      "t": 71.23,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 80.37,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 932.0,
+      "kind": "shot",
+      "name": "Nono_Le_Plot",
+      "speed_to_goal": -1009.0,
+      "t": 80.4,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 963.0,
+      "kind": "shot",
+      "name": "jamjam le plot",
+      "speed_to_goal": 1895.0,
+      "t": 85.74,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "jamjam le plot",
+      "t": 89.81,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1484.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2279.0,
+      "t": 130.83,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 714.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1223.0,
+      "t": 133.89,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 134.71,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2082.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2032.0,
+      "t": 171.29,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1273.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 813.0,
+      "t": 193.55,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "The StrangerCold",
+      "t": 194.15,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Nono_Le_Plot",
+      "t": 196.19,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1454.0,
+      "kind": "shot",
+      "name": "Nono_Le_Plot",
+      "speed_to_goal": 509.0,
+      "t": 206.36,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 206.76,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1597.0,
+      "kind": "shot",
+      "name": "Nono_Le_Plot",
+      "speed_to_goal": 2590.0,
+      "t": 238.89,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Nono_Le_Plot",
+      "t": 245.93,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 360.0,
+      "kind": "shot",
+      "name": "jamjam le plot",
+      "speed_to_goal": 1012.0,
+      "t": 276.03,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1387.0,
+      "kind": "shot",
+      "name": "Nono_Le_Plot",
+      "speed_to_goal": 1310.0,
+      "t": 316.66,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1594.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 891.0,
+      "t": 358.17,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 359.19,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1828.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1554.0,
+      "t": 418.78,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 679.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2344.0,
+      "t": 421.68,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 422.41,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.2,
+    "Eric": 2.8,
+    "Ray": 5.2
+  },
+  "sustained_possession_teams_s": {
+    "0": 10.2,
+    "1": 27.8
+  }
+}

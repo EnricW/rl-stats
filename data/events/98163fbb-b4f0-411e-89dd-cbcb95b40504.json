@@ -1,0 +1,306 @@
+{
+  "goals": [
+    {
+      "name": "Soeily.",
+      "score": [
+        0,
+        1
+      ],
+      "t": 41.45,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        1
+      ],
+      "t": 197.88,
+      "team": 0
+    },
+    {
+      "name": "Soeily.",
+      "score": [
+        1,
+        2
+      ],
+      "t": 463.83,
+      "team": 1
+    }
+  ],
+  "id": "98163fbb-b4f0-411e-89dd-cbcb95b40504",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 118.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 0
+    },
+    "Eric": {
+      "avg_boost_after": 67.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 98.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Soeily.",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "Soeily."
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Voxeyxd",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 54.45,
+      "takers": {
+        "0": "Eric",
+        "1": "Voxeyxd"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Soeily.",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 206.87,
+      "takers": {
+        "0": "Eric",
+        "1": "Soeily."
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Soeily.",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 339.43,
+      "takers": {
+        "0": "Ray",
+        "1": "Soeily."
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 29,
+      "pct_first_man": 23.3,
+      "pct_second_man": 23.7,
+      "pct_third_man": 37.5
+    },
+    "Eric": {
+      "became_first_man": 38,
+      "pct_first_man": 32.8,
+      "pct_second_man": 25.7,
+      "pct_third_man": 26.0
+    },
+    "Ray": {
+      "became_first_man": 40,
+      "pct_first_man": 28.4,
+      "pct_second_man": 35.1,
+      "pct_third_man": 21.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1180.0,
+      "kind": "shot",
+      "name": "Soeily.",
+      "speed_to_goal": 1632.0,
+      "t": 40.78,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Valman2468",
+      "t": 41.78,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 110.3,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2816.0,
+      "kind": "shot",
+      "name": "Soeily.",
+      "speed_to_goal": -2337.0,
+      "t": 110.33,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2092.0,
+      "kind": "shot",
+      "name": "Soeily.",
+      "speed_to_goal": 1073.0,
+      "t": 123.54,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 124.61,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1094.0,
+      "kind": "shot",
+      "name": "Voxeyxd",
+      "speed_to_goal": 1797.0,
+      "t": 157.0,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2083.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1671.0,
+      "t": 178.28,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Voxeyxd",
+      "t": 179.28,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1162.0,
+      "kind": "shot",
+      "name": "Soeily.",
+      "speed_to_goal": 1271.0,
+      "t": 191.48,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 713.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2788.0,
+      "t": 197.58,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1740.0,
+      "kind": "shot",
+      "name": "Soeily.",
+      "speed_to_goal": 1330.0,
+      "t": 266.78,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 268.88,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1495.0,
+      "kind": "shot",
+      "name": "Voxeyxd",
+      "speed_to_goal": -332.0,
+      "t": 352.23,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 352.93,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1578.0,
+      "kind": "shot",
+      "name": "Valman2468",
+      "speed_to_goal": -1473.0,
+      "t": 365.27,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 365.37,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 935.0,
+      "kind": "shot",
+      "name": "Voxeyxd",
+      "speed_to_goal": 18.0,
+      "t": 377.53,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 378.33,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1263.0,
+      "kind": "shot",
+      "name": "Voxeyxd",
+      "speed_to_goal": 1799.0,
+      "t": 392.77,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 393.8,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2742.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -1193.0,
+      "t": 405.83,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Valman2468",
+      "t": 405.93,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Voxeyxd",
+      "t": 463.93,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.9,
+    "Eric": 3.9,
+    "Ray": 7.2
+  },
+  "sustained_possession_teams_s": {
+    "0": 12.0,
+    "1": 27.0
+  }
+}

@@ -1,0 +1,523 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 38.38,
+      "team": 0
+    },
+    {
+      "name": "RICO-74500",
+      "score": [
+        1,
+        1
+      ],
+      "t": 60.76,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        1
+      ],
+      "t": 123.82,
+      "team": 0
+    },
+    {
+      "name": "silienmoa2005",
+      "score": [
+        2,
+        2
+      ],
+      "t": 234.45,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        2
+      ],
+      "t": 266.33,
+      "team": 0
+    },
+    {
+      "name": "MaitreGonzo31",
+      "score": [
+        3,
+        3
+      ],
+      "t": 393.44,
+      "team": 1
+    }
+  ],
+  "id": "3baa4756-dae0-40c7-b135-b7fe957c8841",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 46.9,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 7,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 57.4,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 7,
+      "taken": 3
+    },
+    "Ray": {
+      "avg_boost_after": 141.9,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 7,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "silienmoa2005"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "MaitreGonzo31",
+      "first_touch_team": 1,
+      "goal_team": 1,
+      "outcome": 1,
+      "t": 50.22,
+      "takers": {
+        "0": "Eric",
+        "1": "MaitreGonzo31"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "RICO-74500",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 69.91,
+      "takers": {
+        "0": "Enric",
+        "1": "RICO-74500"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 136.81,
+      "takers": {
+        "0": "Eric",
+        "1": "MaitreGonzo31"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "RICO-74500",
+      "first_touch_team": 1,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 249.39,
+      "takers": {
+        "0": "Ray",
+        "1": "RICO-74500"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "MaitreGonzo31",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 276.3,
+      "takers": {
+        "0": "Enric",
+        "1": "MaitreGonzo31"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 406.45,
+      "takers": {
+        "0": "Eric",
+        "1": "silienmoa2005"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 59,
+      "pct_first_man": 24.1,
+      "pct_second_man": 24.3,
+      "pct_third_man": 38.7
+    },
+    "Eric": {
+      "became_first_man": 70,
+      "pct_first_man": 28.3,
+      "pct_second_man": 28.0,
+      "pct_third_man": 31.0
+    },
+    "Ray": {
+      "became_first_man": 77,
+      "pct_first_man": 34.8,
+      "pct_second_man": 34.9,
+      "pct_third_man": 17.5
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1629.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1519.0,
+      "t": 34.88,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "silienmoa2005",
+      "t": 35.98,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2284.0,
+      "kind": "shot",
+      "name": "RICO-74500",
+      "speed_to_goal": 2322.0,
+      "t": 59.79,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "MaitreGonzo31",
+      "t": 60.9,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1615.0,
+      "kind": "shot",
+      "name": "MaitreGonzo31",
+      "speed_to_goal": 1290.0,
+      "t": 88.51,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 89.75,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2158.0,
+      "kind": "shot",
+      "name": "MaitreGonzo31",
+      "speed_to_goal": 1256.0,
+      "t": 116.92,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 117.05,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2157.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2263.0,
+      "t": 122.72,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2178.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2301.0,
+      "t": 143.18,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "silienmoa2005",
+      "t": 143.94,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1777.0,
+      "kind": "shot",
+      "name": "silienmoa2005",
+      "speed_to_goal": 2567.0,
+      "t": 172.14,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 172.84,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2227.0,
+      "kind": "shot",
+      "name": "RICO-74500",
+      "speed_to_goal": 1928.0,
+      "t": 181.1,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1756.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2689.0,
+      "t": 265.73,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2071.0,
+      "kind": "shot",
+      "name": "MaitreGonzo31",
+      "speed_to_goal": 2867.0,
+      "t": 313.37,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 313.67,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1992.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1235.0,
+      "t": 338.88,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "MaitreGonzo31",
+      "t": 339.21,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1700.0,
+      "kind": "shot",
+      "name": "RICO-74500",
+      "speed_to_goal": 2343.0,
+      "t": 354.67,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 355.27,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1981.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2438.0,
+      "t": 380.27,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "MaitreGonzo31",
+      "t": 380.67,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2031.0,
+      "kind": "shot",
+      "name": "MaitreGonzo31",
+      "speed_to_goal": 1842.0,
+      "t": 392.24,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "RICO-74500",
+      "t": 393.47,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2316.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -2397.0,
+      "t": 455.15,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "silienmoa2005",
+      "t": 455.15,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1907.0,
+      "kind": "shot",
+      "name": "silienmoa2005",
+      "speed_to_goal": 2072.0,
+      "t": 457.75,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1749.0,
+      "kind": "shot",
+      "name": "silienmoa2005",
+      "speed_to_goal": 2083.0,
+      "t": 565.55,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 565.75,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1329.0,
+      "kind": "shot",
+      "name": "RICO-74500",
+      "speed_to_goal": 2512.0,
+      "t": 572.9,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1738.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1665.0,
+      "t": 587.21,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "RICO-74500",
+      "t": 588.58,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1748.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1903.0,
+      "t": 606.12,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "silienmoa2005",
+      "t": 606.36,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2027.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2594.0,
+      "t": 634.23,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "silienmoa2005",
+      "t": 634.76,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2146.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1736.0,
+      "t": 685.79,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "silienmoa2005",
+      "t": 686.39,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1959.0,
+      "kind": "shot",
+      "name": "RICO-74500",
+      "speed_to_goal": 2863.0,
+      "t": 806.54,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2035.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2284.0,
+      "t": 830.63,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "MaitreGonzo31",
+      "t": 831.2,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 314.0,
+      "kind": "shot",
+      "name": "MaitreGonzo31",
+      "speed_to_goal": 2345.0,
+      "t": 861.16,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 157.0,
+      "kind": "shot",
+      "name": "RICO-74500",
+      "speed_to_goal": 335.0,
+      "t": 861.29,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2221.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2485.0,
+      "t": 930.98,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 12.9,
+    "Eric": 9.7,
+    "Ray": 18.7
+  },
+  "sustained_possession_teams_s": {
+    "0": 41.3,
+    "1": 42.3
+  }
+}

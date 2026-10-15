@@ -1,0 +1,293 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 116.51,
+      "team": 1
+    },
+    {
+      "name": "iNsiiX_NaVaFraaN",
+      "score": [
+        1,
+        1
+      ],
+      "t": 161.41,
+      "team": 0
+    },
+    {
+      "name": "odiimulero",
+      "score": [
+        2,
+        1
+      ],
+      "t": 224.4,
+      "team": 0
+    },
+    {
+      "name": "juanpe_hem",
+      "score": [
+        3,
+        1
+      ],
+      "t": 322.76,
+      "team": 0
+    }
+  ],
+  "id": "73525d7a-a5eb-48f6-a483-0ef01a399ff0",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 101.6,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 73.4,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 155.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "odiimulero",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "odiimulero",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 126.8,
+      "takers": {
+        "0": "juanpe_hem",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "iNsiiX_NaVaFraaN",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 174.43,
+      "takers": {
+        "0": "iNsiiX_NaVaFraaN",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 235.23,
+      "takers": {
+        "0": "juanpe_hem",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "iNsiiX_NaVaFraaN",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 335.8,
+      "takers": {
+        "0": "iNsiiX_NaVaFraaN",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 28,
+      "pct_first_man": 23.1,
+      "pct_second_man": 25.8,
+      "pct_third_man": 39.7
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 27.5,
+      "pct_second_man": 32.7,
+      "pct_third_man": 28.4
+    },
+    "Ray": {
+      "became_first_man": 32,
+      "pct_first_man": 38.1,
+      "pct_second_man": 30.1,
+      "pct_third_man": 20.5
+    }
+  },
+  "stat_events": [
+    {
+      "kind": "save",
+      "name": "iNsiiX_NaVaFraaN",
+      "t": 72.38,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1381.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 418.0,
+      "t": 72.81,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2059.0,
+      "kind": "shot",
+      "name": "juanpe_hem",
+      "speed_to_goal": 2322.0,
+      "t": 87.42,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1744.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2469.0,
+      "t": 115.27,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "juanpe_hem",
+      "t": 115.87,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 153.23,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1292.0,
+      "kind": "shot",
+      "name": "iNsiiX_NaVaFraaN",
+      "speed_to_goal": -670.0,
+      "t": 153.3,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 794.0,
+      "kind": "shot",
+      "name": "iNsiiX_NaVaFraaN",
+      "speed_to_goal": 720.0,
+      "t": 161.37,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1793.0,
+      "kind": "shot",
+      "name": "iNsiiX_NaVaFraaN",
+      "speed_to_goal": 1766.0,
+      "t": 199.87,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 200.84,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1483.0,
+      "kind": "shot",
+      "name": "iNsiiX_NaVaFraaN",
+      "speed_to_goal": 1747.0,
+      "t": 207.0,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 207.97,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 990.0,
+      "kind": "shot",
+      "name": "juanpe_hem",
+      "speed_to_goal": 872.0,
+      "t": 223.26,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "juanpe_hem",
+      "t": 224.82,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1251.0,
+      "kind": "shot",
+      "name": "odiimulero",
+      "speed_to_goal": 2714.0,
+      "t": 288.03,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 289.03,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1802.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1612.0,
+      "t": 311.33,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "odiimulero",
+      "t": 312.39,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 792.0,
+      "kind": "shot",
+      "name": "juanpe_hem",
+      "speed_to_goal": 1231.0,
+      "t": 322.49,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 6.9,
+    "Eric": 6.1,
+    "Ray": 2.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 9.0,
+    "1": 15.0
+  }
+}

@@ -24,6 +24,30 @@
         "path": "reports/009d30c3-2f16-47b3-8c57-88a796dc1669.md"
       }
     },
+    "06144b27-5329-4dd9-a2bc-0ba622eaf0c6": {
+      "date": "2026-10-15T21:20:01Z",
+      "events": {
+        "at": "2026-10-15T21:26:27+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:26:21+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:15+00:00",
+      "match_guid": "B0C7753811F1C8DCD345D79967A4872F",
+      "report": {
+        "generated_at": "2026-10-15T21:28:43+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/06144b27-5329-4dd9-a2bc-0ba622eaf0c6.md"
+      }
+    },
     "0fc00121-a98e-47e3-b9f4-f58f06ea5fbc": {
       "date": "2026-10-14T21:21:25Z",
       "events": {
@@ -118,6 +142,78 @@
         "generated_at": "2026-10-15T16:05:12+00:00",
         "model": "claude-sonnet-5-5",
         "path": "reports/2dfe52b1-e978-4a07-9e38-8b5ec0be7a76.md"
+      }
+    },
+    "3103d263-105e-4ba6-a556-0d6fae838535": {
+      "date": "2026-10-15T20:25:16Z",
+      "events": {
+        "at": "2026-10-15T21:26:37+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:26:29+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:02+00:00",
+      "match_guid": "E3C9D51E11F1C8D4077482A2DB1F9E4B",
+      "report": {
+        "generated_at": "2026-10-15T21:29:16+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/3103d263-105e-4ba6-a556-0d6fae838535.md"
+      }
+    },
+    "3baa4756-dae0-40c7-b135-b7fe957c8841": {
+      "date": "2026-10-15T21:04:32Z",
+      "events": {
+        "at": "2026-10-15T21:27:17+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:26:42+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:11+00:00",
+      "match_guid": "2854D3E211F1C8D988C084A5A264708C",
+      "report": {
+        "generated_at": "2026-10-15T21:29:59+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/3baa4756-dae0-40c7-b135-b7fe957c8841.md"
+      }
+    },
+    "3fdc9498-fe43-496f-8b71-cdbb2bc60a67": {
+      "date": "2026-10-15T20:33:33Z",
+      "events": {
+        "at": "2026-10-15T21:27:25+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:27:19+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:04+00:00",
+      "match_guid": "289CBCF011F1C8D690659F932ADC5625",
+      "report": {
+        "generated_at": "2026-10-15T21:30:34+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/3fdc9498-fe43-496f-8b71-cdbb2bc60a67.md"
       }
     },
     "48293f4f-aecd-4f8a-a85b-60120c5078a9": {
@@ -288,6 +384,30 @@
         "path": "reports/6ff936c5-63c6-4803-b1aa-e436a24bac0f.md"
       }
     },
+    "73525d7a-a5eb-48f6-a483-0ef01a399ff0": {
+      "date": "2026-10-15T20:40:31Z",
+      "events": {
+        "at": "2026-10-15T21:27:34+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:27:26+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:06+00:00",
+      "match_guid": "2B087AAA11F1C8D76CAF06A15D03616E",
+      "report": {
+        "generated_at": "2026-10-15T21:31:25+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/73525d7a-a5eb-48f6-a483-0ef01a399ff0.md"
+      }
+    },
     "743b9fe6-3f0e-4746-8028-b1e16a2cf948": {
       "date": "2026-10-14T21:13:51Z",
       "events": {
@@ -334,6 +454,54 @@
         "generated_at": "2026-10-15T20:10:22+00:00",
         "model": "claude-sonnet-5-5",
         "path": "reports/77bbb1d3-fd1f-46d5-8fb3-37416b66c11d.md"
+      }
+    },
+    "97c95901-f6da-433e-9487-15d08bf717ad": {
+      "date": "2026-10-15T21:12:27Z",
+      "events": {
+        "at": "2026-10-15T21:27:41+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:27:36+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:13+00:00",
+      "match_guid": "81E9957611F1C8DB6F92A99F15A8A97B",
+      "report": {
+        "generated_at": "2026-10-15T21:31:55+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/97c95901-f6da-433e-9487-15d08bf717ad.md"
+      }
+    },
+    "98163fbb-b4f0-411e-89dd-cbcb95b40504": {
+      "date": "2026-10-15T21:28:57Z",
+      "events": {
+        "at": "2026-10-15T21:27:55+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:27:43+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:17+00:00",
+      "match_guid": "AD9D884C11F1C8DD5ED8F1AF91D8C282",
+      "report": {
+        "generated_at": "2026-10-15T21:32:31+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/98163fbb-b4f0-411e-89dd-cbcb95b40504.md"
       }
     },
     "9926bcb0-4951-4f9e-bbbb-a284edc1857f": {
@@ -408,6 +576,54 @@
         "path": "reports/a093337d-19b3-49cc-8102-e5066af33314.md"
       }
     },
+    "a2ff46bf-1b5a-41a9-9c20-e841603eaba7": {
+      "date": "2026-10-15T20:47:39Z",
+      "events": {
+        "at": "2026-10-15T21:28:02+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:27:56+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:26:09+00:00",
+      "match_guid": "286C59FA11F1C8D8595374B960D4B411",
+      "report": {
+        "generated_at": "2026-10-15T21:33:04+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/a2ff46bf-1b5a-41a9-9c20-e841603eaba7.md"
+      }
+    },
+    "cea85bf4-c6a3-4eb6-9c91-39b6fec850ad": {
+      "date": "2026-10-15T20:17:04Z",
+      "events": {
+        "at": "2026-10-15T21:28:09+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "frames": {
+        "at": "2026-10-15T21:28:03+00:00",
+        "attempts": 1,
+        "error": null,
+        "ok": true,
+        "v": 1
+      },
+      "ingested_at": "2026-10-15T21:25:59+00:00",
+      "match_guid": "EC807BAA11F1C8D3396DE49768244BC6",
+      "report": {
+        "generated_at": "2026-10-15T21:33:42+00:00",
+        "model": "claude-sonnet-5-5",
+        "path": "reports/cea85bf4-c6a3-4eb6-9c91-39b6fec850ad.md"
+      }
+    },
     "d40b442a-6cf4-49ca-9674-4163ed16079d": {
       "date": "2026-10-14T20:54:58Z",
       "events": {
@@ -458,30 +674,30 @@
     }
   },
   "player_reports_state": {
-    "Enric": 10,
-    "Eric": 10,
-    "Ray": 10
+    "Enric": 28,
+    "Eric": 28,
+    "Ray": 28
   },
   "reports": {
     "players": {
       "Enric": [
         {
           "date": "2026-10-15",
-          "model": null,
+          "model": "claude-opus-5-5",
           "path": "reports/player-Enric-2026-10-15.md"
         }
       ],
       "Eric": [
         {
           "date": "2026-10-15",
-          "model": null,
+          "model": "claude-opus-5-5",
           "path": "reports/player-Eric-2026-10-15.md"
         }
       ],
       "Ray": [
         {
           "date": "2026-10-15",
-          "model": null,
+          "model": "claude-opus-5-5",
           "path": "reports/player-Ray-2026-10-15.md"
         }
       ]

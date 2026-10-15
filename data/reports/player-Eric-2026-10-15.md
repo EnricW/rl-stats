@@ -1,29 +1,54 @@
 # Informe de tendencia: Eric
 
 ## 1. Foto actual
-Eric ha jugado **10 partidas, todas en 3v3**, con **4 victorias (40 % de winrate)**. Su perfil es el de un jugador **muy posicional y poco finalizador**: promedia 0,5 goles, 0,2 asistencias y 1,8 tiros por partido, con un 28,33 % de acierto. Juega mucho en campo propio (54,15 % en el tercio defensivo, solo 17,41 % en el ofensivo). Por ahora está **irregular, con una ligera mejoría en resultados**. Gana 3 de las últimas 5 partidas, frente a 1 de las 5 primeras.
 
-## 2. Tendencias
-Aquí hay una limitación: **`last10_averages` es idéntico a `averages`**, porque solo hay 10 partidas. No se puede hacer la comparación habitual de forma y media histórica. Como alternativa, comparo las **5 primeras partidas con las 5 últimas**. Son muestras muy pequeñas, así que tómalo como orientación y no como conclusión firme.
+Eric juega solo **3v3** (28 partidas) con un **winrate del 53,6%** (15 victorias). Es un jugador equilibrado, sin un rol fijo, que rota bien entre primer y tercer hombre. Ahora mismo está **mejorando en lo ofensivo**: en las últimas 10 ha ganado 6 (60%), su score medio ha subido claramente y ha sacado un MVP con 447 puntos. La parte de boost, en cambio, va algo peor y su rendimiento es **irregular** partida a partida: el score de esas 10 oscila entre 160 y 447.
 
-- **Tercio defensivo:** pasa de ~52,0 % a ~56,3 %. En paralelo, el ofensivo baja de ~18,7 % a ~16,1 %. Cada vez juega más atrás.
-- **Score medio:** sube de ~229 a ~273, aunque los goles no acompañan: ~0,6 en las 5 primeras y ~0,4 en las 5 últimas. Los tiros bajan de 2,2 a 1,4 por partido. Suma puntos por defensa y presencia (paradas: 0,8 → 1,2), no por finalización.
-- **Boost a cero:** baja de ~12,0 % a ~10,2 %. Es una mejora leve en gestión, aunque oscila mucho entre partidas (de 4,99 % a 16,19 %).
+> Nota: el historial muestra 20 de las 28 partidas, así que algunos cálculos partida a partida de este informe se basan solo en esas 20. No hay datos de rango, así que no puedo contextualizar la evolución con el rango.
 
-Un dato aparte: la distancia media a compañeros se dispara en las dos últimas partidas (4010 y 3888, frente a ~3050-3550 en el resto). Puede ser una señal de desconexión con el equipo.
+## 2. Tendencias (últimas 10 vs. media total, 3v3)
+
+| Métrica | Media total | Últimas 10 | Cambio |
+|---|---|---|---|
+| **Score** | 250,46 | **290,5** | +40 (+16%) |
+| **Shooting %** | 30,06% | **35,83%** | +5,8 pts |
+| **Tiros** | 1,68 | **2,1** | +25% |
+| bcpm (boost recogido/min) | 301,49 | 290,81 | −10,7 |
+| pct_zero_boost | 11,63% | 12,63% | +1 pt |
+| pct_most_back | 32,7% | 30,85% | −1,85 pts |
+
+**Lectura rápida:**
+- **Ataque al alza.** Tiras más y mejor: los goles suben de 0,46 a 0,6 por partida y las asistencias de 0,5 a 0,6. En esas 10 partidas ha superado los 300 puntos 5 veces (334, 447, 380, 402, 316).
+- **Boost a la baja.** Recoges menos (bcpm 290,81), gastas menos (bpm de 291,54 a 283,6), llevas menos de media (avg_boost de 47,43 a 45,93) y pasas más tiempo a cero. Hay picos feos de pct_zero_boost: 22,29% en una derrota (score 144), 19,23% y 18,49%.
+- **Algo más adelantado.** Pasas menos tiempo como último hombre (30,85%) y algo menos detrás del balón (de 72,54% a 71,52%). Ojo con esto, porque es justo lo que separa tus victorias de tus derrotas (ver más abajo).
+- Otros detalles: los demos infligidos suben de 0,57 a 0,8 y el primer toque en kickoff de 32,1% a 36,67%. Este último es muy irregular: hay partidas con 0% y otras con 100%.
 
 ## 3. Fortalezas consolidadas
-- **Buen posicionamiento respecto al balón:** `pct_behind_ball` de 73,15 %, siempre entre 67,9 % y 78,6 %. Rara vez se deja superar.
-- **Rotación equilibrada:** primer hombre 29,34 %, tercer hombre 30,62 %, último atrás 36,18 % y más adelantado 32,09 %. No se queda clavado en un rol.
-- **Economía de boost correcta:** recoge 310 de bcpm y gasta 298 de bpm, con un boost medio de 48,38. Además roba 209,6 de boost por partida.
-- **Juego mayoritariamente a ras de suelo:** 68,58 % en suelo y 29,66 % en aire bajo. Es un estilo estable y poco arriesgado (aire alto: 1,77 %).
+
+- **Rotación equilibrada.** Primer hombre un 29,22% del tiempo y tercero un 28,65%. Último hombre un 32,7% y primero un 33,58%. No te quedas anclado atrás ni te lanzas siempre: sabes ocupar el rol que toca.
+- **Posición detrás del balón.** Tu media es 72,54%. En las 20 partidas del historial, en tus **victorias** estás detrás del balón un **~74,5%** del tiempo, y en tus **derrotas** un **~69,5%**. Cuando haces esto bien, ganas.
+- **Robo de boost.** Robas 279,61 de media y 306,9 en las últimas 10. Este dato incluye un 854 en una sola partida que infla la media, pero aun así te metes en el campo rival a quitarles recursos con regularidad.
+- **Distancia a compañeros estable.** Se mantiene en ~3.545 tanto en la media como en las últimas 10. Juegas conectado con tu equipo.
+- **Contribución constante.** Asistes con frecuencia: 12 de las 20 partidas del historial tienen al menos una asistencia.
 
 ## 4. Plan de práctica
-1. **Saques (`kickoff_ft_pct` 24,07 %):** en muchas partidas tiene un 0 % de primeros toques en saques. Dedica 10 minutos de calentamiento a saques desde cada posición (diagonal, lateral y centro). Fija una decisión previa: ir a por la bola o cubrir de forma explícita. Mide cuántos primeros toques consigues sobre 20 saques.
-2. **Finalización (1,8 tiros por partido, 28,33 % de acierto):** en entrenamiento libre o con packs de tiros, practica 15 minutos de remates tras recibir un pase o tras un rebote. Fíjate el objetivo de llegar a 3 tiros por partido, con intención de tirar al tercio ofensivo cuando recuperes y no solo despejar. Hoy el 54 % del tiempo en tu campo limita tus opciones.
-3. **Boost y cercanía al equipo (`pct_zero_boost` 11,09 %, `boost_overfill` 282, `avg_dist_to_mates` de 3481,9):** haz rutina de recogida de pads pequeños durante la rotación, sin pisar pads grandes con más del 80 % de boost. Así bajas el desperdicio y el tiempo a cero. Apunta a quedarte siempre por debajo del 10 % a cero (ya lo logras en 4 de las 10 partidas). En las partidas, fija una referencia: mantente a una distancia de pase de tus compañeros, sobre todo al subir tras defender. Es el hábito que deberías vigilar tras las dos últimas partidas.
 
-**Siguiente paso:** acumula 10 partidas más. Entonces `last10_averages` ya será comparable con la media histórica y podremos confirmar si estas tendencias se sostienen.
+**1. pct_zero_boost en 12,63% y bcpm a la baja → rutina de pads pequeños en rotación**
+En las 20 partidas visibles, tus derrotas promedian ~13,8% del tiempo a cero frente a ~11% en las victorias.
+- **Ejercicio:** 10 minutos en free play antes de jugar, rotando de ataque a defensa por el lado contrario del campo. Recoge solo pads pequeños y no toques los grandes.
+- **Hábito en partida:** si bajas de ~30 de boost, tu siguiente ruta de rotación pasa sí o sí por una línea de pads.
+
+**2. Bajón de pct_behind_ball en derrotas + ga_last_defender (1,17 por partida en las que aparece) → disciplina de último hombre**
+En todas tus derrotas del historial te marcaron goles siendo último defensor (1 o 2 por partida).
+- **Ejercicio:** revisa en replay cada gol encajado como último hombre de tus próximas 5 partidas. Pregúntate si estabas detrás del balón y si rotabas por el segundo palo.
+- **Regla en partida:** si eres el último, no subes a disputar un 50/50 sin que un compañero esté ya volviendo.
+
+**3. boost_overfill de ~287 por partida → no recoger grandes con el depósito lleno**
+Estás tirando casi 290 de boost por partida, en algunas por encima de 400 (496, 543, 444, 443).
+- **Hábito:** si llevas más de 70 de boost, no vayas a por un pad grande. Déjalo para un compañero o niégaselo al rival solo si te pilla de camino.
+- **Ejercicio:** en tus próximas 5 partidas, fíjate en el overfill tras cada una. El objetivo es bajar de 200, que ya has conseguido en algunas (27, 134, 179, 185, 188).
+
+**Resumen:** el ataque ya está despegando. Si cuidas el boost y no te despegas del balón cuando eres el último, ese 60% reciente puede consolidarse. 💪
 
 ---
-*Informe generado por claude-sonnet-5-5 el 2026-10-15 04:44 UTC.*
+*Informe generado por claude-opus-5-5 el 2026-10-15 21:35 UTC.*

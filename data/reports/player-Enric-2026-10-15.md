@@ -1,38 +1,64 @@
-# Informe de tendencia: Enric
+# Informe de tendencia: Enric (3v3)
 
 ## 1. Foto actual
-Solo hay datos de **3v3**, con 10 partidas y un **winrate del 40 %** (4 victorias). El nivel es discreto, con poca producción ofensiva: 0,3 goles, 0,2 asistencias y 0,7 tiros por partido, con un score medio de 159,3. La fase es de **mejora tímida**: en las 5 primeras partidas ganó 1 y en las 5 últimas ganó 3, y el score medio pasa de ~118 a ~201. Con tan pocas partidas es una señal, no una certeza.
 
-## 2. Tendencias
-Con solo 10 partidas, `last10_averages` y `averages` son **idénticos**, así que no se puede comparar entre ellos. En su lugar he dividido el historial en las 5 primeras partidas y las 5 últimas (cálculo mío con los datos del JSON):
+Enric, todo tu registro es de **3v3**: 28 partidas, 15 victorias, **53,6 % de winrate**. Vas a mejor. En las últimas 10 vas **6-4 (60 %)**, el score medio sube de **195,5 a 220,3** y ahí está tu único MVP (493 puntos, 2 goles y 2 paradas). Pero sigues siendo irregular: en esas 10 hay una racha de 3 derrotas seguidas y scores que van de **94 a 493**. El historial no trae datos de rango, así que no puedo decirte si esto se nota en tu división.
 
-| Métrica | Primeras 5 | Últimas 5 |
-|---|---|---|
-| Score | ~117,6 | ~201,0 |
-| Goles totales | 0 | 3 |
-| % boost a cero | ~15,6 % | ~11,9 % |
-| Boost recogido por minuto | ~243,8 | ~271,0 |
-| % supersónico | ~3,2 % | ~4,1 % |
-| % más atrás | ~32,5 % | ~37,9 % |
-| % tercio ofensivo | ~19,3 % | ~14,7 % |
-| Distancia a compañeros | ~3.415 | ~3.713 |
+> Nota: el detalle partida a partida cubre 20 de tus 28 partidas. Las medias de toda la vida sí incluyen las 28.
 
-- **Más producción y mejor boost:** sube el score, aparecen los goles y recoge más boost con menos tiempo a cero.
-- **Se ha vuelto más defensivo:** pasa más tiempo como último hombre y menos en el tercio ofensivo (de ~19 % a ~15 %).
-- **Más separación del equipo:** en las dos últimas partidas la distancia a compañeros sube a 4.075 y 4.160, frente a una media de 3.564.
+## 2. Tendencias (últimas 10 vs. media total)
+
+| Métrica | Media total | Últimas 10 | Cambio |
+|---|---|---|---|
+| **Asistencias** | 0,29 | 0,10 | ▼ casi un tercio |
+| **Tiros** | 0,93 | 0,70 | ▼ |
+| **Boost usado (bpm)** | 245,0 | 262,5 | ▲ +17,5 |
+| **Boost recogido (bcpm)** | 264,0 | 280,9 | ▲ +16,8 |
+| **Boost desperdiciado (overfill)** | 266,6 | 314,4 | ▲ +18 % |
+| **Boost robado** | 249,0 | 301,4 | ▲ +21 % |
+| **% tercio defensivo** | 56,9 % | 59,6 % | ▲ |
+| **% último hombre (most_back)** | 40,2 % | 43,5 % | ▲ |
+| **Paradas** | 0,71 | 0,90 | ▲ |
+
+Los tres cambios más claros:
+
+1. **Mueves mucho más boost, pero desperdicias más.** Recoges y gastas unos 17 por minuto más, y robas más al rival (301,4). El problema es que el *overfill* sube casi 48 puntos: estás cogiendo pads con el depósito casi lleno. Tu boost medio incluso baja un poco (51,3 → 49,8).
+2. **Te has ido hacia atrás.** Pasas más tiempo en tu tercio y siendo el último hombre. Como tercer hombre estás un 38,8 % del tiempo y como primero solo un 24 %. El tercio ofensivo baja a 14,1 %. Defensivamente rinde: suben las paradas.
+3. **Aportas menos en ataque.** En las últimas 10 solo tienes 1 asistencia y 7 tiros. Cuando tiras, aciertas: 4 de esos 7 tiros acabaron en gol, y el % de tiro medio sube de 24,4 a 30. El fallo no es la puntería, es que llegas poco.
+
+Otros cambios a tener en cuenta:
+- **Kickoffs:** el % de primer toque en saques sube de 40 a 50.
+- **Demos recibidas:** bajan de 0,57 a 0,30.
 
 ## 3. Fortalezas consolidadas
-- **Estar por detrás del balón:** 70,5 % de media, y nunca baja del 63,9 % en ninguna partida. Es una base de posicionamiento sólida.
-- **Gestión de boost:** `avg_boost` de 50,5, 13,8 % del tiempo a cero y 257 de boost recogido por minuto. Roba un promedio de 210 de boost por partida.
-- **Saques:** 44 % de primeros toques de media. Tras dos partidas con 0 %, nunca baja del 33 % en las partidas con dato, y llega a 100 % y 66,7 % en las partidas 8 y 9.
-- **Rotación equilibrada:** reparte el tiempo entre primer hombre (24,9 %) y tercer hombre (34,2 %) sin obsesionarse con ninguno.
+
+- **Defensa y paciencia.** Estás detrás del balón un **~74 %** del tiempo, tanto en la media total como en las últimas 10. Tus 0,9 paradas por partida en el tramo reciente lo confirman: eres el ancla del equipo.
+- **Control del boost rival.** Robas una media de **301 de boost** en las últimas 10, con picos de 902 y 616. Le quitas recursos al otro equipo.
+- **Te demuelen poco.** Las demos recibidas bajan a **0,3** por partida, así que no regalas inferioridades.
+- **Eficacia cuando llegas.** El % de tiro va al alza (30 %) y en 3 de las últimas 10 partidas metiste todo lo que tiraste.
 
 ## 4. Plan de práctica
-1. **Convertir las llegadas en tiros.** Solo hay 7 tiros en 10 partidas y el tercio ofensivo apenas ocupa el 17 % del tiempo. Haz series de 10 min en entrenamiento libre o con packs de tiro a puerta, y en partida ponte el objetivo de 2-3 tiros por partido. Subir los tiros es lo que más puede mover el winrate.
-2. **Revisar la posición del último hombre.** Encajó 7 goles siendo el último defensor, en las 5 partidas donde aparece ese dato, y pasa un 35 % del tiempo como el más atrás. Practica rotar tras el ataque y no quedarte atrás por inercia. Pide a un compañero en la partida que avise cuando cubras tú. Revisa en replay los goles encajados como último defensor y mira si salías tarde o llegabas sin cobertura.
-3. **Mantener la cercanía al equipo y el boost.** La distancia a compañeros sube en las últimas partidas, hasta 4.160. Haz rotaciones en 3v3 amistosos con el objetivo de quedar a distancia de pase de los compañeros. Al mismo tiempo, reduce el `boost_overfill` (259,9 de media, con picos de 419 y 414) pasando a pads pequeños cuando el depósito está por encima de ~70 %, y conserva el `pct_zero_boost` por debajo del 12 % de las últimas 5 partidas.
 
-**Nota:** con 10 partidas y un solo modo, las conclusiones son orientativas. Conviene volver a revisar este informe cuando haya 20 o más.
+1. **Overfill alto (314) → regla de los 70.**
+   - Si llevas más de 70 de boost, **no pises un pad grande**. Déjalo para un compañero o para negárselo al rival solo si te pilla de camino.
+   - En rotación, enlaza pads pequeños.
+   - Practícalo 10 minutos en free play recorriendo rutas de pads pequeños entre portería y medio campo.
+   - Objetivo: bajar de 250 de overfill.
+
+2. **Último hombre sin boost → nunca cerrar sin depósito.**
+   - Eres el último hombre un 43 % del tiempo. Aun así, en varias partidas recientes pasaste un 15-20 % del tiempo a cero (19,8 %, 16,9 %, 15,8 %).
+   - En esas 10 partidas encajaste 7 goles siendo el último defensor (aparece en 6 de ellas).
+   - Hábito: al rotar atrás, coge siempre 2-3 pads pequeños de camino.
+   - Complemento: 15 minutos de training packs de paradas y defensa en sombra (*shadow defense*), entrando por el segundo palo.
+
+3. **Poca presencia en ataque → seguir la jugada como segundo hombre.**
+   - Con 0,1 asistencias, 0,7 tiros y un 4,3 % de tiempo en supersónico, llegas tarde a las jugadas.
+   - Cuando seas primero o segundo hombre, sube con velocidad: usa flips y powerslides para conservar inercia en vez de gastar boost.
+   - Colócate para el rebote o el pase en lugar de volver atrás de inmediato.
+   - Practica con training packs de pases y remates a la primera.
+   - Objetivo medible: **al menos 1 tiro por partida** y volver a las 0,3 asistencias de tu media.
+
+Tu base defensiva ya funciona. Si gestionas mejor el boost y das un paso adelante en ataque, ese 60 % reciente puede convertirse en tu nivel normal. 💪
 
 ---
-*Informe generado por claude-sonnet-5-5 el 2026-10-15 04:44 UTC.*
+*Informe generado por claude-opus-5-5 el 2026-10-15 21:34 UTC.*

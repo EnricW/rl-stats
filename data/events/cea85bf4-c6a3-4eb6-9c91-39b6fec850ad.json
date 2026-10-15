@@ -1,0 +1,250 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 103.68,
+      "team": 0
+    },
+    {
+      "name": "zeno_ _",
+      "score": [
+        1,
+        1
+      ],
+      "t": 217.71,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        1
+      ],
+      "t": 255.41,
+      "team": 0
+    }
+  ],
+  "id": "cea85bf4-c6a3-4eb6-9c91-39b6fec850ad",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 188.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 0
+    },
+    "Eric": {
+      "avg_boost_after": 19.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 59.8,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "zeno_ _",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "zeno_ _"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "FaZe jouii",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 113.16,
+      "takers": {
+        "0": "Ray",
+        "1": "FaZe jouii"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "zeno_ _",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 230.66,
+      "takers": {
+        "0": "Eric",
+        "1": "zeno_ _"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 265.6,
+      "takers": {
+        "0": "Ray",
+        "1": "nanomurdoc"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 25,
+      "pct_first_man": 26.7,
+      "pct_second_man": 24.8,
+      "pct_third_man": 37.3
+    },
+    "Eric": {
+      "became_first_man": 24,
+      "pct_first_man": 31.7,
+      "pct_second_man": 25.5,
+      "pct_third_man": 31.6
+    },
+    "Ray": {
+      "became_first_man": 31,
+      "pct_first_man": 30.4,
+      "pct_second_man": 38.4,
+      "pct_third_man": 19.9
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2062.0,
+      "kind": "shot",
+      "name": "FaZe jouii",
+      "speed_to_goal": 1633.0,
+      "t": 44.71,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 46.11,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 452.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 103.68,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 103.93,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 468.0,
+      "kind": "shot",
+      "name": "nanomurdoc",
+      "speed_to_goal": -1112.0,
+      "t": 141.58,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 142.58,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "zeno_ _",
+      "t": 209.64,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2283.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -809.0,
+      "t": 209.67,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 499.0,
+      "kind": "shot",
+      "name": "zeno_ _",
+      "speed_to_goal": null,
+      "t": 217.71,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "nanomurdoc",
+      "t": 217.71,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 743.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2040.0,
+      "t": 255.08,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 568.0,
+      "kind": "shot",
+      "name": "FaZe jouii",
+      "speed_to_goal": 2640.0,
+      "t": 275.77,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1857.0,
+      "kind": "shot",
+      "name": "zeno_ _",
+      "speed_to_goal": 35.0,
+      "t": 280.83,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 280.87,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "zeno_ _",
+      "t": 332.53,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1681.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1802.0,
+      "t": 332.53,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Eric": 0.1,
+    "Ray": 7.4
+  },
+  "sustained_possession_teams_s": {
+    "0": 7.5,
+    "1": 18.2
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "goals": [
+    {
+      "name": "ikeeesuphaman",
+      "score": [
+        0,
+        1
+      ],
+      "t": 81.24,
+      "team": 1
+    },
+    {
+      "name": "ItsaGlenn",
+      "score": [
+        0,
+        2
+      ],
+      "t": 126.23,
+      "team": 1
+    },
+    {
+      "name": "ItsaGlenn",
+      "score": [
+        0,
+        3
+      ],
+      "t": 242.58,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        3
+      ],
+      "t": 327.46,
+      "team": 0
+    }
+  ],
+  "id": "a2ff46bf-1b5a-41a9-9c20-e841603eaba7",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 153.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 74.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 88.9,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 5,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "ItsaGlenn",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "ItsaGlenn"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ikeeesuphaman",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 94.05,
+      "takers": {
+        "0": "Enric",
+        "1": "ikeeesuphaman"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 139.21,
+      "takers": {
+        "0": "Ray",
+        "1": "ikeeesuphaman"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ikeeesuphaman",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 252.53,
+      "takers": {
+        "0": "Ray",
+        "1": "ikeeesuphaman"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "ItsaGlenn",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 338.11,
+      "takers": {
+        "0": "Eric",
+        "1": "ItsaGlenn"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 25,
+      "pct_first_man": 19.5,
+      "pct_second_man": 25.6,
+      "pct_third_man": 40.7
+    },
+    "Eric": {
+      "became_first_man": 32,
+      "pct_first_man": 26.1,
+      "pct_second_man": 32.2,
+      "pct_third_man": 27.5
+    },
+    "Ray": {
+      "became_first_man": 30,
+      "pct_first_man": 40.2,
+      "pct_second_man": 28.0,
+      "pct_third_man": 17.6
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2252.0,
+      "kind": "shot",
+      "name": "ShadowDiver",
+      "speed_to_goal": 2590.0,
+      "t": 57.54,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 58.5,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1673.0,
+      "kind": "shot",
+      "name": "ikeeesuphaman",
+      "speed_to_goal": 2167.0,
+      "t": 80.44,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "ItsaGlenn",
+      "t": 81.34,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 964.0,
+      "kind": "shot",
+      "name": "ShadowDiver",
+      "speed_to_goal": 743.0,
+      "t": 123.49,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 960.0,
+      "kind": "shot",
+      "name": "ItsaGlenn",
+      "speed_to_goal": 1559.0,
+      "t": 125.56,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "ShadowDiver",
+      "t": 126.47,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 808.0,
+      "kind": "shot",
+      "name": "ItsaGlenn",
+      "speed_to_goal": null,
+      "t": 242.58,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "ikeeesuphaman",
+      "t": 242.78,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2409.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -2401.0,
+      "t": 307.34,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1008.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2712.0,
+      "t": 326.76,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1874.0,
+      "kind": "shot",
+      "name": "ikeeesuphaman",
+      "speed_to_goal": 996.0,
+      "t": 363.54,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 363.58,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.8,
+    "Eric": 1.2,
+    "Ray": 4.5
+  },
+  "sustained_possession_teams_s": {
+    "0": 8.5,
+    "1": 9.0
+  }
+}
