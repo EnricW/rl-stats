@@ -43,3 +43,41 @@ def test_averages():
     assert out["goals"] == 2.0
     assert out["saves"] == 2.0
     assert averages([]) == {}
+
+
+def test_sessions_view_y_reports_view():
+    """La vista que consume la web: sesiones y sus informes."""
+    from datetime import UTC, datetime, timedelta
+
+    from pipeline.aggregate import reports_view, sessions_view
+
+    anoche = (datetime.now(UTC) - timedelta(hours=30)).isoformat(timespec="seconds")
+    ahora = (datetime.now(UTC) - timedelta(minutes=10)).isoformat(timespec="seconds")
+    settings = {"timezone": "Europe/Madrid", "reports": {"session_gap_hours": 5}}
+    sessions = sessions_view([
+        {"id": "a", "date": anoche, "duration": 300},
+        {"id": "b", "date": ahora, "duration": 300},
+    ], settings)
+
+    # la más reciente primero, y es la que sigue abierta
+    assert len(sessions) == 2
+    assert sessions[0]["open"] is True and sessions[1]["open"] is False
+
+    manifest = {"reports": {
+        "team": [{"date": "2026-10-15", "path": "reports/team-2026-10-15.md", "model": "o"}],
+        "players": {"Enric": [
+            {"session_id": sessions[1]["id"], "date": sessions[1]["date"], "games": 1,
+             "path": "reports/player-Enric-x.md", "model": "o"},
+            # informe de una sesión que ya no existe: no debe publicarse (si no,
+            # la web ofrecería un enlace roto)
+            {"session_id": "1999-01-01-0000", "date": "1999-01-01", "games": 3,
+             "path": "reports/fantasma.md", "model": "o"},
+        ]},
+    }}
+    view = reports_view(manifest, {s["id"] for s in sessions})
+    assert [i["session_id"] for i in view["players"]["Enric"]["items"]] == [sessions[1]["id"]]
+    assert view["players"]["Enric"]["items"][0]["games"] == 1
+    assert len(view["team"]) == 1
+    # la vista ya no publica el umbral de partidas ni el contador
+    assert "every" not in view
+    assert "games_at_last" not in view["players"]["Enric"]

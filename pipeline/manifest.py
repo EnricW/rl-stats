@@ -14,13 +14,16 @@ se generó cada informe. El manifiesto es la única fuente de ese estado:
     frames/events: {v, ok, attempts, error, at}   estado por etapa
     report:        {path, model, generated_at}    informe de la partida
   reports:
-    team:    [{date, path, model}]                informes fechados
-    players: {nombre: [{date, path, model}]}
-  player_reports_state: {nombre: partidas que tenía al generar su último informe}
+    team:    [{date, path, model}]                informes de equipo, fechados
+    players: {nombre: [{session_id, date, games, path, model}]}
+                  un informe de tendencia por SESIÓN de juego (ver
+                  pipeline/sessions.py). `games` se guarda al generarlo, para
+                  que la etiqueta de la web ("14 oct · 13 partidas") no
+                  contradiga al cuerpo si la sesión crece después.
 
 Las rutas son relativas a data/ (la web les antepone "data/").
-Absorbe a los antiguos reports/index.json y reports/player_reports_state.json,
-que se migran automáticamente la primera vez.
+Absorbe al antiguo reports/index.json, que se migra automáticamente la
+primera vez.
 """
 
 import copy
@@ -37,7 +40,7 @@ from pipeline.util import (
 )
 
 MANIFEST_FILE = DATA_DIR / "manifest.json"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 # Versión de cada extractor: subirla regenera los derivados de todas las
 # partidas en la siguiente pasada (antes había que borrar los archivos a mano).
@@ -52,7 +55,6 @@ _EMPTY = {
     "schema_version": SCHEMA_VERSION,
     "matches": {},
     "reports": {"team": [], "players": {}},
-    "player_reports_state": {},
 }
 
 
@@ -62,8 +64,27 @@ def _now():
 
 def load():
     if MANIFEST_FILE.exists():
-        return read_json(MANIFEST_FILE)
+        return _migrate_v1_to_v2(read_json(MANIFEST_FILE))
     return _migrate_legacy()
+
+
+def _migrate_v1_to_v2(manifest):
+    """v1 -> v2: los informes de jugador pasan de "cada N partidas" a "por
+    sesión". Se descartan los items sin session_id (eran ciclos de 10 partidas,
+    no sesiones) y el contador player_reports_state, que ya no hace falta: el
+    estado es "qué sesiones tienen informe" y vive en los propios items."""
+    if int(manifest.get("schema_version", 1)) >= 2:
+        return manifest
+    manifest.pop("player_reports_state", None)
+    players = manifest.get("reports", {}).get("players") or {}
+    for name, items in list(players.items()):
+        kept = [i for i in items if i.get("session_id")]
+        if len(kept) != len(items):
+            print(f"  · manifiesto v2: {len(items) - len(kept)} informes de "
+                  f"{name} descartados (eran por ciclo de partidas, no por sesión)")
+        players[name] = kept
+    manifest["schema_version"] = 2
+    return manifest
 
 
 def save(manifest):
@@ -128,14 +149,34 @@ def record_match_report(manifest, replay_id, path, model):
 
 
 def register_report(manifest, date, path, model, name=None):
-    """Apunta un informe fechado de equipo (name=None) o de jugador."""
+    """Apunta un informe de equipo fechado (los de jugador van por sesión:
+    ver register_player_report)."""
     if name:
-        items = manifest["reports"]["players"].setdefault(name, [])
-    else:
-        items = manifest["reports"]["team"]
+        return register_player_report(manifest, name, date, date, 0, path, model)
+    items = manifest["reports"]["team"]
     items[:] = [i for i in items if i["date"] != date]
     items.append({"date": date, "path": path, "model": model})
     items.sort(key=lambda i: i["date"])
+
+
+def register_player_report(manifest, name, session_id, date, games, path, model):
+    """Apunta el informe de tendencia de un jugador para una sesión.
+
+    Dedup por session_id (no por fecha: dos sesiones el mismo día tendrían el
+    mismo nombre de archivo y se pisarían, que es el bug que esto arregla).
+    El id lleva la hora de inicio, así que ordenar por id es ordenar
+    cronológicamente.
+    """
+    items = manifest["reports"]["players"].setdefault(name, [])
+    items[:] = [i for i in items if i.get("session_id") != session_id]
+    items.append({
+        "session_id": session_id,
+        "date": date,
+        "games": games,
+        "path": path,
+        "model": model,
+    })
+    items.sort(key=lambda i: i.get("session_id") or "")
 
 
 def run_stages(specs, roster, load_shared):
@@ -225,7 +266,4 @@ def _migrate_legacy():
                 {"date": d, "path": f"reports/player-{name}-{d}.md", "model": None}
                 for d in dates
             ]
-    legacy_state = REPORTS_DIR / "player_reports_state.json"
-    if legacy_state.exists():
-        manifest["player_reports_state"] = read_json(legacy_state)
     return manifest

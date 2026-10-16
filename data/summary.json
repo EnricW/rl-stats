@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T21:36:13+00:00",
+  "generated_at": "2026-10-16T09:13:46+00:00",
   "matches": [
     {
       "date": "2026-10-15T21:28:57Z",
@@ -1268,32 +1268,52 @@
     "Ray"
   ],
   "reports": {
-    "every": 10,
     "players": {
       "Enric": {
-        "games_at_last": 28,
         "items": [
           {
+            "date": "2026-10-14",
+            "games": 13,
+            "path": "reports/player-Enric-2026-10-14-1951.md",
+            "session_id": "2026-10-14-1951"
+          },
+          {
             "date": "2026-10-15",
-            "path": "reports/player-Enric-2026-10-15.md"
+            "games": 15,
+            "path": "reports/player-Enric-2026-10-15-2130.md",
+            "session_id": "2026-10-15-2130"
           }
         ]
       },
       "Eric": {
-        "games_at_last": 28,
         "items": [
           {
+            "date": "2026-10-14",
+            "games": 13,
+            "path": "reports/player-Eric-2026-10-14-1951.md",
+            "session_id": "2026-10-14-1951"
+          },
+          {
             "date": "2026-10-15",
-            "path": "reports/player-Eric-2026-10-15.md"
+            "games": 15,
+            "path": "reports/player-Eric-2026-10-15-2130.md",
+            "session_id": "2026-10-15-2130"
           }
         ]
       },
       "Ray": {
-        "games_at_last": 28,
         "items": [
           {
+            "date": "2026-10-14",
+            "games": 13,
+            "path": "reports/player-Ray-2026-10-14-1951.md",
+            "session_id": "2026-10-14-1951"
+          },
+          {
             "date": "2026-10-15",
-            "path": "reports/player-Ray-2026-10-15.md"
+            "games": 15,
+            "path": "reports/player-Ray-2026-10-15-2130.md",
+            "session_id": "2026-10-15-2130"
           }
         ]
       }
@@ -1305,6 +1325,24 @@
       }
     ]
   },
+  "sessions": [
+    {
+      "date": "2026-10-15",
+      "end": "2026-10-15T21:36:29Z",
+      "games": 15,
+      "id": "2026-10-15-2130",
+      "open": false,
+      "start": "2026-10-15T19:30:48Z"
+    },
+    {
+      "date": "2026-10-14",
+      "end": "2026-10-14T21:34:04Z",
+      "games": 13,
+      "id": "2026-10-14-1951",
+      "open": false,
+      "start": "2026-10-14T17:51:26Z"
+    }
+  ],
   "team": {
     "modes": {
       "3v3": {

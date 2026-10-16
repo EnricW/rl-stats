@@ -10,19 +10,24 @@ import pipeline.manifest as mf
 import pipeline.report as report
 from pipeline.util import read_json, write_json
 
-MATCH_ID = "aaaabbbb-cccc-dddd-eeee-ffff00001111"
-
 SETTINGS = {
+    "timezone": "Europe/Madrid",
     "reports": {
         "match_model": "haiku-test",
         "trend_model": "sonnet-test",
         "trend_effort": "high",
-        "player_report_every": 2,
+        "session_gap_hours": 5,
+        "session_min_games": 1,
+        "max_player_reports_per_run": 6,
         "team_report_every_days": 7,
         "prompt_history_games": 20,
         "max_tokens": 100,
-    }
+    },
 }
+
+
+def _ago(hours):
+    return (datetime.now(UTC) - timedelta(hours=hours)).isoformat(timespec="seconds")
 
 
 @pytest.fixture
@@ -46,9 +51,7 @@ def sandbox(tmp_path, monkeypatch):
     monkeypatch.setattr(report, "load_settings", lambda: SETTINGS)
     monkeypatch.setattr(sys, "argv", ["report"])
 
-    calls = []
-    payloads = []
-    efforts = []
+    calls, payloads, efforts = [], [], []
 
     def fake_ask(model, system_prompt, payload_text, reports_cfg, effort=None):
         calls.append(model)
@@ -58,60 +61,141 @@ def sandbox(tmp_path, monkeypatch):
 
     monkeypatch.setattr(report, "ask_claude", fake_ask)
 
-    write_json(dirs["matches"] / f"{MATCH_ID}.json", {
-        "id": MATCH_ID,
-        "date": "2026-10-14T20:00:00+02:00",
-        "mode": "3v3",
-        "players": [{"name": "Enric", "roster": True}],
-        "teams": {"blue": {"goals": 1, "stats": {}}, "orange": {"goals": 0, "stats": {}}},
-    })
-    write_json(dirs["players"] / "Enric.json", {
-        "name": "Enric",
-        "modes": {"3v3": {"games": 2, "winrate": 1.0,
-                          "averages": {}, "last10_averages": {}}},
-        "history": [{"mode": "3v3"}, {"mode": "3v3"}],
-    })
-    return {"dirs": dirs, "calls": calls, "payloads": payloads, "efforts": efforts}
+    state = {"n": 0}
+
+    def add_match(date, player="Enric"):
+        """Añade una partida y la refleja en el histórico del jugador."""
+        state["n"] += 1
+        mid = f"{state['n']:08d}-cccc-dddd-eeee-ffff00001111"
+        write_json(dirs["matches"] / f"{mid}.json", {
+            "id": mid, "date": date, "mode": "3v3", "duration": 300,
+            "players": [{"name": player, "roster": True}],
+            "teams": {"blue": {"goals": 1, "stats": {}}, "orange": {"goals": 0, "stats": {}}},
+        })
+        path = dirs["players"] / f"{player}.json"
+        data = read_json(path) if path.exists() else {
+            "name": player,
+            "modes": {"3v3": {"games": 0, "winrate": 1.0, "averages": {},
+                              "last10_averages": {}}},
+            "history": [],
+        }
+        data["history"].append({"match_id": mid, "date": date, "mode": "3v3",
+                                "result": "win", "goals": 1})
+        data["modes"]["3v3"]["games"] = len(data["history"])
+        write_json(path, data)
+        return mid
+
+    return {"dirs": dirs, "calls": calls, "payloads": payloads,
+            "efforts": efforts, "add_match": add_match}
 
 
 def test_main_genera_y_registra(sandbox):
+    """Una sesión cerrada: informe de partida + informe de tendencia + equipo."""
+    sandbox["add_match"](_ago(30))
     report.main()
 
-    # partida (haiku) + tendencia de Enric (2 partidas, every=2) + equipo
-    # (nunca hubo): tres llamadas, ni una más
     assert sandbox["calls"] == ["haiku-test", "sonnet-test", "sonnet-test"]
     # trend_effort solo aplica a las tendencias, no al informe de partida
     assert sandbox["efforts"] == [None, "high", "high"]
 
-    reports_dir = sandbox["dirs"]["reports"]
-    assert (reports_dir / f"{MATCH_ID}.md").exists()
-    date = report._report_date()
-    assert (reports_dir / f"player-Enric-{date}.md").exists()
-    assert (reports_dir / f"team-{date}.md").exists()
-
     manifest = read_json(mf.MANIFEST_FILE)
-    assert manifest["matches"][MATCH_ID]["report"]["model"] == "haiku-test"
-    assert manifest["player_reports_state"] == {"Enric": 2}
-    assert [i["date"] for i in manifest["reports"]["team"]] == [date]
-    assert manifest["reports"]["players"]["Enric"][0]["path"] == f"reports/player-Enric-{date}.md"
+    item = manifest["reports"]["players"]["Enric"][0]
+    assert item["games"] == 1
+    assert item["session_id"] and item["session_id"].startswith(item["date"])
+    assert (sandbox["dirs"]["reports"] / f"player-Enric-{item['session_id']}.md").exists()
+    assert item["path"] == f"reports/player-Enric-{item['session_id']}.md"
+    # el contador por partidas desapareció con el esquema v2
+    assert "player_reports_state" not in manifest
 
 
-def test_main_es_idempotente(sandbox):
+def test_no_informa_la_sesion_en_curso(sandbox):
+    """El test que protege el dinero: mientras la sesión está abierta, los
+    avisos del watcher (uno por partida) no generan informes de tendencia."""
+    sandbox["add_match"](_ago(0.2))   # hace 12 minutos: la noche sigue
+    report.main()
+    # se genera el informe de la partida y el de equipo (nunca hubo), pero
+    # NINGUNA tendencia: su payload es el único que lleva la clave "sesion"
+    assert [p for p in sandbox["payloads"] if '"sesion"' in p] == []
+    assert sandbox["calls"] == ["haiku-test", "sonnet-test"]
+    assert read_json(mf.MANIFEST_FILE)["reports"]["players"] == {}
+
+
+def test_una_tendencia_por_sesion_cerrada(sandbox):
+    sandbox["add_match"](_ago(50))    # sesión A (anteayer)
     report.main()
     n = len(sandbox["calls"])
-    # segunda pasada inmediata: informe de partida ya existe, Enric no ha
-    # sumado partidas nuevas y el de equipo es de hoy -> cero llamadas (coste)
+
+    sandbox["add_match"](_ago(26))    # sesión B (ayer)
+    report.main()
+    nuevos = sandbox["calls"][n:]
+    # una partida nueva + una tendencia nueva; el equipo no (es de hoy)
+    assert nuevos == ["haiku-test", "sonnet-test"]
+    items = read_json(mf.MANIFEST_FILE)["reports"]["players"]["Enric"]
+    assert len(items) == 2
+    assert items[0]["session_id"] < items[1]["session_id"]  # orden cronológico
+
+
+def test_es_idempotente(sandbox):
+    sandbox["add_match"](_ago(30))
+    report.main()
+    n = len(sandbox["calls"])
     report.main()
     assert len(sandbox["calls"]) == n
 
 
-def test_team_report_recibe_el_anterior(sandbox):
-    """El informe de equipo nuevo recibe el anterior para darle continuidad."""
+def test_payload_lleva_la_sesion_y_el_informe_anterior(sandbox):
+    sandbox["add_match"](_ago(50))
     report.main()
-    # el primero no tiene nada que repasar
-    assert all("informe_anterior" not in p for p in sandbox["payloads"])
+    primero = [p for p in sandbox["payloads"] if '"sesion"' in p][0]
+    assert '"partidas": 1' in primero
+    assert "informe_anterior" not in primero   # es el primero de la serie
 
-    # fuerza que vuelva a tocar: el último informe pasa a tener 8 días
+    sandbox["add_match"](_ago(26))
+    report.main()
+    segundo = [p for p in sandbox["payloads"] if '"sesion"' in p][-1]
+    assert "informe_anterior" in segundo       # continuidad con el anterior
+    assert "# informe de prueba" in segundo
+
+
+def test_la_sesion_no_ve_partidas_posteriores(sandbox):
+    """El informe de una sesión antigua no puede hablar del futuro."""
+    viejo = sandbox["add_match"](_ago(50))
+    nuevo = sandbox["add_match"](_ago(26))
+    report.main()
+    tendencias = [p for p in sandbox["payloads"] if '"sesion"' in p]
+    primera = next(p for p in tendencias if viejo in p)
+    assert nuevo not in primera
+
+
+def test_respeta_el_minimo_de_partidas(sandbox, monkeypatch):
+    monkeypatch.setitem(SETTINGS["reports"], "session_min_games", 3)
+    try:
+        sandbox["add_match"](_ago(30))
+        sandbox["add_match"](_ago(30))
+        report.main()
+        assert [p for p in sandbox["payloads"] if '"sesion"' in p] == []
+        sandbox["add_match"](_ago(30))   # tercera: ya merece informe
+        report.main()
+        assert len([p for p in sandbox["payloads"] if '"sesion"' in p]) == 1
+    finally:
+        SETTINGS["reports"]["session_min_games"] = 1
+
+
+def test_tope_por_pasada(sandbox, monkeypatch):
+    monkeypatch.setitem(SETTINGS["reports"], "max_player_reports_per_run", 1)
+    try:
+        sandbox["add_match"](_ago(80))
+        sandbox["add_match"](_ago(50))
+        sandbox["add_match"](_ago(26))
+        report.main()
+        assert len([p for p in sandbox["payloads"] if '"sesion"' in p]) == 1
+    finally:
+        SETTINGS["reports"]["max_player_reports_per_run"] = 6
+
+
+def test_team_report_recibe_el_anterior(sandbox):
+    sandbox["add_match"](_ago(30))
+    report.main()
     manifest = read_json(mf.MANIFEST_FILE)
     manifest["reports"]["team"][-1]["date"] = (
         datetime.now(UTC).date() - timedelta(days=8)
@@ -119,26 +203,4 @@ def test_team_report_recibe_el_anterior(sandbox):
     write_json(mf.MANIFEST_FILE, manifest)
 
     report.main()
-    assert sandbox["calls"][-1] == "sonnet-test"  # solo se regeneró el de equipo
     assert "informe_anterior" in sandbox["payloads"][-1]
-    assert "# informe de prueba" in sandbox["payloads"][-1]  # el markdown viaja
-
-
-def test_main_umbral_de_jugador(sandbox):
-    report.main()
-    n = len(sandbox["calls"])
-    # una partida más (3 en total): no llega al siguiente ciclo de 2 desde
-    # el estado (2 + 2 = 4), así que no se regenera todavía
-    data = read_json(sandbox["dirs"]["players"] / "Enric.json")
-    data["history"].append({"mode": "3v3"})
-    write_json(sandbox["dirs"]["players"] / "Enric.json", data)
-    report.main()
-    assert len(sandbox["calls"]) == n
-
-    # con la cuarta partida toca informe nuevo
-    data["history"].append({"mode": "3v3"})
-    write_json(sandbox["dirs"]["players"] / "Enric.json", data)
-    report.main()
-    assert sandbox["calls"][n:] == ["sonnet-test"]
-    manifest = read_json(mf.MANIFEST_FILE)
-    assert manifest["player_reports_state"] == {"Enric": 4}

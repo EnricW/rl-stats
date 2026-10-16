@@ -63,7 +63,10 @@ export function fmtDate(iso) {
 
 export function fmtDateShort(iso) {
   if (!iso) return "—";
-  return new Date(iso).toLocaleDateString("es-ES", { day: "2-digit", month: "short" });
+  // una fecha sin hora ("2026-10-14") se interpretaría en UTC y en husos
+  // negativos mostraría el día anterior; se ancla a mediodía local
+  const d = /^\d{4}-\d{2}-\d{2}$/.test(iso) ? new Date(`${iso}T12:00:00`) : new Date(iso);
+  return d.toLocaleDateString("es-ES", { day: "2-digit", month: "short" });
 }
 
 export function fmtDateLong(iso) {

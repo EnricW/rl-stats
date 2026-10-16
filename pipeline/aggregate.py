@@ -9,6 +9,7 @@ Uso: python -m pipeline.aggregate
 from datetime import UTC, datetime
 
 from pipeline import manifest as mf
+from pipeline import sessions as ses
 from pipeline.util import (
     DATA_DIR,
     EVENTS_DIR,
@@ -87,6 +88,46 @@ def averages(rows):
         if values:
             out[key] = round(sum(values) / len(values), 2)
     return out
+
+
+def sessions_view(matches, settings):
+    """Sesiones de juego para la web, de la más reciente a la más antigua.
+    `open` marca la que aún está en curso (su informe llegará al cerrarse)."""
+    cfg = settings["reports"]
+    gap = float(cfg.get("session_gap_hours", ses.DEFAULT_GAP_HOURS))
+    sessions = ses.group_sessions(matches, gap, ses.local_tz(settings))
+    return [
+        {
+            "id": s["id"], "date": s["date"], "games": s["games"],
+            "start": s["start"], "end": s["end"],
+            "open": not ses.is_closed(s, gap),
+        }
+        for s in reversed(sessions)
+    ]
+
+
+def reports_view(manifest, session_ids):
+    """Histórico de informes para la web, con las rutas ya resueltas (la web no
+    reconstruye nombres de archivo). Los informes de jugador van por sesión;
+    se descartan los de sesiones que ya no existen (un replay tardío puede
+    cambiar el id de una sesión) para no ofrecer un enlace roto."""
+    players = {}
+    for name, items in manifest["reports"]["players"].items():
+        rows = []
+        for i in items:
+            if i.get("session_id") not in session_ids:
+                print(f"  · aviso: informe de {name} de una sesión inexistente "
+                      f"({i.get('session_id')}), no se publica")
+                continue
+            rows.append({
+                "session_id": i["session_id"], "date": i["date"],
+                "games": i.get("games") or 0, "path": i["path"],
+            })
+        players[name] = {"items": rows}
+    return {
+        "team": [{"date": i["date"], "path": i["path"]} for i in manifest["reports"]["team"]],
+        "players": players,
+    }
 
 
 def main():
@@ -177,22 +218,9 @@ def main():
         )
     index.sort(key=lambda m: m["date"] or "", reverse=True)
 
-    # Vista para la web del histórico de informes (rutas incluidas: la web ya
-    # no reconstruye nombres de archivo a mano) y del progreso hacia el
-    # siguiente informe de tendencia de cada jugador.
     manifest = mf.load()
     settings = load_settings()
-    reports_view = {
-        "every": int(settings["reports"].get("player_report_every", 10)),
-        "team": [{"date": i["date"], "path": i["path"]} for i in manifest["reports"]["team"]],
-        "players": {
-            name: {
-                "items": [{"date": i["date"], "path": i["path"]} for i in items],
-                "games_at_last": int(manifest["player_reports_state"].get(name, 0)),
-            }
-            for name, items in manifest["reports"]["players"].items()
-        },
-    }
+    sessions = sessions_view(matches, settings)
 
     write_json_if_changed(
         DATA_DIR / "summary.json",
@@ -201,7 +229,8 @@ def main():
             "team": {"modes": team_modes},
             "players": sorted(histories),
             "matches": index,
-            "reports": reports_view,
+            "sessions": sessions,
+            "reports": reports_view(manifest, {s["id"] for s in sessions}),
         },
     )
     print(f"aggregate: {len(matches)} partidas, {len(histories)} jugadores")

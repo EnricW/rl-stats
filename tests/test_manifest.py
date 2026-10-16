@@ -64,3 +64,44 @@ def test_known_guids_ignora_duplicados():
         "c": {},  # sin guid (partida migrada): no participa en el dedup
     }
     assert mf.known_guids(manifest) == {"g1": "a"}
+
+
+def test_register_player_report_dedup_por_sesion():
+    manifest = _empty()
+    mf.register_player_report(manifest, "Enric", "2026-10-14-1951", "2026-10-14",
+                              13, "reports/player-Enric-2026-10-14-1951.md", "opus")
+    # misma sesión regenerada: sustituye, no duplica
+    mf.register_player_report(manifest, "Enric", "2026-10-14-1951", "2026-10-14",
+                              13, "reports/player-Enric-2026-10-14-1951.md", "opus-2")
+    items = manifest["reports"]["players"]["Enric"]
+    assert len(items) == 1 and items[0]["model"] == "opus-2"
+
+    # dos sesiones el MISMO día ya no se pisan (era el bug del nombre por fecha)
+    mf.register_player_report(manifest, "Enric", "2026-10-14-2330", "2026-10-14",
+                              4, "reports/player-Enric-2026-10-14-2330.md", "opus")
+    items = manifest["reports"]["players"]["Enric"]
+    assert [i["session_id"] for i in items] == ["2026-10-14-1951", "2026-10-14-2330"]
+    assert [i["games"] for i in items] == [13, 4]
+
+
+def test_migracion_v1_a_v2():
+    v1 = {
+        "schema_version": 1,
+        "matches": {},
+        "reports": {
+            "team": [{"date": "2026-10-15", "path": "reports/team-2026-10-15.md",
+                      "model": "opus"}],
+            # items del esquema viejo: por ciclo de partidas, sin session_id
+            "players": {"Enric": [{"date": "2026-10-15", "path": "x.md", "model": "opus"}]},
+        },
+        "player_reports_state": {"Enric": 28},
+    }
+    v2 = mf._migrate_v1_to_v2(v1)
+    assert v2["schema_version"] == 2
+    assert "player_reports_state" not in v2
+    assert v2["reports"]["players"]["Enric"] == []   # descartado: no era sesión
+    assert len(v2["reports"]["team"]) == 1           # el de equipo se conserva
+
+    # idempotente: un manifiesto ya en v2 no se toca
+    sin_cambios = mf._migrate_v1_to_v2(dict(v2))
+    assert sin_cambios["reports"]["team"] == v2["reports"]["team"]

@@ -1,6 +1,10 @@
 # Configuración del pipeline. Las claves/tokens NUNCA van aquí:
 # van en el .env de la raíz (plantilla: .env.example; git lo ignora).
 
+# Zona horaria del equipo: solo se usa para etiquetar las sesiones con la
+# fecha que percibe el usuario ("14 oct"), no para agrupar partidas.
+timezone: "Europe/Madrid"
+
 ballchasing:
   # ID del grupo del equipo en ballchasing.com (lo que va después de /group/ en su URL).
   group: "rl-stats-xl1gi5rbh9"
@@ -22,8 +26,18 @@ reports:
   # Esfuerzo de razonamiento para las tendencias: Opus 5.5 trae "medium" por
   # defecto y el análisis semanal merece "high".
   trend_effort: high
-  # Regenerar el informe de tendencia de un jugador cada N partidas suyas.
-  player_report_every: 10
+  # Informes de tendencia: uno por SESIÓN de juego (una noche de partidas).
+  # Una sesión son partidas consecutivas con menos de N horas de hueco, aunque
+  # la tanda cruce la medianoche; su informe se genera cuando la sesión se cierra
+  # (así los avisos del watcher durante la noche no regeneran nada).
+  session_gap_hours: 5
+  # Sesiones con menos partidas que esto no gastan un informe (sus partidas
+  # entran igualmente como contexto del siguiente).
+  session_min_games: 3
+  # Tope de informes de tendencia por pasada: si algún día se importa una
+  # temporada entera de replays, no se convierte en una factura ni agota el
+  # timeout del job.
+  max_player_reports_per_run: 6
   # Informe de equipo cada N días. Se decide por la fecha del último informe
   # (no por el evento cron): si una pasada se pierde, la siguiente lo genera.
   team_report_every_days: 7

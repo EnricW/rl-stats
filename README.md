@@ -9,7 +9,7 @@ ballchasing.com y GitHub Actions actualiza la web en unos minutos.
 ```
 PC de juego ── watcher.py ──> ballchasing.com (grupo del equipo, replays unlisted)
                                    │
-GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron semanal (lunes)
+GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron diario (09:00)
   sync          stats completas de la API -> data/matches/<id>.json
                 .replay original -> replays/archive/ (solo en el runner, no se versiona)
   derive        parsea el .replay una vez (subtr-actor) y genera:
@@ -18,6 +18,8 @@ GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron s
                   events: tiros/paradas, kickoffs, rotación -> data/events/<id>.json
   aggregate     data/players/<nombre>.json + data/summary.json
   report        informes con la API de Claude -> data/reports/
+                  por partida; por jugador tras cada sesión de juego (una
+                  noche de partidas); de equipo cada 7 días
   aggregate     segunda pasada: el índice refleja los informes recién creados
   deploy        site/ + data/ -> GitHub Pages
 ```
@@ -26,6 +28,14 @@ El estado del pipeline vive en `data/manifest.json` (registro central): qué
 partidas se ingirieron (con dedup por `match_guid`), el estado de cada derivado
 (versión del extractor, intentos y último error: un replay corrupto se reintenta
 3 veces y se desiste), y el histórico de informes con fecha, ruta y modelo.
+
+Las **sesiones de juego** (`pipeline/sessions.py`) agrupan las partidas en las
+noches en que se jugaron: partidas consecutivas separadas por menos de
+`session_gap_hours`, aunque la tanda cruce la medianoche. Cada sesión cerrada
+genera un informe de tendencia por jugador (`player-<nombre>-<id-sesión>.md`),
+que la web etiqueta como "14 oct · 13 partidas". Mientras la sesión está en
+curso no se genera nada, así que los avisos del watcher durante la noche no
+disparan informes a medias.
 La web no adivina rutas: lee la vista que `aggregate` publica en `summary.json`.
 
 Las stats agregadas las calcula ballchasing (aquí solo se normalizan y comentan);

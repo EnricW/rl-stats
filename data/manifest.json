@@ -673,32 +673,54 @@
       }
     }
   },
-  "player_reports_state": {
-    "Enric": 28,
-    "Eric": 28,
-    "Ray": 28
-  },
   "reports": {
     "players": {
       "Enric": [
         {
-          "date": "2026-10-15",
+          "date": "2026-10-14",
+          "games": 13,
           "model": "claude-opus-5-5",
-          "path": "reports/player-Enric-2026-10-15.md"
+          "path": "reports/player-Enric-2026-10-14-1951.md",
+          "session_id": "2026-10-14-1951"
+        },
+        {
+          "date": "2026-10-15",
+          "games": 15,
+          "model": "claude-opus-5-5",
+          "path": "reports/player-Enric-2026-10-15-2130.md",
+          "session_id": "2026-10-15-2130"
         }
       ],
       "Eric": [
         {
-          "date": "2026-10-15",
+          "date": "2026-10-14",
+          "games": 13,
           "model": "claude-opus-5-5",
-          "path": "reports/player-Eric-2026-10-15.md"
+          "path": "reports/player-Eric-2026-10-14-1951.md",
+          "session_id": "2026-10-14-1951"
+        },
+        {
+          "date": "2026-10-15",
+          "games": 15,
+          "model": "claude-opus-5-5",
+          "path": "reports/player-Eric-2026-10-15-2130.md",
+          "session_id": "2026-10-15-2130"
         }
       ],
       "Ray": [
         {
-          "date": "2026-10-15",
+          "date": "2026-10-14",
+          "games": 13,
           "model": "claude-opus-5-5",
-          "path": "reports/player-Ray-2026-10-15.md"
+          "path": "reports/player-Ray-2026-10-14-1951.md",
+          "session_id": "2026-10-14-1951"
+        },
+        {
+          "date": "2026-10-15",
+          "games": 15,
+          "model": "claude-opus-5-5",
+          "path": "reports/player-Ray-2026-10-15-2130.md",
+          "session_id": "2026-10-15-2130"
         }
       ]
     },
@@ -710,5 +732,5 @@
       }
     ]
   },
-  "schema_version": 1
+  "schema_version": 2
 }

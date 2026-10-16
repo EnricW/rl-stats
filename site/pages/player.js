@@ -2,7 +2,7 @@
    totales e informe de tendencias. */
 
 import {
-  avg, chartTokens, esc, fetchJSON, fetchText, fmt, fmtDateLong, fmtDateShort,
+  avg, chartTokens, esc, fetchJSON, fetchText, fmt, fmtDateShort,
   loadError, mdToHTML, multiLineChart, playerColor, renderNav, setUpdated, tile,
 } from "../app.js";
 
@@ -10,9 +10,11 @@ let roster = [];
 let chart = null;
 let radar = null;
 let radarActive = null;
-// vista de informes publicada por el pipeline en summary.reports:
-// { every, team: [{date, path}], players: {n: {items, games_at_last}} }
-let reportsIndex = { every: 10, team: [], players: {} };
+// vista publicada por el pipeline en summary.reports:
+// { team: [{date, path}], players: {n: {items: [{session_id, date, games, path}]}} }
+let reportsIndex = { team: [], players: {} };
+// sesiones de juego (summary.sessions), de la más reciente a la más antigua
+let sessions = [];
 const playersData = new Map();
 
 /* ---- radar octogonal: 8 ejes, todos "más = mejor" (los invertidos se
@@ -305,43 +307,54 @@ async function loadPlayer(name) {
     }
   }
 
-  // informe de tendencias: histórico por fechas, o estado vacío con progreso
-  renderTrendReport(player.name, mode?.games ?? 0);
+  // informe de tendencias: histórico por sesiones, o estado vacío
+  renderTrendReport(player.name);
 }
 
-// Desplegable con las fechas de los informes de tendencia del jugador
-// (summary.reports los enumera: un sitio estático no puede listar carpetas).
-function renderTrendReport(name, games) {
+// Etiqueta de un informe de sesión: "14 oct · 13 partidas"
+function sessionLabel(item) {
+  const n = item.games || 0;
+  return `${fmtDateShort(item.date)} · ${n} ${n === 1 ? "partida" : "partidas"}`;
+}
+
+// Desplegable con las sesiones que tienen informe de tendencia
+// (summary.reports las enumera: un sitio estático no puede listar carpetas).
+function renderTrendReport(name) {
   const sel = document.getElementById("trend-date");
-  const info = reportsIndex.players?.[name];
-  const items = [...(info?.items || [])].reverse();
+  const items = [...(reportsIndex.players?.[name]?.items || [])].reverse();
   if (!items.length) {
     sel.hidden = true;
-    // progreso real hacia el siguiente informe: cada `every` partidas
-    // desde el último (el ciclo lo publica el pipeline, no va a fuego)
-    const every = reportsIndex.every || 10;
-    const since = Math.min(games - (info?.games_at_last ?? 0), every);
+    // sin umbral de partidas que medir: lo que se explica es el ciclo (una
+    // noche de juego = un informe) y en qué punto está la última sesión
+    const last = sessions[0];
+    const detail = !last
+      ? "Aún no hay partidas: se generará tras la primera noche de juego."
+      : last.open
+        ? `La sesión de ${fmtDateShort(last.date)} está en curso: se analizará cuando termine la noche.`
+        : `El informe de la sesión de ${fmtDateShort(last.date)} está en camino.`;
     document.getElementById("player-report").innerHTML = `
       <div class="empty-state">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path></svg>
-        <span class="t">El informe de tendencias se genera cada ${every} partidas</span>
-        <span class="s">Lleva ${since} de ${every} · comparará su evolución con el equipo y propondrá un plan de práctica</span>
-        <span class="progress"><span style="width:${Math.round((since / every) * 100)}%"></span></span>
+        <span class="t">El informe de tendencias se genera tras cada sesión de juego</span>
+        <span class="s">${detail}</span>
       </div>`;
     return;
   }
   sel.hidden = false;
-  sel.innerHTML = items.map((i) => `<option value="${i.date}">${fmtDateLong(i.date)}</option>`).join("");
-  showTrendReport(name, items[0].date);
+  sel.innerHTML = items
+    .map((i) => `<option value="${i.session_id}">${sessionLabel(i)}</option>`)
+    .join("");
+  showTrendReport(name, items[0].session_id);
 }
 
 // evita que al cambiar rápido de pestaña o de fecha, un fetch atrasado
 // pinte el informe de otro jugador encima del actual
 let trendSeq = 0;
 
-async function showTrendReport(name, date) {
+async function showTrendReport(name, sessionId) {
   const seq = ++trendSeq;
-  const item = (reportsIndex.players?.[name]?.items || []).find((i) => i.date === date);
+  const item = (reportsIndex.players?.[name]?.items || [])
+    .find((i) => i.session_id === sessionId);
   const { data: md, failed } = item
     ? await fetchText(`data/${item.path}`)
     : { data: null, failed: false };
@@ -369,6 +382,7 @@ async function main() {
   roster.forEach((n, i) => { if (all[i].data) playersData.set(n, all[i].data); });
 
   reportsIndex = summary.reports || reportsIndex;
+  sessions = summary.sessions || [];
 
   const sel = document.getElementById("evolution-metric");
   sel.innerHTML = EVOLUTION.map(([k, label]) => `<option value="${k}">${label}</option>`).join("");

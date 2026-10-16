@@ -1,11 +1,14 @@
 # Pipeline principal: sincroniza con ballchasing, agrega, genera informes IA,
 # commitea los datos y despliega la web en GitHub Pages.
 #
-# Se dispara: al avisar el watcher (repository_dispatch), el lunes por la
-# mañana (reconciliación por si algún aviso del watcher se perdió), y a mano
-# desde la pestaña Actions. El informe semanal de equipo lo decide report.py
-# por estado (fecha del último), no el evento: así un cron perdido en la cola
-# de concurrencia no deja la semana sin informe.
+# Se dispara: al avisar el watcher (repository_dispatch), cada mañana por cron
+# (cierra la sesión de la noche anterior y reconcilia por si algún aviso del
+# watcher se perdió), y a mano desde la pestaña Actions.
+#
+# Los informes los decide report.py por estado, no el evento que disparó el
+# job: los de tendencia cuando una sesión de juego se cierra, y el de equipo
+# cuando pasan N días desde el último. Así una pasada perdida en la cola de
+# concurrencia no deja nada sin generar.
 
 name: Procesar partidas
 
@@ -13,7 +16,7 @@ on:
   repository_dispatch:
     types: [new-replay]
   schedule:
-    - cron: "0 8 * * 1"      # lunes: reconciliación (e informe de equipo si toca)
+    - cron: "0 7 * * *"      # 09:00 en Madrid: informes de la sesión de anoche
   workflow_dispatch:
 
 # Permisos por job: process solo necesita escribir contenido; los de Pages

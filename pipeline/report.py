@@ -1,8 +1,8 @@
 """Genera informes con la API de Claude a partir de los JSON ya calculados.
 
 - Informe de partida: para cada partida sin informe (modelo rápido).
-- Informe de jugador: cada N partidas del jugador (modelo de tendencias).
-- Informe de equipo: con --team (lo dispara el cron semanal).
+- Informe de jugador: uno por SESIÓN de juego cerrada (modelo de tendencias).
+- Informe de equipo: cada N días, decidido por estado (o forzado con --team).
 
 Claude nunca ve el .replay: solo JSON con números reales.
 
@@ -17,6 +17,8 @@ from datetime import UTC, datetime
 import anthropic
 
 from pipeline import manifest as mf
+from pipeline import sessions as ses
+from pipeline.aggregate import averages
 from pipeline.util import (
     DATA_DIR,
     EVENTS_DIR,
@@ -82,6 +84,31 @@ def slim_player(data, keep):
     en tokens crecía sin límite con cada partida jugada."""
     slim = dict(data)
     slim["history"] = (data.get("history") or [])[-keep:]
+    return slim
+
+
+def player_session_rows(data, session):
+    """Filas del histórico del jugador que pertenecen a esa sesión."""
+    ids = set(session["match_ids"])
+    return [h for h in (data.get("history") or []) if h.get("match_id") in ids]
+
+
+def slim_player_for_session(data, session, keep):
+    """Histórico recortado alrededor de una sesión: las `keep` partidas previas
+    más las de la sesión, y NADA posterior.
+
+    Sin el corte por arriba, el informe de una sesión antigua vería los
+    resultados de las noches siguientes y sonaría a profecía; además así el
+    informe de cualquier sesión es reproducible a posteriori.
+    """
+    history = data.get("history") or []
+    ids = set(session["match_ids"])
+    idx = [i for i, h in enumerate(history) if h.get("match_id") in ids]
+    slim = dict(data)
+    if not idx:
+        slim["history"] = history[-keep:]
+        return slim
+    slim["history"] = history[max(0, idx[0] - keep):idx[-1] + 1]
     return slim
 
 
@@ -161,26 +188,44 @@ def match_report(match, settings, manifest):
     print(f"  informe de partida: {out.name}")
 
 
-def player_report(name, settings, manifest):
-    keep = int(settings["reports"].get("prompt_history_games", 20))
-    data = slim_player(read_json(PLAYERS_DIR / f"{name}.json"), keep)
-    model = settings["reports"]["trend_model"]
+def player_report(name, session, settings, manifest):
+    """Informe de tendencia de un jugador para una sesión de juego."""
+    cfg = settings["reports"]
+    keep = int(cfg.get("prompt_history_games", 20))
+    data = read_json(PLAYERS_DIR / f"{name}.json")
+    rows = player_session_rows(data, session)
+    context = {
+        "jugador": slim_player_for_session(data, session, keep),
+        "sesion": {
+            "fecha": session["date"],
+            "inicio": session["start"],
+            "fin": session["end"],
+            "partidas": len(rows),
+            "historial": rows,
+            # medias de esa noche, para comparar con las de temporada (modes)
+            "medias": averages(rows),
+        },
+    }
+    previous = _previous_player_report(manifest, name)
+    if previous:
+        context["informe_anterior"] = previous
+
+    model = cfg["trend_model"]
     text = ask_claude(model, prompt("player.md"),
-                      json.dumps(data, ensure_ascii=False, indent=1), settings["reports"],
-                      effort=settings["reports"].get("trend_effort"))
-    date = _report_date()
-    out = REPORTS_DIR / f"player-{name}-{date}.md"
+                      json.dumps(context, ensure_ascii=False, indent=1), cfg,
+                      effort=cfg.get("trend_effort"))
+    out = REPORTS_DIR / f"player-{name}-{session['id']}.md"
     write_text_atomic(out, text)
-    mf.register_report(manifest, date, f"reports/{out.name}", model, name=name)
+    mf.register_player_report(manifest, name, session["id"], session["date"],
+                              len(rows), f"reports/{out.name}", model)
     mf.save(manifest)
-    print(f"  informe de jugador: {out.name}")
+    print(f"  informe de jugador: {out.name} ({len(rows)} partidas)")
 
 
-def _previous_team_report(manifest):
-    """Último informe de equipo generado, si existe: se le pasa al siguiente
-    para darle continuidad (evaluar si las prioridades marcadas se cumplieron),
+def _previous_report(items):
+    """Último informe de la lista, si su .md sigue en disco: se le pasa al
+    siguiente para darle continuidad (repasar si lo que pidió se cumplió),
     porque cada informe parte de cero sobre los números."""
-    items = manifest["reports"]["team"]
     if not items:
         return None
     last = items[-1]
@@ -188,6 +233,14 @@ def _previous_team_report(manifest):
     if not path.exists():
         return None
     return {"fecha": last["date"], "markdown": path.read_text(encoding="utf-8")}
+
+
+def _previous_team_report(manifest):
+    return _previous_report(manifest["reports"]["team"])
+
+
+def _previous_player_report(manifest, name):
+    return _previous_report(manifest["reports"]["players"].get(name) or [])
 
 
 def team_report(settings, manifest):
@@ -236,13 +289,52 @@ def _team_report_due(manifest, every_days):
     return (datetime.now(UTC).date() - last).days >= every_days
 
 
+def _player_session_reports(settings, manifest, all_matches):
+    """Genera los informes de tendencia que falten, uno por sesión cerrada.
+
+    Devuelve el número de fallos (cada uno se reintenta en la pasada siguiente,
+    al no quedar ni el .md ni el item en el manifiesto).
+    """
+    cfg = settings["reports"]
+    gap = float(cfg.get("session_gap_hours", ses.DEFAULT_GAP_HOURS))
+    min_games = int(cfg.get("session_min_games", 3))
+    budget = int(cfg.get("max_player_reports_per_run", 6))
+    sessions = ses.group_sessions(all_matches, gap, ses.local_tz(settings))
+    closed = [s for s in sessions if ses.is_closed(s, gap)]
+    failures = 0
+
+    for path in sorted(PLAYERS_DIR.glob("*.json")):
+        data = read_json(path)
+        name = data["name"]
+        done = {i.get("session_id") for i in manifest["reports"]["players"].get(name) or []}
+        for session in closed:  # ascendente: las sesiones viejas primero
+            if budget <= 0:
+                print(f"  · tope de {cfg.get('max_player_reports_per_run', 6)} informes de "
+                      "tendencia por pasada alcanzado; el resto, en la siguiente")
+                return failures
+            if session["id"] in done:
+                continue
+            # las partidas de ESE jugador en la sesión: una noche en la que no
+            # jugó no le genera informe, y su cuenta no es la del equipo
+            rows = player_session_rows(data, session)
+            if len(rows) < min_games:
+                continue
+            budget -= 1
+            try:
+                player_report(name, session, settings, manifest)
+            except Exception as exc:
+                failures += 1
+                print(f"  ! informe de {name} ({session['id']}) falló "
+                      f"(se reintentará): {exc}")
+    return failures
+
+
 def main():
     parser = argparse.ArgumentParser(description="Genera informes IA de los JSON ya calculados")
     parser.add_argument("--team", action="store_true", help="informe semanal de equipo")
     parser.add_argument("--match", metavar="ID", help="regenerar el informe de una partida")
     args = parser.parse_args()
     settings = load_settings()
-    every = int(settings["reports"].get("player_report_every", 10))
     manifest = mf.load()
 
     if args.team:
@@ -262,29 +354,20 @@ def main():
     # Partidas sin informe (en orden cronológico). Un informe que falle no
     # bloquea los demás ni el commit/deploy de los datos ya sincronizados:
     # al no escribirse su .md, se reintenta en la siguiente pasada.
-    matches = sorted(MATCHES_DIR.glob("*.json"))
-    pending = [m for m in matches if not (REPORTS_DIR / f"{m.stem}.md").exists()]
-    for path in pending:
+    paths = sorted(MATCHES_DIR.glob("*.json"))
+    all_matches = sorted((read_json(p) for p in paths), key=lambda m: m.get("date") or "")
+    pending = [m for m in all_matches if not (REPORTS_DIR / f"{m['id']}.md").exists()]
+    for match in pending:
         try:
-            match_report(read_json(path), settings, manifest)
+            match_report(match, settings, manifest)
         except Exception as exc:
             failures += 1
-            print(f"  ! informe de {path.stem} falló (se reintentará): {exc}")
+            print(f"  ! informe de {match['id']} falló (se reintentará): {exc}")
 
-    # Informe de tendencia cuando un jugador suma N partidas desde el último
-    state = manifest["player_reports_state"]
-    for path in sorted(PLAYERS_DIR.glob("*.json")):
-        data = read_json(path)
-        games = len(data.get("history") or [])
-        if games >= every and games - int(state.get(data["name"], 0)) >= every:
-            try:
-                player_report(data["name"], settings, manifest)
-            except Exception as exc:
-                failures += 1
-                print(f"  ! informe de {data['name']} falló (se reintentará): {exc}")
-            else:
-                state[data["name"]] = games
-                mf.save(manifest)
+    # Informes de tendencia: uno por sesión de juego CERRADA. Mientras la
+    # sesión está abierta no se genera nada, así que los avisos del watcher
+    # durante la noche no disparan (ni cobran) informes a medias.
+    failures += _player_session_reports(settings, manifest, all_matches)
 
     # Informe de equipo periódico, decidido por estado (ver _team_report_due)
     team_days = int(settings["reports"].get("team_report_every_days", 7))
