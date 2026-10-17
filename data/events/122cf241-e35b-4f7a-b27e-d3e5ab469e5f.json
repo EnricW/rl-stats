@@ -1,0 +1,274 @@
+{
+  "goals": [
+    {
+      "name": "do_yo0906",
+      "score": [
+        1,
+        0
+      ],
+      "t": 53.67,
+      "team": 0
+    },
+    {
+      "name": "pros_chetto",
+      "score": [
+        2,
+        0
+      ],
+      "t": 100.42,
+      "team": 0
+    },
+    {
+      "name": "Zenix03",
+      "score": [
+        3,
+        0
+      ],
+      "t": 164.88,
+      "team": 0
+    }
+  ],
+  "id": "122cf241-e35b-4f7a-b27e-d3e5ab469e5f",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 63.8,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 22.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 121.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "pros_chetto",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "pros_chetto",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 65.27,
+      "takers": {
+        "0": "Zenix03",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "do_yo0906",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 110.11,
+      "takers": {
+        "0": "do_yo0906",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "pros_chetto",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 177.85,
+      "takers": {
+        "0": "pros_chetto",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 27,
+      "pct_first_man": 19.2,
+      "pct_second_man": 28.8,
+      "pct_third_man": 40.3
+    },
+    "Eric": {
+      "became_first_man": 26,
+      "pct_first_man": 29.4,
+      "pct_second_man": 27.4,
+      "pct_third_man": 31.6
+    },
+    "Ray": {
+      "became_first_man": 35,
+      "pct_first_man": 39.8,
+      "pct_second_man": 32.1,
+      "pct_third_man": 16.4
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1422.0,
+      "kind": "shot",
+      "name": "Zenix03",
+      "speed_to_goal": 2844.0,
+      "t": 50.77,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1083.0,
+      "kind": "shot",
+      "name": "do_yo0906",
+      "speed_to_goal": 995.0,
+      "t": 53.14,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Zenix03",
+      "t": 53.82,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1264.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1847.0,
+      "t": 90.65,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "pros_chetto",
+      "t": 91.65,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1071.0,
+      "kind": "shot",
+      "name": "do_yo0906",
+      "speed_to_goal": 1120.0,
+      "t": 98.72,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 508.0,
+      "kind": "shot",
+      "name": "pros_chetto",
+      "speed_to_goal": null,
+      "t": 100.42,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "do_yo0906",
+      "t": 100.64,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2184.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -902.0,
+      "t": 138.55,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1515.0,
+      "kind": "shot",
+      "name": "Zenix03",
+      "speed_to_goal": 1271.0,
+      "t": 163.98,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "do_yo0906",
+      "t": 164.92,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "pros_chetto",
+      "t": 230.64,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1830.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1130.0,
+      "t": 230.67,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1642.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1820.0,
+      "t": 241.91,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "do_yo0906",
+      "t": 242.91,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1137.0,
+      "kind": "shot",
+      "name": "do_yo0906",
+      "speed_to_goal": 1170.0,
+      "t": 282.52,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 283.52,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1343.0,
+      "kind": "shot",
+      "name": "pros_chetto",
+      "speed_to_goal": -821.0,
+      "t": 285.49,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1451.0,
+      "kind": "shot",
+      "name": "Zenix03",
+      "speed_to_goal": -338.0,
+      "t": 288.63,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Eric": 7.0,
+    "Ray": 7.5
+  },
+  "sustained_possession_teams_s": {
+    "0": 18.4,
+    "1": 14.6
+  }
+}

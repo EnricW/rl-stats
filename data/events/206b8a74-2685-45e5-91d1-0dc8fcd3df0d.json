@@ -1,0 +1,302 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 32.15,
+      "team": 0
+    },
+    {
+      "name": "BZTGRM NWPO",
+      "score": [
+        1,
+        1
+      ],
+      "t": 68.32,
+      "team": 1
+    },
+    {
+      "name": "ratapla926",
+      "score": [
+        1,
+        2
+      ],
+      "t": 134.78,
+      "team": 1
+    },
+    {
+      "name": "BZTGRM NWPO",
+      "score": [
+        1,
+        3
+      ],
+      "t": 166.45,
+      "team": 1
+    }
+  ],
+  "id": "206b8a74-2685-45e5-91d1-0dc8fcd3df0d",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 96.8,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 105.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 70.9,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 5,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "solo еstе"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ratapla926",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 45.21,
+      "takers": {
+        "0": "Eric",
+        "1": "ratapla926"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "BZTGRM NWPO",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 79.74,
+      "takers": {
+        "0": "Enric",
+        "1": "BZTGRM NWPO"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ratapla926",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 144.58,
+      "takers": {
+        "0": "Ray",
+        "1": "ratapla926"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 179.42,
+      "takers": {
+        "0": "Enric",
+        "1": "BZTGRM NWPO"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 24,
+      "pct_first_man": 23.5,
+      "pct_second_man": 25.4,
+      "pct_third_man": 37.7
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 29.4,
+      "pct_second_man": 27.5,
+      "pct_third_man": 29.6
+    },
+    "Ray": {
+      "became_first_man": 32,
+      "pct_first_man": 33.7,
+      "pct_second_man": 33.6,
+      "pct_third_man": 19.3
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 910.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2172.0,
+      "t": 12.24,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "BZTGRM NWPO",
+      "t": 13.08,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1080.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1490.0,
+      "t": 31.52,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1302.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -570.0,
+      "t": 58.38,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "BZTGRM NWPO",
+      "t": 58.41,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1763.0,
+      "kind": "shot",
+      "name": "BZTGRM NWPO",
+      "speed_to_goal": 1846.0,
+      "t": 67.59,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1088.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1875.0,
+      "t": 92.92,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 744.0,
+      "kind": "shot",
+      "name": "ratapla926",
+      "speed_to_goal": 1066.0,
+      "t": 134.65,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1606.0,
+      "kind": "shot",
+      "name": "BZTGRM NWPO",
+      "speed_to_goal": 2809.0,
+      "t": 165.85,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "ratapla926",
+      "t": 166.7,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1283.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1026.0,
+      "t": 205.83,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "BZTGRM NWPO",
+      "t": 206.86,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1471.0,
+      "kind": "shot",
+      "name": "BZTGRM NWPO",
+      "speed_to_goal": -2168.0,
+      "t": 267.72,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 267.82,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1796.0,
+      "kind": "shot",
+      "name": "ratapla926",
+      "speed_to_goal": 1821.0,
+      "t": 297.33,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 298.8,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1690.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1104.0,
+      "t": 331.28,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "BZTGRM NWPO",
+      "t": 331.62,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2613.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -922.0,
+      "t": 332.82,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 437.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1675.0,
+      "t": 371.5,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.2,
+    "Eric": 2.5
+  },
+  "sustained_possession_teams_s": {
+    "0": 2.7,
+    "1": 17.5
+  }
+}

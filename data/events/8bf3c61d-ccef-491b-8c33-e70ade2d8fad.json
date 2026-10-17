@@ -1,0 +1,436 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        0,
+        1
+      ],
+      "t": 30.09,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        0,
+        2
+      ],
+      "t": 108.58,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        3
+      ],
+      "t": 159.43,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        0,
+        4
+      ],
+      "t": 183.24,
+      "team": 1
+    },
+    {
+      "name": "krieg_evan",
+      "score": [
+        1,
+        4
+      ],
+      "t": 225.13,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        5
+      ],
+      "t": 263.7,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        6
+      ],
+      "t": 318.16,
+      "team": 1
+    },
+    {
+      "name": "KRIEG_LORGE",
+      "score": [
+        2,
+        6
+      ],
+      "t": 375.74,
+      "team": 0
+    },
+    {
+      "name": "krieg_evan",
+      "score": [
+        3,
+        6
+      ],
+      "t": 423.01,
+      "team": 0
+    }
+  ],
+  "id": "8bf3c61d-ccef-491b-8c33-e70ade2d8fad",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 27.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 10,
+      "taken": 4
+    },
+    "Eric": {
+      "avg_boost_after": 106.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 10,
+      "taken": 4
+    },
+    "Ray": {
+      "avg_boost_after": 149.0,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 10,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Zakakooki",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "krieg_evan",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 43.11,
+      "takers": {
+        "0": "krieg_evan",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "krieg_evan",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 121.54,
+      "takers": {
+        "0": "krieg_evan",
+        "1": "Eric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "KRIEG_LORGE",
+      "first_touch_team": 0,
+      "goal_team": 1,
+      "outcome": 1,
+      "t": 172.44,
+      "takers": {
+        "0": "KRIEG_LORGE",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Zakakooki",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 196.24,
+      "takers": {
+        "0": "Zakakooki",
+        "1": "Enric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 238.15,
+      "takers": {
+        "0": "Zakakooki",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "krieg_evan",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 274.74,
+      "takers": {
+        "0": "krieg_evan",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "krieg_evan",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 328.03,
+      "takers": {
+        "0": "krieg_evan",
+        "1": "Eric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "KRIEG_LORGE",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 388.74,
+      "takers": {
+        "0": "KRIEG_LORGE",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "KRIEG_LORGE",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 432.98,
+      "takers": {
+        "0": "KRIEG_LORGE",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 22,
+      "pct_first_man": 30.9,
+      "pct_second_man": 18.9,
+      "pct_third_man": 37.1
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 29.2,
+      "pct_second_man": 32.6,
+      "pct_third_man": 25.1
+    },
+    "Ray": {
+      "became_first_man": 30,
+      "pct_first_man": 26.7,
+      "pct_second_man": 35.5,
+      "pct_third_man": 24.7
+    }
+  },
+  "stat_events": [
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 18.75,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1740.0,
+      "kind": "shot",
+      "name": "krieg_evan",
+      "speed_to_goal": 502.0,
+      "t": 18.78,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 926.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 425.0,
+      "t": 29.22,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 670.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": null,
+      "t": 30.09,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 30.26,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1957.0,
+      "kind": "shot",
+      "name": "KRIEG_LORGE",
+      "speed_to_goal": 2219.0,
+      "t": 95.04,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 525.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -3050.0,
+      "t": 108.21,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Zakakooki",
+      "t": 108.21,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 108.86,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 414.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1907.0,
+      "t": 159.26,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1148.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 959.0,
+      "t": 182.57,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1298.0,
+      "kind": "shot",
+      "name": "Zakakooki",
+      "speed_to_goal": 1936.0,
+      "t": 216.56,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 217.56,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 796.0,
+      "kind": "shot",
+      "name": "krieg_evan",
+      "speed_to_goal": 1563.0,
+      "t": 224.66,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 315.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -114.0,
+      "t": 263.56,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 264.09,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1788.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2703.0,
+      "t": 317.49,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 318.37,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 662.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1368.0,
+      "t": 337.13,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1809.0,
+      "kind": "shot",
+      "name": "KRIEG_LORGE",
+      "speed_to_goal": 2070.0,
+      "t": 374.71,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "krieg_evan",
+      "t": 376.22,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1101.0,
+      "kind": "shot",
+      "name": "krieg_evan",
+      "speed_to_goal": 1254.0,
+      "t": 422.38,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 403.0,
+      "kind": "shot",
+      "name": "krieg_evan",
+      "speed_to_goal": 107.0,
+      "t": 447.25,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 448.25,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.8,
+    "Eric": 2.5,
+    "Ray": 1.7
+  },
+  "sustained_possession_teams_s": {
+    "0": 25.3,
+    "1": 7.0
+  }
+}

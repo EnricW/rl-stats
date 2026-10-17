@@ -1,0 +1,345 @@
+{
+  "goals": [
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 18.74,
+      "team": 0
+    },
+    {
+      "name": "Enric",
+      "score": [
+        2,
+        0
+      ],
+      "t": 211.8,
+      "team": 0
+    },
+    {
+      "name": "skryteг",
+      "score": [
+        2,
+        1
+      ],
+      "t": 313.68,
+      "team": 1
+    }
+  ],
+  "id": "59e1042d-2797-45e6-8663-336c17b44325",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 51.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 80.2,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 123.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "JetDrudru"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "skryteг",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 31.74,
+      "takers": {
+        "0": "Ray",
+        "1": "skryteг"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "CHICAILLE-_-",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 224.78,
+      "takers": {
+        "0": "Enric",
+        "1": "CHICAILLE-_-"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "JetDrudru",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 326.71,
+      "takers": {
+        "0": "Eric",
+        "1": "JetDrudru"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 23,
+      "pct_first_man": 22.7,
+      "pct_second_man": 21.2,
+      "pct_third_man": 46.5
+    },
+    "Eric": {
+      "became_first_man": 27,
+      "pct_first_man": 28.0,
+      "pct_second_man": 35.5,
+      "pct_third_man": 26.9
+    },
+    "Ray": {
+      "became_first_man": 27,
+      "pct_first_man": 39.7,
+      "pct_second_man": 33.7,
+      "pct_third_man": 17.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 762.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": null,
+      "t": 18.74,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 18.92,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1570.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1097.0,
+      "t": 60.19,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "CHICAILLE-_-",
+      "t": 61.25,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 379.0,
+      "kind": "shot",
+      "name": "skryteг",
+      "speed_to_goal": -1430.0,
+      "t": 83.53,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2042.0,
+      "kind": "shot",
+      "name": "JetDrudru",
+      "speed_to_goal": 1252.0,
+      "t": 105.0,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 105.93,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 123.23,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2063.0,
+      "kind": "shot",
+      "name": "CHICAILLE-_-",
+      "speed_to_goal": -1817.0,
+      "t": 123.29,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2029.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 934.0,
+      "t": 134.43,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1139.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 761.0,
+      "t": 138.4,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "skryteг",
+      "t": 140.5,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1826.0,
+      "kind": "shot",
+      "name": "skryteг",
+      "speed_to_goal": 1185.0,
+      "t": 183.06,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 183.23,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1610.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1281.0,
+      "t": 201.5,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "skryteг",
+      "t": 202.4,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2002.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1953.0,
+      "t": 210.67,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 212.23,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1315.0,
+      "kind": "shot",
+      "name": "CHICAILLE-_-",
+      "speed_to_goal": 1971.0,
+      "t": 245.11,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 246.14,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1330.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 249.0,
+      "t": 281.7,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1074.0,
+      "kind": "shot",
+      "name": "JetDrudru",
+      "speed_to_goal": 1028.0,
+      "t": 313.24,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 747.0,
+      "kind": "shot",
+      "name": "skryteг",
+      "speed_to_goal": null,
+      "t": 313.68,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "JetDrudru",
+      "t": 313.93,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 377.0,
+      "kind": "shot",
+      "name": "JetDrudru",
+      "speed_to_goal": 2573.0,
+      "t": 344.98,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 355.15,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2604.0,
+      "kind": "shot",
+      "name": "skryteг",
+      "speed_to_goal": -943.0,
+      "t": 355.15,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1954.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1211.0,
+      "t": 363.28,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 679.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 509.0,
+      "t": 364.28,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Eric": 3.8,
+    "Ray": 6.2
+  },
+  "sustained_possession_teams_s": {
+    "0": 9.9,
+    "1": 12.8
+  }
+}

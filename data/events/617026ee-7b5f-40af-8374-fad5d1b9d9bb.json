@@ -1,0 +1,303 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 24.38,
+      "team": 0
+    },
+    {
+      "name": "titu jeffry",
+      "score": [
+        1,
+        1
+      ],
+      "t": 521.12,
+      "team": 1
+    }
+  ],
+  "id": "617026ee-7b5f-40af-8374-fad5d1b9d9bb",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 77.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 158.1,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 0
+    },
+    "Ray": {
+      "avg_boost_after": 74.2,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "titu jeffry",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "titu jeffry"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Anibas18",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 33.92,
+      "takers": {
+        "0": "Ray",
+        "1": "Anibas18"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "titu jeffry",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 189.82,
+      "takers": {
+        "0": "Enric",
+        "1": "titu jeffry"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 345.29,
+      "takers": {
+        "0": "Ray",
+        "1": "Anibas18"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 41,
+      "pct_first_man": 24.1,
+      "pct_second_man": 25.5,
+      "pct_third_man": 40.1
+    },
+    "Eric": {
+      "became_first_man": 44,
+      "pct_first_man": 28.1,
+      "pct_second_man": 25.8,
+      "pct_third_man": 35.9
+    },
+    "Ray": {
+      "became_first_man": 50,
+      "pct_first_man": 37.6,
+      "pct_second_man": 38.4,
+      "pct_third_man": 13.8
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 432.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2488.0,
+      "t": 24.08,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 24.38,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2355.0,
+      "kind": "shot",
+      "name": "Cire253",
+      "speed_to_goal": -2505.0,
+      "t": 59.17,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 59.2,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2003.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1577.0,
+      "t": 89.39,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Anibas18",
+      "t": 90.16,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2071.0,
+      "kind": "shot",
+      "name": "titu jeffry",
+      "speed_to_goal": 2311.0,
+      "t": 162.32,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2088.0,
+      "kind": "shot",
+      "name": "Anibas18",
+      "speed_to_goal": 1545.0,
+      "t": 173.3,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 272.0,
+      "kind": "shot",
+      "name": "Cire253",
+      "speed_to_goal": 960.0,
+      "t": 176.53,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2239.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2340.0,
+      "t": 202.23,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "titu jeffry",
+      "t": 202.4,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1815.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1211.0,
+      "t": 214.89,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Cire253",
+      "t": 216.03,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1125.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 111.0,
+      "t": 244.71,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2140.0,
+      "kind": "shot",
+      "name": "Anibas18",
+      "speed_to_goal": 1698.0,
+      "t": 275.21,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 275.58,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2066.0,
+      "kind": "shot",
+      "name": "titu jeffry",
+      "speed_to_goal": 1588.0,
+      "t": 278.07,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 278.94,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1930.0,
+      "kind": "shot",
+      "name": "titu jeffry",
+      "speed_to_goal": 1568.0,
+      "t": 335.39,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 335.69,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2278.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2086.0,
+      "t": 478.47,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1913.0,
+      "kind": "shot",
+      "name": "titu jeffry",
+      "speed_to_goal": 1626.0,
+      "t": 486.06,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2135.0,
+      "kind": "shot",
+      "name": "Anibas18",
+      "speed_to_goal": 1589.0,
+      "t": 493.52,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1940.0,
+      "kind": "shot",
+      "name": "titu jeffry",
+      "speed_to_goal": 2420.0,
+      "t": 520.16,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Eric": 3.3,
+    "Ray": 4.6
+  },
+  "sustained_possession_teams_s": {
+    "0": 8.0,
+    "1": 28.0
+  }
+}

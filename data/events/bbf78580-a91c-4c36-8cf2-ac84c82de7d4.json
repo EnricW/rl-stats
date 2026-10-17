@@ -1,0 +1,246 @@
+{
+  "goals": [
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 9.8,
+      "team": 0
+    },
+    {
+      "name": "Bartek 857",
+      "score": [
+        1,
+        1
+      ],
+      "t": 265.98,
+      "team": 1
+    },
+    {
+      "name": "Elgauchooo77",
+      "score": [
+        1,
+        2
+      ],
+      "t": 338.4,
+      "team": 1
+    }
+  ],
+  "id": "bbf78580-a91c-4c36-8cf2-ac84c82de7d4",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 130.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 36.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 63.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Bartek 857",
+      "first_touch_team": 1,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "Bartek 857"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Bartek 857",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 22.78,
+      "takers": {
+        "0": "Ray",
+        "1": "Bartek 857"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Elgauchooo77",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 278.96,
+      "takers": {
+        "0": "Eric",
+        "1": "Elgauchooo77"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "DarkSkye88",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 351.39,
+      "takers": {
+        "0": "Enric",
+        "1": "DarkSkye88"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 25,
+      "pct_first_man": 21.9,
+      "pct_second_man": 24.0,
+      "pct_third_man": 43.2
+    },
+    "Eric": {
+      "became_first_man": 25,
+      "pct_first_man": 28.8,
+      "pct_second_man": 29.3,
+      "pct_third_man": 31.0
+    },
+    "Ray": {
+      "became_first_man": 30,
+      "pct_first_man": 38.4,
+      "pct_second_man": 35.8,
+      "pct_third_man": 14.9
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1734.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1881.0,
+      "t": 8.87,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 10.08,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 721.0,
+      "kind": "shot",
+      "name": "Bartek 857",
+      "speed_to_goal": 1084.0,
+      "t": 41.1,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 42.03,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1050.0,
+      "kind": "shot",
+      "name": "Bartek 857",
+      "speed_to_goal": 24.0,
+      "t": 66.48,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1633.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1285.0,
+      "t": 145.63,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Bartek 857",
+      "t": 146.79,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 676.0,
+      "kind": "shot",
+      "name": "Bartek 857",
+      "speed_to_goal": 1878.0,
+      "t": 163.03,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1140.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1347.0,
+      "t": 205.5,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1351.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -429.0,
+      "t": 208.61,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Bartek 857",
+      "t": 208.71,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 521.0,
+      "kind": "shot",
+      "name": "Bartek 857",
+      "speed_to_goal": 2645.0,
+      "t": 265.74,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Bartek 857",
+      "t": 309.97,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1767.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -345.0,
+      "t": 310.47,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1956.0,
+      "kind": "shot",
+      "name": "Elgauchooo77",
+      "speed_to_goal": 3287.0,
+      "t": 337.86,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 3.4,
+    "Eric": 4.6,
+    "Ray": 9.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 17.0,
+    "1": 26.2
+  }
+}

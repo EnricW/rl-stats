@@ -1,0 +1,306 @@
+{
+  "goals": [
+    {
+      "name": "Razvan_roe_08",
+      "score": [
+        0,
+        1
+      ],
+      "t": 30.01,
+      "team": 1
+    },
+    {
+      "name": "Itz_nry",
+      "score": [
+        0,
+        2
+      ],
+      "t": 80.16,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        2
+      ],
+      "t": 169.82,
+      "team": 0
+    }
+  ],
+  "id": "8806c887-3e0a-4da1-8140-78ba01dfa0ef",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 51.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 65.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 97.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 5,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Razvan_roe_08",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "Razvan_roe_08"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Itz_nry",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 37.02,
+      "takers": {
+        "0": "Ray",
+        "1": "Itz_nry"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Dracarys_625",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 93.09,
+      "takers": {
+        "0": "Eric",
+        "1": "Dracarys_625"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Razvan_roe_08",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 116.75,
+      "takers": {
+        "0": "Enric",
+        "1": "Razvan_roe_08"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Dracarys_625",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 182.81,
+      "takers": {
+        "0": "Eric",
+        "1": "Dracarys_625"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 28,
+      "pct_first_man": 31.0,
+      "pct_second_man": 20.9,
+      "pct_third_man": 35.7
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 23.7,
+      "pct_second_man": 32.0,
+      "pct_third_man": 31.9
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 32.9,
+      "pct_second_man": 34.8,
+      "pct_third_man": 20.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2104.0,
+      "kind": "shot",
+      "name": "Razvan_roe_08",
+      "speed_to_goal": 1781.0,
+      "t": 25.84,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1485.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1085.0,
+      "t": 59.27,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Razvan_roe_08",
+      "t": 60.07,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1327.0,
+      "kind": "shot",
+      "name": "Dracarys_625",
+      "speed_to_goal": 1947.0,
+      "t": 76.12,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1633.0,
+      "kind": "shot",
+      "name": "Itz_nry",
+      "speed_to_goal": 2616.0,
+      "t": 79.46,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Dracarys_625",
+      "t": 80.19,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2032.0,
+      "kind": "shot",
+      "name": "Itz_nry",
+      "speed_to_goal": 2945.0,
+      "t": 102.86,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Dracarys_625",
+      "t": 103.86,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 999.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 890.0,
+      "t": 159.08,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Dracarys_625",
+      "t": 159.58,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1914.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2447.0,
+      "t": 168.88,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 169.85,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1922.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1297.0,
+      "t": 191.82,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Itz_nry",
+      "t": 192.71,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1916.0,
+      "kind": "shot",
+      "name": "Razvan_roe_08",
+      "speed_to_goal": 2412.0,
+      "t": 202.35,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1968.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2526.0,
+      "t": 214.94,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Itz_nry",
+      "t": 215.31,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2259.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2006.0,
+      "t": 221.28,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Razvan_roe_08",
+      "t": 224.14,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1684.0,
+      "kind": "shot",
+      "name": "Itz_nry",
+      "speed_to_goal": 2810.0,
+      "t": 286.59,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1496.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -510.0,
+      "t": 356.9,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Dracarys_625",
+      "t": 356.9,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.7,
+    "Eric": 0.4,
+    "Ray": 0.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 3.3,
+    "1": 28.2
+  }
+}

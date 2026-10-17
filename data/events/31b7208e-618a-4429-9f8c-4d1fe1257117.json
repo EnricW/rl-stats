@@ -1,0 +1,195 @@
+{
+  "goals": [
+    {
+      "name": "Yankees13300",
+      "score": [
+        0,
+        1
+      ],
+      "t": 25.64,
+      "team": 1
+    },
+    {
+      "name": "Dodo_le_best",
+      "score": [
+        0,
+        2
+      ],
+      "t": 252.21,
+      "team": 1
+    }
+  ],
+  "id": "31b7208e-618a-4429-9f8c-4d1fe1257117",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 110.7,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 3,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 25.7,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 3,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 107.7,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 3,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Yankees13300",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "Yankees13300"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 38.62,
+      "takers": {
+        "0": "Enric",
+        "1": "nathan_mlp3007"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Dodo_le_best",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 265.2,
+      "takers": {
+        "0": "Ray",
+        "1": "Dodo_le_best"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 23,
+      "pct_first_man": 30.7,
+      "pct_second_man": 20.1,
+      "pct_third_man": 36.1
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 34.3,
+      "pct_second_man": 26.9,
+      "pct_third_man": 25.7
+    },
+    "Ray": {
+      "became_first_man": 25,
+      "pct_first_man": 21.9,
+      "pct_second_man": 39.9,
+      "pct_third_man": 25.1
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1317.0,
+      "kind": "shot",
+      "name": "Yankees13300",
+      "speed_to_goal": 2475.0,
+      "t": 24.97,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1965.0,
+      "kind": "shot",
+      "name": "Dodo_le_best",
+      "speed_to_goal": 2135.0,
+      "t": 58.98,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 59.98,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1513.0,
+      "kind": "shot",
+      "name": "nathan_mlp3007",
+      "speed_to_goal": 964.0,
+      "t": 111.82,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 112.86,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1290.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1751.0,
+      "t": 211.48,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Dodo_le_best",
+      "t": 212.48,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 441.0,
+      "kind": "shot",
+      "name": "Dodo_le_best",
+      "speed_to_goal": 2215.0,
+      "t": 252.07,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Yankees13300",
+      "t": 278.43,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1411.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -1756.0,
+      "t": 278.47,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 713.0,
+      "kind": "shot",
+      "name": "Dodo_le_best",
+      "speed_to_goal": -467.0,
+      "t": 300.81,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 3.9,
+    "Eric": 3.0,
+    "Ray": 3.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 9.8,
+    "1": 22.9
+  }
+}
