@@ -9,7 +9,7 @@ ballchasing.com y GitHub Actions actualiza la web en unos minutos.
 ```
 PC de juego ── watcher.py ──> ballchasing.com (grupo del equipo, replays unlisted)
                                    │
-GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron diario (09:00)
+GitHub Actions (ingest.yml) <──────┘  repository_dispatch + cron (03:23 y 07:41)
   sync          stats completas de la API -> data/matches/<id>.json
                 .replay original -> replays/archive/ (solo en el runner, no se versiona)
   derive        parsea el .replay una vez (subtr-actor) y genera:
