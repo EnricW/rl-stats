@@ -30,7 +30,12 @@ reports:
   # Una sesión son partidas consecutivas con menos de N horas de hueco, aunque
   # la tanda cruce la medianoche; su informe se genera cuando la sesión se cierra
   # (así los avisos del watcher durante la noche no regeneran nada).
-  session_gap_hours: 5
+  #
+  # 3 h: el equipo juega de 21:00 a 23:45 como muy tarde, así que la sesión
+  # queda cerrada hacia las 02:45 y el cron de las 03:23 ya puede informarla.
+  # Margen de sobra sobre la pausa más larga vista dentro de una noche (1 h 39),
+  # así que no parte sesiones. Bajarlo más apuraría ese margen.
+  session_gap_hours: 3
   # Sesiones con menos partidas que esto no gastan un informe (sus partidas
   # entran igualmente como contexto del siguiente).
   session_min_games: 3

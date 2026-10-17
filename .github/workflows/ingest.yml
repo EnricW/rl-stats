@@ -2,10 +2,9 @@
 # commitea los datos y despliega la web en GitHub Pages.
 #
 # Se dispara: al avisar el watcher (repository_dispatch), de madrugada por
-# cron (publica las partidas de la noche y, en la segunda pasada, los informes
-# de la sesión ya cerrada; además reconcilia por si algún aviso se perdió), y a
-# mano desde la pestaña Actions -> "Run workflow", que es la vía para publicar
-# al momento tras subir replays a ballchasing.
+# cron (publica la noche entera, informes incluidos, y reconcilia por si algún
+# aviso se perdió), y a mano desde la pestaña Actions -> "Run workflow", que es
+# la vía para publicar al momento tras subir replays a ballchasing.
 #
 # Los informes los decide report.py por estado, no el evento que disparó el
 # job: los de tendencia cuando una sesión de juego se cierra, y el de equipo
@@ -18,19 +17,16 @@ on:
   repository_dispatch:
     types: [new-replay]
   schedule:
-    # Cron en UTC (GitHub no ajusta el horario de verano) y en minutos
-    # "impopulares": a las horas en punto la cola de Actions se congestiona y
-    # las ejecuciones se retrasan (una programada a las 07:00 salió a las 11:19).
+    # 03:23 en Madrid (02:23 en horario de invierno): una sola pasada que
+    # publica la noche completa, informes de tendencia incluidos. El equipo
+    # juega hasta las 23:45 como muy tarde y session_gap_hours es 3, así que a
+    # esa hora la sesión ya está cerrada.
     #
-    # 03:23 en Madrid (02:23 en horario de invierno): publica las partidas de
-    # la noche y sus informes.
+    # La hora va en UTC (GitHub no ajusta el horario de verano) y el minuto es
+    # "impopular" a propósito: a las horas en punto la cola de Actions se
+    # congestiona y las ejecuciones se retrasan (una programada a las 07:00
+    # salió a las 11:19).
     - cron: "23 1 * * *"
-    # 07:41 en Madrid (06:41 en invierno): a esta hora ya han pasado las
-    # session_gap_hours desde la última partida de una noche normal, así que
-    # aquí salen los informes de tendencia de la sesión. Sin esta segunda
-    # pasada, una sesión que acabe a las 23:30 (cerrada a las 04:30) se
-    # quedaría sin informe hasta el día siguiente.
-    - cron: "41 5 * * *"
   workflow_dispatch:
 
 # Permisos por job: process solo necesita escribir contenido; los de Pages
