@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T21:53:39+00:00",
+  "generated_at": "2026-10-18T06:03:39+00:00",
   "matches": [
     {
       "date": "2026-10-17T21:02:20Z",
@@ -1732,6 +1732,12 @@
             "games": 15,
             "path": "reports/player-Enric-2026-10-15-2130.md",
             "session_id": "2026-10-15-2130"
+          },
+          {
+            "date": "2026-10-17",
+            "games": 10,
+            "path": "reports/player-Enric-2026-10-17-2153.md",
+            "session_id": "2026-10-17-2153"
           }
         ]
       },
@@ -1748,6 +1754,12 @@
             "games": 15,
             "path": "reports/player-Eric-2026-10-15-2130.md",
             "session_id": "2026-10-15-2130"
+          },
+          {
+            "date": "2026-10-17",
+            "games": 10,
+            "path": "reports/player-Eric-2026-10-17-2153.md",
+            "session_id": "2026-10-17-2153"
           }
         ]
       },
@@ -1764,6 +1776,12 @@
             "games": 15,
             "path": "reports/player-Ray-2026-10-15-2130.md",
             "session_id": "2026-10-15-2130"
+          },
+          {
+            "date": "2026-10-17",
+            "games": 10,
+            "path": "reports/player-Ray-2026-10-17-2153.md",
+            "session_id": "2026-10-17-2153"
           }
         ]
       }
@@ -1781,7 +1799,7 @@
       "end": "2026-10-17T21:08:02Z",
       "games": 10,
       "id": "2026-10-17-2153",
-      "open": true,
+      "open": false,
       "start": "2026-10-17T19:53:27Z"
     },
     {
