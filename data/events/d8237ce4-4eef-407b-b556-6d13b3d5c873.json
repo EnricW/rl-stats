@@ -1,0 +1,237 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 138.67,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        0
+      ],
+      "t": 235.77,
+      "team": 0
+    },
+    {
+      "name": "Jeresz",
+      "score": [
+        2,
+        1
+      ],
+      "t": 311.71,
+      "team": 1
+    }
+  ],
+  "id": "d8237ce4-4eef-407b-b556-6d13b3d5c873",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 71.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 51.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 123.3,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "elinfame",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "elinfame"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "jd_javii",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 151.65,
+      "takers": {
+        "0": "Eric",
+        "1": "jd_javii"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "jd_javii",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 248.74,
+      "takers": {
+        "0": "Enric",
+        "1": "jd_javii"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 324.72,
+      "takers": {
+        "0": "Ray",
+        "1": "elinfame"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 26,
+      "pct_first_man": 25.5,
+      "pct_second_man": 26.0,
+      "pct_third_man": 33.9
+    },
+    "Eric": {
+      "became_first_man": 25,
+      "pct_first_man": 22.7,
+      "pct_second_man": 29.7,
+      "pct_third_man": 33.0
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 37.2,
+      "pct_second_man": 29.7,
+      "pct_third_man": 18.5
+    }
+  },
+  "stat_events": [
+    {
+      "kind": "save",
+      "name": "jd_javii",
+      "t": 89.57,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 3884.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -1709.0,
+      "t": 89.77,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1166.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1671.0,
+      "t": 118.1,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 525.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 947.0,
+      "t": 138.43,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 139.1,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 575.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2182.0,
+      "t": 232.84,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 304.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 235.77,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 235.84,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1134.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1117.0,
+      "t": 269.08,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "elinfame",
+      "t": 270.08,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2060.0,
+      "kind": "shot",
+      "name": "Jeresz",
+      "speed_to_goal": 2055.0,
+      "t": 310.61,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "elinfame",
+      "t": 337.92,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1306.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1416.0,
+      "t": 337.96,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1768.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1861.0,
+      "t": 353.18,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Eric": 0.1,
+    "Ray": 3.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 3.0,
+    "1": 15.1
+  }
+}

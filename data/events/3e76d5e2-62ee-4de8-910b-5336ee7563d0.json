@@ -1,0 +1,236 @@
+{
+  "goals": [
+    {
+      "name": "Oscarpaccioo",
+      "score": [
+        1,
+        0
+      ],
+      "t": 77.03,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        1
+      ],
+      "t": 270.64,
+      "team": 1
+    },
+    {
+      "name": "Imai Ako",
+      "score": [
+        2,
+        1
+      ],
+      "t": 300.44,
+      "team": 0
+    }
+  ],
+  "id": "3e76d5e2-62ee-4de8-910b-5336ee7563d0",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 7.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 173.5,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 107.6,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Bärßi",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Oscarpaccioo",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 86.77,
+      "takers": {
+        "0": "Oscarpaccioo",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 283.61,
+      "takers": {
+        "0": "Imai Ako",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Oscarpaccioo",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 313.52,
+      "takers": {
+        "0": "Oscarpaccioo",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 24,
+      "pct_first_man": 25.7,
+      "pct_second_man": 24.5,
+      "pct_third_man": 35.9
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 27.2,
+      "pct_second_man": 28.3,
+      "pct_third_man": 30.6
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 33.1,
+      "pct_second_man": 33.4,
+      "pct_third_man": 19.6
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1329.0,
+      "kind": "shot",
+      "name": "Oscarpaccioo",
+      "speed_to_goal": 1187.0,
+      "t": 53.49,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 54.66,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 334.0,
+      "kind": "shot",
+      "name": "Oscarpaccioo",
+      "speed_to_goal": 1999.0,
+      "t": 76.9,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Bärßi",
+      "t": 77.31,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1897.0,
+      "kind": "shot",
+      "name": "Bärßi",
+      "speed_to_goal": 2503.0,
+      "t": 97.98,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 99.01,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1690.0,
+      "kind": "shot",
+      "name": "Oscarpaccioo",
+      "speed_to_goal": 2159.0,
+      "t": 125.31,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 126.44,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1546.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2275.0,
+      "t": 169.11,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 541.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 265.0,
+      "t": 194.49,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 271.08,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 911.0,
+      "kind": "shot",
+      "name": "Imai Ako",
+      "speed_to_goal": 2182.0,
+      "t": 299.9,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 322.63,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1973.0,
+      "kind": "shot",
+      "name": "Bärßi",
+      "speed_to_goal": -2178.0,
+      "t": 322.66,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.5,
+    "Eric": 5.2,
+    "Ray": 9.6
+  },
+  "sustained_possession_teams_s": {
+    "0": 12.2,
+    "1": 15.3
+  }
+}

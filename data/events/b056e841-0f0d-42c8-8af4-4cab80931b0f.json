@@ -1,0 +1,334 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        0,
+        1
+      ],
+      "t": 14.74,
+      "team": 1
+    },
+    {
+      "name": "Manu_2011-_-",
+      "score": [
+        1,
+        1
+      ],
+      "t": 170.98,
+      "team": 0
+    },
+    {
+      "name": "mousy_devorador",
+      "score": [
+        2,
+        1
+      ],
+      "t": 259.3,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        2
+      ],
+      "t": 349.39,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        3
+      ],
+      "t": 443.42,
+      "team": 1
+    }
+  ],
+  "id": "b056e841-0f0d-42c8-8af4-4cab80931b0f",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 169.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 6,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 54.2,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 3
+    },
+    "Ray": {
+      "avg_boost_after": 91.1,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 6,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Manu_2011-_-",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ninja_veloz15",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 26.07,
+      "takers": {
+        "0": "ninja_veloz15",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "mousy_devorador",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 182.39,
+      "takers": {
+        "0": "mousy_devorador",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "mousy_devorador",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 270.96,
+      "takers": {
+        "0": "mousy_devorador",
+        "1": "Ray"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 361.54,
+      "takers": {
+        "0": "Manu_2011-_-",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Manu_2011-_-",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 379.95,
+      "takers": {
+        "0": "Manu_2011-_-",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 32,
+      "pct_first_man": 23.4,
+      "pct_second_man": 30.0,
+      "pct_third_man": 32.7
+    },
+    "Eric": {
+      "became_first_man": 28,
+      "pct_first_man": 30.2,
+      "pct_second_man": 29.5,
+      "pct_third_man": 26.4
+    },
+    "Ray": {
+      "became_first_man": 32,
+      "pct_first_man": 32.5,
+      "pct_second_man": 26.6,
+      "pct_third_man": 27.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1133.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1549.0,
+      "t": 14.14,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1757.0,
+      "kind": "shot",
+      "name": "Manu_2011-_-",
+      "speed_to_goal": 2778.0,
+      "t": 70.76,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 71.76,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "ninja_veloz15",
+      "t": 108.35,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2089.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1499.0,
+      "t": 108.38,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1671.0,
+      "kind": "shot",
+      "name": "ninja_veloz15",
+      "speed_to_goal": 2264.0,
+      "t": 170.28,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "ninja_veloz15",
+      "t": 171.2,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1053.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1318.0,
+      "t": 194.59,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1101.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1744.0,
+      "t": 198.69,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "mousy_devorador",
+      "t": 199.65,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1221.0,
+      "kind": "shot",
+      "name": "Manu_2011-_-",
+      "speed_to_goal": 946.0,
+      "t": 205.78,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 206.82,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1145.0,
+      "kind": "shot",
+      "name": "ninja_veloz15",
+      "speed_to_goal": 1745.0,
+      "t": 225.11,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2636.0,
+      "kind": "shot",
+      "name": "mousy_devorador",
+      "speed_to_goal": -1176.0,
+      "t": 228.15,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 228.18,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2066.0,
+      "kind": "shot",
+      "name": "mousy_devorador",
+      "speed_to_goal": 2583.0,
+      "t": 258.56,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "ninja_veloz15",
+      "t": 326.8,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1782.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1396.0,
+      "t": 326.83,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "ninja_veloz15",
+      "t": 347.09,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1123.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -628.0,
+      "t": 347.19,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 386.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1489.0,
+      "t": 349.15,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 349.81,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 23.3,
+    "1": 0.1
+  }
+}

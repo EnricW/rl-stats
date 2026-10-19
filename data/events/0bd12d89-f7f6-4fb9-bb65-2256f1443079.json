@@ -1,0 +1,428 @@
+{
+  "goals": [
+    {
+      "name": "Davedoliam9",
+      "score": [
+        0,
+        1
+      ],
+      "t": 41.26,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        1
+      ],
+      "t": 86.19,
+      "team": 0
+    },
+    {
+      "name": "zele_pit",
+      "score": [
+        1,
+        2
+      ],
+      "t": 139.86,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        2,
+        2
+      ],
+      "t": 160.5,
+      "team": 0
+    },
+    {
+      "name": "Davedoliam9",
+      "score": [
+        2,
+        3
+      ],
+      "t": 239.65,
+      "team": 1
+    },
+    {
+      "name": "zele_pit",
+      "score": [
+        2,
+        4
+      ],
+      "t": 266.79,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        4
+      ],
+      "t": 341.04,
+      "team": 0
+    }
+  ],
+  "id": "0bd12d89-f7f6-4fb9-bb65-2256f1443079",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 37.5,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 8,
+      "taken": 4
+    },
+    "Eric": {
+      "avg_boost_after": 161.9,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 8,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 95.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 8,
+      "taken": 3
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "davidefort-JW",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "davidefort-JW"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 51.18,
+      "takers": {
+        "0": "Enric",
+        "1": "Davedoliam9"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "zele_pit",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 99.13,
+      "takers": {
+        "0": "Ray",
+        "1": "zele_pit"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 152.8,
+      "takers": {
+        "0": "Enric",
+        "1": "Davedoliam9"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "zele_pit",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 173.44,
+      "takers": {
+        "0": "Ray",
+        "1": "zele_pit"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": 1,
+      "outcome": 1,
+      "t": 252.67,
+      "takers": {
+        "0": "Eric",
+        "1": "davidefort-JW"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Davedoliam9",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 277.09,
+      "takers": {
+        "0": "Enric",
+        "1": "Davedoliam9"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "zele_pit",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 350.87,
+      "takers": {
+        "0": "Ray",
+        "1": "zele_pit"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 28,
+      "pct_first_man": 29.6,
+      "pct_second_man": 26.3,
+      "pct_third_man": 29.8
+    },
+    "Eric": {
+      "became_first_man": 31,
+      "pct_first_man": 25.9,
+      "pct_second_man": 29.8,
+      "pct_third_man": 30.0
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 30.2,
+      "pct_second_man": 29.6,
+      "pct_third_man": 25.9
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1682.0,
+      "kind": "shot",
+      "name": "zele_pit",
+      "speed_to_goal": 1691.0,
+      "t": 37.63,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 465.0,
+      "kind": "shot",
+      "name": "Davedoliam9",
+      "speed_to_goal": 398.0,
+      "t": 41.03,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "zele_pit",
+      "t": 41.51,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1103.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 769.0,
+      "t": 58.35,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1538.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -579.0,
+      "t": 63.42,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "zele_pit",
+      "t": 63.42,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 691.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 961.0,
+      "t": 84.79,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 442.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 86.19,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 86.46,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 237.0,
+      "kind": "shot",
+      "name": "zele_pit",
+      "speed_to_goal": 430.0,
+      "t": 139.72,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "davidefort-JW",
+      "t": 140.29,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1019.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1355.0,
+      "t": 159.96,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "zele_pit",
+      "t": 202.95,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1764.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -954.0,
+      "t": 203.02,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2013.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -573.0,
+      "t": 210.02,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "davidefort-JW",
+      "t": 210.02,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 588.0,
+      "kind": "shot",
+      "name": "Davedoliam9",
+      "speed_to_goal": 1472.0,
+      "t": 239.55,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "zele_pit",
+      "t": 240.09,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1595.0,
+      "kind": "shot",
+      "name": "zele_pit",
+      "speed_to_goal": 1935.0,
+      "t": 265.89,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "zele_pit",
+      "t": 306.54,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 870.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1237.0,
+      "t": 306.57,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1102.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2560.0,
+      "t": 312.6,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Davedoliam9",
+      "t": 313.67,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 819.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -456.0,
+      "t": 325.87,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "davidefort-JW",
+      "t": 326.83,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1902.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1805.0,
+      "t": 340.11,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 341.16,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1296.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -690.0,
+      "t": 399.66,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Davedoliam9",
+      "t": 399.66,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.3,
+    "Eric": 4.5,
+    "Ray": 6.9
+  },
+  "sustained_possession_teams_s": {
+    "0": 11.7,
+    "1": 13.4
+  }
+}

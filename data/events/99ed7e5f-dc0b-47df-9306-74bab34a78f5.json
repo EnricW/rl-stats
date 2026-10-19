@@ -1,0 +1,285 @@
+{
+  "goals": [
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 82.13,
+      "team": 0
+    },
+    {
+      "name": "K1nzell_5",
+      "score": [
+        1,
+        1
+      ],
+      "t": 116.75,
+      "team": 1
+    },
+    {
+      "name": "mvlc_95",
+      "score": [
+        1,
+        2
+      ],
+      "t": 391.54,
+      "team": 1
+    }
+  ],
+  "id": "99ed7e5f-dc0b-47df-9306-74bab34a78f5",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 82.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 186.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 0
+    },
+    "Ray": {
+      "avg_boost_after": 24.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Delta M0MERE",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "Delta M0MERE"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Delta M0MERE",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 91.78,
+      "takers": {
+        "0": "Ray",
+        "1": "Delta M0MERE"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "K1nzell_5",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 126.77,
+      "takers": {
+        "0": "Enric",
+        "1": "K1nzell_5"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "K1nzell_5",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 337.15,
+      "takers": {
+        "0": "Enric",
+        "1": "K1nzell_5"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 29,
+      "pct_first_man": 24.5,
+      "pct_second_man": 30.8,
+      "pct_third_man": 30.1
+    },
+    "Eric": {
+      "became_first_man": 35,
+      "pct_first_man": 25.6,
+      "pct_second_man": 25.5,
+      "pct_third_man": 34.3
+    },
+    "Ray": {
+      "became_first_man": 32,
+      "pct_first_man": 35.3,
+      "pct_second_man": 29.0,
+      "pct_third_man": 21.1
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1774.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2244.0,
+      "t": 81.46,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1422.0,
+      "kind": "shot",
+      "name": "K1nzell_5",
+      "speed_to_goal": 2123.0,
+      "t": 116.15,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "mvlc_95",
+      "t": 116.99,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1333.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1717.0,
+      "t": 201.93,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Delta M0MERE",
+      "t": 202.99,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 220.2,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2423.0,
+      "kind": "shot",
+      "name": "mvlc_95",
+      "speed_to_goal": -846.0,
+      "t": 220.33,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1508.0,
+      "kind": "shot",
+      "name": "K1nzell_5",
+      "speed_to_goal": 477.0,
+      "t": 235.46,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2135.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1810.0,
+      "t": 251.71,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Delta M0MERE",
+      "t": 252.74,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "mvlc_95",
+      "t": 253.84,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 296.41,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1076.0,
+      "kind": "shot",
+      "name": "mvlc_95",
+      "speed_to_goal": -986.0,
+      "t": 296.44,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 691.0,
+      "kind": "shot",
+      "name": "K1nzell_5",
+      "speed_to_goal": 2330.0,
+      "t": 299.41,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 300.45,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1271.0,
+      "kind": "shot",
+      "name": "Delta M0MERE",
+      "speed_to_goal": 1722.0,
+      "t": 304.58,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 305.48,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1009.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 370.0,
+      "t": 321.75,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "K1nzell_5",
+      "t": 331.88,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1453.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -778.0,
+      "t": 331.98,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1865.0,
+      "kind": "shot",
+      "name": "mvlc_95",
+      "speed_to_goal": 3390.0,
+      "t": 390.97,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Ray": 0.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 0.1,
+    "1": 24.5
+  }
+}

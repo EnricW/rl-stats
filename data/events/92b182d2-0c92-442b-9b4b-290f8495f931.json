@@ -1,0 +1,310 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 36.22,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        2
+      ],
+      "t": 111.88,
+      "team": 1
+    },
+    {
+      "name": "ROSTA FARAX",
+      "score": [
+        1,
+        2
+      ],
+      "t": 219.08,
+      "team": 0
+    },
+    {
+      "name": "ROSTA FARAX",
+      "score": [
+        2,
+        2
+      ],
+      "t": 296.32,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        3
+      ],
+      "t": 357.35,
+      "team": 1
+    }
+  ],
+  "id": "92b182d2-0c92-442b-9b4b-290f8495f931",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 80.1,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 6,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 18.2,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 4
+    },
+    "Ray": {
+      "avg_boost_after": 150.6,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Fredericdidou",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Fredericdidou",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ROSTA FARAX",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 47.13,
+      "takers": {
+        "0": "Fredericdidou",
+        "1": "Eric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "DraftoMeklaTN",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 120.89,
+      "takers": {
+        "0": "DraftoMeklaTN",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 232.11,
+      "takers": {
+        "0": "ROSTA FARAX",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 307.01,
+      "takers": {
+        "0": "ROSTA FARAX",
+        "1": "Eric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 368.94,
+      "takers": {
+        "0": "Fredericdidou",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 21,
+      "pct_first_man": 24.1,
+      "pct_second_man": 29.4,
+      "pct_third_man": 37.4
+    },
+    "Eric": {
+      "became_first_man": 20,
+      "pct_first_man": 27.2,
+      "pct_second_man": 34.0,
+      "pct_third_man": 29.7
+    },
+    "Ray": {
+      "became_first_man": 26,
+      "pct_first_man": 39.6,
+      "pct_second_man": 27.5,
+      "pct_third_man": 23.8
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2002.0,
+      "kind": "shot",
+      "name": "Fredericdidou",
+      "speed_to_goal": 2322.0,
+      "t": 9.53,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 10.83,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2150.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1913.0,
+      "t": 35.26,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1469.0,
+      "kind": "shot",
+      "name": "ROSTA FARAX",
+      "speed_to_goal": -745.0,
+      "t": 56.27,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 56.34,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1107.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 13.0,
+      "t": 87.82,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1642.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2740.0,
+      "t": 111.18,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1540.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -234.0,
+      "t": 162.64,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "DraftoMeklaTN",
+      "t": 163.58,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1648.0,
+      "kind": "shot",
+      "name": "DraftoMeklaTN",
+      "speed_to_goal": 1031.0,
+      "t": 203.15,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 241.0,
+      "kind": "shot",
+      "name": "ROSTA FARAX",
+      "speed_to_goal": -880.0,
+      "t": 218.72,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Fredericdidou",
+      "t": 219.27,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1647.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -898.0,
+      "t": 277.71,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "ROSTA FARAX",
+      "t": 277.88,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 742.0,
+      "kind": "shot",
+      "name": "ROSTA FARAX",
+      "speed_to_goal": 2214.0,
+      "t": 296.12,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1618.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2778.0,
+      "t": 356.71,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 357.59,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 629.0,
+      "kind": "shot",
+      "name": "DraftoMeklaTN",
+      "speed_to_goal": -47.0,
+      "t": 380.11,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 4.5,
+    "Eric": 2.9,
+    "Ray": 12.7
+  },
+  "sustained_possession_teams_s": {
+    "0": 7.2,
+    "1": 20.1
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 158.41,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        0,
+        2
+      ],
+      "t": 191.31,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        0,
+        3
+      ],
+      "t": 269.8,
+      "team": 1
+    }
+  ],
+  "id": "344d56cc-1c40-4061-8a29-c1b0a6ae1b7d",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 93.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 3,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 195.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 3,
+      "taken": 0
+    },
+    "Ray": {
+      "avg_boost_after": 38.7,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 3,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 0.0,
+      "takers": {
+        "0": "SiyusWorks",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "MarccBoy",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 171.45,
+      "takers": {
+        "0": "MarccBoy",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 201.65,
+      "takers": {
+        "0": "SiyusWorks",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 17,
+      "pct_first_man": 26.2,
+      "pct_second_man": 26.2,
+      "pct_third_man": 36.0
+    },
+    "Eric": {
+      "became_first_man": 18,
+      "pct_first_man": 28.8,
+      "pct_second_man": 24.1,
+      "pct_third_man": 35.6
+    },
+    "Ray": {
+      "became_first_man": 24,
+      "pct_first_man": 33.5,
+      "pct_second_man": 38.1,
+      "pct_third_man": 16.9
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1149.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1563.0,
+      "t": 11.44,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1421.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1418.0,
+      "t": 157.69,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1561.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2660.0,
+      "t": 190.78,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 191.54,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 531.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1462.0,
+      "t": 269.67,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 269.8,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 1.9,
+    "Ray": 1.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 2.5,
+    "1": 2.9
+  }
+}

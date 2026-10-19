@@ -1,0 +1,267 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        0,
+        1
+      ],
+      "t": 108.34,
+      "team": 1
+    },
+    {
+      "name": "Harrybfmv420",
+      "score": [
+        1,
+        1
+      ],
+      "t": 173.72,
+      "team": 0
+    },
+    {
+      "name": "Harrybfmv420",
+      "score": [
+        2,
+        1
+      ],
+      "t": 302.43,
+      "team": 0
+    },
+    {
+      "name": "DonMorcillona",
+      "score": [
+        3,
+        1
+      ],
+      "t": 329.67,
+      "team": 0
+    }
+  ],
+  "id": "e7bacfa4-4c1b-446c-a4a6-8f4c3a58b6de",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 18.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 122.2,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 56.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "jasmineskart",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Harrybfmv420",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 117.62,
+      "takers": {
+        "0": "Harrybfmv420",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "DonMorcillona",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 183.99,
+      "takers": {
+        "0": "DonMorcillona",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Harrybfmv420",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 314.5,
+      "takers": {
+        "0": "Harrybfmv420",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 19,
+      "pct_first_man": 25.2,
+      "pct_second_man": 21.4,
+      "pct_third_man": 39.3
+    },
+    "Eric": {
+      "became_first_man": 26,
+      "pct_first_man": 31.7,
+      "pct_second_man": 28.6,
+      "pct_third_man": 25.5
+    },
+    "Ray": {
+      "became_first_man": 27,
+      "pct_first_man": 29.0,
+      "pct_second_man": 35.9,
+      "pct_third_man": 21.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 3497.0,
+      "kind": "shot",
+      "name": "DonMorcillona",
+      "speed_to_goal": -2139.0,
+      "t": 13.18,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 13.25,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1543.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1717.0,
+      "t": 36.75,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Harrybfmv420",
+      "t": 37.98,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1022.0,
+      "kind": "shot",
+      "name": "DonMorcillona",
+      "speed_to_goal": -364.0,
+      "t": 91.57,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 853.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1606.0,
+      "t": 107.84,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 108.61,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 723.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1730.0,
+      "t": 150.19,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "jasmineskart",
+      "t": 150.22,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1304.0,
+      "kind": "shot",
+      "name": "Harrybfmv420",
+      "speed_to_goal": 1118.0,
+      "t": 172.45,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "jasmineskart",
+      "t": 174.14,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1222.0,
+      "kind": "shot",
+      "name": "Harrybfmv420",
+      "speed_to_goal": -80.0,
+      "t": 230.67,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 230.77,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2079.0,
+      "kind": "shot",
+      "name": "Harrybfmv420",
+      "speed_to_goal": 1096.0,
+      "t": 239.8,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1447.0,
+      "kind": "shot",
+      "name": "Harrybfmv420",
+      "speed_to_goal": 1934.0,
+      "t": 301.73,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1198.0,
+      "kind": "shot",
+      "name": "DonMorcillona",
+      "speed_to_goal": 1435.0,
+      "t": 328.77,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "jasmineskart",
+      "t": 329.81,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.3,
+    "Eric": 1.5,
+    "Ray": 1.6
+  },
+  "sustained_possession_teams_s": {
+    "0": 17.3,
+    "1": 5.4
+  }
+}

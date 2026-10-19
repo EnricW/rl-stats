@@ -1,0 +1,286 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        0
+      ],
+      "t": 264.02,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        0
+      ],
+      "t": 300.96,
+      "team": 0
+    },
+    {
+      "name": "kingy24101",
+      "score": [
+        2,
+        1
+      ],
+      "t": 329.06,
+      "team": 1
+    }
+  ],
+  "id": "23ff1bbe-c7a9-497d-bd80-4d2f703ec64c",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 18.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 169.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 0
+    },
+    "Ray": {
+      "avg_boost_after": 73.3,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Faze Wincle",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "Faze Wincle"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 277.03,
+      "takers": {
+        "0": "Ray",
+        "1": "kingy24101"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Faze Wincle",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 312.52,
+      "takers": {
+        "0": "Enric",
+        "1": "Faze Wincle"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 342.07,
+      "takers": {
+        "0": "Ray",
+        "1": "Lucstarrr"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 28,
+      "pct_first_man": 36.1,
+      "pct_second_man": 21.3,
+      "pct_third_man": 29.2
+    },
+    "Eric": {
+      "became_first_man": 27,
+      "pct_first_man": 25.0,
+      "pct_second_man": 24.4,
+      "pct_third_man": 37.1
+    },
+    "Ray": {
+      "became_first_man": 26,
+      "pct_first_man": 25.4,
+      "pct_second_man": 40.9,
+      "pct_third_man": 20.3
+    }
+  },
+  "stat_events": [
+    {
+      "kind": "save",
+      "name": "Faze Wincle",
+      "t": 39.32,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 865.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 268.0,
+      "t": 39.46,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2017.0,
+      "kind": "shot",
+      "name": "Faze Wincle",
+      "speed_to_goal": 2242.0,
+      "t": 88.15,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2244.0,
+      "kind": "shot",
+      "name": "Faze Wincle",
+      "speed_to_goal": -1499.0,
+      "t": 146.03,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 146.66,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1094.0,
+      "kind": "shot",
+      "name": "Faze Wincle",
+      "speed_to_goal": -172.0,
+      "t": 199.96,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 200.86,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 341.0,
+      "kind": "shot",
+      "name": "kingy24101",
+      "speed_to_goal": -1000.0,
+      "t": 200.86,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1314.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -403.0,
+      "t": 241.76,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Lucstarrr",
+      "t": 242.26,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 606.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1041.0,
+      "t": 263.82,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 264.08,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Faze Wincle",
+      "t": 284.13,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2544.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1735.0,
+      "t": 284.2,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1518.0,
+      "kind": "shot",
+      "name": "Lucstarrr",
+      "speed_to_goal": -2428.0,
+      "t": 288.26,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 288.3,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Faze Wincle",
+      "t": 291.23,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2315.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -2057.0,
+      "t": 291.33,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1012.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2211.0,
+      "t": 300.46,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2160.0,
+      "kind": "shot",
+      "name": "kingy24101",
+      "speed_to_goal": 1973.0,
+      "t": 327.76,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Lucstarrr",
+      "t": 329.43,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.8,
+    "Eric": 0.1,
+    "Ray": 6.2
+  },
+  "sustained_possession_teams_s": {
+    "0": 9.0,
+    "1": 16.8
+  }
+}

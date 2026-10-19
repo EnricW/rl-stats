@@ -1,0 +1,364 @@
+{
+  "goals": [
+    {
+      "name": "ButaCuta",
+      "score": [
+        0,
+        1
+      ],
+      "t": 59.6,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        1
+      ],
+      "t": 254.49,
+      "team": 0
+    },
+    {
+      "name": "LightOwl779",
+      "score": [
+        1,
+        2
+      ],
+      "t": 280.35,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        2
+      ],
+      "t": 306.94,
+      "team": 0
+    },
+    {
+      "name": "ButaCuta",
+      "score": [
+        2,
+        3
+      ],
+      "t": 438.48,
+      "team": 1
+    }
+  ],
+  "id": "4e6a88cd-09c6-4fdf-9b72-960424d69d15",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 58.6,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 173.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 6,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 39.8,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 3
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "LightOwl779",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "LightOwl779"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ButaCuta",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 68.39,
+      "takers": {
+        "0": "Eric",
+        "1": "ButaCuta"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 264.32,
+      "takers": {
+        "0": "Enric",
+        "1": "Zeaxor35"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 293.34,
+      "takers": {
+        "0": "Ray",
+        "1": "LightOwl779"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 318.72,
+      "takers": {
+        "0": "Enric",
+        "1": "Zeaxor35"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 374.48,
+      "takers": {
+        "0": "Ray",
+        "1": "LightOwl779"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 33,
+      "pct_first_man": 25.0,
+      "pct_second_man": 23.4,
+      "pct_third_man": 40.4
+    },
+    "Eric": {
+      "became_first_man": 44,
+      "pct_first_man": 29.0,
+      "pct_second_man": 33.6,
+      "pct_third_man": 26.3
+    },
+    "Ray": {
+      "became_first_man": 36,
+      "pct_first_man": 34.8,
+      "pct_second_man": 31.8,
+      "pct_third_man": 22.2
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2135.0,
+      "kind": "shot",
+      "name": "ButaCuta",
+      "speed_to_goal": 2027.0,
+      "t": 58.36,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "LightOwl779",
+      "t": 59.6,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2209.0,
+      "kind": "shot",
+      "name": "LightOwl779",
+      "speed_to_goal": 1476.0,
+      "t": 89.8,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 90.47,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1935.0,
+      "kind": "shot",
+      "name": "LightOwl779",
+      "speed_to_goal": 2017.0,
+      "t": 112.31,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 112.54,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1837.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1071.0,
+      "t": 211.53,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "ButaCuta",
+      "t": 211.96,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 891.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -200.0,
+      "t": 217.19,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 878.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 252.0,
+      "t": 218.22,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1932.0,
+      "kind": "shot",
+      "name": "LightOwl779",
+      "speed_to_goal": 2049.0,
+      "t": 230.39,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 230.59,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2181.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1840.0,
+      "t": 253.12,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 254.59,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2227.0,
+      "kind": "shot",
+      "name": "LightOwl779",
+      "speed_to_goal": 1489.0,
+      "t": 279.12,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "ButaCuta",
+      "t": 280.45,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2199.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1898.0,
+      "t": 305.68,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1855.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1845.0,
+      "t": 330.75,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Zeaxor35",
+      "t": 331.09,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2176.0,
+      "kind": "shot",
+      "name": "LightOwl779",
+      "speed_to_goal": 2653.0,
+      "t": 363.34,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1829.0,
+      "kind": "shot",
+      "name": "LightOwl779",
+      "speed_to_goal": 2033.0,
+      "t": 401.47,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 402.41,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2185.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2190.0,
+      "t": 417.37,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Zeaxor35",
+      "t": 417.87,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1755.0,
+      "kind": "shot",
+      "name": "ButaCuta",
+      "speed_to_goal": 3105.0,
+      "t": 437.71,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Zeaxor35",
+      "t": 438.51,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.5,
+    "Eric": 4.8,
+    "Ray": 3.8
+  },
+  "sustained_possession_teams_s": {
+    "0": 11.0,
+    "1": 12.3
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "goals": [
+    {
+      "name": "KalashUF",
+      "score": [
+        1,
+        0
+      ],
+      "t": 17.64,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        1
+      ],
+      "t": 124.1,
+      "team": 1
+    },
+    {
+      "name": "Predator_Ki1ler_",
+      "score": [
+        2,
+        1
+      ],
+      "t": 321.26,
+      "team": 0
+    }
+  ],
+  "id": "b1951323-c171-4aaf-9527-19e7a7659656",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 51.0,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 132.3,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 82.6,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "KalashUF",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 0.0,
+      "takers": {
+        "0": "KalashUF",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 30.31,
+      "takers": {
+        "0": "Predator_Ki1ler_",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 137.11,
+      "takers": {
+        "0": "ID_Klaus",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "KalashUF",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 199.38,
+      "takers": {
+        "0": "KalashUF",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ID_Klaus",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 263.94,
+      "takers": {
+        "0": "ID_Klaus",
+        "1": "Ray"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 290.49,
+      "takers": {
+        "0": "KalashUF",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 16,
+      "pct_first_man": 29.8,
+      "pct_second_man": 22.2,
+      "pct_third_man": 34.5
+    },
+    "Eric": {
+      "became_first_man": 23,
+      "pct_first_man": 31.3,
+      "pct_second_man": 30.5,
+      "pct_third_man": 24.8
+    },
+    "Ray": {
+      "became_first_man": 21,
+      "pct_first_man": 25.4,
+      "pct_second_man": 33.9,
+      "pct_third_man": 27.3
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2141.0,
+      "kind": "shot",
+      "name": "KalashUF",
+      "speed_to_goal": 2081.0,
+      "t": 16.21,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1954.0,
+      "kind": "shot",
+      "name": "Predator_Ki1ler_",
+      "speed_to_goal": 2352.0,
+      "t": 53.38,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 53.88,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 357.0,
+      "kind": "shot",
+      "name": "KalashUF",
+      "speed_to_goal": 1554.0,
+      "t": 95.24,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 42.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1712.0,
+      "t": 124.0,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1747.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1630.0,
+      "t": 166.45,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "KalashUF",
+      "t": 167.31,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2114.0,
+      "kind": "shot",
+      "name": "Predator_Ki1ler_",
+      "speed_to_goal": -880.0,
+      "t": 176.72,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 176.79,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 668.0,
+      "kind": "shot",
+      "name": "KalashUF",
+      "speed_to_goal": 2543.0,
+      "t": 188.82,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Predator_Ki1ler_",
+      "t": 189.06,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 850.0,
+      "kind": "shot",
+      "name": "Predator_Ki1ler_",
+      "speed_to_goal": 1697.0,
+      "t": 252.13,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2175.0,
+      "kind": "shot",
+      "name": "Predator_Ki1ler_",
+      "speed_to_goal": 2453.0,
+      "t": 276.21,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "KalashUF",
+      "t": 277.51,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1377.0,
+      "kind": "shot",
+      "name": "Predator_Ki1ler_",
+      "speed_to_goal": 1824.0,
+      "t": 320.63,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "KalashUF",
+      "t": 321.26,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 5.8,
+    "Eric": 2.6,
+    "Ray": 4.4
+  },
+  "sustained_possession_teams_s": {
+    "0": 9.2,
+    "1": 12.8
+  }
+}
