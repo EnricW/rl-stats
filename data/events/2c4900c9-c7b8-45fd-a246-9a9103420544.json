@@ -1,0 +1,278 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 91.28,
+      "team": 1
+    },
+    {
+      "name": "boxed_by_jack24",
+      "score": [
+        1,
+        1
+      ],
+      "t": 142.25,
+      "team": 0
+    },
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        2
+      ],
+      "t": 213.5,
+      "team": 1
+    }
+  ],
+  "id": "2c4900c9-c7b8-45fd-a246-9a9103420544",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 7.8,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 105.3,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 124.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 0
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Aston plays7515",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Aston plays7515",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Aston plays7515",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 104.26,
+      "takers": {
+        "0": "Aston plays7515",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 152.27,
+      "takers": {
+        "0": "Aston plays7515",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "boxed_by_jack24",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 226.52,
+      "takers": {
+        "0": "boxed_by_jack24",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 26,
+      "pct_first_man": 30.8,
+      "pct_second_man": 24.4,
+      "pct_third_man": 34.3
+    },
+    "Eric": {
+      "became_first_man": 26,
+      "pct_first_man": 26.0,
+      "pct_second_man": 29.1,
+      "pct_third_man": 34.4
+    },
+    "Ray": {
+      "became_first_man": 27,
+      "pct_first_man": 32.8,
+      "pct_second_man": 36.0,
+      "pct_third_man": 20.7
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 1536.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2529.0,
+      "t": 13.94,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Swing me246",
+      "t": 14.18,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1121.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 793.0,
+      "t": 47.53,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Swing me246",
+      "t": 49.76,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 216.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 91.28,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 362.0,
+      "kind": "shot",
+      "name": "boxed_by_jack24",
+      "speed_to_goal": 1136.0,
+      "t": 141.82,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Swing me246",
+      "t": 142.54,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 172.59,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 823.0,
+      "kind": "shot",
+      "name": "Swing me246",
+      "speed_to_goal": 148.0,
+      "t": 172.62,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 158.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 787.0,
+      "t": 213.2,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 213.82,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 525.0,
+      "kind": "shot",
+      "name": "Aston plays7515",
+      "speed_to_goal": 1693.0,
+      "t": 251.97,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 253.03,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2108.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1286.0,
+      "t": 290.57,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Swing me246",
+      "t": 291.43,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 998.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 31.0,
+      "t": 309.9,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Swing me246",
+      "t": 317.9,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2134.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1040.0,
+      "t": 317.93,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1530.0,
+      "kind": "shot",
+      "name": "Swing me246",
+      "speed_to_goal": 1607.0,
+      "t": 321.97,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 322.1,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.2,
+    "Eric": 0.1,
+    "Ray": 7.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 29.3,
+    "1": 9.3
+  }
+}

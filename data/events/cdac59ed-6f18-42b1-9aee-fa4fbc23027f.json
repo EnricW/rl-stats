@@ -1,0 +1,368 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 78.09,
+      "team": 1
+    },
+    {
+      "name": "Eric",
+      "score": [
+        0,
+        2
+      ],
+      "t": 133.17,
+      "team": 1
+    },
+    {
+      "name": "THE BEACHSTER",
+      "score": [
+        1,
+        2
+      ],
+      "t": 169.48,
+      "team": 0
+    },
+    {
+      "name": "Ob1 Matt",
+      "score": [
+        2,
+        2
+      ],
+      "t": 212.49,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        3
+      ],
+      "t": 347.36,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        4
+      ],
+      "t": 379.1,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        5
+      ],
+      "t": 402.04,
+      "team": 1
+    }
+  ],
+  "id": "cdac59ed-6f18-42b1-9aee-fa4fbc23027f",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 75.6,
+      "fakes": 0,
+      "first_touches": 3,
+      "kickoffs": 8,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 140.2,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 8,
+      "taken": 3
+    },
+    "Ray": {
+      "avg_boost_after": 101.6,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 8,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "CAMYBEAR1252530",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 0.0,
+      "takers": {
+        "0": "CAMYBEAR1252530",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 90.1,
+      "takers": {
+        "0": "Ob1 Matt",
+        "1": "Enric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 144.05,
+      "takers": {
+        "0": "Ob1 Matt",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ob1 Matt",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 181.53,
+      "takers": {
+        "0": "Ob1 Matt",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 225.46,
+      "takers": {
+        "0": "THE BEACHSTER",
+        "1": "Enric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "THE BEACHSTER",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 360.32,
+      "takers": {
+        "0": "THE BEACHSTER",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": 1,
+      "outcome": 0,
+      "t": 392.15,
+      "takers": {
+        "0": "Ob1 Matt",
+        "1": "Enric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 410.6,
+      "takers": {
+        "0": "Ob1 Matt",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 27,
+      "pct_first_man": 27.0,
+      "pct_second_man": 32.0,
+      "pct_third_man": 28.5
+    },
+    "Eric": {
+      "became_first_man": 20,
+      "pct_first_man": 26.0,
+      "pct_second_man": 23.6,
+      "pct_third_man": 38.0
+    },
+    "Ray": {
+      "became_first_man": 31,
+      "pct_first_man": 34.5,
+      "pct_second_man": 32.0,
+      "pct_third_man": 21.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2177.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -156.0,
+      "t": 26.0,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "THE BEACHSTER",
+      "t": 26.74,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1583.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2778.0,
+      "t": 34.8,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "THE BEACHSTER",
+      "t": 34.84,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 78.45,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 804.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2321.0,
+      "t": 132.8,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2375.0,
+      "kind": "shot",
+      "name": "THE BEACHSTER",
+      "speed_to_goal": -1933.0,
+      "t": 163.32,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 163.35,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1673.0,
+      "kind": "shot",
+      "name": "THE BEACHSTER",
+      "speed_to_goal": 1661.0,
+      "t": 168.38,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "CAMYBEAR1252530",
+      "t": 169.95,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 852.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1965.0,
+      "t": 205.86,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ob1 Matt",
+      "t": 206.89,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1565.0,
+      "kind": "shot",
+      "name": "Ob1 Matt",
+      "speed_to_goal": 2686.0,
+      "t": 211.96,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "THE BEACHSTER",
+      "t": 212.77,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 341.33,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2697.0,
+      "kind": "shot",
+      "name": "THE BEACHSTER",
+      "speed_to_goal": -2152.0,
+      "t": 341.33,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 446.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": null,
+      "t": 347.36,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 878.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1099.0,
+      "t": 378.67,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 379.35,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1715.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2440.0,
+      "t": 401.31,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 402.26,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 6.4,
+    "Eric": 0.1,
+    "Ray": 4.4
+  },
+  "sustained_possession_teams_s": {
+    "0": 4.5,
+    "1": 10.8
+  }
+}

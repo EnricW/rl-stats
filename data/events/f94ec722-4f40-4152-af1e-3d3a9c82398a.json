@@ -1,0 +1,252 @@
+{
+  "goals": [
+    {
+      "name": "Twitch_ajrgaming",
+      "score": [
+        1,
+        0
+      ],
+      "t": 256.87,
+      "team": 0
+    }
+  ],
+  "id": "f94ec722-4f40-4152-af1e-3d3a9c82398a",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 127.5,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 2,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 39.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 2,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 137.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 2,
+      "taken": 0
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Twitch_ajrgaming",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Twitch_ajrgaming",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 269.84,
+      "takers": {
+        "0": "vgdow",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 25,
+      "pct_first_man": 29.4,
+      "pct_second_man": 23.7,
+      "pct_third_man": 36.6
+    },
+    "Eric": {
+      "became_first_man": 25,
+      "pct_first_man": 24.8,
+      "pct_second_man": 40.0,
+      "pct_third_man": 24.9
+    },
+    "Ray": {
+      "became_first_man": 29,
+      "pct_first_man": 35.5,
+      "pct_second_man": 25.9,
+      "pct_third_man": 28.2
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 889.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1771.0,
+      "t": 59.97,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Twitch_ajrgaming",
+      "t": 60.97,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1251.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1849.0,
+      "t": 77.63,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1137.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1574.0,
+      "t": 79.2,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Twitch_ajrgaming",
+      "t": 79.23,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 832.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 309.0,
+      "t": 126.93,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1224.0,
+      "kind": "shot",
+      "name": "MarceI_",
+      "speed_to_goal": 1319.0,
+      "t": 189.88,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 190.52,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 947.0,
+      "kind": "shot",
+      "name": "Twitch_ajrgaming",
+      "speed_to_goal": -598.0,
+      "t": 194.28,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1988.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2376.0,
+      "t": 203.18,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Twitch_ajrgaming",
+      "t": 203.45,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1764.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2089.0,
+      "t": 241.71,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "MarceI_",
+      "t": 242.71,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1877.0,
+      "kind": "shot",
+      "name": "Twitch_ajrgaming",
+      "speed_to_goal": 3126.0,
+      "t": 256.24,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "vgdow",
+      "t": 257.16,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 904.0,
+      "kind": "shot",
+      "name": "vgdow",
+      "speed_to_goal": 1748.0,
+      "t": 281.04,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 282.01,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1367.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 905.0,
+      "t": 296.24,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 307.42,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2002.0,
+      "kind": "shot",
+      "name": "vgdow",
+      "speed_to_goal": -1880.0,
+      "t": 307.45,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1525.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1659.0,
+      "t": 318.69,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "vgdow",
+      "t": 319.09,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.1,
+    "Eric": 0.1,
+    "Ray": 5.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 5.9,
+    "1": 5.4
+  }
+}

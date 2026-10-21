@@ -1,0 +1,288 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 9.47,
+      "team": 0
+    },
+    {
+      "name": "Jambo-Iceman7",
+      "score": [
+        1,
+        1
+      ],
+      "t": 45.37,
+      "team": 1
+    },
+    {
+      "name": "Herrie21",
+      "score": [
+        1,
+        2
+      ],
+      "t": 322.59,
+      "team": 1
+    }
+  ],
+  "id": "d42b020d-4487-43d7-8035-92405b75db7b",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 71.5,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 17.5,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 142.2,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Kn1ghtd3m0n24",
+      "first_touch_team": 1,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "Kn1ghtd3m0n24"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 22.5,
+      "takers": {
+        "0": "Ray",
+        "1": "Herrie21"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Kn1ghtd3m0n24",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 58.38,
+      "takers": {
+        "0": "Enric",
+        "1": "Kn1ghtd3m0n24"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 335.59,
+      "takers": {
+        "0": "Eric",
+        "1": "Jambo-Iceman7"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 27,
+      "pct_first_man": 24.4,
+      "pct_second_man": 28.5,
+      "pct_third_man": 32.9
+    },
+    "Eric": {
+      "became_first_man": 30,
+      "pct_first_man": 29.7,
+      "pct_second_man": 27.2,
+      "pct_third_man": 29.0
+    },
+    "Ray": {
+      "became_first_man": 26,
+      "pct_first_man": 31.7,
+      "pct_second_man": 30.1,
+      "pct_third_man": 24.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 787.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": null,
+      "t": 9.47,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 9.95,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1468.0,
+      "kind": "shot",
+      "name": "Herrie21",
+      "speed_to_goal": 1344.0,
+      "t": 42.93,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1160.0,
+      "kind": "shot",
+      "name": "Jambo-Iceman7",
+      "speed_to_goal": 2438.0,
+      "t": 44.9,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Herrie21",
+      "t": 45.66,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1753.0,
+      "kind": "shot",
+      "name": "Kn1ghtd3m0n24",
+      "speed_to_goal": 2206.0,
+      "t": 72.64,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1470.0,
+      "kind": "shot",
+      "name": "Kn1ghtd3m0n24",
+      "speed_to_goal": 2575.0,
+      "t": 90.93,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 91.93,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Kn1ghtd3m0n24",
+      "t": 106.17,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1475.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -215.0,
+      "t": 106.23,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1124.0,
+      "kind": "shot",
+      "name": "Herrie21",
+      "speed_to_goal": -467.0,
+      "t": 127.46,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1396.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1016.0,
+      "t": 157.02,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Herrie21",
+      "t": 157.95,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2183.0,
+      "kind": "shot",
+      "name": "Herrie21",
+      "speed_to_goal": 2990.0,
+      "t": 162.02,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 162.79,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2003.0,
+      "kind": "shot",
+      "name": "Herrie21",
+      "speed_to_goal": 618.0,
+      "t": 179.28,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 179.35,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1193.0,
+      "kind": "shot",
+      "name": "Jambo-Iceman7",
+      "speed_to_goal": 1949.0,
+      "t": 182.48,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Kn1ghtd3m0n24",
+      "t": 300.11,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2004.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -829.0,
+      "t": 300.25,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 224.0,
+      "kind": "shot",
+      "name": "Herrie21",
+      "speed_to_goal": -1178.0,
+      "t": 322.52,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 1.0,
+    "Eric": 5.1,
+    "Ray": 6.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 12.1,
+    "1": 11.3
+  }
+}

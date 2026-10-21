@@ -1,0 +1,301 @@
+{
+  "goals": [
+    {
+      "name": "MrXTitaZzz",
+      "score": [
+        0,
+        1
+      ],
+      "t": 86.14,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        1
+      ],
+      "t": 86.7,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        1
+      ],
+      "t": 403.01,
+      "team": 0
+    }
+  ],
+  "id": "7ab8d298-6489-4ac4-9329-37dff1208039",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 133.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 78.2,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 4,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 66.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Eric",
+        "1": "1.61_2.4"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "MrXTitaZzz",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 47.7,
+      "takers": {
+        "0": "Enric",
+        "1": "MrXTitaZzz"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "deanyougblood",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 99.11,
+      "takers": {
+        "0": "Eric",
+        "1": "deanyougblood"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "1.61_2.4",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 342.25,
+      "takers": {
+        "0": "Ray",
+        "1": "1.61_2.4"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 28,
+      "pct_first_man": 24.3,
+      "pct_second_man": 30.4,
+      "pct_third_man": 35.4
+    },
+    "Eric": {
+      "became_first_man": 29,
+      "pct_first_man": 30.1,
+      "pct_second_man": 26.3,
+      "pct_third_man": 33.7
+    },
+    "Ray": {
+      "became_first_man": 31,
+      "pct_first_man": 35.7,
+      "pct_second_man": 33.4,
+      "pct_third_man": 21.0
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 574.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2429.0,
+      "t": 35.81,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 36.24,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1693.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 927.0,
+      "t": 57.63,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2131.0,
+      "kind": "shot",
+      "name": "MrXTitaZzz",
+      "speed_to_goal": 2703.0,
+      "t": 85.31,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2054.0,
+      "kind": "shot",
+      "name": "MrXTitaZzz",
+      "speed_to_goal": 2371.0,
+      "t": 124.54,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 125.24,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1829.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -1652.0,
+      "t": 135.73,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "MrXTitaZzz",
+      "t": 135.77,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2004.0,
+      "kind": "shot",
+      "name": "deanyougblood",
+      "speed_to_goal": 2341.0,
+      "t": 209.16,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 209.56,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2191.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1952.0,
+      "t": 272.84,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "1.61_2.4",
+      "t": 273.58,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 631.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 900.0,
+      "t": 281.44,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1200.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2324.0,
+      "t": 283.87,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "1.61_2.4",
+      "t": 284.34,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2210.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1549.0,
+      "t": 289.71,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "MrXTitaZzz",
+      "t": 290.64,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1892.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1656.0,
+      "t": 326.09,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "1.61_2.4",
+      "t": 327.09,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1797.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2116.0,
+      "t": 358.03,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "1.61_2.4",
+      "t": 358.39,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1978.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1804.0,
+      "t": 376.89,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2212.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1528.0,
+      "t": 401.38,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Eric": 7.4,
+    "Ray": 15.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 22.5,
+    "1": 9.3
+  }
+}

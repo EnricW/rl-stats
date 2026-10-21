@@ -1,0 +1,400 @@
+{
+  "goals": [
+    {
+      "name": "Eric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 37.51,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        0
+      ],
+      "t": 134.55,
+      "team": 0
+    },
+    {
+      "name": "HandigeHarry316",
+      "score": [
+        2,
+        1
+      ],
+      "t": 152.64,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        3,
+        1
+      ],
+      "t": 174.54,
+      "team": 0
+    },
+    {
+      "name": "deTomstar",
+      "score": [
+        3,
+        2
+      ],
+      "t": 203.91,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        4,
+        2
+      ],
+      "t": 219.79,
+      "team": 0
+    },
+    {
+      "name": "deTomstar",
+      "score": [
+        4,
+        3
+      ],
+      "t": 257.67,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        5,
+        3
+      ],
+      "t": 373.01,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        6,
+        3
+      ],
+      "t": 402.89,
+      "team": 0
+    }
+  ],
+  "id": "3d3e74ab-7cfe-40d3-a43e-139ff942809d",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 89.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 10,
+      "taken": 2
+    },
+    "Eric": {
+      "avg_boost_after": 152.6,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 10,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 39.8,
+      "fakes": 0,
+      "first_touches": 6,
+      "kickoffs": 10,
+      "taken": 6
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "HandigeHarry316"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": null,
+      "t": 49.11,
+      "takers": {
+        "0": "Ray",
+        "1": "deTomstar"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "deTomstar",
+      "first_touch_team": 1,
+      "goal_team": 1,
+      "outcome": 1,
+      "t": 144.41,
+      "takers": {
+        "0": "Enric",
+        "1": "deTomstar"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": 1,
+      "t": 163.79,
+      "takers": {
+        "0": "Eric",
+        "1": "deTomstar"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 187.54,
+      "takers": {
+        "0": "Ray",
+        "1": "HandigeHarry316"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 212.09,
+      "takers": {
+        "0": "Ray",
+        "1": "HandigeHarry316"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 232.75,
+      "takers": {
+        "0": "Ray",
+        "1": "HandigeHarry316"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "deTomstar",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 270.07,
+      "takers": {
+        "0": "Enric",
+        "1": "deTomstar"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 385.24,
+      "takers": {
+        "0": "Eric",
+        "1": "deTomstar"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 413.42,
+      "takers": {
+        "0": "Ray",
+        "1": "Hans v Baalen"
+      },
+      "type": "unknown"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 19,
+      "pct_first_man": 34.1,
+      "pct_second_man": 22.9,
+      "pct_third_man": 32.8
+    },
+    "Eric": {
+      "became_first_man": 17,
+      "pct_first_man": 27.1,
+      "pct_second_man": 27.5,
+      "pct_third_man": 35.2
+    },
+    "Ray": {
+      "became_first_man": 23,
+      "pct_first_man": 28.6,
+      "pct_second_man": 39.4,
+      "pct_third_man": 21.8
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2265.0,
+      "kind": "shot",
+      "name": "HandigeHarry316",
+      "speed_to_goal": 1924.0,
+      "t": 27.64,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 28.37,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 816.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1692.0,
+      "t": 36.04,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2102.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1563.0,
+      "t": 100.94,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "HandigeHarry316",
+      "t": 100.94,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 521.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -457.0,
+      "t": 134.51,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 134.95,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 440.0,
+      "kind": "shot",
+      "name": "HandigeHarry316",
+      "speed_to_goal": 489.0,
+      "t": 152.54,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "deTomstar",
+      "t": 153.07,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1623.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1866.0,
+      "t": 173.91,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 174.54,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 275.0,
+      "kind": "shot",
+      "name": "deTomstar",
+      "speed_to_goal": 2650.0,
+      "t": 203.78,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 924.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1684.0,
+      "t": 219.19,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1594.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -2303.0,
+      "t": 239.87,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Hans v Baalen",
+      "t": 239.87,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 237.0,
+      "kind": "shot",
+      "name": "deTomstar",
+      "speed_to_goal": null,
+      "t": 257.67,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Hans v Baalen",
+      "t": 257.92,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1508.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1778.0,
+      "t": 371.75,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 856.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1928.0,
+      "t": 402.49,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 0.5,
+    "Eric": 2.7,
+    "Ray": 10.9
+  },
+  "sustained_possession_teams_s": {
+    "0": 14.1,
+    "1": 7.7
+  }
+}

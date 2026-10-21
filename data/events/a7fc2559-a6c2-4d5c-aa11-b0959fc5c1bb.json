@@ -1,0 +1,372 @@
+{
+  "goals": [
+    {
+      "name": "Ray",
+      "score": [
+        0,
+        1
+      ],
+      "t": 33.69,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        0,
+        2
+      ],
+      "t": 57.48,
+      "team": 1
+    },
+    {
+      "name": "Thomsk",
+      "score": [
+        1,
+        2
+      ],
+      "t": 143.9,
+      "team": 0
+    },
+    {
+      "name": "Respxct-me44",
+      "score": [
+        2,
+        2
+      ],
+      "t": 192.96,
+      "team": 0
+    },
+    {
+      "name": "Respxct-me44",
+      "score": [
+        3,
+        2
+      ],
+      "t": 258.14,
+      "team": 0
+    },
+    {
+      "name": "kingkam1801",
+      "score": [
+        4,
+        2
+      ],
+      "t": 285.02,
+      "team": 0
+    },
+    {
+      "name": "kingkam1801",
+      "score": [
+        5,
+        2
+      ],
+      "t": 318.54,
+      "team": 0
+    },
+    {
+      "name": "kingkam1801",
+      "score": [
+        6,
+        2
+      ],
+      "t": 368.33,
+      "team": 0
+    }
+  ],
+  "id": "a7fc2559-a6c2-4d5c-aa11-b0959fc5c1bb",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 80.4,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 8,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 106.5,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 8,
+      "taken": 4
+    },
+    "Ray": {
+      "avg_boost_after": 138.6,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 8,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Respxct-me44",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Respxct-me44",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Thomsk",
+      "first_touch_team": 0,
+      "goal_team": 1,
+      "outcome": 1,
+      "t": 46.71,
+      "takers": {
+        "0": "Thomsk",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Respxct-me44",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 70.57,
+      "takers": {
+        "0": "Respxct-me44",
+        "1": "Eric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Respxct-me44",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 156.86,
+      "takers": {
+        "0": "Respxct-me44",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "kingkam1801",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 205.94,
+      "takers": {
+        "0": "kingkam1801",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Respxct-me44",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 271.15,
+      "takers": {
+        "0": "Respxct-me44",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 297.99,
+      "takers": {
+        "0": "Thomsk",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Respxct-me44",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 329.49,
+      "takers": {
+        "0": "Respxct-me44",
+        "1": "Eric"
+      },
+      "type": "unknown"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 18,
+      "pct_first_man": 24.5,
+      "pct_second_man": 25.6,
+      "pct_third_man": 41.7
+    },
+    "Eric": {
+      "became_first_man": 17,
+      "pct_first_man": 31.2,
+      "pct_second_man": 26.2,
+      "pct_third_man": 34.4
+    },
+    "Ray": {
+      "became_first_man": 27,
+      "pct_first_man": 36.1,
+      "pct_second_man": 40.0,
+      "pct_third_man": 15.7
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2383.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1850.0,
+      "t": 18.84,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Thomsk",
+      "t": 19.31,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1735.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1447.0,
+      "t": 32.72,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 728.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1538.0,
+      "t": 56.88,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Eric",
+      "t": 57.7,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1864.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -410.0,
+      "t": 125.49,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Respxct-me44",
+      "t": 138.63,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2148.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -2239.0,
+      "t": 138.7,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1498.0,
+      "kind": "shot",
+      "name": "Respxct-me44",
+      "speed_to_goal": 2041.0,
+      "t": 142.7,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 526.0,
+      "kind": "shot",
+      "name": "Thomsk",
+      "speed_to_goal": 1072.0,
+      "t": 143.77,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Respxct-me44",
+      "t": 144.29,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1088.0,
+      "kind": "shot",
+      "name": "Respxct-me44",
+      "speed_to_goal": 2216.0,
+      "t": 192.46,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Thomsk",
+      "t": 258.42,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 500.0,
+      "kind": "shot",
+      "name": "kingkam1801",
+      "speed_to_goal": 1057.0,
+      "t": 284.35,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Respxct-me44",
+      "t": 285.24,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 686.0,
+      "kind": "shot",
+      "name": "kingkam1801",
+      "speed_to_goal": 263.0,
+      "t": 318.37,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Respxct-me44",
+      "t": 318.93,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Respxct-me44",
+      "t": 342.7,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2061.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": -483.0,
+      "t": 342.73,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 541.0,
+      "kind": "shot",
+      "name": "kingkam1801",
+      "speed_to_goal": 2671.0,
+      "t": 368.06,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Eric": 0.1,
+    "Ray": 4.5
+  },
+  "sustained_possession_teams_s": {
+    "0": 17.4,
+    "1": 4.5
+  }
+}

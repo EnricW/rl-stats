@@ -1,0 +1,293 @@
+{
+  "goals": [
+    {
+      "name": "Dj asian boy",
+      "score": [
+        1,
+        0
+      ],
+      "t": 14.21,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        1,
+        1
+      ],
+      "t": 123.74,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        2
+      ],
+      "t": 242.84,
+      "team": 1
+    },
+    {
+      "name": "ZebraFlosse162",
+      "score": [
+        2,
+        2
+      ],
+      "t": 267.03,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        3
+      ],
+      "t": 299.59,
+      "team": 1
+    },
+    {
+      "name": "Ray",
+      "score": [
+        2,
+        4
+      ],
+      "t": 325.42,
+      "team": 1
+    }
+  ],
+  "id": "1f898c34-60c3-44a8-95b7-ee51795b7050",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 98.0,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 6,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 50.7,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 181.0,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 6,
+      "taken": 1
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "odkrencony",
+        "1": "Enric"
+      },
+      "type": "unknown"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 24.86,
+      "takers": {
+        "0": "Dj asian boy",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "ZebraFlosse162",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 136.7,
+      "takers": {
+        "0": "ZebraFlosse162",
+        "1": "Eric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Enric",
+      "first_touch_team": 1,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 255.8,
+      "takers": {
+        "0": "odkrencony",
+        "1": "Enric"
+      },
+      "type": "center_offset"
+    },
+    {
+      "first_touch": "odkrencony",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 275.78,
+      "takers": {
+        "0": "odkrencony",
+        "1": "Enric"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 312.59,
+      "takers": {
+        "0": "odkrencony",
+        "1": "Ray"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 15,
+      "pct_first_man": 22.6,
+      "pct_second_man": 22.9,
+      "pct_third_man": 42.9
+    },
+    "Eric": {
+      "became_first_man": 17,
+      "pct_first_man": 25.2,
+      "pct_second_man": 32.7,
+      "pct_third_man": 30.6
+    },
+    "Ray": {
+      "became_first_man": 22,
+      "pct_first_man": 40.6,
+      "pct_second_man": 32.9,
+      "pct_third_man": 14.9
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 724.0,
+      "kind": "shot",
+      "name": "Dj asian boy",
+      "speed_to_goal": null,
+      "t": 14.21,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1079.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 502.0,
+      "t": 43.21,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Dj asian boy",
+      "t": 44.24,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Dj asian boy",
+      "t": 123.47,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 851.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1848.0,
+      "t": 123.61,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1049.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 835.0,
+      "t": 148.94,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 165.65,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1829.0,
+      "kind": "shot",
+      "name": "ZebraFlosse162",
+      "speed_to_goal": -832.0,
+      "t": 166.15,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 676.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2237.0,
+      "t": 242.44,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 242.87,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1969.0,
+      "kind": "shot",
+      "name": "ZebraFlosse162",
+      "speed_to_goal": 1966.0,
+      "t": 265.96,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "odkrencony",
+      "t": 267.5,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 564.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1196.0,
+      "t": 299.19,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 299.88,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1119.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 2070.0,
+      "t": 324.86,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Ray": 5.5
+  },
+  "sustained_possession_teams_s": {
+    "0": 13.7,
+    "1": 5.5
+  }
+}

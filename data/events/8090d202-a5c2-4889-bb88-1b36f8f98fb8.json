@@ -1,0 +1,399 @@
+{
+  "goals": [
+    {
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "score": [
+        0,
+        1
+      ],
+      "t": 25.25,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        1
+      ],
+      "t": 47.45,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        2,
+        1
+      ],
+      "t": 83.95,
+      "team": 0
+    },
+    {
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "score": [
+        2,
+        2
+      ],
+      "t": 135.3,
+      "team": 1
+    },
+    {
+      "name": "WaryElixier56",
+      "score": [
+        2,
+        3
+      ],
+      "t": 175.61,
+      "team": 1
+    },
+    {
+      "name": "Enric",
+      "score": [
+        3,
+        4
+      ],
+      "t": 273.83,
+      "team": 0
+    },
+    {
+      "name": "WaryElixier56",
+      "score": [
+        3,
+        5
+      ],
+      "t": 410.75,
+      "team": 1
+    }
+  ],
+  "id": "8090d202-a5c2-4889-bb88-1b36f8f98fb8",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 81.2,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 8,
+      "taken": 3
+    },
+    "Eric": {
+      "avg_boost_after": 160.4,
+      "fakes": 0,
+      "first_touches": 1,
+      "kickoffs": 8,
+      "taken": 2
+    },
+    "Ray": {
+      "avg_boost_after": 59.4,
+      "fakes": 0,
+      "first_touches": 2,
+      "kickoffs": 8,
+      "taken": 3
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "WaryElixier56",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 0.0,
+      "takers": {
+        "0": "Enric",
+        "1": "WaryElixier56"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": 0,
+      "outcome": 0,
+      "t": 38.23,
+      "takers": {
+        "0": "Ray",
+        "1": "dog**********"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Eric",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 60.46,
+      "takers": {
+        "0": "Eric",
+        "1": "Dietrich-Wilhelm Dönneweg"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "WaryElixier56",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 95.49,
+      "takers": {
+        "0": "Enric",
+        "1": "WaryElixier56"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Ray",
+      "first_touch_team": 0,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 145.19,
+      "takers": {
+        "0": "Ray",
+        "1": "dog**********"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "WaryElixier56",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 186.47,
+      "takers": {
+        "0": "Enric",
+        "1": "WaryElixier56"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "dog**********",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 244.81,
+      "takers": {
+        "0": "Ray",
+        "1": "dog**********"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Dietrich-Wilhelm Dönneweg",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 283.91,
+      "takers": {
+        "0": "Eric",
+        "1": "Dietrich-Wilhelm Dönneweg"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 28,
+      "pct_first_man": 26.9,
+      "pct_second_man": 27.5,
+      "pct_third_man": 33.8
+    },
+    "Eric": {
+      "became_first_man": 22,
+      "pct_first_man": 22.7,
+      "pct_second_man": 30.2,
+      "pct_third_man": 35.2
+    },
+    "Ray": {
+      "became_first_man": 24,
+      "pct_first_man": 38.5,
+      "pct_second_man": 30.4,
+      "pct_third_man": 19.2
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2166.0,
+      "kind": "shot",
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "speed_to_goal": 1484.0,
+      "t": 23.91,
+      "team": 1
+    },
+    {
+      "kind": "assist",
+      "name": "dog**********",
+      "t": 25.31,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1990.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2134.0,
+      "t": 45.41,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 47.45,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1838.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 1333.0,
+      "t": 82.75,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 83.95,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2206.0,
+      "kind": "shot",
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "speed_to_goal": 3086.0,
+      "t": 134.4,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1993.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1017.0,
+      "t": 161.29,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "WaryElixier56",
+      "t": 162.26,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1839.0,
+      "kind": "shot",
+      "name": "WaryElixier56",
+      "speed_to_goal": 2037.0,
+      "t": 174.81,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1391.0,
+      "kind": "shot",
+      "name": "dog**********",
+      "speed_to_goal": 1042.0,
+      "t": 230.0,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1268.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 2373.0,
+      "t": 270.14,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Ray",
+      "t": 270.91,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2266.0,
+      "kind": "shot",
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "speed_to_goal": 2475.0,
+      "t": 300.92,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 301.22,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1920.0,
+      "kind": "shot",
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "speed_to_goal": 2202.0,
+      "t": 312.9,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 313.26,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1771.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 2272.0,
+      "t": 321.33,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "WaryElixier56",
+      "t": 321.69,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2138.0,
+      "kind": "shot",
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "speed_to_goal": 2007.0,
+      "t": 353.76,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 353.96,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1995.0,
+      "kind": "shot",
+      "name": "Dietrich-Wilhelm Dönneweg",
+      "speed_to_goal": 2287.0,
+      "t": 366.69,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 367.25,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1884.0,
+      "kind": "shot",
+      "name": "dog**********",
+      "speed_to_goal": 1602.0,
+      "t": 378.76,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1655.0,
+      "kind": "shot",
+      "name": "WaryElixier56",
+      "speed_to_goal": 2620.0,
+      "t": 410.02,
+      "team": 1
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 1.9,
+    "Ray": 1.0
+  },
+  "sustained_possession_teams_s": {
+    "0": 2.9,
+    "1": 12.0
+  }
+}

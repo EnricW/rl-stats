@@ -1,0 +1,369 @@
+{
+  "goals": [
+    {
+      "name": "Enric",
+      "score": [
+        1,
+        0
+      ],
+      "t": 67.56,
+      "team": 0
+    },
+    {
+      "name": "Enric",
+      "score": [
+        2,
+        0
+      ],
+      "t": 134.09,
+      "team": 0
+    },
+    {
+      "name": "Ray",
+      "score": [
+        3,
+        0
+      ],
+      "t": 246.95,
+      "team": 0
+    },
+    {
+      "name": "Eric",
+      "score": [
+        4,
+        0
+      ],
+      "t": 357.05,
+      "team": 0
+    }
+  ],
+  "id": "7d1205ec-64ba-4175-9633-fe0fff68b23d",
+  "kickoff_players": {
+    "Enric": {
+      "avg_boost_after": 63.8,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Eric": {
+      "avg_boost_after": 146.0,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 1
+    },
+    "Ray": {
+      "avg_boost_after": 56.1,
+      "fakes": 0,
+      "first_touches": 0,
+      "kickoffs": 4,
+      "taken": 2
+    }
+  },
+  "kickoffs": [
+    {
+      "first_touch": "Douz3pack",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 0,
+      "t": 0.0,
+      "takers": {
+        "0": "Ray",
+        "1": "Douz3pack"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Krysix02",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 80.59,
+      "takers": {
+        "0": "Eric",
+        "1": "Krysix02"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Este",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": null,
+      "t": 144.97,
+      "takers": {
+        "0": "Enric",
+        "1": "Este"
+      },
+      "type": "diagonal"
+    },
+    {
+      "first_touch": "Douz3pack",
+      "first_touch_team": 1,
+      "goal_team": null,
+      "outcome": 1,
+      "t": 259.92,
+      "takers": {
+        "0": "Ray",
+        "1": "Douz3pack"
+      },
+      "type": "diagonal"
+    }
+  ],
+  "rotation": {
+    "Enric": {
+      "became_first_man": 22,
+      "pct_first_man": 28.5,
+      "pct_second_man": 22.3,
+      "pct_third_man": 35.7
+    },
+    "Eric": {
+      "became_first_man": 22,
+      "pct_first_man": 31.8,
+      "pct_second_man": 24.5,
+      "pct_third_man": 30.3
+    },
+    "Ray": {
+      "became_first_man": 24,
+      "pct_first_man": 26.3,
+      "pct_second_man": 39.7,
+      "pct_third_man": 20.5
+    }
+  },
+  "stat_events": [
+    {
+      "dist_to_goal": 2047.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1743.0,
+      "t": 8.34,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Krysix02",
+      "t": 9.67,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 40.28,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 999.0,
+      "kind": "shot",
+      "name": "Este",
+      "speed_to_goal": 346.0,
+      "t": 40.72,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 921.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -165.0,
+      "t": 56.59,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1041.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1072.0,
+      "t": 65.26,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Krysix02",
+      "t": 66.6,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 2711.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -851.0,
+      "t": 95.85,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Douz3pack",
+      "t": 95.88,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 852.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": -352.0,
+      "t": 120.23,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1276.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 709.0,
+      "t": 123.36,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1103.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1250.0,
+      "t": 133.49,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 2063.0,
+      "kind": "shot",
+      "name": "Douz3pack",
+      "speed_to_goal": -611.0,
+      "t": 153.07,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Eric",
+      "t": 153.07,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 434.0,
+      "kind": "shot",
+      "name": "Este",
+      "speed_to_goal": 2293.0,
+      "t": 160.14,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 3022.0,
+      "kind": "shot",
+      "name": "Krysix02",
+      "speed_to_goal": -1584.0,
+      "t": 182.54,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Ray",
+      "t": 182.57,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 826.0,
+      "kind": "shot",
+      "name": "Este",
+      "speed_to_goal": 295.0,
+      "t": 195.75,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 219.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1546.0,
+      "t": 246.62,
+      "team": 0
+    },
+    {
+      "kind": "assist",
+      "name": "Enric",
+      "t": 246.95,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1087.0,
+      "kind": "shot",
+      "name": "Este",
+      "speed_to_goal": 2077.0,
+      "t": 268.02,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 269.09,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Krysix02",
+      "t": 299.54,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 771.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": 1802.0,
+      "t": 299.61,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Douz3pack",
+      "t": 316.82,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1319.0,
+      "kind": "shot",
+      "name": "Enric",
+      "speed_to_goal": -1982.0,
+      "t": 316.95,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 1176.0,
+      "kind": "shot",
+      "name": "Ray",
+      "speed_to_goal": 1545.0,
+      "t": 338.18,
+      "team": 0
+    },
+    {
+      "kind": "save",
+      "name": "Douz3pack",
+      "t": 339.21,
+      "team": 1
+    },
+    {
+      "dist_to_goal": 1516.0,
+      "kind": "shot",
+      "name": "Este",
+      "speed_to_goal": 81.0,
+      "t": 347.28,
+      "team": 1
+    },
+    {
+      "kind": "save",
+      "name": "Enric",
+      "t": 347.41,
+      "team": 0
+    },
+    {
+      "dist_to_goal": 488.0,
+      "kind": "shot",
+      "name": "Eric",
+      "speed_to_goal": 231.0,
+      "t": 356.51,
+      "team": 0
+    }
+  ],
+  "sustained_possession_s": {
+    "Enric": 2.3,
+    "Eric": 5.1,
+    "Ray": 0.1
+  },
+  "sustained_possession_teams_s": {
+    "0": 7.5,
+    "1": 7.5
+  }
+}
