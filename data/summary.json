@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T21:22:19+00:00",
+  "generated_at": "2026-10-22T06:18:23+00:00",
   "matches": [
     {
       "date": "2026-10-21T21:13:47Z",
@@ -2914,6 +2914,12 @@
             "games": 13,
             "path": "reports/player-Enric-2026-10-19-2137.md",
             "session_id": "2026-10-19-2137"
+          },
+          {
+            "date": "2026-10-21",
+            "games": 13,
+            "path": "reports/player-Enric-2026-10-21-2140.md",
+            "session_id": "2026-10-21-2140"
           }
         ]
       },
@@ -2942,6 +2948,12 @@
             "games": 13,
             "path": "reports/player-Eric-2026-10-19-2137.md",
             "session_id": "2026-10-19-2137"
+          },
+          {
+            "date": "2026-10-21",
+            "games": 13,
+            "path": "reports/player-Eric-2026-10-21-2140.md",
+            "session_id": "2026-10-21-2140"
           }
         ]
       },
@@ -2970,6 +2982,12 @@
             "games": 13,
             "path": "reports/player-Ray-2026-10-19-2137.md",
             "session_id": "2026-10-19-2137"
+          },
+          {
+            "date": "2026-10-21",
+            "games": 13,
+            "path": "reports/player-Ray-2026-10-21-2140.md",
+            "session_id": "2026-10-21-2140"
           }
         ]
       }
@@ -2978,6 +2996,10 @@
       {
         "date": "2026-10-15",
         "path": "reports/team-2026-10-15.md"
+      },
+      {
+        "date": "2026-10-22",
+        "path": "reports/team-2026-10-22.md"
       }
     ]
   },
@@ -2987,7 +3009,7 @@
       "end": "2026-10-21T21:19:21Z",
       "games": 13,
       "id": "2026-10-21-2140",
-      "open": true,
+      "open": false,
       "start": "2026-10-21T19:40:55Z"
     },
     {
