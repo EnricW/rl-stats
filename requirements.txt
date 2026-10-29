@@ -3,6 +3,6 @@
 requests==2.34.2
 PyYAML==6.0.3
 tzdata==2026.2            # zona horaria de las sesiones (pipeline/sessions.py)
-anthropic==1.13.0        # >=1.13: report.py usa betas+fallbacks de beta.messages
+anthropic==2.3.0        # >=1.13: report.py usa betas+fallbacks de beta.messages
 subtr-actor-py==1.4.0    # extensión nativa crítica (frames.py y events.py)
 numpy==2.5.4             # lo necesita el ndarray de subtr-actor (no lo declara)
