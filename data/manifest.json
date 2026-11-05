@@ -1666,6 +1666,11 @@
         "date": "2026-10-29",
         "model": "claude-opus-5-5",
         "path": "reports/team-2026-10-29.md"
+      },
+      {
+        "date": "2026-11-05",
+        "model": "claude-opus-5-5",
+        "path": "reports/team-2026-11-05.md"
       }
     ]
   },
